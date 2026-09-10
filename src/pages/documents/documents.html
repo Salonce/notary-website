@@ -1,0 +1,137 @@
+<section class="documents-section">
+    <div class="documents-content">
+
+        <h2>Dokumenty</h2>
+
+        <p>
+            Niezbędne do dokonania czynności notarialnej dokumenty oraz dane stron
+            powinny być dostarczone do kancelarii przed ustalonym terminem jej
+            dokonania, z odpowiednim wyprzedzeniem czasowym.
+        </p>
+
+        <p>
+            Większość czynności poświadczeniowych dokonywana jest jednak na
+            poczekaniu, bez konieczności wcześniejszego umawiania się i
+            dostarczania dokumentów.
+        </p>
+
+        <p>
+            Przy czynności notarialnej notariusz stwierdza tożsamość osób biorących
+            udział w czynności, na podstawie prawem przewidzianych dokumentów:
+            dowodu osobistego, paszportu lub karty pobytu, gdy do czynności stają
+            osoby fizyczne, albo odpisu z Krajowego Rejestru Sądowego w przypadku
+            osób prawnych. W tym ostatnim przypadku wymagane jest również
+            dostarczenie aktu założycielskiego lub umowy spółki.
+        </p>
+
+        <p>
+            Przed przystąpieniem do dokonania czynności notarialnej każda z osób
+            w niej uczestniczących powinna dostarczyć do kancelarii następujące dane:
+        </p>
+
+        <ul class="documents-list">
+            <li>imię (imiona),</li>
+            <li>nazwisko,</li>
+            <li>imiona rodziców,</li>
+            <li>seria, numer i termin ważności dokumentu tożsamości,</li>
+            <li>PESEL,</li>
+            <li>NIP,</li>
+            <li>stan cywilny,</li>
+            <li>dokładny adres zamieszkania,</li>
+            <li>
+                w przypadku osób prawnych – pełna nazwa z danymi przedstawicieli,
+                numer rejestru, REGON, NIP, dokładny adres siedziby.
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<style>
+    .documents-section {
+        width: 100%;
+        padding: 60px 20px;
+        box-sizing: border-box;
+        background: #fafafa;
+    }
+
+    .documents-content {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 45px 55px;
+        box-sizing: border-box;
+        background: #ffffff;
+        border-top: 3px solid #b59b5b;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .documents-content h2 {
+        margin: 0 0 30px;
+        text-align: center;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 28px;
+        font-weight: 500;
+        color: #222;
+    }
+
+    .documents-content h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 1px;
+        margin: 18px auto 0;
+        background: #b59b5b;
+    }
+
+    .documents-content p {
+        margin: 0 0 20px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .documents-list {
+        margin: 10px 0 0;
+        padding: 0;
+        list-style: none;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .documents-list li {
+        position: relative;
+        margin-bottom: 9px;
+        padding-left: 25px;
+    }
+
+    .documents-list li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #b59b5b;
+        font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+        .documents-section {
+            padding: 35px 15px;
+        }
+
+        .documents-content {
+            padding: 30px 25px;
+        }
+
+        .documents-content h2 {
+            font-size: 24px;
+        }
+
+        .documents-content p,
+        .documents-list {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+    }
+</style>
