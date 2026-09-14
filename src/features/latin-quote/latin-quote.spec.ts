@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Documents } from './documents';
+import { LatinQuote } from './latin-quote';
 
-describe('Documents', () => {
-  let component: Documents;
-  let fixture: ComponentFixture<Documents>;
+describe('LatinQuote', () => {
+  let component: LatinQuote;
+  let fixture: ComponentFixture<LatinQuote>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Documents],
+      imports: [LatinQuote],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Documents);
+    fixture = TestBed.createComponent(LatinQuote);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

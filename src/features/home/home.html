@@ -1,38 +1,59 @@
-<section class="welcome-section">
-    <div class="welcome-content">
+<main>
+    
+<app-top-navbar/>
 
-        <h2>Szanowni Państwo!</h2>
+  <section
+    id="czynnosci-notarialne"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-latin-quote/>
+  </section>
 
-        <p>
-            Z przyjemnością witam Państwa na stronie internetowej mojej kancelarii
-            – <strong>Zbigniew Władysławski – Notariusz Olsztyn.</strong>
-        </p>
+    <!-- CZYNNOŚCI NOTARIALNE -->
+  <section
+    id="czynnosci-notarialne"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-intro/>
+  </section>
 
-        <p>
-            Jako notariusz dokonuję czynności notarialnych, gdy wymagają tego
-            przepisy oraz w innych przypadkach – na życzenie Klientów.
-            Czynności te z reguły dokonywane są w kancelarii i mają charakter
-            dokumentu urzędowego.
-        </p>
+  <!-- CZYNNOŚCI NOTARIALNE -->
+  <section
+    id="czynnosci-notarialne"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-notarial-services />
+  </section>
 
-        <p>
-            Wyznaję zasadę, że bezstronność, życzliwość i profesjonalizm
-            stanowią cechy nieodłącznie związane z wykonywaniem zawodu notariusza.
-        </p>
 
-        <p>
-            Zachęcam Państwa do kontaktu z kancelarią, tym bardziej, że wszelkie
-            informacje w zakresie dokonywanych czynności notarialnych udzielane
-            są Klientom bezpłatnie.
-        </p>
+  <!-- KOSZTY -->
+  <section
+    id="oplaty"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-fees />
+  </section>
 
-        <div class="signature">
-            <strong>Zbigniew Władysławski</strong>
-            <span>Notariusz</span>
-        </div>
 
-    </div>
-</section>
+  <!-- STREFA KLIENTA -->
+  <section
+    id="strefa-klienta"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-customer-area />
+  </section>
+
+
+  <!-- KONTAKT -->
+  <section
+    id="kontakt"
+    class="scroll-mt-24 min-h-screen"
+  >
+    <app-contact />
+  </section>
+
+</main>
+
 
 <style>
     .welcome-section {

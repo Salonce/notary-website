@@ -1,13 +1,15 @@
-<nav class="w-full border-b border-stone-200">
+<!-- NAVBAR -->
+<nav class="w-full border-b border-stone-200 bg-white">
   <div class="mx-auto flex max-w-7xl">
 
     <!-- STRONA GŁÓWNA -->
     <a
-      routerLink="/"
-      routerLinkActive="text-stone-900 after:w-full"
-      [routerLinkActiveOptions]="{ exact: true }"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
+      href="#home"
+      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500
+             transition-colors duration-300 hover:text-stone-900
+             after:absolute after:bottom-0 after:left-0 after:h-[2px]
+             after:w-0 after:bg-stone-900 after:transition-all after:duration-300
+             hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -35,10 +37,12 @@
 
     <!-- CZYNNOŚCI NOTARIALNE -->
     <a
-      routerLink="/czynnosci-notarialne"
-      routerLinkActive="text-stone-900 after:w-full"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
+      href="#czynnosci-notarialne"
+      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500
+             transition-colors duration-300 hover:text-stone-900
+             after:absolute after:bottom-0 after:left-0 after:h-[2px]
+             after:w-0 after:bg-stone-900 after:transition-all after:duration-300
+             hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -64,48 +68,14 @@
     </a>
 
 
-    <!-- DOKUMENTY -->
+    <!-- KOSZTY -->
     <a
-      routerLink="/dokumenty"
-      routerLinkActive="text-stone-900 after:w-full"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
-    >
-      <span class="inline-flex items-center justify-center gap-2">
-
-        <!-- Dokument -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          class="h-4 w-4"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 3.5h8l4 4V20.5H6V3.5Z"
-          />
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M14 3.5v4h4M9 12h6M9 15.5h6"
-          />
-        </svg>
-
-        <span>Dokumenty</span>
-      </span>
-    </a>
-
-
-    <!-- OPŁATY -->
-    <a
-      routerLink="/oplaty"
-      routerLinkActive="text-stone-900 after:w-full"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
+      href="#oplaty"
+      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500
+             transition-colors duration-300 hover:text-stone-900
+             after:absolute after:bottom-0 after:left-0 after:h-[2px]
+             after:w-0 after:bg-stone-900 after:transition-all after:duration-300
+             hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -120,27 +90,31 @@
           aria-hidden="true"
         >
           <circle cx="12" cy="12" r="8.5" />
+
           <path
             stroke-linecap="round"
             d="M14.5 9.5c-.5-.7-1.4-1.1-2.5-1.1-1.4 0-2.4.7-2.4 1.7 0 2.6 4.8 1.1 4.8 3.8 0 1.1-1 1.8-2.5 1.8-1.1 0-2.1-.4-2.7-1.2"
           />
+
           <path
             stroke-linecap="round"
             d="M12 7v10"
           />
         </svg>
 
-        <span>Opłaty</span>
+        <span>Koszty</span>
       </span>
     </a>
 
 
-    <!-- LINKI -->
+    <!-- STREFA KLIENTA -->
     <a
-      routerLink="/linki"
-      routerLinkActive="text-stone-900 after:w-full"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
+      href="#strefa-klienta"
+      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500
+             transition-colors duration-300 hover:text-stone-900
+             after:absolute after:bottom-0 after:left-0 after:h-[2px]
+             after:w-0 after:bg-stone-900 after:transition-all after:duration-300
+             hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -159,6 +133,7 @@
             stroke-linejoin="round"
             d="M10 13.5a4 4 0 0 0 5.7 0l2.2-2.2a4 4 0 0 0-5.7-5.7l-1.3 1.3"
           />
+
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -166,17 +141,19 @@
           />
         </svg>
 
-        <span>Linki</span>
+        <span>Strefa klienta</span>
       </span>
     </a>
 
 
     <!-- KONTAKT -->
     <a
-      routerLink="/kontakt"
-      routerLinkActive="text-stone-900 after:w-full"
-      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500 transition-colors duration-300 hover:text-stone-900
-             after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-stone-900 after:transition-all after:duration-300"
+      href="#kontakt"
+      class="relative flex-1 px-6 py-5 text-center text-sm font-medium text-stone-500
+             transition-colors duration-300 hover:text-stone-900
+             after:absolute after:bottom-0 after:left-0 after:h-[2px]
+             after:w-0 after:bg-stone-900 after:transition-all after:duration-300
+             hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -203,3 +180,5 @@
 
   </div>
 </nav>
+
+
