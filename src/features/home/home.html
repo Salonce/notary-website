@@ -1,26 +1,74 @@
 <main>
-    
-<app-top-navbar/>
 
+  <app-top-navbar />
+
+  <!-- MOTTO -->
   <section
-    id="czynnosci-notarialne"
-    class="scroll-mt-24 min-h-screen"
+    id="motto"
+    class="scroll-mt-24"
   >
-    <app-latin-quote/>
+    <app-latin-quote />
   </section>
 
-    <!-- CZYNNOŚCI NOTARIALNE -->
+
+  <!-- O KANCELARII -->
   <section
-    id="czynnosci-notarialne"
-    class="scroll-mt-24 min-h-screen"
+    id="o-kancelarii"
+    class="scroll-mt-24 bg-[#fafafa]"
   >
-    <app-intro/>
+    <div
+      class="mx-auto max-w-7xl px-6 py-12
+             md:px-8 md:py-16"
+    >
+
+      <!-- EXACT 50 / 50 SPLIT -->
+      <div
+        class="grid grid-cols-1 gap-8
+               md:grid-cols-2"
+      >
+
+        <!-- LEFT: ABOUT LAWYER -->
+        <app-about-lawyer />
+
+        <!-- RIGHT: ABOUT LOCATION -->
+        <app-about-location />
+
+      </div>
+
+    </div>
   </section>
+
+    <!-- ACCESSIBILITY / LOCATION -->
+  <section
+    id="udogodnienia"
+    class="scroll-mt-24 bg-[#fafafa]"
+  >
+    <div
+      class="mx-auto max-w-7xl px-6 py-12
+            md:px-8 md:py-16"
+    >
+
+      <div
+        class="grid grid-cols-1 gap-8
+              md:grid-cols-2"
+      >
+
+        <!-- LEFT: FOR DISABLED -->
+        <app-for-disabled />
+
+        <!-- RIGHT: GOOGLE MAP -->
+        <app-google-map />
+
+      </div>
+
+    </div>
+  </section>
+
 
   <!-- CZYNNOŚCI NOTARIALNE -->
   <section
     id="czynnosci-notarialne"
-    class="scroll-mt-24 min-h-screen"
+    class="scroll-mt-24"
   >
     <app-notarial-services />
   </section>
@@ -29,7 +77,7 @@
   <!-- KOSZTY -->
   <section
     id="oplaty"
-    class="scroll-mt-24 min-h-screen"
+    class="scroll-mt-24"
   >
     <app-fees />
   </section>
@@ -38,7 +86,7 @@
   <!-- STREFA KLIENTA -->
   <section
     id="strefa-klienta"
-    class="scroll-mt-24 min-h-screen"
+    class="scroll-mt-24"
   >
     <app-customer-area />
   </section>
@@ -47,7 +95,7 @@
   <!-- KONTAKT -->
   <section
     id="kontakt"
-    class="scroll-mt-24 min-h-screen"
+    class="scroll-mt-24"
   >
     <app-contact />
   </section>

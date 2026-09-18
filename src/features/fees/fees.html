@@ -1,180 +1,449 @@
-<section class="fees-section">
-    <div class="fees-content">
+<div class="w-full bg-[#fafafa] px-6 py-12 md:px-8 md:py-16">
+  <div
+    class="mx-auto max-w-5xl overflow-hidden
+           border border-stone-200
+           border-t-[3px] border-t-[#b59b5b]
+           bg-white
+           shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+  >
 
-KOSZTY
-Wynagrodzenie, podatki i opłaty sądowe uiszcza się przy dokonaniu czynności notarialnych: gotówką, przelewem na telefon (BLIK) lub na rachunek bankowy kancelarii o numerze 07 1020 3541 0000 5302 0286 9071.
-Jak na tej stronie, ale bez tabel, jeżeli się da to niech pliki się otwierają w nowym oknie https://notariuszjaroty.pl/koszty/ tam, gdzie nie ma linków to ja podam
-W celu indywidualnego ustalenia wysokości wynagrodzenia, podatków i opłat sądowych prosimy o kontakt z kancelarią.
+    <!-- HEADER -->
+    <div class="px-6 pt-10 text-center md:px-12 md:pt-12">
+
+      <span
+        class="font-serif text-xs font-medium uppercase
+               tracking-[0.25em] text-stone-400"
+      >
+        INFORMACJE
+      </span>
+
+      <h2
+        class="mt-3 font-serif text-3xl font-medium
+               tracking-wide text-stone-800
+               md:text-4xl"
+      >
+        Koszty
+      </h2>
+
+      <div class="mx-auto mt-5 flex items-center justify-center gap-3">
+        <span class="h-px w-10 bg-stone-200"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-[#b59b5b]"></span>
+        <span class="h-px w-10 bg-stone-200"></span>
+      </div>
 
     </div>
-</section>
 
-<style>
-    .fees-section {
-        width: 100%;
-        padding: 60px 20px;
-        box-sizing: border-box;
-        background: #fafafa;
-    }
 
-    .fees-content {
-        max-width: 850px;
-        margin: 0 auto;
-        padding: 45px 55px;
-        box-sizing: border-box;
-        background: #ffffff;
-        border-top: 3px solid #b59b5b;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    }
+    <!-- PAYMENT BOX -->
+    <div class="px-6 pt-10 md:px-12 md:pt-12">
 
-    .fees-content h2 {
-        margin: 0 0 30px;
-        text-align: center;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 28px;
-        font-weight: 500;
-        color: #222;
-    }
+      <div
+        class="relative overflow-hidden
+               border border-[#d8ccb0]
+               bg-[#f8f6f0]
+               px-6 py-7
+               md:px-8 md:py-8"
+      >
 
-    .fees-content h2::after {
-        content: "";
-        display: block;
-        width: 50px;
-        height: 1px;
-        margin: 18px auto 0;
-        background: #b59b5b;
-    }
+        <!-- DECORATIVE GOLD LINE -->
+        <div
+          class="absolute left-0 top-0 h-full w-1
+                 bg-[#b59b5b]"
+        ></div>
 
-    .fees-content p {
-        margin: 0 0 20px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 17px;
-        line-height: 1.8;
-        color: #444;
-    }
+        <div class="flex flex-col gap-6 md:flex-row md:items-center">
 
-    .fees-list {
-        margin: 10px 0 25px;
-        padding: 0;
-        list-style: none;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 17px;
-        line-height: 1.8;
-        color: #444;
-    }
+          <!-- ICON -->
+          <div
+            class="flex h-14 w-14 shrink-0
+                   items-center justify-center
+                   border border-[#cdbd98]
+                   bg-white
+                   text-[#806c3e]"
+            aria-hidden="true"
+          >
+            <i class="fa-solid fa-building-columns text-xl"></i>
+          </div>
 
-    .fees-list li {
-        position: relative;
-        margin-bottom: 9px;
-        padding-left: 25px;
-    }
+          <!-- TEXT -->
+          <div>
 
-    .fees-list li::before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: #b59b5b;
-    }
+            <p
+              class="font-serif text-xs font-medium
+                     uppercase tracking-[0.18em]
+                     text-[#806c3e]"
+            >
+              Płatność
+            </p>
 
-    .notice {
-        margin: 30px 0;
-        padding: 20px 25px;
-        border-left: 3px solid #b59b5b;
-        background: #faf8f2;
-    }
+            <p
+              class="mt-2 font-serif text-[15px]
+                     leading-7 text-stone-600
+                     md:text-base md:leading-8"
+            >
+              Wynagrodzenie, podatki i opłaty sądowe uiszcza się
+              przy dokonaniu czynności notarialnych: gotówką,
+              przelewem na telefon (BLIK) lub na rachunek bankowy
+              kancelarii.
+            </p>
 
-    .notice strong {
-        display: block;
-        margin-bottom: 7px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 16px;
-        color: #222;
-        letter-spacing: 0.5px;
-    }
+            <div
+              class="mt-4 flex flex-col
+                     gap-1 sm:flex-row sm:items-baseline sm:gap-3"
+            >
+              <span
+                class="font-serif text-xs uppercase
+                       tracking-[0.12em] text-stone-400"
+              >
+                Numer rachunku
+              </span>
 
-    .notice p {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.7;
-    }
+              <span
+                class="font-serif text-base font-medium
+                       tracking-wide text-stone-800
+                       md:text-lg"
+              >
+                07 1020 3541 0000 5302 0286 9071
+              </span>
+            </div>
 
-    .contact-box {
-        margin-top: 40px;
-        padding: 30px;
-        text-align: center;
-        background: #fafafa;
-        border: 1px solid #e8e4da;
-    }
+          </div>
 
-    .contact-box h3 {
-        margin: 0 0 15px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 22px;
-        font-weight: 500;
-        color: #222;
-    }
+        </div>
 
-    .contact-box p {
-        margin-bottom: 18px;
-        font-size: 16px;
-    }
+      </div>
 
-    .phone-numbers {
-        display: flex;
-        justify-content: center;
-        gap: 35px;
-        flex-wrap: wrap;
-        margin: 20px 0;
-    }
+    </div>
 
-    .phone-numbers a {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 20px;
-        color: #806c3e;
-        text-decoration: none;
-        letter-spacing: 1px;
-    }
 
-    .phone-numbers a:hover {
-        text-decoration: underline;
-    }
+    <!-- COST ITEMS -->
+    <div class="px-6 py-10 md:px-12 md:py-12">
 
-    .contact-note {
-        margin: 0 !important;
-        color: #777 !important;
-        font-size: 15px !important;
-    }
+      <div class="space-y-0">
 
-    @media (max-width: 600px) {
-        .fees-section {
-            padding: 35px 15px;
-        }
 
-        .fees-content {
-            padding: 30px 25px;
-        }
+        <!-- ITEM I -->
+        <div
+          class="group flex gap-5
+                 border-b border-stone-200
+                 py-7 first:pt-0"
+        >
 
-        .fees-content h2 {
-            font-size: 24px;
-        }
+          <div
+            class="flex h-9 w-9 shrink-0
+                   items-center justify-center
+                   border border-[#d8ccb0]
+                   font-serif text-sm font-medium
+                   text-[#806c3e]"
+          >
+            I
+          </div>
 
-        .fees-content p,
-        .fees-list {
-            font-size: 16px;
-            line-height: 1.7;
-        }
+          <div class="pt-1">
 
-        .notice {
-            padding: 18px 20px;
-        }
+            <h3
+              class="font-serif text-base font-medium
+                     leading-7 text-stone-800
+                     md:text-lg md:leading-8"
+            >
+              Taksa notarialna ustalana jest indywidualnie
+              na podstawie § 3 Rozporządzenia Ministra Sprawiedliwości
+              w sprawie maksymalnych stawek taksy notarialnej
+              z dnia 28 czerwca 2004 roku
+            </h3>
 
-        .contact-box {
-            padding: 25px 15px;
-        }
+          </div>
 
-        .phone-numbers {
-            gap: 15px;
-            flex-direction: column;
-        }
-    }
-</style>
+        </div>
+
+
+        <!-- ITEM II -->
+        <div
+          class="group flex gap-5
+                 border-b border-stone-200
+                 py-7"
+        >
+
+          <div
+            class="flex h-9 w-9 shrink-0
+                   items-center justify-center
+                   border border-[#d8ccb0]
+                   font-serif text-sm font-medium
+                   text-[#806c3e]"
+          >
+            II
+          </div>
+
+          <div class="pt-1">
+
+            <h3
+              class="font-serif text-base font-medium
+                     leading-7 text-stone-800
+                     md:text-lg md:leading-8"
+            >
+              Podatek od czynności cywilnoprawnych zostaje
+              wyliczony zgodnie z ustawą z dnia 9 września 2000 r.
+              o podatku od czynności cywilnoprawnych
+            </h3>
+
+            <a
+              href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20000860959/U/D20000959Lj.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2
+                     font-serif text-sm font-medium
+                     text-[#806c3e]
+                     transition-colors
+                     hover:text-[#b59b5b]"
+            >
+              <span
+                class="border-b border-[#b59b5b]
+                       pb-0.5"
+              >
+                Pobierz ustawę
+              </span>
+
+              <span
+                class="transition-transform
+                       group-hover:translate-x-1"
+              >
+                ↗
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM III -->
+        <div
+          class="group flex gap-5
+                 border-b border-stone-200
+                 py-7"
+        >
+
+          <div
+            class="flex h-9 w-9 shrink-0
+                   items-center justify-center
+                   border border-[#d8ccb0]
+                   font-serif text-sm font-medium
+                   text-[#806c3e]"
+          >
+            III
+          </div>
+
+          <div class="pt-1">
+
+            <h3
+              class="font-serif text-base font-medium
+                     leading-7 text-stone-800
+                     md:text-lg md:leading-8"
+            >
+              Podatek od spadków i darowizn zostaje wyliczony
+              zgodnie z ustawą z dnia 28 lipca 1983 r. o podatku
+              od spadków i darowizn
+            </h3>
+
+            <a
+              href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19830450207/U/D19830207Lj.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2
+                     font-serif text-sm font-medium
+                     text-[#806c3e]
+                     transition-colors
+                     hover:text-[#b59b5b]"
+            >
+              <span
+                class="border-b border-[#b59b5b]
+                       pb-0.5"
+              >
+                Pobierz ustawę
+              </span>
+
+              <span
+                class="transition-transform
+                       group-hover:translate-x-1"
+              >
+                ↗
+              </span>
+            </a>
+
+            <div
+              class="mt-5 border-l-2 border-[#b59b5b]
+                     bg-[#fafafa]
+                     px-5 py-4"
+            >
+              <p
+                class="font-serif text-[15px]
+                       leading-7 text-stone-600
+                       md:text-base md:leading-8"
+              >
+                Zwolnieni od podatku od spadków i darowizn są osoby
+                należące do grupy I grupy podatkowej: małżonek,
+                zstępni (dzieci, wnuki, itd.), wstępni (rodzice,
+                dziadkowie, itd.), pasierbowie, rodzeństwo, ojczym
+                i macocha.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM IV -->
+        <div
+          class="group flex gap-5
+                 border-b border-stone-200
+                 py-7"
+        >
+
+          <div
+            class="flex h-9 w-9 shrink-0
+                   items-center justify-center
+                   border border-[#d8ccb0]
+                   font-serif text-sm font-medium
+                   text-[#806c3e]"
+          >
+            IV
+          </div>
+
+          <div class="pt-1">
+
+            <h3
+              class="font-serif text-base font-medium
+                     leading-7 text-stone-800
+                     md:text-lg md:leading-8"
+            >
+              Opłata sądowa ustalana każdorazowo
+              w odniesieniu do przedmiotowego stanu faktycznego
+              na podstawie ustawy z dnia 28 lipca 2005 r.
+              o kosztach sądowych w sprawach cywilnych
+            </h3>
+
+            <a
+              href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20051671398/U/D20051398Lj.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2
+                     font-serif text-sm font-medium
+                     text-[#806c3e]
+                     transition-colors
+                     hover:text-[#b59b5b]"
+            >
+              <span
+                class="border-b border-[#b59b5b]
+                       pb-0.5"
+              >
+                Pobierz ustawę
+              </span>
+
+              <span
+                class="transition-transform
+                       group-hover:translate-x-1"
+              >
+                ↗
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ITEM V -->
+        <div
+          class="group flex gap-5
+                 py-7"
+        >
+
+          <div
+            class="flex h-9 w-9 shrink-0
+                   items-center justify-center
+                   border border-[#d8ccb0]
+                   font-serif text-sm font-medium
+                   text-[#806c3e]"
+          >
+            V
+          </div>
+
+          <div class="pt-1">
+
+            <h3
+              class="font-serif text-base font-medium
+                     leading-7 text-stone-800
+                     md:text-lg md:leading-8"
+            >
+              Taksa notarialna za wypisy aktu wynosi
+              <span class="text-[#806c3e]">
+                6 zł netto (7,38 zł brutto)
+              </span>
+              za każdą rozpoczętą stronę
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FINAL CONTACT -->
+      <div
+        class="mt-6 border-t border-stone-200
+               pt-10 text-center"
+      >
+
+        <div
+          class="mx-auto flex h-12 w-12
+                 items-center justify-center
+                 border border-[#d8ccb0]
+                 text-[#806c3e]"
+          aria-hidden="true"
+        >
+          <i class="fa-solid fa-phone text-sm"></i>
+        </div>
+
+        <p
+          class="mx-auto mt-5 max-w-2xl
+                 font-serif text-base
+                 leading-7 text-stone-600
+                 md:text-[17px] md:leading-8"
+        >
+          W celu indywidualnego ustalenia wysokości wynagrodzenia,
+          podatków i opłat sądowych prosimy o kontakt z kancelarią.
+        </p>
+
+        <a
+          href="#kontakt"
+          class="group mt-6 inline-flex
+                 items-center gap-3
+                 bg-[#806c3e]
+                 px-7 py-3.5
+                 font-serif text-sm
+                 font-medium uppercase
+                 tracking-[0.12em]
+                 text-white
+                 transition-colors
+                 hover:bg-[#b59b5b]"
+        >
+          <span>
+            Kontakt z kancelarią
+          </span>
+
+          <span
+            class="transition-transform
+                   group-hover:translate-x-1"
+          >
+            →
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
