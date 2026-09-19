@@ -13,7 +13,7 @@ import { GoogleMap } from '../google-map/google-map';
 import { GoogleOpinions } from '../google-opinions/google-opinions';
 
 @Component({
-  imports: [BannerImage, Contact, Header, NotarialServices, Fees, CustomerArea, TopNavbar, LatinQuote, LatinQuote, AboutLawyer, ForDisabled, GoogleMap, GoogleOpinions],
+  imports: [Contact,  NotarialServices, Fees, CustomerArea, TopNavbar, LatinQuote, LatinQuote, AboutLawyer, ForDisabled, GoogleMap, GoogleOpinions],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',

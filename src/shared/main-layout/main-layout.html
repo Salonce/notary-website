@@ -1,13 +1,20 @@
 <div class="flex min-h-screen flex-col">
 
-  <app-top-bar></app-top-bar>
+  <!-- TOP BAR — FIXED -->
+  <div class="fixed inset-x-0 top-0 z-50">
+    <app-top-bar></app-top-bar>
+  </div>
 
+
+  <!-- HEADER / BANER / NAWIGACJA -->
   <app-header></app-header>
 
-  <!-- Main content -->
+
+  <!-- MAIN CONTENT -->
   <main
     class="mt-6 flex-1 px-4
            pb-80
+           pt-[72px]
            sm:px-6
            md:pb-56
            lg:px-8"
@@ -15,7 +22,8 @@
     <router-outlet></router-outlet>
   </main>
 
-  <!-- Fixed bottom bar -->
+
+  <!-- FIXED BOTTOM BAR -->
   <app-bottom-bar />
 
 </div>
