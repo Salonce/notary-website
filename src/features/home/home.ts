@@ -7,14 +7,13 @@ import { Fees } from '../fees/fees';
 import { CustomerArea } from '../customer-area/customer-area';
 import { TopNavbar } from '../../shared/top-navbar/top-navbar';
 import { LatinQuote } from '../latin-quote/latin-quote';
-import { AboutLocation } from '../about-location/about-location';
 import { AboutLawyer } from '../about-lawyer/about-lawyer';
 import { ForDisabled } from '../for-disabled/for-disabled';
 import { GoogleMap } from '../google-map/google-map';
 import { GoogleOpinions } from '../google-opinions/google-opinions';
 
 @Component({
-  imports: [BannerImage, Contact, Header, NotarialServices, Fees, CustomerArea, TopNavbar, LatinQuote, LatinQuote, AboutLawyer, AboutLocation, ForDisabled, GoogleMap, GoogleOpinions],
+  imports: [BannerImage, Contact, Header, NotarialServices, Fees, CustomerArea, TopNavbar, LatinQuote, LatinQuote, AboutLawyer, ForDisabled, GoogleMap, GoogleOpinions],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
