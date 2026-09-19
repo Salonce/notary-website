@@ -1,13 +1,21 @@
-<app-top-bar></app-top-bar>
-<app-header></app-header>
+<div class="flex min-h-screen flex-col">
 
+  <app-top-bar></app-top-bar>
 
-<!-- Flex container for sidebar + content -->
-<div class="flex w-full mt-6 px-4 sm:px-6 lg:px-8 gap-8">
+  <app-header></app-header>
 
   <!-- Main content -->
-  <main class="flex-1">
+  <main
+    class="mt-6 flex-1 px-4
+           pb-80
+           sm:px-6
+           md:pb-56
+           lg:px-8"
+  >
     <router-outlet></router-outlet>
   </main>
+
+  <!-- Fixed bottom bar -->
+  <app-bottom-bar />
 
 </div>

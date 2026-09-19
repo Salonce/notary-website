@@ -1,1 +1,69 @@
-<p>customer-area works!</p>
+
+<section class="customer-area" id="customer-area">
+  <div class="customer-area__container">
+
+    <div class="customer-area__grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="customer-area__left">
+        <app-before-visit></app-before-visit>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="customer-area__right">
+        <app-documents></app-documents>
+
+        <app-external-links></app-external-links>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .customer-area {
+    padding: 120px 24px;
+    background: #f7f6f2;
+    color: #20201e;
+  }
+
+  .customer-area__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .customer-area__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .customer-area__left,
+  .customer-area__right {
+    min-width: 0;
+  }
+
+  .customer-area__right {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  @media (max-width: 900px) {
+    .customer-area {
+      padding: 80px 20px;
+    }
+
+    .customer-area__grid {
+      grid-template-columns: 1fr;
+      gap: 70px;
+    }
+
+    .customer-area__right {
+      gap: 60px;
+    }
+  }
+</style>
