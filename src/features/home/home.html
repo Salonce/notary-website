@@ -1,85 +1,76 @@
 <main>
 
-  <!-- MOTTO / BANER -->
+  <!-- NAWIGACJA -->
+  <div class="sticky top-[42px] z-40 w-full">
+    <app-top-navbar />
+  </div>
+
+  <!-- MOTTO -->
   <section
     id="motto"
-    class="scroll-mt-24"
+    class="scroll-mt-24 border-b border-stone-200 bg-white"
   >
     <app-latin-quote />
   </section>
 
-
-  <!-- NAWIGACJA -->
-  <div
-    class="sticky top-[72px] z-40 w-full"
-  >
-    <app-top-navbar />
-  </div>
-
-
   <!-- O KANCELARII -->
   <section
     id="o-kancelarii"
-    class="scroll-mt-24 bg-[#fafafa]"
+    class="scroll-mt-24 border-b border-stone-200 bg-[#fafafa]"
   >
     <div
       class="mx-auto max-w-7xl px-6 py-12
              md:px-8 md:py-16"
     >
-
-      <!-- EXACT 50 / 50 SPLIT -->
       <div
         class="grid grid-cols-1 gap-8
                md:grid-cols-2"
       >
-
-        <!-- LEFT: ABOUT LAWYER -->
         <app-about-lawyer />
-
-        <!-- RIGHT: ABOUT LOCATION -->
         <app-google-map />
-
       </div>
-
     </div>
   </section>
 
+  <!-- DLA OSÓB NIEPEŁNOSPRAWNYCH -->
+  <section
+    id="udogodnienia"
+    class="scroll-mt-24 border-b border-stone-200 bg-white"
+  >
+    <app-for-disabled />
+  </section>
 
   <!-- CZYNNOŚCI NOTARIALNE -->
   <section
     id="czynnosci-notarialne"
-    class="scroll-mt-24"
+    class="scroll-mt-24 border-b border-stone-200"
   >
     <app-notarial-services />
   </section>
 
-
   <!-- KOSZTY -->
   <section
     id="oplaty"
-    class="scroll-mt-24"
+    class="scroll-mt-24 border-b border-stone-200"
   >
     <app-fees />
   </section>
 
-
   <!-- STREFA KLIENTA -->
   <section
     id="strefa-klienta"
-    class="scroll-mt-24"
+    class="scroll-mt-24 border-b border-stone-200"
   >
     <app-customer-area />
   </section>
 
-
   <!-- KONTAKT -->
   <section
     id="kontakt"
-    class="scroll-mt-24"
+    class="scroll-mt-24 border-b border-stone-200"
   >
     <app-contact />
   </section>
-
 
   <!-- OPINIE GOOGLE -->
   <section
@@ -90,98 +81,3 @@
   </section>
 
 </main>
-
-
-<style>
-  .welcome-section {
-    width: 100%;
-    padding: 60px 20px;
-    box-sizing: border-box;
-    background: #fafafa;
-  }
-
-  .welcome-content {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 45px 55px;
-    box-sizing: border-box;
-    background: #ffffff;
-    border-top: 3px solid #b59b5b;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  }
-
-  .welcome-content h2 {
-    margin: 0 0 30px;
-    text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: 500;
-    color: #222;
-  }
-
-  .welcome-content h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 1px;
-    margin: 18px auto 0;
-    background: #b59b5b;
-  }
-
-  .welcome-content p {
-    margin: 0 0 20px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    line-height: 1.8;
-    color: #444;
-  }
-
-  .welcome-content p strong {
-    color: #222;
-    font-weight: 600;
-  }
-
-  .signature {
-    margin-top: 35px;
-    padding-top: 25px;
-    border-top: 1px solid #e5e5e5;
-    text-align: right;
-    font-family: Georgia, "Times New Roman", serif;
-  }
-
-  .signature strong {
-    display: block;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 500;
-    color: #222;
-  }
-
-  .signature span {
-    display: block;
-    margin-top: 5px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #888;
-  }
-
-  @media (max-width: 600px) {
-    .welcome-section {
-      padding: 35px 15px;
-    }
-
-    .welcome-content {
-      padding: 30px 25px;
-    }
-
-    .welcome-content h2 {
-      font-size: 24px;
-    }
-
-    .welcome-content p {
-      font-size: 16px;
-      line-height: 1.7;
-    }
-  }
-</style>
