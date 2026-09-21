@@ -1,31 +1,52 @@
 <header class="w-full border-b border-stone-200 bg-white">
   <div
     class="mx-auto flex max-w-7xl items-center justify-between
-           px-6 py-2.5"
+           px-4 py-2.5
+           sm:px-6"
   >
 
     <!-- LEFT: ADDRESS -->
-    <div class="flex items-center gap-3">
+    <div class="hidden items-center gap-3 md:flex">
       <i
         class="fa-solid fa-house text-lg text-[#b59b5b]"
         aria-hidden="true"
       ></i>
 
       <span
-        class="font-serif text-sm leading-6 text-stone-600"
+        class="whitespace-nowrap font-serif text-sm leading-6 text-stone-600"
       >
         10-540 Olsztyn, ul. Dąbrowszczaków Nr 21 lok. 3
       </span>
     </div>
 
 
-    <!-- RIGHT: CONTACT INFORMATION -->
-    <div class="flex items-center gap-6">
+    <!-- MOBILE: PHONE ICON -->
+    <a
+      href="tel:+48895273839"
+      class="flex items-center gap-2
+             font-serif text-sm text-stone-600
+             transition-colors hover:text-[#806c3e]
+             md:hidden"
+    >
+      <i
+        class="fa-solid fa-phone text-base text-[#b59b5b]"
+        aria-hidden="true"
+      ></i>
+
+      <span>
+        89 527 38 39
+      </span>
+    </a>
+
+
+    <!-- DESKTOP: CONTACT INFORMATION -->
+    <div class="hidden items-center gap-6 md:flex">
 
       <!-- PHONE -->
       <a
         href="tel:+48895273839"
         class="flex items-center gap-3
+               whitespace-nowrap
                font-serif text-sm text-stone-600
                transition-colors hover:text-[#806c3e]"
       >
@@ -44,6 +65,7 @@
       <a
         href="mailto:notariusz@wladyslawski.pl"
         class="flex items-center gap-3
+               whitespace-nowrap
                font-serif text-sm text-stone-600
                transition-colors hover:text-[#806c3e]"
       >
