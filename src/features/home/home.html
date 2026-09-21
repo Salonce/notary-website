@@ -1,101 +1,72 @@
-<main>
-  <!-- MOTTO / BANER -->
+<div class="relative">
 
-  <app-section-divider size="short" />
+  <!-- HOME CONTENT -->
+  <main class="relative z-10">
 
-  <section
-    id="motto"
-    class="scroll-mt-24 bg-white"
-  >
-    <app-latin-quote />
-  </section>
+    <!-- MOTTO / BANER -->
+    <app-section-divider size="short" />
 
-  <!-- O KANCELARII -->
-  <app-section-divider size="short" />
+    <section id="motto" class="scroll-mt-24">
+      <app-latin-quote />
+    </section>
 
-  <section
-    id="o-kancelarii"
-    class="scroll-mt-24 bg-[#fafafa]"
-  >
-    <div
-      class="mx-auto max-w-7xl
-             px-6 py-12
-             md:px-8 md:py-16"
-    >
 
-      <div
-        class="grid grid-cols-1
-               gap-8
-               md:grid-cols-2"
-      >
+    <!-- O KANCELARII -->
+    <app-section-divider size="short" />
 
-        <app-about-lawyer />
+    <section id="o-kancelarii" class="scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16">
 
-        <app-google-map />
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <app-about-lawyer />
+          <app-google-map />
+        </div>
 
       </div>
-
-    </div>
-  </section>
-
-  <!-- CZYNNOŚCI NOTARIALNE -->
-
-  <app-section-divider size="short" />
-
-  <section
-    id="czynnosci-notarialne"
-    class="scroll-mt-24"
-  >
-    <app-notarial-services />
-  </section>
+    </section>
 
 
-  <!-- KOSZTY -->
+    <!-- CZYNNOŚCI NOTARIALNE -->
+    <app-section-divider size="short" />
 
-  <app-section-divider size="short" />
-
-  <section
-    id="oplaty"
-    class="scroll-mt-24"
-  >
-    <app-fees />
-  </section>
+    <section id="czynnosci-notarialne" class="scroll-mt-24">
+      <app-notarial-services />
+    </section>
 
 
-  <app-section-divider size="short" />
+    <!-- KOSZTY -->
+    <app-section-divider size="short" />
+
+    <section id="oplaty" class="scroll-mt-24">
+      <app-fees />
+    </section>
 
 
-  <!-- STREFA KLIENTA -->
-
-  <section
-    id="strefa-klienta"
-    class="scroll-mt-24"
-  >
-    <app-customer-area />
-  </section>
+    <app-section-divider />
 
 
-  <!-- KONTAKT -->
-
-  <app-section-divider size="short" />
-
-  <section
-    id="kontakt"
-    class="scroll-mt-24"
-  >
-    <app-contact />
-  </section>
+    <!-- STREFA KLIENTA -->
+    <section id="strefa-klienta" class="scroll-mt-24">
+      <app-customer-area />
+    </section>
 
 
-  <!-- OPINIE GOOGLE -->
+    <!-- KONTAKT -->
+    <app-section-divider size="short" />
 
-  <app-section-divider size="short" />
+    <section id="kontakt" class="scroll-mt-24">
+      <app-contact />
+    </section>
 
-  <section
-    id="opinie"
-    class="scroll-mt-24"
-  >
-    <app-google-opinions />
-  </section>
 
-</main>
+    <!-- OPINIE GOOGLE -->
+    <app-section-divider size="short" />
+
+    <section id="opinie" class="scroll-mt-24">
+      <app-google-opinions />
+    </section>
+
+  </main>
+
+</div>
+```
