@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './notarial-services.css',
   templateUrl: './notarial-services.html',
 })
-export class NotarialServices {}
+export class NotarialServices {
+
+showAllCategories = false;
+openCategory: string | null = null;
+
+toggleCategory(category: string): void {
+  this.openCategory =
+    this.openCategory === category ? null : category;
+}
+
+}

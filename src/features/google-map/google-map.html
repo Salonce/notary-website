@@ -1,8 +1,8 @@
 <div
   class="h-full
-         px-6 py-8
+         px-6 py-6
          shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-         md:px-10 md:py-10"
+         md:px-10 md:py-8"
 >
 
   <!-- HEADER -->
@@ -16,97 +16,106 @@
       Lokalizacja
     </h2>
 
+    <div
+      class="mx-auto mt-4 h-px w-12
+             bg-[#b59b5b]"
+    ></div>
+
   </div>
 
 
   <!-- INTRODUCTION -->
   <div
-    class="mt-8 font-serif text-[16px]
+    class="mt-6 font-serif text-[16px]
            leading-7 text-stone-600
            md:text-[17px] md:leading-8"
   >
+
     <p>
       Kancelaria mieści się w dogodnym punkcie w centrum Olsztyna,
       w odległości ok. 600 metrów od dworca PKP/PKS, w sąsiedztwie
       siedziby Starostwa Olsztyńskiego oraz Sądu Gospodarczego
       w Olsztynie.
     </p>
+
   </div>
 
 
   <!-- GOOGLE MAP -->
-  <div class="mt-8">
+  <div class="mt-6">
 
-    <div
-      class="overflow-hidden border border-stone-200"
-    >
+    <div class="overflow-hidden border border-stone-200">
+
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.3658463302477!2d20.48646801454162!3d53.78202465329993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27932d50acc27%3A0x26f0d82f9c816b2!2sKancelaria%20Notarialna%20Zbigniew%20W%C5%82adys%C5%82awski%20Notariusz!5e1!3m2!1spl!2spl!4v1789055793941!5m2!1spl!2spl"
-        class="h-[350px] w-full border-0 md:h-[420px]"
+        class="h-[260px] w-full border-0 md:h-[300px]"
         allowfullscreen
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"
         title="Kancelaria Notarialna Zbigniew Władysławski - mapa"
       ></iframe>
+
     </div>
 
   </div>
 
 
-  <!-- GOOGLE MAPS BUTTON -->
-  <div class="mt-6 text-center">
+  <!-- ADDRESS + GOOGLE MAPS -->
+  <div
+    class="mt-5
+           flex flex-col items-center gap-4
+           border-t border-stone-200
+           pt-5
+           sm:flex-row sm:items-center
+           sm:justify-between"
+  >
 
+    <!-- ADDRESS -->
+    <div class="text-center sm:text-left">
+
+      <p
+        class="font-serif text-[11px]
+               uppercase tracking-[0.2em]
+               text-[#b59b5b]"
+      >
+        Adres kancelarii
+      </p>
+
+      <p
+        class="mt-1 font-serif text-[15px]
+               tracking-wide text-stone-700"
+      >
+        ul. Dąbrowszczaków 21/3
+      </p>
+
+      <p
+        class="font-serif text-[14px]
+               text-stone-500"
+      >
+        10-540 Olsztyn
+      </p>
+
+    </div>
+
+
+    <!-- GOOGLE MAPS BUTTON -->
     <a
       href="https://www.google.com/maps/search/?api=1&query=Kancelaria+Notarialna+Zbigniew+W%C5%82adys%C5%82awski+Olsztyn"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-3
+      class="inline-flex items-center gap-2
              border border-[#b59b5b]
-             px-5 py-3
-             font-serif text-sm
+             px-4 py-2
+             font-serif text-xs
+             tracking-wide
              text-stone-700
-             transition-colors
+             transition-colors duration-300
              hover:bg-[#b59b5b]
              hover:text-white"
     >
-      <span>
-        Zobacz w Google Maps
-      </span>
-
-      <span class="text-base">
-        ↗
-      </span>
+      <span>Zobacz w Google Maps</span>
+      <span class="text-sm">↗</span>
     </a>
-
-  </div>
-
-
-  <!-- ADDRESS -->
-  <div
-    class="mt-8 border-t border-stone-200
-           pt-6 text-center"
-  >
-
-    <p
-      class="font-serif text-sm uppercase
-             tracking-[0.15em] text-stone-400"
-    >
-      Adres kancelarii
-    </p>
-
-    <p
-      class="mt-2 font-serif text-base
-             text-stone-700"
-    >
-      ul. Dąbrowszczaków 21/3
-    </p>
-
-    <p
-      class="font-serif text-base
-             text-stone-700"
-    >
-      10-540 Olsztyn
-    </p>
 
   </div>
 

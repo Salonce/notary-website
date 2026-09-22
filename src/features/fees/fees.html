@@ -3,18 +3,21 @@
   <div class="mx-auto max-w-5xl">
 
     <!-- HEADER -->
-    <div class="mb-14 md:mb-16">
+    <div class="mb-14 text-center md:mb-16">
 
       <h2
-        class="font-serif text-5xl font-normal
-               leading-none tracking-tight
+        class="font-serif text-4xl font-normal
+               leading-tight tracking-tight
                text-stone-800
+               sm:text-5xl
                md:text-6xl"
       >
-        Koszty
+        Wynagrodzenie, podatki
+        <br class="hidden sm:block" />
+        i opłaty sądowe
       </h2>
 
-      <div class="mt-6 h-px w-12 bg-[#b59b5b]"></div>
+      <div class="mx-auto mt-6 h-px w-12 bg-[#b59b5b]"></div>
 
     </div>
 
@@ -54,7 +57,7 @@
                    uppercase tracking-[0.25em]
                    text-[#806c3e]"
           >
-            Płatność
+            Sposoby płatności
           </span>
 
           <span
@@ -119,92 +122,54 @@
     </div>
 
 
-    <!-- COSTS -->
-    <div>
+    <!-- COSTS / INFORMATION -->
+    <div class="divide-y divide-stone-200">
+
 
       <!-- ITEM I -->
-      <div
-        class="grid grid-cols-[42px_1fr]
-               gap-5 border-b border-stone-200
-               py-7 first:pt-0
-               md:grid-cols-[54px_1fr]
-               md:gap-7 md:py-8"
-      >
+      <div class="py-10 md:py-12">
 
-        <div
-          class="flex h-9 w-9 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#d8ccb0]
-                 font-serif text-xs
-                 font-medium text-[#806c3e]
-                 md:h-10 md:w-10"
-        >
-          I
+        <!-- ROMAN NUMBER -->
+        <div class="flex justify-center">
+
+          <div
+            class="flex h-12 w-12
+                   items-center justify-center
+                   rounded-full
+                   border border-[#d8ccb0]
+                   font-serif text-sm
+                   font-medium text-[#806c3e]"
+          >
+            I.
+          </div>
+
         </div>
 
-        <div class="pt-1">
 
-          <h3
-            class="max-w-3xl
-                   font-serif text-base
-                   font-medium leading-7
-                   text-stone-800
-                   md:text-lg md:leading-8"
+        <!-- CONTENT -->
+        <div class="mx-auto mt-7 max-w-3xl text-center">
+
+          <p
+            class="font-serif text-[15px]
+                   leading-7 text-stone-600
+                   md:text-base md:leading-8"
           >
             Taksa notarialna ustalana jest indywidualnie
-            na podstawie § 3 Rozporządzenia Ministra Sprawiedliwości
+            na podstawie Rozporządzenia Ministra Sprawiedliwości
             w sprawie maksymalnych stawek taksy notarialnej
-            z dnia 28 czerwca 2004 roku
-          </h3>
+            z dnia 28 czerwca 2004 roku.
+            Taksa notarialna opodatkowana jest 23% podatkiem VAT.
+          </p>
 
-        </div>
-
-      </div>
-
-
-      <!-- ITEM II -->
-      <div
-        class="grid grid-cols-[42px_1fr]
-               gap-5 border-b border-stone-200
-               py-7
-               md:grid-cols-[54px_1fr]
-               md:gap-7 md:py-8"
-      >
-
-        <div
-          class="flex h-9 w-9 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#d8ccb0]
-                 font-serif text-xs
-                 font-medium text-[#806c3e]
-                 md:h-10 md:w-10"
-        >
-          II
-        </div>
-
-        <div class="pt-1">
-
-          <h3
-            class="max-w-3xl
-                   font-serif text-base
-                   font-medium leading-7
-                   text-stone-800
-                   md:text-lg md:leading-8"
-          >
-            Podatek od czynności cywilnoprawnych zostaje
-            wyliczony zgodnie z ustawą z dnia 9 września 2000 r.
-            o podatku od czynności cywilnoprawnych
-          </h3>
 
           <a
             href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20000860959/U/D20000959Lj.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="group mt-4 inline-flex
+            class="group mt-5 inline-flex
                    items-center gap-2
                    font-serif text-sm
+                   font-medium
                    text-[#806c3e]
                    transition-colors
                    hover:text-[#b59b5b]"
@@ -212,7 +177,69 @@
             <span>Pobierz ustawę</span>
 
             <span
-              class="transition-transform
+              class="transition-transform duration-300
+                     group-hover:translate-x-1"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ITEM II -->
+      <div class="py-10 md:py-12">
+
+        <!-- ROMAN NUMBER -->
+        <div class="flex justify-center">
+
+          <div
+            class="flex h-12 w-12
+                   items-center justify-center
+                   rounded-full
+                   border border-[#d8ccb0]
+                   font-serif text-sm
+                   font-medium text-[#806c3e]"
+          >
+            II.
+          </div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="mx-auto mt-7 max-w-3xl text-center">
+
+          <p
+            class="font-serif text-[15px]
+                   leading-7 text-stone-600
+                   md:text-base md:leading-8"
+          >
+            Podatek od czynności cywilnoprawnych zostaje
+            wyliczony zgodnie z ustawą z dnia 9 września 2000 r.
+            o podatku od czynności cywilnoprawnych.
+          </p>
+
+
+          <a
+            href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20000860959/U/D20000959Lj.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group mt-5 inline-flex
+                   items-center gap-2
+                   font-serif text-sm
+                   font-medium
+                   text-[#806c3e]
+                   transition-colors
+                   hover:text-[#b59b5b]"
+          >
+            <span>Pobierz ustawę</span>
+
+            <span
+              class="transition-transform duration-300
                      group-hover:translate-x-1"
               aria-hidden="true"
             >
@@ -226,47 +253,47 @@
 
 
       <!-- ITEM III -->
-      <div
-        class="grid grid-cols-[42px_1fr]
-               gap-5 border-b border-stone-200
-               py-7
-               md:grid-cols-[54px_1fr]
-               md:gap-7 md:py-8"
-      >
+      <div class="py-10 md:py-12">
 
-        <div
-          class="flex h-9 w-9 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#d8ccb0]
-                 font-serif text-xs
-                 font-medium text-[#806c3e]
-                 md:h-10 md:w-10"
-        >
-          III
+        <!-- ROMAN NUMBER -->
+        <div class="flex justify-center">
+
+          <div
+            class="flex h-12 w-12
+                   items-center justify-center
+                   rounded-full
+                   border border-[#d8ccb0]
+                   font-serif text-sm
+                   font-medium text-[#806c3e]"
+          >
+            III.
+          </div>
+
         </div>
 
-        <div class="pt-1">
 
-          <h3
-            class="max-w-3xl
-                   font-serif text-base
-                   font-medium leading-7
-                   text-stone-800
-                   md:text-lg md:leading-8"
+        <!-- CONTENT -->
+        <div class="mx-auto mt-7 max-w-3xl text-center">
+
+          <p
+            class="font-serif text-[15px]
+                   leading-7 text-stone-600
+                   md:text-base md:leading-8"
           >
             Podatek od spadków i darowizn zostaje wyliczony
-            zgodnie z ustawą z dnia 28 lipca 1983 r. o podatku
-            od spadków i darowizn
-          </h3>
+            zgodnie z ustawą z dnia 28 lipca 1983 r.
+            o podatku od spadków i darowizn.
+          </p>
+
 
           <a
             href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19830450207/U/D19830207Lj.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="group mt-4 inline-flex
+            class="group mt-5 inline-flex
                    items-center gap-2
                    font-serif text-sm
+                   font-medium
                    text-[#806c3e]
                    transition-colors
                    hover:text-[#b59b5b]"
@@ -274,34 +301,13 @@
             <span>Pobierz ustawę</span>
 
             <span
-              class="transition-transform
+              class="transition-transform duration-300
                      group-hover:translate-x-1"
               aria-hidden="true"
             >
               ↗
             </span>
           </a>
-
-          <div
-            class="mt-5
-                   border-l-2 border-[#d8ccb0]
-                   pl-5"
-          >
-
-            <p
-              class="max-w-3xl
-                     font-serif text-[14px]
-                     leading-7 text-stone-500
-                     md:text-[15px]"
-            >
-              Zwolnieni od podatku od spadków i darowizn są osoby
-              należące do grupy I grupy podatkowej: małżonek,
-              zstępni (dzieci, wnuki, itd.), wstępni (rodzice,
-              dziadkowie, itd.), pasierbowie, rodzeństwo, ojczym
-              i macocha.
-            </p>
-
-          </div>
 
         </div>
 
@@ -309,48 +315,47 @@
 
 
       <!-- ITEM IV -->
-      <div
-        class="grid grid-cols-[42px_1fr]
-               gap-5 border-b border-stone-200
-               py-7
-               md:grid-cols-[54px_1fr]
-               md:gap-7 md:py-8"
-      >
+      <div class="py-10 md:py-12">
 
-        <div
-          class="flex h-9 w-9 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#d8ccb0]
-                 font-serif text-xs
-                 font-medium text-[#806c3e]
-                 md:h-10 md:w-10"
-        >
-          IV
+        <!-- ROMAN NUMBER -->
+        <div class="flex justify-center">
+
+          <div
+            class="flex h-12 w-12
+                   items-center justify-center
+                   rounded-full
+                   border border-[#d8ccb0]
+                   font-serif text-sm
+                   font-medium text-[#806c3e]"
+          >
+            IV.
+          </div>
+
         </div>
 
-        <div class="pt-1">
 
-          <h3
-            class="max-w-3xl
-                   font-serif text-base
-                   font-medium leading-7
-                   text-stone-800
-                   md:text-lg md:leading-8"
+        <!-- CONTENT -->
+        <div class="mx-auto mt-7 max-w-3xl text-center">
+
+          <p
+            class="font-serif text-[15px]
+                   leading-7 text-stone-600
+                   md:text-base md:leading-8"
           >
-            Opłata sądowa ustalana każdorazowo
-            w odniesieniu do przedmiotowego stanu faktycznego
+            Opłata sądowa ustalana jest głównie
             na podstawie ustawy z dnia 28 lipca 2005 r.
-            o kosztach sądowych w sprawach cywilnych
-          </h3>
+            o kosztach sądowych w sprawach cywilnych.
+          </p>
+
 
           <a
             href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20051671398/U/D20051398Lj.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="group mt-4 inline-flex
+            class="group mt-5 inline-flex
                    items-center gap-2
                    font-serif text-sm
+                   font-medium
                    text-[#806c3e]
                    transition-colors
                    hover:text-[#b59b5b]"
@@ -358,7 +363,7 @@
             <span>Pobierz ustawę</span>
 
             <span
-              class="transition-transform
+              class="transition-transform duration-300
                      group-hover:translate-x-1"
               aria-hidden="true"
             >
@@ -371,100 +376,24 @@
       </div>
 
 
-      <!-- ITEM V -->
-      <div
-        class="grid grid-cols-[42px_1fr]
-               gap-5 py-7
-               md:grid-cols-[54px_1fr]
-               md:gap-7 md:py-8"
-      >
-
-        <div
-          class="flex h-9 w-9 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#d8ccb0]
-                 font-serif text-xs
-                 font-medium text-[#806c3e]
-                 md:h-10 md:w-10"
-        >
-          V
-        </div>
-
-        <div class="pt-1">
-
-          <h3
-            class="max-w-3xl
-                   font-serif text-base
-                   font-medium leading-7
-                   text-stone-800
-                   md:text-lg md:leading-8"
-          >
-            Taksa notarialna za wypisy aktu wynosi
-            <span class="font-medium text-[#806c3e]">
-              6 zł netto (7,38 zł brutto)
-            </span>
-            za każdą rozpoczętą stronę
-          </h3>
-
-        </div>
-
-      </div>
-
     </div>
 
-
-    <!-- CONTACT -->
     <div
       class="mt-10
-             border-t border-stone-200
-             pt-10 md:mt-12 md:pt-12"
+            border-t border-stone-200
+            pt-10
+            md:mt-12 md:pt-12"
     >
-
-      <div
-        class="flex flex-col
-               gap-6
-               md:flex-row md:items-center
-               md:justify-between"
+      <p
+        class="mx-auto max-w-3xl
+              text-center
+              font-serif text-[15px]
+              leading-7 text-stone-500
+              md:text-base md:leading-8"
       >
-
-        <p
-          class="max-w-2xl
-                 font-serif text-[15px]
-                 leading-7 text-stone-500
-                 md:text-base md:leading-8"
-        >
-          W celu indywidualnego ustalenia wysokości wynagrodzenia,
-          podatków i opłat sądowych prosimy o kontakt z kancelarią.
-        </p>
-
-        <a
-          href="#kontakt"
-          class="group inline-flex shrink-0
-                 items-center gap-4
-                 border border-[#b59b5b]
-                 px-6 py-3
-                 font-serif text-[11px]
-                 font-medium uppercase
-                 tracking-[0.16em]
-                 text-stone-700
-                 transition-all duration-300
-                 hover:bg-[#806c3e]
-                 hover:text-white"
-        >
-          <span>Kontakt z kancelarią</span>
-
-          <span
-            class="transition-transform
-                   group-hover:translate-x-1"
-            aria-hidden="true"
-          >
-            →
-          </span>
-        </a>
-
-      </div>
-
+        W celu indywidualnego ustalenia wysokości wynagrodzenia,
+        podatków i opłat sądowych prosimy o kontakt z kancelarią.
+      </p>
     </div>
 
   </div>
