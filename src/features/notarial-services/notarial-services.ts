@@ -7,13 +7,19 @@ import { Component } from '@angular/core';
   templateUrl: './notarial-services.html',
 })
 export class NotarialServices {
+  nieruchomosciOpen = false;
+  rodzinneOpen = false;
+  spadkiOpen = false;
 
-showAllCategories = false;
-openCategory: string | null = null;
+  toggleNieruchomosci(): void {
+    this.nieruchomosciOpen = !this.nieruchomosciOpen;
+  }
 
-toggleCategory(category: string): void {
-  this.openCategory =
-    this.openCategory === category ? null : category;
-}
+  toggleRodzinne(): void {
+    this.rodzinneOpen = !this.rodzinneOpen;
+  }
 
+  toggleSpadki(): void {
+    this.spadkiOpen = !this.spadkiOpen;
+  }
 }
