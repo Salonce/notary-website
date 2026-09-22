@@ -1,46 +1,27 @@
 <div class="min-h-screen bg-[#faf9f6] relative">
 
   <!-- TOP BAR -->
+
   <div class="fixed inset-x-0 top-0 z-50 h-[48px]">
     <app-top-bar></app-top-bar>
   </div>
 
-
   <!-- HEADER -->
+
   <div class="relative z-40 pt-[48px]">
     <app-header></app-header>
   </div>
 
-
   <!-- NAVIGATION -->
+
   <div class="sticky top-[41px] z-50 w-full md:top-[45px]">
     <app-top-navbar></app-top-navbar>
   </div>
 
-
-  <!-- EAGLE -->
-  <div
-    class="pointer-events-none sticky z-[2]
-           mx-auto
-           -mt-[1px]
-           h-[calc(100vh-196px)]
-           w-full"
-    style="
-      top: 146px;
-      background-image: url('assets/eagle.svg');
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: 900px auto;
-      opacity: 0.50;
-    "
-    aria-hidden="true"
-  ></div>
-
-
   <!-- ROUTED CONTENT -->
+
   <main
     class="relative z-10
-           -mt-[calc(100vh-196px)]
            flex-1
            px-4
            pb-80
@@ -52,8 +33,8 @@
     <router-outlet></router-outlet>
   </main>
 
-
   <!-- BOTTOM BAR -->
+
   <div class="relative z-50">
     <app-bottom-bar></app-bottom-bar>
   </div>
