@@ -2,16 +2,26 @@
 
   <!-- HEADER -->
 
-  <div class="mb-6">
+  <div class="text-center">
+
     <h2
-      class="font-serif text-4xl font-normal leading-[1.1]
-             tracking-tight text-stone-900 md:text-5xl"
+      class="mt-2
+             font-['Cormorant_Garamond']
+             text-[32px]
+             font-medium
+             tracking-wide
+             text-stone-800
+             md:text-[36px]"
     >
       Wypełnij formularz<br />
       kontaktowy
     </h2>
 
-    <div class="mt-4 h-px w-16 bg-stone-400"></div>
+    <div
+      class="mx-auto mt-4 h-px w-14
+             bg-[#b59b5b]"
+    ></div>
+
   </div>
 
 
@@ -20,16 +30,26 @@
   <form
     [formGroup]="contactForm"
     (ngSubmit)="onSubmit()"
-    class="max-w-xl space-y-3"
+    class="mx-auto mt-10
+           w-full max-w-xl
+           space-y-4
+           font-['Lora']
+           md:mt-12"
   >
 
     <!-- IMIĘ I NAZWISKO -->
 
     <div>
+
       <label
         for="name"
-        class="mb-1 block text-[10px] font-medium uppercase
-               tracking-[0.2em] text-stone-400"
+        class="mb-1.5 block
+               font-['Lora']
+               text-[10px]
+               font-medium
+               uppercase
+               tracking-[0.2em]
+               text-[#806c3e]"
       >
         Imię i nazwisko
       </label>
@@ -40,27 +60,38 @@
         type="text"
         autocomplete="name"
         placeholder="Jan Kowalski"
-        class="w-full border border-stone-300
-               bg-stone-50/50
-               px-4 py-2
-               text-[15px] text-stone-800
+        class="w-full
+               border border-[#d8ccb0]
+               bg-[#f3f0e7]/40
+               px-4 py-2.5
+               font-['Lora']
+               text-[15px]
+               text-stone-800
                outline-none
                transition-all duration-300
                placeholder:text-stone-400
-               hover:border-stone-400
-               focus:border-stone-600
-               focus:ring-1 focus:ring-stone-200"
+               hover:border-[#b59b5b]
+               focus:border-[#806c3e]
+               focus:ring-1
+               focus:ring-[#d8ccb0]"
       />
+
     </div>
 
 
     <!-- ADRES E-MAIL -->
 
     <div>
+
       <label
         for="email"
-        class="mb-1 block text-[10px] font-medium uppercase
-               tracking-[0.2em] text-stone-400"
+        class="mb-1.5 block
+               font-['Lora']
+               text-[10px]
+               font-medium
+               uppercase
+               tracking-[0.2em]
+               text-[#806c3e]"
       >
         Adres e-mail
       </label>
@@ -71,27 +102,38 @@
         type="email"
         autocomplete="email"
         placeholder="jan.kowalski@email.pl"
-        class="w-full border border-stone-300
-               bg-stone-50/50
-               px-4 py-2
-               text-[15px] text-stone-800
+        class="w-full
+               border border-[#d8ccb0]
+               bg-[#f3f0e7]/40
+               px-4 py-2.5
+               font-['Lora']
+               text-[15px]
+               text-stone-800
                outline-none
                transition-all duration-300
                placeholder:text-stone-400
-               hover:border-stone-400
-               focus:border-stone-600
-               focus:ring-1 focus:ring-stone-200"
+               hover:border-[#b59b5b]
+               focus:border-[#806c3e]
+               focus:ring-1
+               focus:ring-[#d8ccb0]"
       />
+
     </div>
 
 
     <!-- TREŚĆ ZAPYTANIA -->
 
     <div>
+
       <label
         for="message"
-        class="mb-1 block text-[10px] font-medium uppercase
-               tracking-[0.2em] text-stone-400"
+        class="mb-1.5 block
+               font-['Lora']
+               text-[10px]
+               font-medium
+               uppercase
+               tracking-[0.2em]
+               text-[#806c3e]"
       >
         Treść zapytania
       </label>
@@ -99,37 +141,56 @@
       <textarea
         id="message"
         formControlName="message"
-        rows="4"
+        rows="5"
         placeholder="W czym możemy Państwu pomóc?"
-        class="w-full resize-none border border-stone-300
-               bg-stone-50/50
-               px-4 py-2
-               text-[15px] leading-6 text-stone-800
+        class="w-full
+               resize-none
+               border border-[#d8ccb0]
+               bg-[#f3f0e7]/40
+               px-4 py-2.5
+               font-['Lora']
+               text-[15px]
+               leading-7
+               text-stone-800
                outline-none
                transition-all duration-300
                placeholder:text-stone-400
-               hover:border-stone-400
-               focus:border-stone-600
-               focus:ring-1 focus:ring-stone-200"
+               hover:border-[#b59b5b]
+               focus:border-[#806c3e]
+               focus:ring-1
+               focus:ring-[#d8ccb0]"
       ></textarea>
+
     </div>
 
 
     <!-- ZGODA -->
 
-    <div class="pt-0">
+    <div class="pt-1">
 
-      <label class="flex cursor-pointer items-start gap-3">
+      <label
+        class="flex cursor-pointer
+               items-start
+               gap-3"
+      >
 
         <input
           id="consent"
           formControlName="consent"
           type="checkbox"
-          class="mt-1 h-4 w-4 shrink-0
-                 cursor-pointer accent-stone-700"
+          class="mt-1
+                 h-4 w-4
+                 shrink-0
+                 cursor-pointer
+                 accent-[#806c3e]"
         />
 
-        <span class="text-xs leading-5 text-stone-500">
+        <span
+          class="font-['Lora']
+                 text-[12px]
+                 leading-5
+                 text-stone-500"
+        >
           Wyrażam zgodę na przetwarzanie moich danych osobowych
           w celu przetworzenia zapytania. Administratorem danych
           osobowych jest Kancelaria Notarialna Zbigniewa Władysławskiego.
@@ -143,50 +204,78 @@
     <!-- MESSAGES -->
 
     @if (successMessage) {
-      <div class="pt-2 text-sm text-stone-600">
+
+      <div
+        class="pt-1
+               font-['Lora']
+               text-[13px]
+               leading-6
+               text-stone-600"
+      >
         {{ successMessage }}
       </div>
+
     }
 
     @if (errorMessage) {
-      <div class="pt-2 text-sm text-red-700">
+
+      <div
+        class="pt-1
+               font-['Lora']
+               text-[13px]
+               leading-6
+               text-red-700"
+      >
         {{ errorMessage }}
       </div>
+
     }
 
 
     <!-- BUTTON -->
 
-    <div class="pt-0">
+    <div class="pt-1">
 
       <button
         type="submit"
         [disabled]="isSending"
-        class="group inline-flex items-center gap-4
-               border border-stone-400
+        class="group inline-flex
+               w-full
+               items-center
+               justify-center
+               gap-4
+               border border-[#d8ccb0]
                bg-transparent
                px-6 py-2.5
-               text-[15px] font-medium text-stone-700
+               font-['Lora']
+               text-[14px]
+               font-medium
+               text-[#806c3e]
                transition-all duration-300
-               hover:border-stone-700
-               hover:bg-stone-700
+               hover:border-[#806c3e]
+               hover:bg-[#806c3e]
                hover:text-white
                disabled:cursor-not-allowed
-               disabled:opacity-50"
+               disabled:opacity-50
+               sm:w-auto"
       >
+
         <span>
           {{ isSending ? 'Wysyłanie...' : 'Wyślij zapytanie' }}
         </span>
 
         @if (!isSending) {
+
           <span
-            class="text-stone-400
+            class="text-[#b59b5b]
                    transition-transform duration-300
                    group-hover:translate-x-1
                    group-hover:text-white"
+            aria-hidden="true"
           >
             →
           </span>
+
         }
 
       </button>
