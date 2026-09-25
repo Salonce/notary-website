@@ -4,50 +4,66 @@
 
     <!-- HEADER -->
 
-    <div class="mb-14 max-w-3xl">
+<div class="mb-14">
 
-      <div
-        class="flex flex-col gap-8
-               md:flex-row md:items-end md:justify-between"
-      >
+  <div class="text-center">
 
-        <div>
-          <h2
-            class="font-serif text-4xl font-normal leading-[1.1]
-                   tracking-tight text-stone-900 md:text-5xl"
-          >
-            Opinie klientów
-          </h2>
+    <h2
+      class="font-serif text-4xl font-normal leading-[1.1]
+             tracking-tight text-stone-900 md:text-5xl"
+    >
+      Opinie klientów
+    </h2>
 
-          <div class="mt-6 h-px w-16 bg-stone-400"></div>
+    <div
+      class="mx-auto mt-6 h-px w-16
+             bg-amber-700/60"
+    ></div>
+
+  </div>
+
+
+  <!-- RATING -->
+
+  <div
+    class="mt-8 flex justify-center"
+  >
+
+    <div
+      class="flex items-center gap-5"
+    >
+
+      <div>
+
+        <div
+          class="flex items-center justify-center gap-1
+                 text-[15px] tracking-wide
+                 text-amber-700/80"
+        >
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
         </div>
 
-        <!-- GOOGLE RATING -->
-
-        <div class="flex items-center gap-4">
-
-          <div>
-
-            <div class="flex items-center gap-1 text-stone-700">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-            </div>
-
-            <p class="mt-1 text-[12px] text-stone-500">
-              {{ rating().toFixed(1).replace('.', ',') }} / 5
-              · {{ totalReviews() }} opinii
-            </p>
-
-          </div>
-
-        </div>
+        <p
+          class="mt-2 text-center text-[12px]
+                 text-stone-500"
+        >
+          {{ rating().toFixed(1).replace('.', ',') }} / 5
+          <span class="mx-1 text-stone-300">·</span>
+          {{ totalReviews() }} opinii
+        </p>
 
       </div>
 
     </div>
+
+  </div>
+
+</div>
+
 
     <!-- LOADING -->
 
@@ -62,6 +78,7 @@
 
     }
 
+
     <!-- ERROR -->
 
     @if (!isLoading() && error()) {
@@ -70,92 +87,179 @@
         class="border border-stone-300
                p-8 text-sm text-stone-500"
       >
-        Nie udało się pobrać opinii z Google.
+        Nie udało się pobrać opinii.
       </div>
 
     }
+
 
     <!-- REVIEWS -->
 
     @if (!isLoading() && !error() && reviews().length > 0) {
 
-      <div
-        class="grid grid-cols-1 gap-px overflow-hidden
-               border border-stone-300
-               md:grid-cols-3"
-      >
+      <div>
 
-        @for (
-          review of reviews();
-          track review.authorAttribution?.uri ?? $index
-        ) {
+        <div
+          class="grid grid-cols-1 gap-4
+                 md:grid-cols-3 md:gap-5"
+        >
 
-          <article class="bg-transparent p-7 md:p-8">
+          @for (
+            review of reviews().slice(0, 3);
+            track review.authorAttribution?.uri ?? $index
+          ) {
 
-            <!-- AUTHOR + RATING -->
+            <article
+              class="group relative flex min-h-[280px]
+                     flex-col overflow-hidden
+                     border border-stone-200
+                     bg-stone-50/30
+                     p-7
+                     transition-all duration-300
+                     hover:border-stone-300
+                     hover:bg-stone-50
+                     md:p-8"
+            >
 
-            <div class="flex items-center justify-between">
+              <!-- SUBTLE GOLD ACCENT -->
 
-              <div>
+              <div
+                class="absolute left-0 top-0
+                       h-px w-12
+                       bg-amber-700/60
+                       transition-all duration-500
+                       group-hover:w-20
+                       group-hover:bg-amber-700/80"
+              ></div>
 
-                <p class="text-[14px] font-medium text-stone-800">
+
+              <!-- AUTHOR -->
+
+              <div
+                class="flex items-start
+                       justify-between gap-6"
+              >
+
+                <div>
+
+                  <p
+                    class="text-[14px] font-medium
+                           text-stone-800"
+                  >
+                    {{
+                      review.authorAttribution?.displayName
+                      ?? 'Użytkownik Google'
+                    }}
+                  </p>
+
+                  <p
+                    class="mt-1 text-[11px]
+                           text-stone-400"
+                  >
+                    Google
+                  </p>
+
+                </div>
+
+
+                <!-- STARS -->
+
+                <div
+                  class="shrink-0 text-[13px]
+                         tracking-wide
+                         text-amber-700/80"
+                >
+
+                  @for (
+                    star of [1, 2, 3, 4, 5];
+                    track star
+                  ) {
+
+                    <span>
+                      {{ star <= review.rating ? '★' : '☆' }}
+                    </span>
+
+                  }
+
+                </div>
+
+              </div>
+
+
+              <!-- DECORATIVE LINE -->
+
+              <div
+                class="mt-7 h-px w-10
+                       bg-amber-700/50
+                       transition-all duration-300
+                       group-hover:w-14
+                       group-hover:bg-amber-700/70"
+              ></div>
+
+
+              <!-- REVIEW -->
+
+              <div class="mt-6 flex-1">
+
+                <span
+                  class="font-serif text-3xl
+                         leading-none
+                         text-amber-700/25"
+                >
+                  “
+                </span>
+
+                <p
+                  class="-mt-1 text-[15px]
+                         leading-7 text-stone-600"
+                >
                   {{
-                    review.authorAttribution?.displayName
-                    ?? 'Użytkownik Google'
+                    review.originalText?.text
+                    ?? review.text?.text
+                    ?? ''
                   }}
                 </p>
 
-                <p class="mt-0.5 text-[11px] text-stone-400">
-                  Google
+              </div>
+
+
+              <!-- DATE -->
+
+              @if (review.relativePublishTimeDescription) {
+
+                <p
+                  class="mt-6 text-[11px]
+                         text-stone-400"
+                >
+                  {{ review.relativePublishTimeDescription }}
                 </p>
 
-              </div>
+              }
 
-              <!-- STARS -->
+            </article>
 
-              <div class="text-sm tracking-wide text-stone-600">
+          }
 
-                @for (star of [1, 2, 3, 4, 5]; track star) {
+        </div>
 
-                  <span>
-                    {{ star <= review.rating ? '★' : '☆' }}
-                  </span>
 
-                }
+        <!-- SELECTED REVIEWS -->
 
-              </div>
+        @if (reviews().length > 3) {
 
-            </div>
-
-            <!-- REVIEW TEXT -->
-
-            <p class="mt-6 text-[15px] leading-7 text-stone-600">
-
-              {{
-                review.originalText?.text
-                ?? review.text?.text
-                ?? ''
-              }}
-
-            </p>
-
-            <!-- DATE -->
-
-            @if (review.relativePublishTimeDescription) {
-
-              <p class="mt-4 text-[11px] text-stone-400">
-                {{ review.relativePublishTimeDescription }}
-              </p>
-
-            }
-
-          </article>
+          <p
+            class="mt-5 text-[12px]
+                   leading-5 text-stone-400"
+          >
+            Wybrane opinie klientów.
+          </p>
 
         }
 
       </div>
 
     }
+
 
     <!-- NO REVIEWS -->
 
@@ -170,40 +274,57 @@
 
     }
 
+
     <!-- FOOTER -->
 
     <div
-      class="mt-8 flex flex-col gap-4
-             sm:flex-row sm:items-center sm:justify-between"
+      class="mt-10 border-t border-stone-200
+             pt-6"
     >
 
-      <p class="text-[12px] leading-5 text-stone-400">
-        Wyświetlane są opinie z oceną 5 gwiazdek
-        z profilu kancelarii w Google.
-      </p>
-
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Kancelaria+Notarialna+Zbigniew+Władysławski+Olsztyn"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group inline-flex items-center gap-3
-               text-[13px] font-medium text-stone-700
-               transition-colors duration-300
-               hover:text-stone-950"
+      <div
+        class="flex flex-col gap-5
+               sm:flex-row sm:items-center
+               sm:justify-between"
       >
-        <span>
-          Zobacz wszystkie opinie w Google
-        </span>
 
-        <span
-          class="text-stone-400
-                 transition-transform duration-300
-                 group-hover:translate-x-1
-                 group-hover:text-stone-700"
+        <p
+          class="max-w-xl text-[12px]
+                 leading-5 text-stone-400"
         >
-          →
-        </span>
-      </a>
+          Pełną listę opinii oraz aktualną ocenę
+          kancelarii znajdziesz w Google.
+        </p>
+
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Kancelaria+Notarialna+Zbigniew+Władysławski+Olsztyn"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex shrink-0
+                 items-center gap-3
+                 text-[13px] font-medium
+                 text-stone-700
+                 transition-colors duration-300
+                 hover:text-stone-950"
+        >
+
+          <span>
+            Zobacz wszystkie opinie
+          </span>
+
+          <span
+            class="text-stone-400
+                   transition-transform duration-300
+                   group-hover:translate-x-1
+                   group-hover:text-stone-700"
+          >
+            →
+          </span>
+
+        </a>
+
+      </div>
 
     </div>
 
