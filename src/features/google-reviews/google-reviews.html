@@ -113,63 +113,18 @@
         <!-- CAROUSEL -->
 
         <div
-          class="mx-auto flex max-w-5xl
+          class="relative mx-auto
+                 flex max-w-5xl
                  items-center justify-center
-                 gap-2
-                 sm:gap-5
                  md:gap-8"
         >
-
-          <!-- PREVIOUS -->
-
-          @if (reviews().length > 1) {
-
-            <button
-              type="button"
-              aria-label="Poprzednia opinia"
-              [disabled]="isAnimating()"
-              (click)="previousReview()"
-              class="group flex size-10 shrink-0
-                     items-center justify-center
-                     rounded-full
-                     border border-[#d8ccb0]
-                     bg-[#f3f0e7]
-                     text-[#806c3e]
-                     shadow-[0_5px_20px_rgba(80,70,50,0.08)]
-                     transition-all duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#ebe5d5]
-                     hover:text-[#806c3e]
-                     hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
-                     disabled:pointer-events-none
-                     disabled:opacity-35
-                     sm:size-12
-                     md:size-16"
-            >
-
-              <span
-                class="mb-0.5
-                       text-xl
-                       font-light
-                       leading-none
-                       transition-transform duration-300
-                       group-hover:-translate-x-1
-                       sm:text-2xl
-                       md:text-3xl"
-                aria-hidden="true"
-              >
-                ←
-              </span>
-
-            </button>
-
-          }
-
 
           <!-- VIEWPORT -->
 
           <div
-            class="min-w-0 flex-1 overflow-hidden"
+            class="min-w-0
+                   w-full
+                   overflow-hidden"
           >
 
             <!-- TRACK -->
@@ -194,7 +149,9 @@
                 <!-- SLIDE -->
 
                 <div
-                  class="w-full shrink-0 px-0.5"
+                  class="w-full
+                         shrink-0
+                         px-0"
                 >
 
                   <!-- CARD -->
@@ -233,7 +190,10 @@
                     <div
                       class="flex items-center
                              justify-between
-                             gap-4"
+                             gap-3
+                             pr-2
+                             sm:gap-4
+                             sm:pr-0"
                     >
 
                       <div class="min-w-0">
@@ -309,7 +269,9 @@
                     <div
                       class="mt-4 flex flex-1
                              flex-col items-center
-                             justify-center"
+                             justify-center
+                             px-1
+                             sm:px-2"
                     >
 
                       <div
@@ -372,16 +334,63 @@
           </div>
 
 
-          <!-- NEXT -->
+          <!-- PREVIOUS — MOBILE -->
 
           @if (reviews().length > 1) {
 
             <button
               type="button"
-              aria-label="Następna opinia"
+              aria-label="Poprzednia opinia"
               [disabled]="isAnimating()"
-              (click)="nextReview()"
-              class="group flex size-10 shrink-0
+              (click)="previousReview()"
+              class="group absolute left-2 top-1/2 z-10
+                     flex size-9
+                     -translate-y-1/2
+                     items-center justify-center
+                     rounded-full
+                     border border-[#d8ccb0]
+                     bg-[#f3f0e7]/95
+                     text-[#806c3e]
+                     shadow-[0_4px_15px_rgba(80,70,50,0.10)]
+                     backdrop-blur-sm
+                     transition-all duration-300
+                     hover:border-[#b59b5b]
+                     hover:bg-[#ebe5d5]
+                     hover:text-[#806c3e]
+                     disabled:pointer-events-none
+                     disabled:opacity-35
+                     md:hidden"
+            >
+
+              <span
+                class="mb-0.5
+                       text-lg
+                       font-light
+                       leading-none
+                       transition-transform duration-300
+                       group-hover:-translate-x-0.5"
+                aria-hidden="true"
+              >
+                ←
+              </span>
+
+            </button>
+
+          }
+
+
+          <!-- PREVIOUS — DESKTOP -->
+
+          @if (reviews().length > 1) {
+
+            <button
+              type="button"
+              aria-label="Poprzednia opinia"
+              [disabled]="isAnimating()"
+              (click)="previousReview()"
+              class="group hidden
+                     shrink-0
+                     size-16
                      items-center justify-center
                      rounded-full
                      border border-[#d8ccb0]
@@ -395,19 +404,106 @@
                      hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
                      disabled:pointer-events-none
                      disabled:opacity-35
-                     sm:size-12
-                     md:size-16"
+                     md:flex"
             >
 
               <span
                 class="mb-0.5
-                       text-xl
+                       text-3xl
                        font-light
                        leading-none
                        transition-transform duration-300
-                       group-hover:translate-x-1
-                       sm:text-2xl
-                       md:text-3xl"
+                       group-hover:-translate-x-1"
+                aria-hidden="true"
+              >
+                ←
+              </span>
+
+            </button>
+
+          }
+
+
+          <!-- NEXT — MOBILE -->
+
+          @if (reviews().length > 1) {
+
+            <button
+              type="button"
+              aria-label="Następna opinia"
+              [disabled]="isAnimating()"
+              (click)="nextReview()"
+              class="group absolute right-2 top-1/2 z-10
+                     flex size-9
+                     -translate-y-1/2
+                     items-center justify-center
+                     rounded-full
+                     border border-[#d8ccb0]
+                     bg-[#f3f0e7]/95
+                     text-[#806c3e]
+                     shadow-[0_4px_15px_rgba(80,70,50,0.10)]
+                     backdrop-blur-sm
+                     transition-all duration-300
+                     hover:border-[#b59b5b]
+                     hover:bg-[#ebe5d5]
+                     hover:text-[#806c3e]
+                     disabled:pointer-events-none
+                     disabled:opacity-35
+                     md:hidden"
+            >
+
+              <span
+                class="mb-0.5
+                       text-lg
+                       font-light
+                       leading-none
+                       transition-transform duration-300
+                       group-hover:translate-x-0.5"
+                aria-hidden="true"
+              >
+                →
+              </span>
+
+            </button>
+
+          }
+
+
+          <!-- NEXT — DESKTOP -->
+
+          @if (reviews().length > 1) {
+
+            <button
+              type="button"
+              aria-label="Następna opinia"
+              [disabled]="isAnimating()"
+              (click)="nextReview()"
+              class="group hidden
+                     shrink-0
+                     size-16
+                     items-center justify-center
+                     rounded-full
+                     border border-[#d8ccb0]
+                     bg-[#f3f0e7]
+                     text-[#806c3e]
+                     shadow-[0_5px_20px_rgba(80,70,50,0.08)]
+                     transition-all duration-300
+                     hover:border-[#b59b5b]
+                     hover:bg-[#ebe5d5]
+                     hover:text-[#806c3e]
+                     hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
+                     disabled:pointer-events-none
+                     disabled:opacity-35
+                     md:flex"
+            >
+
+              <span
+                class="mb-0.5
+                       text-3xl
+                       font-light
+                       leading-none
+                       transition-transform duration-300
+                       group-hover:translate-x-1"
                 aria-hidden="true"
               >
                 →
