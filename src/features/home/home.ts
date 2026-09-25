@@ -5,12 +5,12 @@ import { Fees } from '../fees/fees';
 import { CustomerArea } from '../customer-area/customer-area';
 import { LatinQuote } from '../latin-quote/latin-quote';
 import { AboutLawyer } from '../about-lawyer/about-lawyer';
-import { GoogleMap } from '../google-map/google-map';
 import { SectionDivider } from '../../shared/section-divider/section-divider';
 import { GoogleReviews } from '../google-reviews/google-reviews';
+import { OfficeLocation } from '../office-location/office-location';
 
 @Component({
-  imports: [Contact, NotarialServices, Fees, CustomerArea, LatinQuote, LatinQuote, AboutLawyer, GoogleMap, GoogleReviews, SectionDivider],
+  imports: [Contact, NotarialServices, Fees, CustomerArea, LatinQuote, LatinQuote, AboutLawyer, GoogleReviews, SectionDivider, OfficeLocation],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
