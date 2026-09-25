@@ -109,20 +109,150 @@
 
       <div class="mt-10 md:mt-12">
 
-        <!--
-          MOBILE:
-          karta zajmuje całą szerokość,
-          strzałki są POD kartą.
+        <!-- MOBILE CONTROLS -->
+        <!-- Nad kartą opinii -->
 
-          DESKTOP:
-          strzałka — karta — strzałka.
-        -->
+        @if (reviews().length > 1) {
+
+          <div
+            class="mb-4 flex items-center
+                   justify-between
+                   sm:hidden"
+          >
+
+            <!-- PREVIOUS -->
+
+            <button
+              type="button"
+              aria-label="Poprzednia opinia"
+              [disabled]="isAnimating()"
+              (click)="previousReview()"
+              class="group flex size-9
+                     shrink-0
+                     items-center justify-center
+                     rounded-full
+                     border border-[#d8ccb0]
+                     bg-[#f3f0e7]
+                     text-[#806c3e]
+                     shadow-[0_4px_15px_rgba(80,70,50,0.08)]
+                     transition-all duration-300
+                     hover:border-[#b59b5b]
+                     hover:bg-[#ebe5d5]
+                     disabled:pointer-events-none
+                     disabled:opacity-35"
+            >
+
+              <span
+                class="mb-0.5
+                       text-lg
+                       font-light
+                       leading-none
+                       transition-transform duration-300
+                       group-hover:-translate-x-0.5"
+                aria-hidden="true"
+              >
+                ←
+              </span>
+
+            </button>
+
+
+            <!-- DOTS -->
+
+            <div class="flex items-center gap-2.5">
+
+              @for (
+                review of reviews();
+                track review.authorAttribution?.uri ?? $index;
+                let index = $index
+              ) {
+
+                <button
+                  type="button"
+                  [attr.aria-label]="'Przejdź do opinii ' + (index + 1)"
+                  [attr.aria-current]="
+                    index === currentIndex() - 1
+                      ? 'true'
+                      : null
+                  "
+                  [disabled]="isAnimating()"
+                  (click)="selectReview(index)"
+                  class="group flex size-4
+                         items-center justify-center
+                         disabled:pointer-events-none"
+                >
+
+                  <span
+                    class="block size-2
+                           rounded-full
+                           transition-all duration-300
+                           ease-out
+                           group-hover:scale-125"
+                    [style.background-color]="
+                      index === currentIndex() - 1
+                        ? '#806c3e'
+                        : '#d8ccb0'
+                    "
+                    [style.box-shadow]="
+                      index === currentIndex() - 1
+                        ? '0 0 0 3px rgba(181,155,91,0.18)'
+                        : 'none'
+                    "
+                  ></span>
+
+                </button>
+
+              }
+
+            </div>
+
+
+            <!-- NEXT -->
+
+            <button
+              type="button"
+              aria-label="Następna opinia"
+              [disabled]="isAnimating()"
+              (click)="nextReview()"
+              class="group flex size-9
+                     shrink-0
+                     items-center justify-center
+                     rounded-full
+                     border border-[#d8ccb0]
+                     bg-[#f3f0e7]
+                     text-[#806c3e]
+                     shadow-[0_4px_15px_rgba(80,70,50,0.08)]
+                     transition-all duration-300
+                     hover:border-[#b59b5b]
+                     hover:bg-[#ebe5d5]
+                     disabled:pointer-events-none
+                     disabled:opacity-35"
+            >
+
+              <span
+                class="mb-0.5
+                       text-lg
+                       font-light
+                       leading-none
+                       transition-transform duration-300
+                       group-hover:translate-x-0.5"
+                aria-hidden="true"
+              >
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        }
+
+
+        <!-- CAROUSEL -->
 
         <div
           class="mx-auto max-w-5xl"
         >
-
-          <!-- CAROUSEL ROW -->
 
           <div
             class="flex items-center
@@ -434,100 +564,14 @@
           </div>
 
 
-          <!-- MOBILE CONTROLS -->
+          <!-- DESKTOP DOTS -->
 
           @if (reviews().length > 1) {
 
             <div
-              class="mt-5 flex
-                     items-center
-                     justify-between
-                     sm:hidden"
-            >
-
-              <!-- PREVIOUS -->
-
-              <button
-                type="button"
-                aria-label="Poprzednia opinia"
-                [disabled]="isAnimating()"
-                (click)="previousReview()"
-                class="group flex size-10
-                       items-center justify-center
-                       rounded-full
-                       border border-[#d8ccb0]
-                       bg-[#f3f0e7]
-                       text-[#806c3e]
-                       shadow-[0_4px_15px_rgba(80,70,50,0.08)]
-                       transition-all duration-300
-                       hover:border-[#b59b5b]
-                       hover:bg-[#ebe5d5]
-                       disabled:pointer-events-none
-                       disabled:opacity-35"
-              >
-
-                <span
-                  class="mb-0.5
-                         text-lg
-                         font-light
-                         leading-none
-                         transition-transform duration-300
-                         group-hover:-translate-x-0.5"
-                  aria-hidden="true"
-                >
-                  ←
-                </span>
-
-              </button>
-
-
-              <!-- NEXT -->
-
-              <button
-                type="button"
-                aria-label="Następna opinia"
-                [disabled]="isAnimating()"
-                (click)="nextReview()"
-                class="group flex size-10
-                       items-center justify-center
-                       rounded-full
-                       border border-[#d8ccb0]
-                       bg-[#f3f0e7]
-                       text-[#806c3e]
-                       shadow-[0_4px_15px_rgba(80,70,50,0.08)]
-                       transition-all duration-300
-                       hover:border-[#b59b5b]
-                       hover:bg-[#ebe5d5]
-                       disabled:pointer-events-none
-                       disabled:opacity-35"
-              >
-
-                <span
-                  class="mb-0.5
-                         text-lg
-                         font-light
-                         leading-none
-                         transition-transform duration-300
-                         group-hover:translate-x-0.5"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-
-              </button>
-
-            </div>
-
-          }
-
-
-          <!-- DOTS -->
-
-          @if (reviews().length > 1) {
-
-            <div
-              class="mt-5 flex justify-center
-                     sm:mt-6"
+              class="mt-6 hidden
+                     justify-center
+                     md:flex"
             >
 
               <div class="flex items-center gap-2.5">
