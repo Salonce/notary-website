@@ -23,7 +23,6 @@
                bg-[#b59b5b]"
       ></div>
 
-
       <!-- RATING -->
 
       <div class="mt-5 md:mt-6">
@@ -110,473 +109,479 @@
 
       <div class="mt-10 md:mt-12">
 
-        <!-- CAROUSEL -->
+        <!--
+          MOBILE:
+          karta zajmuje całą szerokość,
+          strzałki są POD kartą.
+
+          DESKTOP:
+          strzałka — karta — strzałka.
+        -->
 
         <div
-          class="relative mx-auto
-                 flex max-w-5xl
-                 items-center justify-center
-                 md:gap-8"
+          class="mx-auto max-w-5xl"
         >
 
-          <!-- VIEWPORT -->
+          <!-- CAROUSEL ROW -->
 
           <div
-            class="min-w-0
-                   w-full
-                   overflow-hidden"
+            class="flex items-center
+                   justify-center
+                   gap-8"
           >
 
-            <!-- TRACK -->
+            <!-- PREVIOUS — DESKTOP -->
+
+            @if (reviews().length > 1) {
+
+              <button
+                type="button"
+                aria-label="Poprzednia opinia"
+                [disabled]="isAnimating()"
+                (click)="previousReview()"
+                class="group hidden
+                       size-12 shrink-0
+                       items-center justify-center
+                       rounded-full
+                       border border-[#d8ccb0]
+                       bg-[#f3f0e7]
+                       text-[#806c3e]
+                       shadow-[0_5px_20px_rgba(80,70,50,0.08)]
+                       transition-all duration-300
+                       hover:border-[#b59b5b]
+                       hover:bg-[#ebe5d5]
+                       hover:text-[#806c3e]
+                       hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
+                       disabled:pointer-events-none
+                       disabled:opacity-35
+                       md:flex
+                       md:size-16"
+              >
+
+                <span
+                  class="mb-0.5
+                         text-2xl
+                         font-light
+                         leading-none
+                         transition-transform duration-300
+                         group-hover:-translate-x-1
+                         md:text-3xl"
+                  aria-hidden="true"
+                >
+                  ←
+                </span>
+
+              </button>
+
+            }
+
+
+            <!-- VIEWPORT -->
 
             <div
-              class="flex"
-              [class.transition-transform]="isAnimating()"
-              [class.duration-500]="isAnimating()"
-              [class.ease-out]="isAnimating()"
-              [style.transform]="
-                'translateX(-' +
-                (currentIndex() * 100) +
-                '%)'
-              "
+              class="min-w-0
+                     w-full
+                     overflow-hidden
+                     md:flex-1"
             >
 
-              @for (
-                review of carouselReviews;
-                track $index
-              ) {
+              <!-- TRACK -->
 
-                <!-- SLIDE -->
+              <div
+                class="flex"
+                [class.transition-transform]="isAnimating()"
+                [class.duration-500]="isAnimating()"
+                [class.ease-out]="isAnimating()"
+                [style.transform]="
+                  'translateX(-' +
+                  (currentIndex() * 100) +
+                  '%)'
+                "
+              >
 
-                <div
-                  class="w-full
-                         shrink-0
-                         px-0"
-                >
+                @for (
+                  review of carouselReviews;
+                  track $index
+                ) {
 
-                  <!-- CARD -->
+                  <!-- SLIDE -->
 
-                  <article
-                    class="group relative mx-auto
-                           flex min-h-[280px]
-                           max-w-3xl
-                           flex-col
-                           overflow-hidden
-                           rounded-2xl
-                           border border-[#d8ccb0]
-                           bg-[#f3f0e7]
-                           px-6 py-7
-                           shadow-[0_8px_30px_rgba(80,70,50,0.07)]
-                           transition-all duration-500
-                           hover:border-[#b59b5b]/70
-                           hover:shadow-[0_12px_35px_rgba(80,70,50,0.10)]
-                           sm:px-9 sm:py-8
-                           md:min-h-[270px]
-                           md:px-12"
+                  <div
+                    class="w-full shrink-0"
                   >
 
-                    <!-- GOLD ACCENT -->
+                    <!-- CARD -->
 
-                    <div
-                      class="absolute left-0 top-0
-                             h-full w-1
-                             bg-[#b59b5b]"
-                      aria-hidden="true"
-                    ></div>
-
-
-                    <!-- AUTHOR + STARS -->
-
-                    <div
-                      class="flex items-center
-                             justify-between
-                             gap-3
-                             pr-2
-                             sm:gap-4
-                             sm:pr-0"
+                    <article
+                      class="group relative mx-auto
+                             flex min-h-[280px]
+                             w-full
+                             max-w-3xl
+                             flex-col
+                             overflow-hidden
+                             rounded-2xl
+                             border border-[#d8ccb0]
+                             bg-[#f3f0e7]
+                             px-6 py-7
+                             shadow-[0_8px_30px_rgba(80,70,50,0.07)]
+                             transition-all duration-500
+                             hover:border-[#b59b5b]/70
+                             hover:shadow-[0_12px_35px_rgba(80,70,50,0.10)]
+                             sm:px-9 sm:py-8
+                             md:min-h-[270px]
+                             md:px-12"
                     >
 
-                      <div class="min-w-0">
+                      <!-- GOLD ACCENT -->
+
+                      <div
+                        class="absolute left-0 top-0
+                               h-full w-1
+                               bg-[#b59b5b]"
+                        aria-hidden="true"
+                      ></div>
+
+
+                      <!-- AUTHOR + STARS -->
+
+                      <div
+                        class="flex items-center
+                               justify-between
+                               gap-4"
+                      >
+
+                        <div class="min-w-0">
+
+                          <p
+                            class="truncate
+                                   font-['Lora']
+                                   text-[15px]
+                                   font-medium
+                                   text-stone-800"
+                          >
+                            {{
+                              review.authorAttribution?.displayName
+                              ?? 'Użytkownik Google'
+                            }}
+                          </p>
+
+                          <p
+                            class="mt-1
+                                   font-['Lora']
+                                   text-[9px]
+                                   font-medium
+                                   uppercase
+                                   tracking-[0.18em]
+                                   text-stone-400"
+                          >
+                            Opinia w Google
+                          </p>
+
+                        </div>
+
+
+                        <!-- STARS -->
+
+                        <div
+                          class="shrink-0
+                                 font-['Lora']
+                                 text-[13px]
+                                 tracking-[0.12em]
+                                 text-[#b59b5b]"
+                          aria-label="Ocena opinii"
+                        >
+
+                          @for (
+                            star of [1, 2, 3, 4, 5];
+                            track star
+                          ) {
+
+                            <span>
+                              {{ star <= review.rating ? '★' : '☆' }}
+                            </span>
+
+                          }
+
+                        </div>
+
+                      </div>
+
+
+                      <!-- DIVIDER -->
+
+                      <div
+                        class="mt-5 h-px w-10
+                               bg-[#b59b5b]/60
+                               transition-all duration-500
+                               group-hover:w-16
+                               group-hover:bg-[#b59b5b]"
+                      ></div>
+
+
+                      <!-- QUOTE / CONTENT -->
+
+                      <div
+                        class="mt-4 flex flex-1
+                               flex-col items-center
+                               justify-center"
+                      >
+
+                        <div
+                          class="mb-1
+                                 font-['Cormorant_Garamond']
+                                 text-4xl
+                                 leading-none
+                                 text-[#b59b5b]/40"
+                          aria-hidden="true"
+                        >
+                          “
+                        </div>
+
+
+                        <!-- REVIEW TEXT -->
 
                         <p
-                          class="truncate
+                          class="mx-auto max-w-2xl
+                                 text-justify
                                  font-['Lora']
                                  text-[15px]
-                                 font-medium
-                                 text-stone-800"
+                                 leading-7
+                                 text-stone-600"
                         >
                           {{
-                            review.authorAttribution?.displayName
-                            ?? 'Użytkownik Google'
+                            review.originalText?.text
+                            ?? review.text?.text
+                            ?? ''
                           }}
                         </p>
 
+                      </div>
+
+
+                      <!-- DATE -->
+
+                      @if (review.relativePublishTimeDescription) {
+
                         <p
-                          class="mt-1
+                          class="mt-4
+                                 text-center
                                  font-['Lora']
-                                 text-[9px]
-                                 font-medium
-                                 uppercase
-                                 tracking-[0.18em]
+                                 text-[10px]
+                                 tracking-wide
                                  text-stone-400"
                         >
-                          Opinia w Google
+                          {{ review.relativePublishTimeDescription }}
                         </p>
 
-                      </div>
+                      }
 
+                    </article>
 
-                      <!-- STARS -->
+                  </div>
 
-                      <div
-                        class="shrink-0
-                               font-['Lora']
-                               text-[13px]
-                               tracking-[0.12em]
-                               text-[#b59b5b]"
-                        aria-label="Ocena opinii"
-                      >
+                }
 
-                        @for (
-                          star of [1, 2, 3, 4, 5];
-                          track star
-                        ) {
-
-                          <span>
-                            {{ star <= review.rating ? '★' : '☆' }}
-                          </span>
-
-                        }
-
-                      </div>
-
-                    </div>
-
-
-                    <!-- DIVIDER -->
-
-                    <div
-                      class="mt-5 h-px w-10
-                             bg-[#b59b5b]/60
-                             transition-all duration-500
-                             group-hover:w-16
-                             group-hover:bg-[#b59b5b]"
-                    ></div>
-
-
-                    <!-- QUOTE / CONTENT -->
-
-                    <div
-                      class="mt-4 flex flex-1
-                             flex-col items-center
-                             justify-center
-                             px-1
-                             sm:px-2"
-                    >
-
-                      <div
-                        class="mb-1
-                               font-['Cormorant_Garamond']
-                               text-4xl
-                               leading-none
-                               text-[#b59b5b]/40"
-                        aria-hidden="true"
-                      >
-                        “
-                      </div>
-
-
-                      <!-- JUSTIFIED REVIEW TEXT -->
-
-                      <p
-                        class="mx-auto max-w-2xl
-                               text-justify
-                               font-['Lora']
-                               text-[15px]
-                               leading-7
-                               text-stone-600"
-                      >
-                        {{
-                          review.originalText?.text
-                          ?? review.text?.text
-                          ?? ''
-                        }}
-                      </p>
-
-                    </div>
-
-
-                    <!-- DATE -->
-
-                    @if (review.relativePublishTimeDescription) {
-
-                      <p
-                        class="mt-4
-                               text-center
-                               font-['Lora']
-                               text-[10px]
-                               tracking-wide
-                               text-stone-400"
-                      >
-                        {{ review.relativePublishTimeDescription }}
-                      </p>
-
-                    }
-
-                  </article>
-
-                </div>
-
-              }
+              </div>
 
             </div>
+
+
+            <!-- NEXT — DESKTOP -->
+
+            @if (reviews().length > 1) {
+
+              <button
+                type="button"
+                aria-label="Następna opinia"
+                [disabled]="isAnimating()"
+                (click)="nextReview()"
+                class="group hidden
+                       size-12 shrink-0
+                       items-center justify-center
+                       rounded-full
+                       border border-[#d8ccb0]
+                       bg-[#f3f0e7]
+                       text-[#806c3e]
+                       shadow-[0_5px_20px_rgba(80,70,50,0.08)]
+                       transition-all duration-300
+                       hover:border-[#b59b5b]
+                       hover:bg-[#ebe5d5]
+                       hover:text-[#806c3e]
+                       hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
+                       disabled:pointer-events-none
+                       disabled:opacity-35
+                       md:flex
+                       md:size-16"
+              >
+
+                <span
+                  class="mb-0.5
+                         text-2xl
+                         font-light
+                         leading-none
+                         transition-transform duration-300
+                         group-hover:translate-x-1
+                         md:text-3xl"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+
+              </button>
+
+            }
 
           </div>
 
 
-          <!-- PREVIOUS — MOBILE -->
+          <!-- MOBILE CONTROLS -->
 
           @if (reviews().length > 1) {
 
-            <button
-              type="button"
-              aria-label="Poprzednia opinia"
-              [disabled]="isAnimating()"
-              (click)="previousReview()"
-              class="group absolute left-2 top-1/2 z-10
-                     flex size-9
-                     -translate-y-1/2
-                     items-center justify-center
-                     rounded-full
-                     border border-[#d8ccb0]
-                     bg-[#f3f0e7]/95
-                     text-[#806c3e]
-                     shadow-[0_4px_15px_rgba(80,70,50,0.10)]
-                     backdrop-blur-sm
-                     transition-all duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#ebe5d5]
-                     hover:text-[#806c3e]
-                     disabled:pointer-events-none
-                     disabled:opacity-35
-                     md:hidden"
+            <div
+              class="mt-5 flex
+                     items-center
+                     justify-between
+                     sm:hidden"
             >
 
-              <span
-                class="mb-0.5
-                       text-lg
-                       font-light
-                       leading-none
-                       transition-transform duration-300
-                       group-hover:-translate-x-0.5"
-                aria-hidden="true"
-              >
-                ←
-              </span>
+              <!-- PREVIOUS -->
 
-            </button>
+              <button
+                type="button"
+                aria-label="Poprzednia opinia"
+                [disabled]="isAnimating()"
+                (click)="previousReview()"
+                class="group flex size-10
+                       items-center justify-center
+                       rounded-full
+                       border border-[#d8ccb0]
+                       bg-[#f3f0e7]
+                       text-[#806c3e]
+                       shadow-[0_4px_15px_rgba(80,70,50,0.08)]
+                       transition-all duration-300
+                       hover:border-[#b59b5b]
+                       hover:bg-[#ebe5d5]
+                       disabled:pointer-events-none
+                       disabled:opacity-35"
+              >
+
+                <span
+                  class="mb-0.5
+                         text-lg
+                         font-light
+                         leading-none
+                         transition-transform duration-300
+                         group-hover:-translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  ←
+                </span>
+
+              </button>
+
+
+              <!-- NEXT -->
+
+              <button
+                type="button"
+                aria-label="Następna opinia"
+                [disabled]="isAnimating()"
+                (click)="nextReview()"
+                class="group flex size-10
+                       items-center justify-center
+                       rounded-full
+                       border border-[#d8ccb0]
+                       bg-[#f3f0e7]
+                       text-[#806c3e]
+                       shadow-[0_4px_15px_rgba(80,70,50,0.08)]
+                       transition-all duration-300
+                       hover:border-[#b59b5b]
+                       hover:bg-[#ebe5d5]
+                       disabled:pointer-events-none
+                       disabled:opacity-35"
+              >
+
+                <span
+                  class="mb-0.5
+                         text-lg
+                         font-light
+                         leading-none
+                         transition-transform duration-300
+                         group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+
+              </button>
+
+            </div>
 
           }
 
 
-          <!-- PREVIOUS — DESKTOP -->
+          <!-- DOTS -->
 
           @if (reviews().length > 1) {
 
-            <button
-              type="button"
-              aria-label="Poprzednia opinia"
-              [disabled]="isAnimating()"
-              (click)="previousReview()"
-              class="group hidden
-                     shrink-0
-                     size-16
-                     items-center justify-center
-                     rounded-full
-                     border border-[#d8ccb0]
-                     bg-[#f3f0e7]
-                     text-[#806c3e]
-                     shadow-[0_5px_20px_rgba(80,70,50,0.08)]
-                     transition-all duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#ebe5d5]
-                     hover:text-[#806c3e]
-                     hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
-                     disabled:pointer-events-none
-                     disabled:opacity-35
-                     md:flex"
+            <div
+              class="mt-5 flex justify-center
+                     sm:mt-6"
             >
 
-              <span
-                class="mb-0.5
-                       text-3xl
-                       font-light
-                       leading-none
-                       transition-transform duration-300
-                       group-hover:-translate-x-1"
-                aria-hidden="true"
-              >
-                ←
-              </span>
+              <div class="flex items-center gap-2.5">
 
-            </button>
+                @for (
+                  review of reviews();
+                  track review.authorAttribution?.uri ?? $index;
+                  let index = $index
+                ) {
 
-          }
+                  <button
+                    type="button"
+                    [attr.aria-label]="'Przejdź do opinii ' + (index + 1)"
+                    [attr.aria-current]="
+                      index === currentIndex() - 1
+                        ? 'true'
+                        : null
+                    "
+                    [disabled]="isAnimating()"
+                    (click)="selectReview(index)"
+                    class="group flex size-4
+                           items-center justify-center
+                           disabled:pointer-events-none"
+                  >
 
+                    <span
+                      class="block size-2
+                             rounded-full
+                             transition-all duration-300
+                             ease-out
+                             group-hover:scale-125"
+                      [style.background-color]="
+                        index === currentIndex() - 1
+                          ? '#806c3e'
+                          : '#d8ccb0'
+                      "
+                      [style.box-shadow]="
+                        index === currentIndex() - 1
+                          ? '0 0 0 3px rgba(181,155,91,0.18)'
+                          : 'none'
+                      "
+                    ></span>
 
-          <!-- NEXT — MOBILE -->
+                  </button>
 
-          @if (reviews().length > 1) {
+                }
 
-            <button
-              type="button"
-              aria-label="Następna opinia"
-              [disabled]="isAnimating()"
-              (click)="nextReview()"
-              class="group absolute right-2 top-1/2 z-10
-                     flex size-9
-                     -translate-y-1/2
-                     items-center justify-center
-                     rounded-full
-                     border border-[#d8ccb0]
-                     bg-[#f3f0e7]/95
-                     text-[#806c3e]
-                     shadow-[0_4px_15px_rgba(80,70,50,0.10)]
-                     backdrop-blur-sm
-                     transition-all duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#ebe5d5]
-                     hover:text-[#806c3e]
-                     disabled:pointer-events-none
-                     disabled:opacity-35
-                     md:hidden"
-            >
+              </div>
 
-              <span
-                class="mb-0.5
-                       text-lg
-                       font-light
-                       leading-none
-                       transition-transform duration-300
-                       group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                →
-              </span>
-
-            </button>
-
-          }
-
-
-          <!-- NEXT — DESKTOP -->
-
-          @if (reviews().length > 1) {
-
-            <button
-              type="button"
-              aria-label="Następna opinia"
-              [disabled]="isAnimating()"
-              (click)="nextReview()"
-              class="group hidden
-                     shrink-0
-                     size-16
-                     items-center justify-center
-                     rounded-full
-                     border border-[#d8ccb0]
-                     bg-[#f3f0e7]
-                     text-[#806c3e]
-                     shadow-[0_5px_20px_rgba(80,70,50,0.08)]
-                     transition-all duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#ebe5d5]
-                     hover:text-[#806c3e]
-                     hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
-                     disabled:pointer-events-none
-                     disabled:opacity-35
-                     md:flex"
-            >
-
-              <span
-                class="mb-0.5
-                       text-3xl
-                       font-light
-                       leading-none
-                       transition-transform duration-300
-                       group-hover:translate-x-1"
-                aria-hidden="true"
-              >
-                →
-              </span>
-
-            </button>
+            </div>
 
           }
 
         </div>
-
-
-        <!-- DOTS -->
-
-        @if (reviews().length > 1) {
-
-          <div
-            class="mt-6 flex justify-center
-                   md:mt-7"
-          >
-
-            <div
-              class="flex items-center gap-2.5"
-            >
-
-              @for (
-                review of reviews();
-                track review.authorAttribution?.uri ?? $index;
-                let index = $index
-              ) {
-
-                <button
-                  type="button"
-                  [attr.aria-label]="'Przejdź do opinii ' + (index + 1)"
-                  [attr.aria-current]="
-                    index === currentIndex() - 1
-                      ? 'true'
-                      : null
-                  "
-                  [disabled]="isAnimating()"
-                  (click)="selectReview(index)"
-                  class="group flex size-4
-                         items-center justify-center
-                         disabled:pointer-events-none"
-                >
-
-                  <span
-                    class="block size-2
-                           rounded-full
-                           transition-all duration-300
-                           ease-out
-                           group-hover:scale-125"
-                    [style.background-color]="
-                      index === currentIndex() - 1
-                        ? '#806c3e'
-                        : '#d8ccb0'
-                    "
-                    [style.box-shadow]="
-                      index === currentIndex() - 1
-                        ? '0 0 0 3px rgba(181,155,91,0.18)'
-                        : 'none'
-                    "
-                  ></span>
-
-                </button>
-
-              }
-
-            </div>
-
-          </div>
-
-        }
 
       </div>
 
@@ -631,7 +636,6 @@
           Pełną listę opinii oraz aktualną ocenę
           kancelarii znajdziesz w Google.
         </p>
-
 
         <a
           href="https://www.google.com/maps/search/?api=1&query=Kancelaria+Notarialna+Zbigniew+Władysławski+Olsztyn"
