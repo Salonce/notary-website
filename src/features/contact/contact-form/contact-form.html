@@ -11,164 +11,187 @@
       kontaktowy
     </h2>
 
-<div class="mt-4 h-px w-16 bg-stone-400"></div>
-
+    <div class="mt-4 h-px w-16 bg-stone-400"></div>
   </div>
+
 
   <!-- FORM -->
 
-  <form class="max-w-xl space-y-3">
-
-<!-- IMIĘ I NAZWISKO -->
-<div>
-  <label
-    for="name"
-    class="mb-1 block text-[10px] font-medium uppercase
-           tracking-[0.2em] text-stone-400"
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="max-w-xl space-y-3"
   >
-    Imię i nazwisko
-  </label>
 
-  <input
-    id="name"
-    name="name"
-    type="text"
-    autocomplete="name"
-    required
-    placeholder="Jan Kowalski"
-    class="w-full border border-stone-300
-           bg-stone-50/50
-           px-4 py-2
-           text-[15px] text-stone-800
-           outline-none
-           transition-all duration-300
-           placeholder:text-stone-400
-           hover:border-stone-400
-           focus:border-stone-600
-           focus:ring-1 focus:ring-stone-200"
-  />
-</div>
+    <!-- IMIĘ I NAZWISKO -->
 
+    <div>
+      <label
+        for="name"
+        class="mb-1 block text-[10px] font-medium uppercase
+               tracking-[0.2em] text-stone-400"
+      >
+        Imię i nazwisko
+      </label>
 
-<!-- ADRES E-MAIL -->
-<div>
-  <label
-    for="email"
-    class="mb-1 block text-[10px] font-medium uppercase
-           tracking-[0.2em] text-stone-400"
-  >
-    Adres e-mail
-  </label>
-
-  <input
-    id="email"
-    name="email"
-    type="email"
-    autocomplete="email"
-    required
-    placeholder="jan.kowalski@email.pl"
-    class="w-full border border-stone-300
-           bg-stone-50/50
-           px-4 py-2
-           text-[15px] text-stone-800
-           outline-none
-           transition-all duration-300
-           placeholder:text-stone-400
-           hover:border-stone-400
-           focus:border-stone-600
-           focus:ring-1 focus:ring-stone-200"
-  />
-</div>
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        autocomplete="name"
+        placeholder="Jan Kowalski"
+        class="w-full border border-stone-300
+               bg-stone-50/50
+               px-4 py-2
+               text-[15px] text-stone-800
+               outline-none
+               transition-all duration-300
+               placeholder:text-stone-400
+               hover:border-stone-400
+               focus:border-stone-600
+               focus:ring-1 focus:ring-stone-200"
+      />
+    </div>
 
 
-<!-- TREŚĆ ZAPYTANIA -->
-<div>
-  <label
-    for="message"
-    class="mb-1 block text-[10px] font-medium uppercase
-           tracking-[0.2em] text-stone-400"
-  >
-    Treść zapytania
-  </label>
+    <!-- ADRES E-MAIL -->
 
-  <textarea
-    id="message"
-    name="message"
-    rows="4"
-    required
-    placeholder="W czym możemy Państwu pomóc?"
-    class="w-full resize-none border border-stone-300
-           bg-stone-50/50
-           px-4 py-2
-           text-[15px] leading-6 text-stone-800
-           outline-none
-           transition-all duration-300
-           placeholder:text-stone-400
-           hover:border-stone-400
-           focus:border-stone-600
-           focus:ring-1 focus:ring-stone-200"
-  ></textarea>
-</div>
+    <div>
+      <label
+        for="email"
+        class="mb-1 block text-[10px] font-medium uppercase
+               tracking-[0.2em] text-stone-400"
+      >
+        Adres e-mail
+      </label>
 
-
-<!-- ZGODA -->
-<div class="pt-0">
-
-  <label class="flex cursor-pointer items-start gap-3">
-
-    <input
-      id="consent"
-      name="consent"
-      type="checkbox"
-      required
-      class="mt-1 h-4 w-4 shrink-0
-             cursor-pointer accent-stone-700"
-    />
-
-    <span
-      class="text-xs leading-5 text-stone-500"
-    >
-      Wyrażam zgodę na przetwarzanie moich danych osobowych
-      w celu przetworzenia zapytania. Administratorem danych
-      osobowych jest Kancelaria Notarialna Zbigniewa Władysławskiego.
-    </span>
-
-  </label>
-
-</div>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        autocomplete="email"
+        placeholder="jan.kowalski@email.pl"
+        class="w-full border border-stone-300
+               bg-stone-50/50
+               px-4 py-2
+               text-[15px] text-stone-800
+               outline-none
+               transition-all duration-300
+               placeholder:text-stone-400
+               hover:border-stone-400
+               focus:border-stone-600
+               focus:ring-1 focus:ring-stone-200"
+      />
+    </div>
 
 
-<!-- BUTTON -->
-<div class="pt-0">
+    <!-- TREŚĆ ZAPYTANIA -->
 
-  <button
-    type="submit"
-    class="group inline-flex items-center gap-4
-           border border-stone-400
-           bg-transparent
-           px-6 py-2.5
-           text-[15px] font-medium text-stone-700
-           transition-all duration-300
-           hover:border-stone-700
-           hover:bg-stone-700
-           hover:text-white"
-  >
-    <span>
-      Wyślij zapytanie
-    </span>
+    <div>
+      <label
+        for="message"
+        class="mb-1 block text-[10px] font-medium uppercase
+               tracking-[0.2em] text-stone-400"
+      >
+        Treść zapytania
+      </label>
 
-    <span
-      class="text-stone-400
-             transition-transform duration-300
-             group-hover:translate-x-1
-             group-hover:text-white"
-    >
-      →
-    </span>
+      <textarea
+        id="message"
+        formControlName="message"
+        rows="4"
+        placeholder="W czym możemy Państwu pomóc?"
+        class="w-full resize-none border border-stone-300
+               bg-stone-50/50
+               px-4 py-2
+               text-[15px] leading-6 text-stone-800
+               outline-none
+               transition-all duration-300
+               placeholder:text-stone-400
+               hover:border-stone-400
+               focus:border-stone-600
+               focus:ring-1 focus:ring-stone-200"
+      ></textarea>
+    </div>
 
-  </button>
 
-</div>
+    <!-- ZGODA -->
+
+    <div class="pt-0">
+
+      <label class="flex cursor-pointer items-start gap-3">
+
+        <input
+          id="consent"
+          formControlName="consent"
+          type="checkbox"
+          class="mt-1 h-4 w-4 shrink-0
+                 cursor-pointer accent-stone-700"
+        />
+
+        <span class="text-xs leading-5 text-stone-500">
+          Wyrażam zgodę na przetwarzanie moich danych osobowych
+          w celu przetworzenia zapytania. Administratorem danych
+          osobowych jest Kancelaria Notarialna Zbigniewa Władysławskiego.
+        </span>
+
+      </label>
+
+    </div>
+
+
+    <!-- MESSAGES -->
+
+    @if (successMessage) {
+      <div class="pt-2 text-sm text-stone-600">
+        {{ successMessage }}
+      </div>
+    }
+
+    @if (errorMessage) {
+      <div class="pt-2 text-sm text-red-700">
+        {{ errorMessage }}
+      </div>
+    }
+
+
+    <!-- BUTTON -->
+
+    <div class="pt-0">
+
+      <button
+        type="submit"
+        [disabled]="isSending"
+        class="group inline-flex items-center gap-4
+               border border-stone-400
+               bg-transparent
+               px-6 py-2.5
+               text-[15px] font-medium text-stone-700
+               transition-all duration-300
+               hover:border-stone-700
+               hover:bg-stone-700
+               hover:text-white
+               disabled:cursor-not-allowed
+               disabled:opacity-50"
+      >
+        <span>
+          {{ isSending ? 'Wysyłanie...' : 'Wyślij zapytanie' }}
+        </span>
+
+        @if (!isSending) {
+          <span
+            class="text-stone-400
+                   transition-transform duration-300
+                   group-hover:translate-x-1
+                   group-hover:text-white"
+          >
+            →
+          </span>
+        }
+
+      </button>
+
+    </div>
 
   </form>
 
