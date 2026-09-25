@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ForDisabled } from './for-disabled';
+import { GoogleReviews } from './google-reviews';
 
-describe('ForDisabled', () => {
-  let component: ForDisabled;
-  let fixture: ComponentFixture<ForDisabled>;
+describe('GoogleReviews', () => {
+  let component: GoogleReviews;
+  let fixture: ComponentFixture<GoogleReviews>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ForDisabled],
+      imports: [GoogleReviews],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ForDisabled);
+    fixture = TestBed.createComponent(GoogleReviews);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
