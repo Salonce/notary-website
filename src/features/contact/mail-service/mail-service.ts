@@ -17,8 +17,8 @@ export class MailService {
     formData.append('access_key', environment.web3formsKey);
 
     // Email configuration
-    formData.append('subject', 'New contact form submission');
-    formData.append('from_name', 'Law Firm Website');
+    formData.append('subject', 'Wiadomość z formularza kontaktowego.');
+    formData.append('from_name', 'notariusz.wladyslawski.pl');
 
     // Simple honeypot for spam protection
     formData.append('botcheck', '');
