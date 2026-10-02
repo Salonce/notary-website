@@ -5,26 +5,39 @@
   animation: latinLetterReveal 900ms ease-out forwards;
 }
 
-.latin-quote span:nth-child(1)  { animation-delay: 0.00s; }
-.latin-quote span:nth-child(2)  { animation-delay: 0.12s; }
-.latin-quote span:nth-child(3)  { animation-delay: 0.24s; }
+.latin-quote span:nth-child(1)  { animation-delay: 0.50s; }
 
-.latin-quote span:nth-child(5)  { animation-delay: 0.45s; }
-.latin-quote span:nth-child(6)  { animation-delay: 0.57s; }
-.latin-quote span:nth-child(7)  { animation-delay: 0.69s; }
+.latin-quote span:nth-child(2)  { animation-delay: 0.62s; }
 
-.latin-quote span:nth-child(9)  { animation-delay: 0.90s; }
-.latin-quote span:nth-child(10) { animation-delay: 1.02s; }
-.latin-quote span:nth-child(11) { animation-delay: 1.14s; }
-.latin-quote span:nth-child(12) { animation-delay: 1.26s; }
+.latin-quote span:nth-child(3)  { animation-delay: 0.74s; }
 
-.latin-quote span:nth-child(14) { animation-delay: 1.47s; }
-.latin-quote span:nth-child(15) { animation-delay: 1.59s; }
-.latin-quote span:nth-child(16) { animation-delay: 1.71s; }
-.latin-quote span:nth-child(17) { animation-delay: 1.83s; }
-.latin-quote span:nth-child(18) { animation-delay: 1.95s; }
-.latin-quote span:nth-child(19) { animation-delay: 2.07s; }
-.latin-quote span:nth-child(20) { animation-delay: 2.19s; }
+.latin-quote span:nth-child(5)  { animation-delay: 0.95s; }
+
+.latin-quote span:nth-child(6)  { animation-delay: 1.07s; }
+
+.latin-quote span:nth-child(7)  { animation-delay: 1.19s; }
+
+.latin-quote span:nth-child(9)  { animation-delay: 1.40s; }
+
+.latin-quote span:nth-child(10) { animation-delay: 1.52s; }
+
+.latin-quote span:nth-child(11) { animation-delay: 1.64s; }
+
+.latin-quote span:nth-child(12) { animation-delay: 1.76s; }
+
+.latin-quote span:nth-child(14) { animation-delay: 1.97s; }
+
+.latin-quote span:nth-child(15) { animation-delay: 2.09s; }
+
+.latin-quote span:nth-child(16) { animation-delay: 2.21s; }
+
+.latin-quote span:nth-child(17) { animation-delay: 2.33s; }
+
+.latin-quote span:nth-child(18) { animation-delay: 2.45s; }
+
+.latin-quote span:nth-child(19) { animation-delay: 2.57s; }
+
+.latin-quote span:nth-child(20) { animation-delay: 2.69s; }
 
 @keyframes latinLetterReveal {
   from {

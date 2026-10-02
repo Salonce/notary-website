@@ -1,0 +1,113 @@
+/* =========================================================
+   MAIN LAYOUT - INTRO ANIMATION
+   Elegant entrance for law office website
+   ========================================================= */
+
+.layout-top-bar,
+.layout-header,
+.layout-navbar {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+
+
+/* =========================================================
+   TOP BAR
+   First element to appear
+   ========================================================= */
+
+.layout-top-bar {
+  animation:
+    layoutTopBarReveal
+    800ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    100ms
+    forwards;
+}
+
+@keyframes layoutTopBarReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+   Slightly slower and more elegant
+   ========================================================= */
+
+.layout-header {
+  animation:
+    layoutHeaderReveal
+    1000ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    280ms
+    forwards;
+}
+
+@keyframes layoutHeaderReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   NAVIGATION
+   Last element - subtle entrance
+   ========================================================= */
+
+.layout-navbar {
+  animation:
+    layoutNavbarReveal
+    900ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    520ms
+    forwards;
+}
+
+@keyframes layoutNavbarReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   Respect users who prefer reduced motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .layout-top-bar,
+  .layout-header,
+  .layout-navbar {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
