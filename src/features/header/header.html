@@ -19,8 +19,9 @@
              w-full
              items-center justify-center
              overflow-hidden
-             border-y border-[#b59b5b]/60
-             bg-white
+             border-y
+             border-[#b59b5b]/70
+             bg-[#f8f6f0]
              px-5 py-8
              text-center
              sm:min-h-[210px]
@@ -30,36 +31,116 @@
              md:px-8 md:py-10"
     >
 
-      <!-- DELIKATNE BOCZNE AKCENTY -->
+      <!-- =========================================
+           TŁO - MOTYW PIECZĘCI
+           ========================================= -->
 
-      <span
-        class="header-side-line
-               absolute left-0 top-1/2
-               h-px
-               w-8
-               -translate-y-1/2
-               bg-[#b59b5b]/50
-               sm:w-10
-               md:w-12
-               lg:w-16"
+      <!-- PRAWY GÓRNY ORNAMENT -->
+
+      <div
+        class="pointer-events-none absolute
+               -right-24 -top-24
+               h-[320px] w-[320px]
+               rounded-full
+               border
+               border-[#9e1b32]/[0.10]"
         aria-hidden="true"
-      ></span>
+      ></div>
 
-      <span
-        class="header-side-line
-               absolute right-0 top-1/2
-               h-px
-               w-8
-               -translate-y-1/2
-               bg-[#b59b5b]/50
-               sm:w-10
-               md:w-12
-               lg:w-16"
+      <div
+        class="pointer-events-none absolute
+               -right-10 -top-10
+               h-[250px] w-[250px]
+               rounded-full
+               border
+               border-[#b59b5b]/[0.18]"
         aria-hidden="true"
-      ></span>
+      ></div>
+
+      <div
+        class="pointer-events-none absolute
+               -right-1 top-1
+               h-[190px] w-[190px]
+               rounded-full
+               border
+               border-[#b59b5b]/[0.12]"
+        aria-hidden="true"
+      ></div>
 
 
-      <!-- GŁÓWNA NAZWA -->
+      <!-- LEWY DOLNY ORNAMENT -->
+
+      <div
+        class="pointer-events-none absolute
+               -bottom-28 -left-28
+               h-[300px] w-[300px]
+               rounded-full
+               border
+               border-[#b59b5b]/[0.12]"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute
+               -bottom-16 -left-16
+               h-[220px] w-[220px]
+               rounded-full
+               border
+               border-[#9e1b32]/[0.07]"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- DELIKATNA SIATKA -->
+
+      <div
+        class="pointer-events-none absolute inset-0 opacity-30"
+        aria-hidden="true"
+      >
+        <div
+          class="absolute inset-0
+                 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(181,155,91,0.10)_49%,transparent_50%,transparent_100%)]"
+        ></div>
+
+        <div
+          class="absolute inset-0
+                 bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(181,155,91,0.07)_49%,transparent_50%,transparent_100%)]"
+        ></div>
+      </div>
+
+
+      <!-- =========================================
+           MOCNIEJSZE CENTRALNE ROZŚWIETLENIE
+           ========================================= -->
+
+      <div
+        class="pointer-events-none absolute
+               left-1/2 top-1/2
+               h-[320px] w-[320px]
+               -translate-x-1/2
+               -translate-y-1/2
+               rounded-full
+               bg-[#b59b5b]/[0.16]
+               blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute
+               left-1/2 top-1/2
+               h-[170px] w-[170px]
+               -translate-x-1/2
+               -translate-y-1/2
+               rounded-full
+               bg-[#fffaf0]/[0.75]
+               blur-2xl"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- =========================================
+           GŁÓWNA NAZWA
+           ========================================= -->
 
       <div
         class="relative z-10
@@ -70,21 +151,7 @@
 
         <!-- KANCELARIA NOTARIALNA -->
 
-        <div
-          class="header-small-title
-                 flex items-center
-                 gap-3
-                 sm:gap-4"
-        >
-
-          <span
-            class="h-px w-5
-                   bg-[#b59b5b]/70
-                   sm:w-7
-                   md:w-8"
-            aria-hidden="true"
-          ></span>
-
+        <div class="header-small-title">
           <span
             class="text-[10px]
                    font-normal
@@ -93,18 +160,17 @@
                    text-stone-500
                    sm:text-xs
                    md:text-sm"
+            aria-label="Kancelaria Notarialna"
           >
-            Kancelaria Notarialna
+            @for (letter of splitText(bannerParts[0]); track $index) {
+              <span
+                class="header-letter"
+                [style.animation-delay.ms]="250 + ($index * 35)"
+              >
+                {{ letter === ' ' ? '\u00A0' : letter }}
+              </span>
+            }
           </span>
-
-          <span
-            class="h-px w-5
-                   bg-[#b59b5b]/70
-                   sm:w-7
-                   md:w-8"
-            aria-hidden="true"
-          ></span>
-
         </div>
 
 
@@ -121,30 +187,26 @@
                  sm:text-3xl
                  md:text-3xl
                  lg:text-4xl"
+          aria-label="Zbigniew Władysławski"
         >
-          Zbigniew Władysławski
+          @for (letter of splitText(bannerParts[1]); track $index) {
+            <span
+              class="header-letter"
+              [style.animation-delay.ms]="950 + ($index * 45)"
+            >
+              {{ letter === ' ' ? '\u00A0' : letter }}
+            </span>
+          }
         </h1>
 
 
-        <!-- NOTARIUSZ JAKO CZĘŚĆ NAZWY -->
+        <!-- NOTARIUSZ -->
 
         <div
           class="header-role
                  mt-3
-                 flex items-center
-                 gap-3
-                 sm:mt-4
-                 sm:gap-4"
+                 sm:mt-4"
         >
-
-          <span
-            class="h-px w-7
-                   bg-stone-300
-                   sm:w-9
-                   md:w-10"
-            aria-hidden="true"
-          ></span>
-
           <span
             class="text-[10px]
                    font-normal
@@ -152,32 +214,18 @@
                    tracking-[0.25em]
                    text-stone-500
                    sm:text-xs"
+            aria-label="Notariusz"
           >
-            Notariusz
+            @for (letter of splitText(bannerParts[2]); track $index) {
+              <span
+                class="header-letter"
+                [style.animation-delay.ms]="1900 + ($index * 55)"
+              >
+                {{ letter }}
+              </span>
+            }
           </span>
-
-          <span
-            class="h-px w-7
-                   bg-stone-300
-                   sm:w-9
-                   md:w-10"
-            aria-hidden="true"
-          ></span>
-
         </div>
-
-
-        <!-- DOLNY ZŁOTY AKCENT -->
-
-        <div
-          class="header-main-line
-                 mt-5
-                 h-px w-16
-                 bg-[#b59b5b]
-                 sm:mt-6
-                 sm:w-20"
-          aria-hidden="true"
-        ></div>
 
       </div>
 

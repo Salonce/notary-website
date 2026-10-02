@@ -1,121 +1,56 @@
+/* =========================================
+   BANER KANCELARII
+   ========================================= */
+
 .header-banner {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateX(-12px);
 
   animation:
     headerBannerReveal
-    900ms
+    850ms
     cubic-bezier(0.22, 1, 0.36, 1)
-    150ms
+    100ms
     forwards;
 }
 
 
-/* KANCELARIA NOTARIALNA */
+/* =========================================
+   LITERA PO LITERZE
+   ========================================= */
 
-.header-small-title {
-  opacity: 0;
-  transform: translateY(5px);
+.header-letter {
+  display: inline-block;
 
-  animation:
-    headerTextReveal
-    700ms
-    cubic-bezier(0.22, 1, 0.36, 1)
-    400ms
-    forwards;
-}
-
-
-/* IMIĘ I NAZWISKO */
-
-.header-name {
   opacity: 0;
   transform: translateY(7px);
 
   animation:
-    headerNameReveal
-    850ms
+    headerLetterReveal
+    500ms
     cubic-bezier(0.22, 1, 0.36, 1)
-    550ms
     forwards;
 }
 
 
-/* NOTARIUSZ */
-
-.header-role {
-  opacity: 0;
-  transform: translateY(5px);
-
-  animation:
-    headerTextReveal
-    700ms
-    cubic-bezier(0.22, 1, 0.36, 1)
-    750ms
-    forwards;
-}
-
-
-/* DOLNA LINIA */
-
-.header-main-line {
-  opacity: 0;
-  transform: scaleX(0);
-
-  animation:
-    headerLineReveal
-    750ms
-    cubic-bezier(0.22, 1, 0.36, 1)
-    900ms
-    forwards;
-}
-
-
-/* BOCZNE LINIE */
-
-.header-side-line {
-  opacity: 0;
-
-  animation:
-    headerSideReveal
-    900ms
-    ease-out
-    850ms
-    forwards;
-}
-
-
-/* ========================= */
-/* ANIMACJE */
-/* ========================= */
+/* =========================================
+   ANIMACJE
+   ========================================= */
 
 @keyframes headerBannerReveal {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(-12px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 
-@keyframes headerTextReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@keyframes headerNameReveal {
+@keyframes headerLetterReveal {
   0% {
     opacity: 0;
     transform: translateY(7px);
@@ -128,47 +63,15 @@
 }
 
 
-@keyframes headerLineReveal {
-  0% {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}
-
-
-@keyframes headerSideReveal {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-
-/* ========================= */
-/* REDUCED MOTION */
-/* ========================= */
+/* =========================================
+   REDUKCJA RUCHU
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .header-banner,
-  .header-small-title,
-  .header-name,
-  .header-role,
-  .header-main-line,
-  .header-side-line {
+  .header-letter {
     animation: none;
     opacity: 1;
     transform: none;
-  }
-
-  .header-main-line {
-    transform: scaleX(1);
   }
 }
