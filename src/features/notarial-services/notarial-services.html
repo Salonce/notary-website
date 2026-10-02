@@ -1,7 +1,9 @@
 <div
+  #servicesSection
   id="czynnosci-notarialne"
   class="w-full scroll-mt-20 px-6 py-4
-       md:px-8 md:py-8"
+         md:px-8 md:py-8"
+  [class.is-visible]="isServicesVisible"
 >
   <div
     class="mx-auto max-w-7xl
@@ -15,7 +17,8 @@
     <div class="text-center">
 
       <h2
-        class="mt-2
+        class="services-title
+               mt-2
                font-['Source_Serif_4']
                text-[34px]
                font-normal
@@ -28,15 +31,16 @@
         czynności notarialnych
       </h2>
 
-      <div>
+      <div class="services-divider">
         <app-section-divider />
       </div>
+
     </div>
 
 
     <!-- GŁÓWNA LISTA CZYNNOŚCI -->
 
-    <div class="mx-auto mt-12 max-w-3xl">
+    <div class="services-list mx-auto mt-12 max-w-3xl">
 
 
       <!-- NIERUCHOMOŚCI I PRAWA DO LOKALI -->
@@ -800,7 +804,6 @@
         </div>
 
       </div>
-
 
     </div>
 

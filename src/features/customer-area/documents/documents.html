@@ -1,4 +1,8 @@
-<section class="documents">
+<section
+  #documentsSection
+  class="documents"
+  [class.is-visible]="isDocumentsVisible"
+>
 
   <style>
     .documents a::before,
@@ -27,7 +31,8 @@
     <div class="text-center">
 
       <h2
-        class="mt-2
+        class="documents-title
+               mt-2
                font-['Source_Serif_4']
                text-[34px]
                font-normal
@@ -38,9 +43,9 @@
         Dokumenty do pobrania
       </h2>
 
-    <div>
-      <app-section-divider />
-    </div>
+      <div class="documents-divider">
+        <app-section-divider />
+      </div>
 
     </div>
 
@@ -48,7 +53,8 @@
     <!-- INTRO -->
 
     <div
-      class="mx-auto mt-7 max-w-2xl
+      class="documents-intro
+             mx-auto mt-7 max-w-2xl
              text-justify
              font-['Libre_Baskerville']
              text-[17px]
@@ -73,7 +79,8 @@
     <!-- DOCUMENT LIST -->
 
     <div
-      class="mx-auto mt-6 max-w-3xl
+      class="documents-list
+             mx-auto mt-6 max-w-3xl
              divide-y divide-stone-200
              border-y border-stone-200"
     >
@@ -532,7 +539,8 @@
     <!-- CLOSING TEXT -->
 
     <div
-      class="mx-auto mt-6 max-w-3xl
+      class="documents-closing
+             mx-auto mt-6 max-w-3xl
              pt-4
              font-['Libre_Baskerville']"
     >
@@ -558,7 +566,8 @@
     <!-- INFORMATION -->
 
     <div
-      class="mx-auto mt-4 max-w-3xl
+      class="documents-information
+             mx-auto mt-4 max-w-3xl
              font-['Libre_Baskerville']"
     >
 

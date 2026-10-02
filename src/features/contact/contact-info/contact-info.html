@@ -1,11 +1,16 @@
-<section class="contact-info">
+<section
+  #contactInfoSection
+  class="contact-info"
+  [class.is-visible]="isContactInfoVisible"
+>
 
   <!-- HEADER -->
 
   <div class="text-center">
 
     <h2
-      class="mt-2
+      class="contact-info-title
+             mt-2
              font-['Source_Serif_4']
              text-[34px]
              font-normal
@@ -16,7 +21,7 @@
       Dane teleadresowe
     </h2>
 
-    <div>
+    <div class="contact-info-divider">
       <app-section-divider />
     </div>
 
@@ -26,7 +31,8 @@
   <!-- CONTENT -->
 
   <div
-    class="mx-auto mt-10 max-w-xl
+    class="contact-info-content
+           mx-auto mt-10 max-w-xl
            space-y-9
            font-['Libre_Baskerville']
            text-[17px]
@@ -239,4 +245,3 @@
   </div>
 
 </section>
-

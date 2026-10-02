@@ -1,4 +1,14 @@
-import { Component, inject, signal } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+  inject,
+  signal
+} from '@angular/core';
+
 import { GoogleReviewsService } from './google-reviews-service/google-reviews-service';
 import { SectionDivider } from '../../shared/section-divider/section-divider';
 
@@ -8,9 +18,17 @@ import { SectionDivider } from '../../shared/section-divider/section-divider';
   styleUrl: './google-reviews.css',
   templateUrl: './google-reviews.html',
 })
-export class GoogleReviews {
+export class GoogleReviews implements AfterViewInit, OnDestroy {
+
+  @ViewChild('googleReviewsSection')
+  googleReviewsSection!: ElementRef<HTMLElement>;
+
+  isGoogleReviewsVisible = false;
+
+  private observer?: IntersectionObserver;
 
   private readonly reviewsService = inject(GoogleReviewsService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   reviews = signal<any[]>([]);
 
@@ -26,6 +44,34 @@ export class GoogleReviews {
 
   constructor() {
     this.loadReviews();
+  }
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        this.cdr.detectChanges();
+
+        requestAnimationFrame(() => {
+          this.isGoogleReviewsVisible = true;
+          this.cdr.detectChanges();
+
+          this.observer?.disconnect();
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    this.observer.observe(this.googleReviewsSection.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
   }
 
   private async loadReviews(): Promise<void> {
@@ -57,14 +103,6 @@ export class GoogleReviews {
     }
   }
 
-
-  /**
-   * Karuzela zawiera:
-   *
-   * [ostatnia] [1] [2] [3] [4] [5] [pierwsza]
-   *
-   * Dzięki temu można jechać w nieskończoność.
-   */
   get carouselReviews(): any[] {
 
     const reviews = this.reviews();
@@ -79,7 +117,6 @@ export class GoogleReviews {
       reviews[0],
     ];
   }
-
 
   previousReview(): void {
 
@@ -116,7 +153,6 @@ export class GoogleReviews {
     }, 520);
   }
 
-
   nextReview(): void {
 
     const length = this.reviews().length;
@@ -151,7 +187,6 @@ export class GoogleReviews {
 
     }, 520);
   }
-
 
   selectReview(index: number): void {
 

@@ -1,4 +1,8 @@
-<section class="w-full px-6 py-10 md:px-8 md:py-12">
+<section
+  #googleReviewsSection
+  class="w-full px-6 py-10 md:px-8 md:py-12"
+  [class.is-visible]="isGoogleReviewsVisible"
+>
 
   <div class="mx-auto max-w-5xl">
 
@@ -7,7 +11,7 @@
     <div class="text-center">
 
       <h2
-        class="mt-2
+        class="google-reviews-title mt-2
                font-['Source_Serif_4']
                text-[34px]
                font-normal
@@ -18,13 +22,13 @@
         Opinie klientów
       </h2>
 
-    <div>
-      <app-section-divider />
-    </div>
+      <div class="google-reviews-divider">
+        <app-section-divider />
+      </div>
 
       <!-- RATING -->
 
-      <div class="mt-5 md:mt-6">
+      <div class="google-reviews-rating mt-5 md:mt-6">
 
         <div
           class="flex items-center justify-center gap-0.5
@@ -116,7 +120,7 @@
 
     @if (!isLoading() && !error() && reviews().length > 0) {
 
-      <div class="mt-10 md:mt-12">
+      <div class="google-reviews-carousel mt-10 md:mt-12">
 
         <!-- MOBILE CONTROLS -->
         <!-- Nad kartą opinii -->
@@ -259,9 +263,7 @@
 
         <!-- CAROUSEL -->
 
-        <div
-          class="mx-auto max-w-5xl"
-        >
+        <div class="mx-auto max-w-5xl">
 
           <div
             class="flex items-center
@@ -345,9 +347,7 @@
 
                   <!-- SLIDE -->
 
-                  <div
-                    class="w-full shrink-0"
-                  >
+                  <div class="w-full shrink-0">
 
                     <!-- CARD -->
 
@@ -680,7 +680,8 @@
     <!-- FOOTER -->
 
     <div
-      class="mx-auto mt-8 max-w-3xl
+      class="google-reviews-footer
+             mx-auto mt-8 max-w-3xl
              border-t border-stone-200
              pt-6
              md:mt-9 md:pt-7"
@@ -744,4 +745,3 @@
   </div>
 
 </section>
-

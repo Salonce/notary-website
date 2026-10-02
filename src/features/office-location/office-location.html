@@ -1,8 +1,10 @@
 <div
+  #locationSection
   class="h-full
          px-6 py-6
          shadow-[0_8px_30px_rgba(0,0,0,0.06)]
          md:px-10 md:py-8"
+  [class.is-visible]="isLocationVisible"
 >
 
   <!-- HEADER -->
@@ -10,7 +12,7 @@
   <div class="text-center">
 
     <h2
-      class="mt-2
+      class="location-title mt-2
              font-['Source_Serif_4']
              text-[34px]
              font-normal
@@ -21,7 +23,9 @@
       Lokalizacja
     </h2>
 
-<app-section-divider/>
+    <div class="location-divider">
+      <app-section-divider />
+    </div>
 
   </div>
 
@@ -29,7 +33,8 @@
   <!-- INTRODUCTION -->
 
   <div
-    class="mx-auto mt-10 max-w-xl
+    class="location-introduction
+           mx-auto mt-10 max-w-xl
            text-justify
            font-['Libre_Baskerville']
            text-[17px]
@@ -53,7 +58,7 @@
 
   <!-- GOOGLE MAP -->
 
-  <div class="mx-auto mt-6 max-w-2xl">
+  <div class="location-map mx-auto mt-6 max-w-2xl">
 
     <div class="overflow-hidden border border-stone-200">
 
@@ -74,7 +79,8 @@
   <!-- ADDRESS + GOOGLE MAPS -->
 
   <div
-    class="mt-5
+    class="location-footer
+           mt-5
            border-t border-stone-200
            pt-5"
   >

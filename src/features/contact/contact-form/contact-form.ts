@@ -1,4 +1,13 @@
-import { Component, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+  inject
+} from '@angular/core';
+
 import {
   FormBuilder,
   ReactiveFormsModule,
@@ -14,10 +23,18 @@ import { SectionDivider } from '../../../shared/section-divider/section-divider'
   styleUrl: './contact-form.css',
   templateUrl: './contact-form.html',
 })
-export class ContactForm {
+export class ContactForm implements AfterViewInit, OnDestroy {
+
+  @ViewChild('contactFormSection')
+  contactFormSection!: ElementRef<HTMLElement>;
+
+  isContactFormVisible = false;
+
+  private observer?: IntersectionObserver;
 
   private readonly fb = inject(FormBuilder);
   private readonly mailService = inject(MailService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   contactForm = this.fb.nonNullable.group({
     name: ['', [
@@ -43,6 +60,34 @@ export class ContactForm {
   isSending = false;
   successMessage = '';
   errorMessage = '';
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        this.cdr.detectChanges();
+
+        requestAnimationFrame(() => {
+          this.isContactFormVisible = true;
+          this.cdr.detectChanges();
+
+          this.observer?.disconnect();
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    this.observer.observe(this.contactFormSection.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
 
   async onSubmit(): Promise<void> {
 

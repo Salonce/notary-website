@@ -1,7 +1,9 @@
 <div
+  #feesSection
   id="oplaty"
   class="w-full scroll-mt-20 px-6 py-12
          md:px-8 md:py-16"
+  [class.is-visible]="isFeesVisible"
 >
 
   <div class="mx-auto max-w-5xl">
@@ -11,7 +13,8 @@
     <div class="text-center">
 
       <h2
-        class="mt-2
+        class="fees-title
+               mt-2
                font-['Source_Serif_4']
                text-[34px]
                font-normal
@@ -22,9 +25,9 @@
         Wynagrodzenie, podatki i opłaty sądowe
       </h2>
 
-    <div>
-      <app-section-divider />
-    </div>
+      <div class="fees-divider">
+        <app-section-divider />
+      </div>
 
     </div>
 
@@ -32,7 +35,8 @@
     <!-- PAYMENT -->
 
     <div
-      class="relative mt-12
+      class="fees-payment
+             relative mt-12
              mb-10
              overflow-hidden
              rounded-2xl
@@ -132,12 +136,12 @@
 
     <!-- COSTS / INFORMATION -->
 
-    <div class="divide-y divide-stone-200">
+    <div class="fees-costs divide-y divide-stone-200">
 
 
       <!-- ITEM I -->
 
-      <div class="py-7 md:py-8">
+      <div class="fees-item py-7 md:py-8">
 
         <div class="flex justify-center">
 
@@ -216,7 +220,7 @@
 
       <!-- ITEM II -->
 
-      <div class="py-7 md:py-8">
+      <div class="fees-item py-7 md:py-8">
 
         <div class="flex justify-center">
 
@@ -293,7 +297,7 @@
 
       <!-- ITEM III -->
 
-      <div class="py-7 md:py-8">
+      <div class="fees-item py-7 md:py-8">
 
         <div class="flex justify-center">
 
@@ -370,7 +374,7 @@
 
       <!-- ITEM IV -->
 
-      <div class="py-7 md:py-8">
+      <div class="fees-item py-7 md:py-8">
 
         <div class="flex justify-center">
 
@@ -450,7 +454,8 @@
     <!-- FINAL NOTE -->
 
     <div
-      class="mt-8
+      class="fees-final-note
+             mt-8
              border-t border-stone-200
              pt-8
              md:mt-9 md:pt-9"
