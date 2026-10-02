@@ -6,10 +6,11 @@ import {
 } from '@angular/forms';
 
 import { MailService } from '../mail-service/mail-service';
+import { SectionDivider } from '../../../shared/section-divider/section-divider';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SectionDivider],
   styleUrl: './contact-form.css',
   templateUrl: './contact-form.html',
 })

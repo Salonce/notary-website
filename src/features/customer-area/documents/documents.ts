@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { SectionDivider } from '../../../shared/section-divider/section-divider';
 
 @Component({
-  imports: [],
+  imports: [SectionDivider],
   selector: 'app-documents',
   styleUrl: './documents.css',
   templateUrl: './documents.html',

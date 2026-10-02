@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { SectionDivider } from '../../shared/section-divider/section-divider';
 
 @Component({
-imports: [],
+imports: [SectionDivider],
 selector: 'app-notarial-services',
 styleUrl: './notarial-services.css',
 templateUrl: './notarial-services.html',

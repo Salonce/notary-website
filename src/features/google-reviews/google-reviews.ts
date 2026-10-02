@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { GoogleReviewsService } from './google-reviews-service/google-reviews-service';
+import { SectionDivider } from '../../shared/section-divider/section-divider';
 
 @Component({
   selector: 'app-google-reviews',
-  imports: [],
+  imports: [SectionDivider],
   styleUrl: './google-reviews.css',
   templateUrl: './google-reviews.html',
 })
