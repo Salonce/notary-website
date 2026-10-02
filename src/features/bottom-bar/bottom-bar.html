@@ -1,10 +1,176 @@
 <footer
   class="fixed inset-x-0 bottom-0 z-50
-         border-t border-stone-200
-         bg-stone-50 text-stone-600"
+         overflow-hidden
+         border-t border-[#b3a06a]/40
+         bg-[#faf9f6]
+         text-stone-600"
 >
+
+  <!-- =========================================
+       SZEROKIE PREMIUM OŚWIETLENIE
+       ========================================= -->
+
+  <!-- GŁÓWNE ZŁOTE ŚWIATŁO — MOCNIEJSZE U GÓRY I W CENTRUM -->
+
   <div
-    class="mx-auto max-w-6xl
+    class="pointer-events-none absolute inset-0
+           bg-[radial-gradient(ellipse_115%_155%_at_50%_-10%,rgba(179,160,106,0.28)_0%,rgba(179,160,106,0.20)_24%,rgba(179,160,106,0.11)_46%,rgba(179,160,106,0.045)_68%,transparent_88%)]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- CENTRALNE JASNE ŚWIATŁO — NAJWIĘKSZE SKUPIENIE NA GÓRZE -->
+
+  <div
+    class="pointer-events-none absolute inset-0
+           bg-[radial-gradient(ellipse_75%_105%_at_50%_-15%,rgba(255,253,246,0.98)_0%,rgba(255,252,242,0.72)_28%,rgba(255,251,239,0.32)_52%,rgba(255,250,235,0.08)_72%,transparent_88%)]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ZŁOTA POŚWIATA LEWA -->
+
+  <div
+    class="pointer-events-none absolute
+           left-[-8%] -top-[90%]
+           h-[300px] w-[48%]
+           rounded-full
+           bg-[#b3a06a]/[0.075]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ZŁOTA POŚWIATA ŚRODEK -->
+
+  <div
+    class="pointer-events-none absolute
+           left-[28%] -top-[110%]
+           h-[330px] w-[44%]
+           rounded-full
+           bg-[#b3a06a]/[0.10]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ZŁOTA POŚWIATA PRAWA -->
+
+  <div
+    class="pointer-events-none absolute
+           right-[-8%] -top-[90%]
+           h-[300px] w-[48%]
+           rounded-full
+           bg-[#b3a06a]/[0.075]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       DELIKATNY CIEPŁY AKCENT
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           left-[20%] -top-[85%]
+           h-[220px] w-[60%]
+           rounded-full
+           bg-[#d0bd82]/[0.045]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       MOTYW PIECZĘCI — ZŁOTO
+       ========================================= -->
+
+  <!-- PRAWY GÓRNY ORNAMENT -->
+
+  <div
+    class="pointer-events-none absolute
+           -right-24 -top-28
+           h-[300px] w-[300px]
+           rounded-full
+           border
+           border-[#b3a06a]/[0.12]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -right-8 -top-12
+           h-[220px] w-[220px]
+           rounded-full
+           border
+           border-[#b3a06a]/[0.20]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           right-6 top-6
+           h-[150px] w-[150px]
+           rounded-full
+           border
+           border-[#b3a06a]/[0.13]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- LEWY DOLNY ORNAMENT -->
+
+  <div
+    class="pointer-events-none absolute
+           -bottom-28 -left-24
+           h-[300px] w-[300px]
+           rounded-full
+           border
+           border-[#b3a06a]/[0.16]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -bottom-12 -left-8
+           h-[210px] w-[210px]
+           rounded-full
+           border
+           border-[#b3a06a]/[0.10]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       DELIKATNA SIATKA
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute inset-0 opacity-25"
+    aria-hidden="true"
+  >
+
+    <div
+      class="absolute inset-0
+             bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(179,160,106,0.10)_49%,transparent_50%,transparent_100%)]"
+    ></div>
+
+    <div
+      class="absolute inset-0
+             bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(179,160,106,0.07)_49%,transparent_50%,transparent_100%)]"
+    ></div>
+
+  </div>
+
+
+  <!-- =========================================
+       ZAWARTOŚĆ STOPKI
+       ========================================= -->
+
+  <div
+    class="relative z-10
+           mx-auto max-w-6xl
            px-6 py-3
            lg:px-8"
   >
@@ -64,7 +230,7 @@
 
       <div
         class="md:border-l
-               md:border-stone-200
+               md:border-stone-200/80
                md:pl-6"
       >
 
@@ -72,15 +238,15 @@
           class="flex items-center gap-3"
         >
 
-          <!-- ICON -->
-
           <div
             class="flex h-9 w-9
                    shrink-0
                    items-center justify-center
                    rounded-full
-                   border border-[#b59b5b]
-                   text-[#806c3e]"
+                   border border-[#b3a06a]
+                   bg-[#fffaf0]/75
+                   text-[#766947]
+                   shadow-[0_0_20px_rgba(179,160,106,0.14)]"
             aria-label="Kancelaria przyjazna osobom z niepełnosprawnościami"
           >
             <i
@@ -89,8 +255,6 @@
             ></i>
           </div>
 
-
-          <!-- TEXT -->
 
           <div>
 
@@ -139,11 +303,9 @@
 
       <div
         class="md:border-l
-               md:border-stone-200
+               md:border-stone-200/80
                md:pl-6"
       >
-
-        <!-- COPYRIGHT -->
 
         <div
           class="flex items-center gap-3"
@@ -173,8 +335,6 @@
         </div>
 
 
-        <!-- NAME + ROLE -->
-
         <p
           class="mt-1
                  font-main-body
@@ -185,7 +345,7 @@
                  text-stone-800"
         >
           Kancelaria Notarialna
-          Zbigniew Władysławski
+          Zbigniew Władławski
           Notariusz
         </p>
 
@@ -194,5 +354,5 @@
     </div>
 
   </div>
-</footer>
 
+</footer>
