@@ -1,16 +1,197 @@
 <header
-  class="w-full
-         border-b border-stone-200
-         bg-white"
+  class="relative
+         w-full
+         overflow-hidden
+         border-b border-[#b59b5b]/40
+         bg-[#f7f4ec]"
 >
+
+  <!-- =========================================
+       TŁO - ZŁOTY ORNAMENT
+       ========================================= -->
+
+  <!-- SZEROKIE CENTRALNE ROZŚWIETLENIE -->
+
   <div
-    class="mx-auto flex max-w-7xl
+    class="pointer-events-none absolute
+           left-1/2 top-1/2
+           h-[260px] w-[520px]
+           -translate-x-1/2
+           -translate-y-1/2
+           rounded-full
+           bg-[#b59b5b]/[0.15]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           left-1/2 top-1/2
+           h-[130px] w-[360px]
+           -translate-x-1/2
+           -translate-y-1/2
+           rounded-full
+           bg-[#fffaf0]/[0.90]
+           blur-2xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       SZEROKI ORNAMENT LEWY
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           -left-32 -top-32
+           h-[300px] w-[300px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.28]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -left-20 -top-20
+           h-[240px] w-[240px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.20]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -left-8 -top-8
+           h-[165px] w-[165px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.14]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       SZEROKI ORNAMENT PRAWY
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           -right-32 -bottom-32
+           h-[300px] w-[300px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.28]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -right-20 -bottom-20
+           h-[240px] w-[240px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.20]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -right-8 -bottom-8
+           h-[165px] w-[165px]
+           rounded-full
+           border
+           border-[#b59b5b]/[0.14]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       DŁUŻSZE ŁUKI WZDŁUŻ PASKA
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           left-[12%] top-1/2
+           h-[190px] w-[520px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.08]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           right-[12%] top-1/2
+           h-[190px] w-[520px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.08]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       DELIKATNA SIATKA
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute inset-0 opacity-50"
+    aria-hidden="true"
+  >
+
+    <div
+      class="absolute inset-0
+             bg-[linear-gradient(135deg,transparent_0%,transparent_46%,rgba(181,155,91,0.13)_48%,transparent_50%,transparent_100%)]"
+    ></div>
+
+    <div
+      class="absolute inset-0
+             bg-[linear-gradient(45deg,transparent_0%,transparent_46%,rgba(181,155,91,0.09)_48%,transparent_50%,transparent_100%)]"
+    ></div>
+
+  </div>
+
+
+  <!-- =========================================
+       DELIKATNE LINIE KRAWĘDZIOWE
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           inset-x-0 top-0
+           h-px
+           bg-[#b59b5b]/[0.35]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           inset-x-0 bottom-0
+           h-px
+           bg-[#b59b5b]/[0.30]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       TREŚĆ
+       ========================================= -->
+
+  <div
+    class="relative z-10
+           mx-auto flex max-w-7xl
            items-center justify-between
            px-3 py-2.5
            sm:px-6"
   >
 
-    <!-- MOBILE -->
+    <!-- =========================================
+         MOBILE
+         ========================================= -->
 
     <div
       class="flex w-full
@@ -34,6 +215,7 @@
                transition-colors
                hover:text-[#806c3e]"
       >
+
         <i
           class="fa-solid fa-phone
                  text-[13px]
@@ -66,7 +248,9 @@
     </div>
 
 
-    <!-- DESKTOP -->
+    <!-- =========================================
+         DESKTOP
+         ========================================= -->
 
     <div
       class="hidden w-full
@@ -171,4 +355,5 @@
     </div>
 
   </div>
+
 </header>

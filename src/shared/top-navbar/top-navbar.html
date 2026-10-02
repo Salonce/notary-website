@@ -1,11 +1,125 @@
 <!-- NAVBAR -->
 
 <nav
-  class="w-full
-         border-b border-stone-200
-         bg-white"
+  class="relative
+         w-full
+         overflow-hidden
+         border-y border-[#b59b5b]/30
+         bg-[#eee8d9]
+         shadow-[0_6px_20px_rgba(80,65,35,0.10)]"
 >
-  <div class="mx-auto flex max-w-7xl">
+
+  <!-- =========================================
+       TŁO PREMIUM
+       ========================================= -->
+
+  <!-- DELIKATNE CENTRALNE ROZŚWIETLENIE -->
+
+  <div
+    class="pointer-events-none absolute
+           left-1/2 top-1/2
+           h-[150px] w-[760px]
+           -translate-x-1/2
+           -translate-y-1/2
+           rounded-full
+           bg-[#fffaf0]/[0.42]
+           blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       BARDZO SUBTELNE ŁUKI
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           -left-28 top-1/2
+           h-[180px] w-[420px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.12]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -left-16 top-1/2
+           h-[130px] w-[320px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.08]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -right-28 top-1/2
+           h-[180px] w-[420px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.12]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           -right-16 top-1/2
+           h-[130px] w-[320px]
+           -translate-y-1/2
+           rounded-full
+           border
+           border-[#b59b5b]/[0.08]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       DELIKATNA LINIA CENTRALNA
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           inset-x-[8%] top-1/2
+           h-px
+           -translate-y-1/2
+           bg-[#b59b5b]/[0.07]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       GÓRNA I DOLNA KRAWĘDŹ
+       ========================================= -->
+
+  <div
+    class="pointer-events-none absolute
+           inset-x-0 top-0
+           h-px
+           bg-[#b59b5b]/[0.32]"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute
+           inset-x-0 bottom-0
+           h-px
+           bg-[#b59b5b]/[0.38]"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================================
+       TREŚĆ
+       ========================================= -->
+
+  <div
+    class="relative z-10
+           mx-auto flex max-w-7xl"
+  >
 
     <!-- STRONA GŁÓWNA -->
 
@@ -19,7 +133,7 @@
              text-[15px]
              font-normal
              tracking-wide
-             text-stone-500
+             text-stone-600
              transition-colors duration-300
              hover:text-[#806c3e]
              md:px-6 md:py-3.5
@@ -43,8 +157,7 @@
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[18px] w-[18px] shrink-0
-                 md:h-4 md:w-4"
+          class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
           <path
@@ -74,7 +187,7 @@
              text-[15px]
              font-normal
              tracking-wide
-             text-stone-500
+             text-stone-600
              transition-colors duration-300
              hover:text-[#806c3e]
              md:px-6 md:py-3.5
@@ -98,8 +211,7 @@
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[18px] w-[18px] shrink-0
-                 md:h-4 md:w-4"
+          class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
           <path
@@ -129,7 +241,7 @@
              text-[15px]
              font-normal
              tracking-wide
-             text-stone-500
+             text-stone-600
              transition-colors duration-300
              hover:text-[#806c3e]
              md:px-6 md:py-3.5
@@ -153,15 +265,10 @@
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[18px] w-[18px] shrink-0
-                 md:h-4 md:w-4"
+          class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
-          <circle
-            cx="12"
-            cy="12"
-            r="8.5"
-          />
+          <circle cx="12" cy="12" r="8.5" />
 
           <path
             stroke-linecap="round"
@@ -194,7 +301,7 @@
              text-[15px]
              font-normal
              tracking-wide
-             text-stone-500
+             text-stone-600
              transition-colors duration-300
              hover:text-[#806c3e]
              md:px-6 md:py-3.5
@@ -212,23 +319,16 @@
     >
       <span class="inline-flex items-center justify-center gap-2">
 
-        <!-- USER -->
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[18px] w-[18px] shrink-0
-                 md:h-4 md:w-4"
+          class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
-          <circle
-            cx="12"
-            cy="8"
-            r="3.2"
-          />
+          <circle cx="12" cy="8" r="3.2" />
 
           <path
             stroke-linecap="round"
@@ -257,7 +357,7 @@
              text-[15px]
              font-normal
              tracking-wide
-             text-stone-500
+             text-stone-600
              transition-colors duration-300
              hover:text-[#806c3e]
              md:px-6 md:py-3.5
@@ -281,14 +381,13 @@
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[18px] w-[18px] shrink-0
-                 md:h-4 md:w-4"
+          class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M6.5 3.5h3l1.2 4-2 1.5a15.5 15.5 0 0 0 6.3 6.3l1.5-2 4 1.2v3c0 1.1-.9 2-2 2C11.6 19.5 4.5 12.4 4.5 3.5c0-1.1.9-2 2-2Z"
+            d="M6.5 3.5h3l1.2 4-2 1.5a15.5 15.5 0 0 0 6.3 6.3l1.5 1.2v3c0 1.1-.9 2-2 2C11.6 19.5 4.5 12.4 4.5 3.5c0-1.1.9-2 2-2Z"
           />
         </svg>
 
@@ -300,4 +399,5 @@
     </a>
 
   </div>
+
 </nav>

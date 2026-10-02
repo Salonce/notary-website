@@ -33,10 +33,10 @@ export class AboutLawyer implements AfterViewInit, OnDestroy {
           return;
         }
 
-        // Najpierw Angular musi wyrenderować stan początkowy
+        // Angular renderuje początkowy stan animacji
         this.cdr.detectChanges();
 
-        // Dopiero w następnej klatce uruchamiamy animację
+        // Animacja rozpoczyna się dopiero w kolejnej klatce
         requestAnimationFrame(() => {
           this.isNotariuszVisible = true;
           this.cdr.detectChanges();
