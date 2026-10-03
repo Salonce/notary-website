@@ -6,11 +6,11 @@ import {
   OnDestroy,
   ViewChild
 } from '@angular/core';
+import { TitleDivider } from '../../shared/title-divider/title-divider';
 
-import { SectionDivider } from '../../shared/section-divider/section-divider';
 
 @Component({
-  imports: [SectionDivider],
+  imports: [TitleDivider],
   selector: 'app-fees',
   styleUrl: './fees.css',
   templateUrl: './fees.html',

@@ -10,11 +10,11 @@ import {
 } from '@angular/core';
 
 import { GoogleReviewsService } from './google-reviews-service/google-reviews-service';
-import { SectionDivider } from '../../shared/section-divider/section-divider';
+import { TitleDivider } from '../../shared/title-divider/title-divider';
 
 @Component({
   selector: 'app-google-reviews',
-  imports: [SectionDivider],
+  imports: [TitleDivider],
   styleUrl: './google-reviews.css',
   templateUrl: './google-reviews.html',
 })

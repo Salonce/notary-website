@@ -7,10 +7,10 @@ import {
   ViewChild
 } from '@angular/core';
 
-import { SectionDivider } from '../../shared/section-divider/section-divider';
+import { TitleDivider } from '../../shared/title-divider/title-divider';
 
 @Component({
-  imports: [SectionDivider],
+  imports: [TitleDivider],
   selector: 'app-notarial-services',
   styleUrl: './notarial-services.css',
   templateUrl: './notarial-services.html',
