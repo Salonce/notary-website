@@ -25,16 +25,16 @@ body {
 }
 
 .font-main-heading {
-    font-family: 'Source Serif 4', serif;
-    font-weight: 400;
-    letter-spacing: 0.025em;
-    color: #292424;
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #292424;
 }
 
 .font-main-body {
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 400;
-    color: #574e4e;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  color: #574e4e;
 }
 
 .font-motto {
@@ -45,14 +45,14 @@ body {
 }
 
 .font-notarial-services-list-main-element {
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 400;
-    color: #292424;;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  color: #292424;
 }
 
 .font-roman-numerals {
-        font-family: 'Source Serif 4', serif;
-    font-weight: 400;
-    letter-spacing: 0.025em;
-    color: #292424;
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #292424;
 }
