@@ -10,7 +10,7 @@
        SZEROKIE PREMIUM OŚWIETLENIE
        ========================================= -->
 
-  <!-- GŁÓWNE ZŁOTE ŚWIATŁO — MOCNIEJSZE U GÓRY I W CENTRUM -->
+  <!-- GŁÓWNE ZŁOTE ŚWIATŁO -->
 
   <div
     class="pointer-events-none absolute inset-0
@@ -18,15 +18,13 @@
     aria-hidden="true"
   ></div>
 
-
-  <!-- CENTRALNE JASNE ŚWIATŁO — NAJWIĘKSZE SKUPIENIE NA GÓRZE -->
+  <!-- CENTRALNE JASNE ŚWIATŁO -->
 
   <div
     class="pointer-events-none absolute inset-0
            bg-[radial-gradient(ellipse_75%_105%_at_50%_-15%,rgba(255,253,246,0.98)_0%,rgba(255,252,242,0.72)_28%,rgba(255,251,239,0.32)_52%,rgba(255,250,235,0.08)_72%,transparent_88%)]"
     aria-hidden="true"
   ></div>
-
 
   <!-- ZŁOTA POŚWIATA LEWA -->
 
@@ -40,7 +38,6 @@
     aria-hidden="true"
   ></div>
 
-
   <!-- ZŁOTA POŚWIATA ŚRODEK -->
 
   <div
@@ -52,7 +49,6 @@
            blur-3xl"
     aria-hidden="true"
   ></div>
-
 
   <!-- ZŁOTA POŚWIATA PRAWA -->
 
@@ -66,10 +62,7 @@
     aria-hidden="true"
   ></div>
 
-
-  <!-- =========================================
-       DELIKATNY CIEPŁY AKCENT
-       ========================================= -->
+  <!-- DELIKATNY CIEPŁY AKCENT -->
 
   <div
     class="pointer-events-none absolute
@@ -80,7 +73,6 @@
            blur-3xl"
     aria-hidden="true"
   ></div>
-
 
   <!-- =========================================
        MOTYW PIECZĘCI — ZŁOTO
@@ -118,7 +110,6 @@
     aria-hidden="true"
   ></div>
 
-
   <!-- LEWY DOLNY ORNAMENT -->
 
   <div
@@ -141,7 +132,6 @@
     aria-hidden="true"
   ></div>
 
-
   <!-- =========================================
        DELIKATNA SIATKA
        ========================================= -->
@@ -150,7 +140,6 @@
     class="pointer-events-none absolute inset-0 opacity-25"
     aria-hidden="true"
   >
-
     <div
       class="absolute inset-0
              bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(179,160,106,0.10)_49%,transparent_50%,transparent_100%)]"
@@ -160,9 +149,7 @@
       class="absolute inset-0
              bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(179,160,106,0.07)_49%,transparent_50%,transparent_100%)]"
     ></div>
-
   </div>
-
 
   <!-- =========================================
        ZAWARTOŚĆ STOPKI
@@ -183,171 +170,219 @@
              lg:gap-10"
     >
 
-      <!-- LEWA — GODZINY -->
-
-      <div>
-
-        <span
-          class="mb-1 block
-                 font-main-body
-                 text-[10px]
-                 font-normal
-                 uppercase
-                 tracking-[0.25em]
-                 text-stone-400"
-        >
-          Godziny otwarcia
-        </span>
-
-        <p
-          class="font-main-body
-                 text-[13px]
-                 font-normal
-                 leading-5
-                 tracking-wide
-                 text-stone-600"
-        >
-          Dni powszednie · 08:00 – 16:00
-        </p>
-
-        <p
-          class="mt-1
-                 max-w-sm
-                 font-main-body
-                 text-[11px]
-                 font-normal
-                 leading-4
-                 text-stone-400"
-        >
-          Inne godziny i terminy dokonania czynności
-          notarialnych – po uzgodnieniu z Klientem.
-        </p>
-
-      </div>
-
-
-      <!-- ŚRODEK — DOSTĘPNOŚĆ -->
+      <!-- =====================================
+           LEWA — GODZINY OTWARCIA
+           ===================================== -->
 
       <div
-        class="md:border-l
-               md:border-stone-200/80
-               md:pl-6"
+        class="flex
+               items-center
+               min-h-[76px]"
       >
 
+        <!-- IKONA ZEGARA -->
+
         <div
-          class="flex items-center gap-3"
+          class="flex h-9 w-9
+                 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b3a06a]
+                 bg-[#fffaf0]/75
+                 text-[#766947]
+                 shadow-[0_0_20px_rgba(179,160,106,0.14)]"
+          aria-hidden="true"
         >
-
-          <div
-            class="flex h-9 w-9
-                   shrink-0
-                   items-center justify-center
-                   rounded-full
-                   border border-[#b3a06a]
-                   bg-[#fffaf0]/75
-                   text-[#766947]
-                   shadow-[0_0_20px_rgba(179,160,106,0.14)]"
-            aria-label="Kancelaria przyjazna osobom z niepełnosprawnościami"
-          >
-            <i
-              class="fa-solid fa-wheelchair text-base"
-              aria-hidden="true"
-            ></i>
-          </div>
-
-
-          <div>
-
-            <span
-              class="block
-                     font-main-body
-                     text-[10px]
-                     font-normal
-                     uppercase
-                     tracking-[0.2em]
-                     text-stone-400"
-            >
-              Dostępność
-            </span>
-
-            <p
-              class="font-main-body
-                     text-[14px]
-                     font-normal
-                     leading-5
-                     text-stone-800"
-            >
-              Kancelaria przyjazna osobom
-              niepełnosprawnym
-            </p>
-
-            <p
-              class="mt-1
-                     font-main-body
-                     text-[11px]
-                     font-normal
-                     leading-4
-                     text-stone-400"
-            >
-              Dbamy o wygodę naszych klientów
-            </p>
-
-          </div>
-
+          <i class="fa-regular fa-clock text-sm"></i>
         </div>
 
-      </div>
-
-
-      <!-- PRAWA — KANCELARIA -->
-
-      <div
-        class="md:border-l
-               md:border-stone-200/80
-               md:pl-6"
-      >
-
-        <div
-          class="flex items-center gap-3"
-        >
+        <div class="ml-3">
 
           <span
-            class="font-main-body
+            class="block
+                   font-main-body
                    text-[10px]
                    font-normal
                    uppercase
                    tracking-[0.25em]
                    text-stone-400"
           >
-            Copyright
+            Godziny otwarcia
           </span>
 
-          <span
+          <p
             class="font-main-body
+                   text-[13px]
+                   font-normal
+                   leading-5
+                   tracking-wide
+                   text-stone-600"
+          >
+            Dni powszednie · 08:00 – 16:00
+          </p>
+
+          <p
+            class="mt-1
+                   max-w-sm
+                   font-main-body
                    text-[11px]
                    font-normal
-                   tracking-wide
+                   leading-4
                    text-stone-400"
           >
-            © 2026
-          </span>
+            Inne godziny i terminy dokonania czynności
+            notarialnych – po uzgodnieniu z Klientem.
+          </p>
 
         </div>
 
+      </div>
 
-        <p
-          class="mt-1
-                 font-main-body
-                 text-[14px]
-                 font-normal
-                 leading-5
-                 tracking-wide
-                 text-stone-800"
+
+      <!-- =====================================
+           ŚRODEK — DOSTĘPNOŚĆ
+           ===================================== -->
+
+      <div
+        class="flex
+               items-center
+               min-h-[76px]
+               md:border-l
+               md:border-stone-200/80
+               md:pl-6"
+      >
+
+        <!-- IKONA DOSTĘPNOŚCI -->
+
+        <div
+          class="flex h-9 w-9
+                 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b3a06a]
+                 bg-[#fffaf0]/75
+                 text-[#766947]
+                 shadow-[0_0_20px_rgba(179,160,106,0.14)]"
+          aria-label="Kancelaria przyjazna osobom z niepełnosprawnościami"
         >
-          Kancelaria Notarialna
-          Zbigniew Władysławski
-          Notariusz
-        </p>
+          <i
+            class="fa-solid fa-wheelchair text-base"
+            aria-hidden="true"
+          ></i>
+        </div>
+
+        <div class="ml-3">
+
+          <span
+            class="block
+                   font-main-body
+                   text-[10px]
+                   font-normal
+                   uppercase
+                   tracking-[0.2em]
+                   text-stone-400"
+          >
+            Dostępność
+          </span>
+
+          <p
+            class="font-main-body
+                   text-[14px]
+                   font-normal
+                   leading-5
+                   text-stone-800"
+          >
+            Kancelaria przyjazna osobom
+            niepełnosprawnym
+          </p>
+
+          <p
+            class="mt-1
+                   font-main-body
+                   text-[11px]
+                   font-normal
+                   leading-4
+                   text-stone-400"
+          >
+            Dbamy o wygodę naszych klientów
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           PRAWA — KANCELARIA / COPYRIGHT
+           ===================================== -->
+
+      <div
+        class="flex
+               items-center
+               min-h-[76px]
+               md:border-l
+               md:border-stone-200/80
+               md:pl-6"
+      >
+
+        <!-- IKONA COPYRIGHT -->
+
+        <div
+          class="flex h-9 w-9
+                 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b3a06a]
+                 bg-[#fffaf0]/75
+                 text-[#766947]
+                 shadow-[0_0_20px_rgba(179,160,106,0.14)]"
+          aria-hidden="true"
+        >
+          <i class="fa-regular fa-copyright text-sm"></i>
+        </div>
+
+        <div class="ml-3">
+
+          <div class="flex items-center gap-2">
+
+            <span
+              class="font-main-body
+                     text-[10px]
+                     font-normal
+                     uppercase
+                     tracking-[0.25em]
+                     text-stone-400"
+            >
+              Copyright
+            </span>
+
+            <span
+              class="font-main-body
+                     text-[11px]
+                     font-normal
+                     tracking-wide
+                     text-stone-400"
+            >
+              © 2026
+            </span>
+
+          </div>
+
+          <p
+            class="mt-1
+                   font-main-body
+                   text-[14px]
+                   font-normal
+                   leading-5
+                   tracking-wide
+                   text-stone-800"
+          >
+            Kancelaria Notarialna
+            Zbigniew Władysławski
+            Notariusz
+          </p>
+
+        </div>
 
       </div>
 
