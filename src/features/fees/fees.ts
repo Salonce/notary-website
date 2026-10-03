@@ -6,6 +6,7 @@ import {
   OnDestroy,
   ViewChild
 } from '@angular/core';
+
 import { TitleDivider } from '../../shared/title-divider/title-divider';
 
 
@@ -24,11 +25,15 @@ export class Fees implements AfterViewInit, OnDestroy {
 
   private observer?: IntersectionObserver;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
+
     this.observer = new IntersectionObserver(
       ([entry]) => {
+
         if (!entry.isIntersecting) {
           return;
         }
@@ -36,21 +41,29 @@ export class Fees implements AfterViewInit, OnDestroy {
         this.cdr.detectChanges();
 
         requestAnimationFrame(() => {
+
           this.isFeesVisible = true;
+
           this.cdr.detectChanges();
 
           this.observer?.disconnect();
+
         });
+
       },
       {
         threshold: 0.15
       }
     );
 
-    this.observer.observe(this.feesSection.nativeElement);
+    this.observer.observe(
+      this.feesSection.nativeElement
+    );
   }
 
   ngOnDestroy(): void {
+
     this.observer?.disconnect();
+
   }
 }

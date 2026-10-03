@@ -1,18 +1,37 @@
-<div
+<section
   #feesSection
-  id="oplaty"
-  class="w-full scroll-mt-20 px-6
-         md:px-8"
+  class="documents"
   [class.is-visible]="isFeesVisible"
 >
-  <div class="mx-auto max-w-5xl">
+  <style>
+    .documents a::before,
+    .documents a::after,
+    .documents li::before,
+    .documents li::after,
+    .documents li::marker {
+      content: none !important;
+      display: none !important;
+    }
 
-    <!-- Nagłówek -->
+    .documents a {
+      list-style: none !important;
+    }
+
+    .documents svg {
+      display: block;
+      flex-shrink: 0;
+    }
+  </style>
+
+  <div class="mx-auto max-w-4xl">
+
+    <!-- HEADER -->
 
     <div class="text-center">
 
       <h2
-        class="fees-title mt-2
+        class="documents-title
+               mt-2
                font-main-heading
                text-[34px]
                font-normal
@@ -20,683 +39,489 @@
                text-stone-800
                md:text-[40px]"
       >
-        Wynagrodzenie, podatki i opłaty sądowe
+        Wynagrodzenie, podatki i opłaty
       </h2>
 
-      <div class="fees-divider mt-4">
+      <div class="documents-divider">
         <app-title-divider />
       </div>
 
     </div>
 
 
-    <!-- Sposoby płatności -->
+    <!-- INTRO -->
 
     <div
-      class="fees-payment
-             relative
-             mt-12
-             mb-10
-             overflow-hidden
-             rounded-2xl
-             border
-             border-[#d8ccb0]/60
-             bg-[#f3f0e7]
-             px-6
-             py-8
-             shadow-[0_8px_30px_rgba(80,70,50,0.06)]
-             md:mt-14
-             md:px-12
-             md:py-10"
+      class="documents-intro
+             mx-auto mt-7 max-w-2xl
+             text-justify
+             font-main-body
+             text-[16px]
+             font-normal
+             leading-[1.75]
+             text-stone-600
+             md:mt-8
+             md:text-[17px]
+             md:leading-[1.8]"
     >
 
-      <div
-        class="absolute
-               left-0
-               top-0
-               h-full
-               w-1
-               bg-[#b59b5b]"
-      ></div>
-
-      <div class="mx-auto max-w-4xl text-center">
-
-        <div
-          class="mb-5
-                 font-main-body
-                 text-[20px]
-                 font-extrabold
-                 uppercase
-                 tracking-[0.13em]
-                 text-[#6f5b2f]
-                 md:text-[22px]"
-        >
-          Sposoby płatności
-        </div>
-
-        <div
-          class="mx-auto
-                 mb-6
-                 h-[2px]
-                 w-14
-                 bg-[#b59b5b]"
-        ></div>
-
-        <p
-          class="mx-auto
-                 max-w-4xl
-                 text-justify
-                 font-main-body
-                 text-[17px]
-                 font-normal
-                 leading-[1.85]
-                 text-stone-600
-                 md:text-[18px]
-                 md:leading-[1.9]"
-        >
-          Wynagrodzenie, podatki i opłaty sądowe uiszcza się w kancelarii
-          przy dokonaniu czynności notarialnych: gotówką, przelewem na
-          telefon (BLIK) lub na rachunek bankowy kancelarii.
-        </p>
-
-        <div
-          class="mx-auto
-                 mt-7
-                 max-w-3xl
-                 border-t
-                 border-[#d8ccb0]/70
-                 pt-5
-                 text-center"
-        >
-
-          <span
-            class="block
-                   font-main-body
-                   text-[10px]
-                   font-semibold
-                   uppercase
-                   tracking-[0.2em]
-                   text-stone-400"
-          >
-            Numer rachunku bankowego
-          </span>
-
-          <span
-            class="mt-2
-                   block
-                   font-main-body
-                   text-[18px]
-                   font-semibold
-                   tracking-[0.06em]
-                   text-stone-800
-                   md:text-[20px]"
-          >
-            07 1020 3541 0000 5302 0286 9071
-          </span>
-
-        </div>
-
-      </div>
+      <p>
+        Koszt czynności notarialnej zależy od jej rodzaju,
+        wartości przedmiotu oraz okoliczności konkretnej sprawy.
+        Na całkowity koszt mogą składać się wynagrodzenie notariusza,
+        podatki, opłaty sądowe oraz inne wymagane wydatki.
+      </p>
 
     </div>
 
 
-    <!-- Koszty -->
+    <!-- COST ITEMS -->
 
-    <div class="fees-costs">
+    <div
+      class="documents-table
+             mx-auto mt-7 max-w-3xl"
+    >
 
-      <!-- =====================================
-           I — WYNAGRODZENIE NOTARIALNE
-           ===================================== -->
+      <div class="flex w-full flex-col gap-2">
 
-      <div
-        class="fees-item
-               border-t
-               border-stone-200/80
-               py-9
-               md:py-10"
-      >
 
-        <div class="flex justify-center">
+        <!-- ==================================================
+             WYNAGRODZENIE NOTARIUSZA
+             ================================================== -->
 
-          <div
-            class="flex
-                   h-11
-                   w-11
+        <div
+          class="group
+                 flex w-full
+                 items-start
+                 gap-4
+                 rounded-xl
+                 border border-[#806c3e]/20
+                 bg-[#f7f4ec]/35
+                 px-5 py-3.5
+                 transition-all duration-300
+                 hover:border-[#b59b5b]/50
+                 hover:bg-[#f3f0e7]/70
+                 md:px-6 md:py-4"
+        >
+
+          <span
+            class="mt-0.5
+                   flex
+                   h-7
+                   w-7
+                   shrink-0
                    items-center
                    justify-center
-                   rounded-full
-                   border
-                   border-[#c5ad73]
-                   bg-[#faf8f2]
-                   font-roman-numerals
-                   text-[16px]
-                   font-extrabold
-                   text-[#6f5b2f]"
+                   text-[#806c3e]
+                   transition-colors
+                   duration-300
+                   group-hover:text-[#b59b5b]"
+            aria-hidden="true"
           >
-            I
-          </div>
 
-        </div>
-
-        <div class="mx-auto mt-5 max-w-3xl">
-
-          <div class="mb-5 text-center">
-
-            <div
-              class="font-main-body
-                     text-[17px]
-                     font-extrabold
-                     uppercase
-                     tracking-[0.14em]
-                     text-[#6f5b2f]
-                     md:text-[18px]"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              class="h-5 w-5"
             >
-              Wynagrodzenie notarialne
-            </div>
 
-            <div
-              class="mx-auto
-                     mt-2.5
-                     h-[2px]
-                     w-12
-                     bg-[#b59b5b]"
-            ></div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 2.5h9.5L19 7v18.5H5z"
+              />
 
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.5 2.5V7H19"
+              />
 
-          <p
-            class="text-justify
-                   font-main-body
-                   text-[17px]
-                   font-normal
-                   leading-[1.85]
-                   text-stone-600
-                   md:text-[18px]
-                   md:leading-[1.9]"
-          >
-            Wynagrodzenie ustalane jest indywidualnie na podstawie
-            Rozporządzenia Ministra Sprawiedliwości w sprawie maksymalnych
-            stawek taksy notarialnej z dnia 28 czerwca 2004 roku. Do
-            wynagrodzenia należy doliczyć podatek VAT w stawce 23%.
-          </p>
+              <path
+                stroke-linecap="round"
+                d="M8 11h8M8 14.5h8M8 18h5.5"
+              />
 
-          <div class="mt-5 flex justify-center">
+            </svg>
 
-            <a
-              href="assets/taksa-notarialna-maksymalne-stawki.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group
-                     inline-flex
-                     items-center
-                     gap-2
-                     rounded-md
-                     border
-                     border-[#d8ccb0]
-                     bg-[#faf8f2]
-                     px-3.5
-                     py-2
+          </span>
+
+          <div class="min-w-0">
+
+            <h3
+              class="font-main-body
+                     text-[15px]
+                     font-medium
+                     leading-[1.4]
+                     text-stone-800
+                     md:text-[16px]"
+            >
+              Wynagrodzenie notariusza
+            </h3>
+
+            <p
+              class="mt-1
                      font-main-body
-                     text-[12px]
+                     text-[14px]
                      font-normal
-                     tracking-[0.04em]
-                     text-[#806c3e]
-                     transition-all
-                     duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#f3f0e7]
-                     hover:text-[#6f5c32]"
+                     leading-[1.6]
+                     text-stone-500
+                     md:text-[15px]
+                     md:leading-[1.65]"
             >
-              <span>Zobacz ustawę</span>
-
-              <span
-                class="text-[13px]
-                       transition-transform
-                       duration-300
-                       group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </a>
+              Wysokość wynagrodzenia zależy od rodzaju czynności
+              oraz, w przypadkach określonych przepisami, od wartości
+              jej przedmiotu. Wynagrodzenie jest ustalane
+              z uwzględnieniem obowiązujących maksymalnych stawek.
+            </p>
 
           </div>
 
         </div>
 
-      </div>
 
+        <!-- ==================================================
+             PODATKI
+             ================================================== -->
 
-      <!-- =====================================
-           II — PCC
-           ===================================== -->
+        <div
+          class="group
+                 flex w-full
+                 items-start
+                 gap-4
+                 rounded-xl
+                 border border-[#806c3e]/20
+                 bg-[#f7f4ec]/35
+                 px-5 py-3.5
+                 transition-all duration-300
+                 hover:border-[#b59b5b]/50
+                 hover:bg-[#f3f0e7]/70
+                 md:px-6 md:py-4"
+        >
 
-      <div
-        class="fees-item
-               border-t
-               border-stone-200/80
-               py-9
-               md:py-10"
-      >
-
-        <div class="flex justify-center">
-
-          <div
-            class="flex
-                   h-11
-                   w-11
+          <span
+            class="mt-0.5
+                   flex
+                   h-7
+                   w-7
+                   shrink-0
                    items-center
                    justify-center
-                   rounded-full
-                   border
-                   border-[#c5ad73]
-                   bg-[#faf8f2]
-                   font-roman-numerals
-                   text-[16px]
-                   font-extrabold
-                   text-[#6f5b2f]"
+                   text-[#806c3e]
+                   transition-colors
+                   duration-300
+                   group-hover:text-[#b59b5b]"
+            aria-hidden="true"
           >
-            II
-          </div>
 
-        </div>
-
-        <div class="mx-auto mt-5 max-w-3xl">
-
-          <div class="mb-5 text-center">
-
-            <div
-              class="font-main-body
-                     text-[17px]
-                     font-extrabold
-                     uppercase
-                     tracking-[0.14em]
-                     text-[#6f5b2f]
-                     md:text-[18px]"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              class="h-5 w-5"
             >
-              Podatek od czynności cywilnoprawnych
-            </div>
 
-            <div
-              class="mx-auto
-                     mt-2.5
-                     h-[2px]
-                     w-12
-                     bg-[#b59b5b]"
-            ></div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 2.5h9.5L19 7v18.5H5z"
+              />
 
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.5 2.5V7H19"
+              />
 
-          <p
-            class="text-justify
-                   font-main-body
-                   text-[17px]
-                   font-normal
-                   leading-[1.85]
-                   text-stone-600
-                   md:text-[18px]
-                   md:leading-[1.9]"
-          >
-            Podatek od czynności cywilnoprawnych zostaje wyliczony zgodnie
-            z ustawą z dnia 9 września 2000 r. o podatku od czynności
-            cywilnoprawnych.
-          </p>
+              <path
+                stroke-linecap="round"
+                d="M8 11h8M8 14.5h5M8 18h7"
+              />
 
-          <div class="mt-5 flex justify-center">
+            </svg>
 
-            <a
-              href="assets/podatek-od-czynnosci-cywilnoprawnych.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group
-                     inline-flex
-                     items-center
-                     gap-2
-                     rounded-md
-                     border
-                     border-[#d8ccb0]
-                     bg-[#faf8f2]
-                     px-3.5
-                     py-2
+          </span>
+
+          <div class="min-w-0">
+
+            <h3
+              class="font-main-body
+                     text-[15px]
+                     font-medium
+                     leading-[1.4]
+                     text-stone-800
+                     md:text-[16px]"
+            >
+              Podatki
+            </h3>
+
+            <p
+              class="mt-1
                      font-main-body
-                     text-[12px]
+                     text-[14px]
                      font-normal
-                     tracking-[0.04em]
-                     text-[#806c3e]
-                     transition-all
-                     duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#f3f0e7]
-                     hover:text-[#6f5c32]"
+                     leading-[1.6]
+                     text-stone-500
+                     md:text-[15px]
+                     md:leading-[1.65]"
             >
-              <span>Zobacz ustawę</span>
-
-              <span
-                class="text-[13px]
-                       transition-transform
-                       duration-300
-                       group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
-
-            </a>
+              Przy niektórych czynnościach mogą wystąpić obowiązki
+              podatkowe, w szczególności w zakresie podatku PCC
+              lub podatku od spadków i darowizn. Jeżeli przepisy
+              przewidują pobranie podatku przez notariusza,
+              kancelaria pobiera go od klienta.
+            </p>
 
           </div>
 
         </div>
 
-      </div>
 
+        <!-- ==================================================
+             OPŁATY SĄDOWE
+             ================================================== -->
 
-      <!-- =====================================
-           III — PODATEK OD SPADKÓW I DAROWIZN
-           ===================================== -->
+        <div
+          class="group
+                 flex w-full
+                 items-start
+                 gap-4
+                 rounded-xl
+                 border border-[#806c3e]/20
+                 bg-[#f7f4ec]/35
+                 px-5 py-3.5
+                 transition-all duration-300
+                 hover:border-[#b59b5b]/50
+                 hover:bg-[#f3f0e7]/70
+                 md:px-6 md:py-4"
+        >
 
-      <div
-        class="fees-item
-               border-t
-               border-stone-200/80
-               py-9
-               md:py-10"
-      >
-
-        <div class="flex justify-center">
-
-          <div
-            class="flex
-                   h-11
-                   w-11
+          <span
+            class="mt-0.5
+                   flex
+                   h-7
+                   w-7
+                   shrink-0
                    items-center
                    justify-center
-                   rounded-full
-                   border
-                   border-[#c5ad73]
-                   bg-[#faf8f2]
-                   font-roman-numerals
-                   text-[16px]
-                   font-extrabold
-                   text-[#6f5b2f]"
+                   text-[#806c3e]
+                   transition-colors
+                   duration-300
+                   group-hover:text-[#b59b5b]"
+            aria-hidden="true"
           >
-            III
-          </div>
 
-        </div>
-
-        <div class="mx-auto mt-5 max-w-3xl">
-
-          <div class="mb-5 text-center">
-
-            <div
-              class="font-main-body
-                     text-[17px]
-                     font-extrabold
-                     uppercase
-                     tracking-[0.14em]
-                     text-[#6f5b2f]
-                     md:text-[18px]"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              class="h-5 w-5"
             >
-              Podatek od spadków i darowizn
-            </div>
 
-            <div
-              class="mx-auto
-                     mt-2.5
-                     h-[2px]
-                     w-12
-                     bg-[#b59b5b]"
-            ></div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 24.5h16"
+              />
 
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.5 24.5V11h13v13.5"
+              />
 
-          <p
-            class="text-justify
-                   font-main-body
-                   text-[17px]
-                   font-normal
-                   leading-[1.85]
-                   text-stone-600
-                   md:text-[18px]
-                   md:leading-[1.9]"
-          >
-            Podatek od spadków i darowizn zostaje wyliczony zgodnie
-            z ustawą z dnia 28 lipca 1983 r. o podatku od spadków
-            i darowizn.
-          </p>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.5 11h17L12 4 3.5 11z"
+              />
 
-          <div class="mt-5 flex justify-center">
+              <path
+                stroke-linecap="round"
+                d="M8.5 15v5M12 15v5M15.5 15v5"
+              />
 
-            <a
-              href="assets/podatek-od-spadkow-i-darowizn.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group
-                     inline-flex
-                     items-center
-                     gap-2
-                     rounded-md
-                     border
-                     border-[#d8ccb0]
-                     bg-[#faf8f2]
-                     px-3.5
-                     py-2
-                     font-main-body
-                     text-[12px]
-                     font-normal
-                     tracking-[0.04em]
-                     text-[#806c3e]
-                     transition-all
-                     duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#f3f0e7]
-                     hover:text-[#6f5c32]"
-            >
-              <span>Zobacz ustawę</span>
+            </svg>
 
-              <span
-                class="text-[13px]
-                       transition-transform
-                       duration-300
-                       group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
+          </span>
 
-            </a>
+          <div class="min-w-0">
 
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =====================================
-           IV — OPŁATY SĄDOWE
-           ===================================== -->
-
-      <div
-        class="fees-item
-               border-t
-               border-stone-200/80
-               py-9
-               md:py-10"
-      >
-
-        <div class="flex justify-center">
-
-          <div
-            class="flex
-                   h-11
-                   w-11
-                   items-center
-                   justify-center
-                   rounded-full
-                   border
-                   border-[#c5ad73]
-                   bg-[#faf8f2]
-                   font-roman-numerals
-                   text-[16px]
-                   font-extrabold
-                   text-[#6f5b2f]"
-          >
-            IV
-          </div>
-
-        </div>
-
-        <div class="mx-auto mt-5 max-w-3xl">
-
-          <div class="mb-5 text-center">
-
-            <div
+            <h3
               class="font-main-body
-                     text-[17px]
-                     font-extrabold
-                     uppercase
-                     tracking-[0.14em]
-                     text-[#6f5b2f]
-                     md:text-[18px]"
+                     text-[15px]
+                     font-medium
+                     leading-[1.4]
+                     text-stone-800
+                     md:text-[16px]"
             >
               Opłaty sądowe
-            </div>
+            </h3>
 
-            <div
-              class="mx-auto
-                     mt-2.5
-                     h-[2px]
-                     w-12
-                     bg-[#b59b5b]"
-            ></div>
+            <p
+              class="mt-1
+                     font-main-body
+                     text-[14px]
+                     font-normal
+                     leading-[1.6]
+                     text-stone-500
+                     md:text-[15px]
+                     md:leading-[1.65]"
+            >
+              Przy czynnościach wymagających wpisu do księgi
+              wieczystej lub dokonania innych czynności sądowych
+              może być pobierana opłata sądowa.
+            </p>
 
           </div>
 
-          <p
-            class="text-justify
-                   font-main-body
-                   text-[17px]
-                   font-normal
-                   leading-[1.85]
-                   text-stone-600
-                   md:text-[18px]
-                   md:leading-[1.9]"
+        </div>
+
+
+        <!-- ==================================================
+             INDYWIDUALNA WYCENA
+             ================================================== -->
+
+        <div
+          class="group
+                 flex w-full
+                 items-start
+                 gap-4
+                 rounded-xl
+                 border border-[#806c3e]/20
+                 bg-[#f7f4ec]/35
+                 px-5 py-3.5
+                 transition-all duration-300
+                 hover:border-[#b59b5b]/50
+                 hover:bg-[#f3f0e7]/70
+                 md:px-6 md:py-4"
+        >
+
+          <span
+            class="mt-0.5
+                   flex
+                   h-7
+                   w-7
+                   shrink-0
+                   items-center
+                   justify-center
+                   text-[#806c3e]
+                   transition-colors
+                   duration-300
+                   group-hover:text-[#b59b5b]"
+            aria-hidden="true"
           >
-            Opłata sądowa ustalana jest głównie na podstawie ustawy
-            z dnia 28 lipca 2005 r. o kosztach sądowych w sprawach
-            cywilnych.
-          </p>
 
-          <div class="mt-5 flex justify-center">
-
-            <a
-              href="assets/koszty-sadowe-w-sprawach-cywilnych.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group
-                     inline-flex
-                     items-center
-                     gap-2
-                     rounded-md
-                     border
-                     border-[#d8ccb0]
-                     bg-[#faf8f2]
-                     px-3.5
-                     py-2
-                     font-main-body
-                     text-[12px]
-                     font-normal
-                     tracking-[0.04em]
-                     text-[#806c3e]
-                     transition-all
-                     duration-300
-                     hover:border-[#b59b5b]
-                     hover:bg-[#f3f0e7]
-                     hover:text-[#6f5c32]"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.25"
+              class="h-5 w-5"
             >
-              <span>Zobacz ustawę</span>
 
-              <span
-                class="text-[13px]
-                       transition-transform
-                       duration-300
-                       group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                ↗
-              </span>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v22"
+              />
 
-            </a>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 7h14"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M7 7l-3 6a3 3 0 0 0 6 0L7 7z"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 7l-3 6a3 3 0 0 0 6 0l-3-6z"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.5 23h7"
+              />
+
+            </svg>
+
+          </span>
+
+          <div class="min-w-0">
+
+            <h3
+              class="font-main-body
+                     text-[15px]
+                     font-medium
+                     leading-[1.4]
+                     text-stone-800
+                     md:text-[16px]"
+            >
+              Indywidualna wycena
+            </h3>
+
+            <p
+              class="mt-1
+                     font-main-body
+                     text-[14px]
+                     font-normal
+                     leading-[1.6]
+                     text-stone-500
+                     md:text-[15px]
+                     md:leading-[1.65]"
+            >
+              Dokładny koszt można ustalić po przedstawieniu
+              kancelarii informacji dotyczących planowanej czynności.
+              Przed jej dokonaniem kancelaria informuje o przewidywanej
+              wysokości należności.
+            </p>
 
           </div>
 
         </div>
 
       </div>
-
     </div>
 
 
-    <!-- =====================================
-         INDYWIDUALNA WYCENA
-         ===================================== -->
+    <!-- CLOSING TEXT -->
 
     <div
-      class="fees-final-note
-             mt-5
-             border-t
-             border-stone-200
-             pt-8
-             md:mt-6
-             md:pt-9"
+      class="documents-closing
+             mx-auto mt-6 max-w-3xl
+             pt-1
+             font-main-body"
     >
 
-      <div class="mb-5 text-center">
-
-        <div
-          class="font-main-body
-                 text-[17px]
-                 font-extrabold
-                 uppercase
-                 tracking-[0.14em]
-                 text-[#6f5b2f]
-                 md:text-[18px]"
-        >
-          Indywidualna wycena
-        </div>
-
-        <div
-          class="mx-auto
-                 mt-2.5
-                 h-[2px]
-                 w-12
-                 bg-[#b59b5b]"
-        ></div>
-
-      </div>
-
       <p
-        class="mx-auto
-               mt-5
-               max-w-3xl
-               text-center
-               font-main-body
-               text-[17px]
+        class="text-justify
+               text-[16px]
                font-normal
-               leading-[1.85]
+               leading-[1.75]
                text-stone-500
-               md:text-[18px]
-               md:leading-[1.9]"
+               md:text-[17px]
+               md:leading-[1.8]"
       >
-        W celu indywidualnego ustalenia wysokości wynagrodzenia, podatków
-        i opłat sądowych prosimy o kontakt z kancelarią.
+        W celu przygotowania wyceny prosimy o przekazanie informacji
+        dotyczących planowanej czynności oraz jej przedmiotu.
       </p>
 
     </div>
 
   </div>
-
-</div>
+</section>
