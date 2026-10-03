@@ -4,14 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", Arial, sans-serif;
-    color: #444;
-    background: #fafafa;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -22,6 +14,20 @@ body {
     font-family: "Inter", Arial, sans-serif;
     font-variant-numeric: lining-nums tabular-nums;
     font-feature-settings: "lnum", "tnum";
+}
+
+.font-top-bar {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #292424;
+}
+
+.font-top-navbar {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #292424;
 }
 
 .font-main-heading {
@@ -56,3 +62,4 @@ body {
   letter-spacing: 0.01em;
   color: #292424;
 }
+

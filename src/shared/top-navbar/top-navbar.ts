@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [RouterLink, RouterLinkActive],
+  imports: [],
   selector: 'app-top-navbar',
   styleUrl: './top-navbar.css',
   templateUrl: './top-navbar.html',
