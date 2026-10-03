@@ -151,22 +151,157 @@
     ></div>
   </div>
 
+
   <!-- =========================================
-       ZAWARTOŚĆ STOPKI
+       MOBILE — KOMPAKTOWY PASEK INFORMACYJNY
+       ========================================= -->
+
+  <div
+    class="relative z-10
+           flex h-[60px]
+           items-center
+           justify-center
+           px-4
+           md:hidden"
+  >
+
+    <div
+      class="flex w-full
+             items-center
+             justify-center"
+    >
+
+      <!-- GODZINY -->
+
+      <div
+        class="flex
+               items-center
+               justify-center
+               gap-2"
+      >
+
+        <div
+          class="flex h-8 w-8
+                 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b3a06a]
+                 bg-[#fffaf0]/75
+                 text-[#766947]
+                 shadow-[0_0_16px_rgba(179,160,106,0.12)]"
+          aria-hidden="true"
+        >
+          <i class="fa-regular fa-clock text-xs"></i>
+        </div>
+
+        <div class="flex flex-col">
+
+          <span
+            class="font-main-body
+                   text-[8px]
+                   font-normal
+                   uppercase
+                   tracking-[0.18em]
+                   text-stone-400"
+          >
+            Godziny
+          </span>
+
+          <span
+            class="font-main-body
+                   text-[12px]
+                   font-normal
+                   leading-4
+                   tracking-wide
+                   text-stone-700"
+          >
+            08:00 – 16:00
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- SEPARATOR -->
+
+      <div
+        class="mx-5 h-7 w-px
+               bg-[#b3a06a]/30"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- DOSTĘPNOŚĆ -->
+
+      <div
+        class="flex
+               items-center
+               justify-center
+               gap-2"
+      >
+
+        <div
+          class="flex h-8 w-8
+                 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b3a06a]
+                 bg-[#fffaf0]/75
+                 text-[#766947]
+                 shadow-[0_0_16px_rgba(179,160,106,0.12)]"
+          aria-hidden="true"
+        >
+          <i class="fa-solid fa-wheelchair text-xs"></i>
+        </div>
+
+        <div class="flex flex-col">
+
+          <span
+            class="font-main-body
+                   text-[8px]
+                   font-normal
+                   uppercase
+                   tracking-[0.16em]
+                   text-stone-400"
+          >
+            Dostępność
+          </span>
+
+          <span
+            class="font-main-body
+                   text-[11px]
+                   font-normal
+                   leading-4
+                   text-stone-700"
+          >
+            Kancelaria dostępna
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       DESKTOP — PEŁNA ZAWARTOŚĆ
        ========================================= -->
 
   <div
     class="relative z-10
            mx-auto max-w-6xl
            px-6 py-3
-           lg:px-8"
+           lg:px-8
+           hidden md:block"
   >
 
     <div
-      class="grid grid-cols-1
-             gap-4
-             md:grid-cols-3
-             md:gap-6
+      class="grid grid-cols-3
+             gap-6
              lg:gap-10"
     >
 
@@ -247,9 +382,9 @@
         class="flex
                items-center
                min-h-[76px]
-               md:border-l
-               md:border-stone-200/80
-               md:pl-6"
+               border-l
+               border-stone-200/80
+               pl-6"
       >
 
         <!-- IKONA DOSTĘPNOŚCI -->
@@ -320,9 +455,9 @@
         class="flex
                items-center
                min-h-[76px]
-               md:border-l
-               md:border-stone-200/80
-               md:pl-6"
+               border-l
+               border-stone-200/80
+               pl-6"
       >
 
         <!-- IKONA COPYRIGHT -->
