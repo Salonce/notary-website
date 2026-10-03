@@ -4,7 +4,7 @@ import { ContactInfo } from './contact-info/contact-info';
 import { TitleDivider } from '../../shared/title-divider/title-divider';
 
 @Component({
-  imports: [ContactInfo, ContactForm, TitleDivider],
+  imports: [ContactInfo, ContactForm],
   selector: 'app-contact',
   styleUrl: './contact.css',
   templateUrl: './contact.html',

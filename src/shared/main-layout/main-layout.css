@@ -1,5 +1,6 @@
 /* =========================================================
    MAIN LAYOUT - INTRO ANIMATION
+
    Elegant entrance for law office website
    ========================================================= */
 
@@ -7,7 +8,7 @@
 .layout-header,
 .layout-navbar {
   opacity: 0;
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
 }
 
 
@@ -26,17 +27,17 @@
 }
 
 @keyframes layoutTopBarReveal {
+
   0% {
     opacity: 0;
     transform: translateY(-12px);
-    filter: blur(4px);
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
+
 }
 
 
@@ -55,17 +56,17 @@
 }
 
 @keyframes layoutHeaderReveal {
+
   0% {
     opacity: 0;
     transform: translateY(-18px);
-    filter: blur(2px);
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
+
 }
 
 
@@ -84,6 +85,7 @@
 }
 
 @keyframes layoutNavbarReveal {
+
   0% {
     opacity: 0;
     transform: translateY(-14px);
@@ -93,6 +95,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 
@@ -102,6 +105,7 @@
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .layout-top-bar,
   .layout-header,
   .layout-navbar {
@@ -110,4 +114,5 @@
     transform: none;
     filter: none;
   }
+
 }
