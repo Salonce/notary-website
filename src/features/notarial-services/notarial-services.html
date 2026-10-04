@@ -21,461 +21,606 @@
       </div>
     </div>
 
+
     <!-- Kategorie -->
-    <div class="mx-auto mt-6 w-full max-w-7xl md:mt-7">
+    <div class="mx-auto mt-8 w-full max-w-5xl md:mt-10">
 
-      <div class="grid grid-cols-1 gap-x-10 md:grid-cols-2 lg:gap-x-16">
 
-        <!-- LEWA KOLUMNA -->
-        <div class="flex flex-col">
+      <!-- ====================================================== -->
+      <!-- NIERUCHOMOŚCI -->
+      <!-- ====================================================== -->
 
-          <!-- I -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
-              <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
-              >
-                I
+      <div class="service-category border-t border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <!-- Kropka -->
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <!-- Treść -->
+          <div class="min-w-0 flex-1">
+
+            <!-- Nazwa -->
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Nieruchomości i mieszkania
+            </h3>
+
+            <!-- Przykłady -->
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Sprzedaż · Darowizna · Deweloperskie · Hipoteki · Służebności
+            </p>
+
+            <!-- Przycisk -->
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('nieruchomosci')"
+              [attr.aria-expanded]="showNieruchomosci"
+              aria-controls="services-nieruchomosci"
+            >
+              <span>
+                {{ showNieruchomosci ? 'Ukryj czynności' : 'Pokaż czynności' }}
               </span>
 
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Nieruchomości i prawa do lokali
-                </h3>
-
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
-
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Sprzedaż
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Darowizna
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Dożywocie
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Zamiana
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Zniesienie współwłasności
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Umowy deweloperskie
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Ustanowienie odrębnej własności lokalu
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Ustanowienie hipoteki
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Ustanowienie służebności (gruntowej, przesyłu, osobistej)
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- III -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
               <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showNieruchomosci"
               >
-                III
+                +
               </span>
+            </button>
 
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Spadki i testamenty
-                </h3>
-
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
-
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Sporządzanie testamentów
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Wyszukiwanie testamentów
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Otwarcie i ogłoszenie testamentu
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Przyjęcie spadku
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Odrzucenie spadku
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Protokół dziedziczenia
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Akt poświadczenia dziedziczenia
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Europejskie poświadczenie spadkowe
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Dział spadku
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Zrzeczenie się dziedziczenia
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
-
-          <!-- V -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
-              <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
-              >
-                V
-              </span>
-
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Poświadczenia
-                </h3>
-
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
-
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Poświadczenie zgodności dokumentu z oryginałem
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Poświadczenie własnoręczności podpisu
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Poświadczenie daty okazania dokumentu
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Poświadczenie pozostawania osoby przy życiu lub w określonym miejscu
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- PRAWA KOLUMNA -->
-        <div class="flex flex-col">
 
-          <!-- II -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
-              <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
-              >
-                II
-              </span>
+        <!-- Lista -->
+        <div
+          id="services-nieruchomosci"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showNieruchomosci"
+          [class.max-h-[1000px]]="showNieruchomosci"
+          [class.opacity-0]="!showNieruchomosci"
+          [class.opacity-100]="showNieruchomosci"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Sprzedaż nieruchomości i mieszkań
+            </li>
 
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Sprawy rodzinne i majątkowe
-                </h3>
+            <li class="service-item">
+              Darowizna nieruchomości
+            </li>
 
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
+            <li class="service-item">
+              Dożywocie
+            </li>
 
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Ustanowienie rozdzielności majątkowej
-                    </span>
-                  </li>
+            <li class="service-item">
+              Zamiana nieruchomości
+            </li>
 
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Podział majątku wspólnego
-                    </span>
-                  </li>
+            <li class="service-item">
+              Zniesienie współwłasności
+            </li>
 
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Ustalenie obowiązku alimentacyjnego
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <li class="service-item">
+              Umowy deweloperskie
+            </li>
 
-          <!-- IV -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
-              <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
-              >
-                IV
-              </span>
+            <li class="service-item">
+              Umowy przedwstępne
+            </li>
 
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Spółki, działalność gospodarcza i fundacje
-                </h3>
+            <li class="service-item">
+              Ustanowienie odrębnej własności lokalu
+            </li>
 
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
+            <li class="service-item">
+              Ustanowienie hipoteki
+            </li>
 
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Zakładanie spółek i zmiany umów spółek
-                    </span>
-                  </li>
+            <li class="service-item">
+              Ustanowienie służebności
+            </li>
 
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Protokoły zgromadzeń wspólników i walnych zgromadzeń
-                    </span>
-                  </li>
+            <li class="service-item">
+              Przewłaszczenie nieruchomości na zabezpieczenie
+            </li>
 
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Rejestr akcjonariuszy
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Fundacje
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Fundacje rodzinne
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Zarząd sukcesyjny
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- VI -->
-          <div class="border-t border-stone-200 py-3.5 md:py-4">
-            <div class="flex items-start gap-3.5">
-              <span
-                class="font-roman-numerals pt-0.5 text-[13px] text-[#806c3e]"
-              >
-                VI
-              </span>
-
-              <div class="min-w-0 flex-1">
-                <h3
-                  class="font-notarial-services-list-main-element text-[17px] font-normal leading-[1.3] tracking-wide text-stone-800 md:text-[18px]"
-                >
-                  Pozostałe czynności
-                </h3>
-
-                <div class="mt-1.5 h-px w-7 bg-[#b59b5b]"></div>
-
-                <ul class="mt-1.5">
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Najem okazjonalny
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Najem instytucjonalny
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Protokoły z zebrań Wspólnot Mieszkaniowych
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Rodzinne ogrody działkowe
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Przewłaszczenie nieruchomości na zabezpieczenie
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Przeniesienie prawa w celu zwolnienia się z długu
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Depozyt notarialny
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Pełnomocnictwa
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Umowy przedwstępne
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Wypisy aktów notarialnych
-                    </span>
-                  </li>
-
-                  <li class="flex items-start gap-2 py-[2px]">
-                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"></span>
-                    <span class="font-main-body text-[13px] font-normal leading-[1.35] text-stone-600 md:text-[14px]">
-                      Odpisy i wyciągi dokumentów
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
+            <li class="service-item">
+              Przeniesienie prawa w celu zwolnienia z długu
+            </li>
+          </ul>
         </div>
 
       </div>
+
+
+      <!-- ====================================================== -->
+      <!-- SPADKI -->
+      <!-- ====================================================== -->
+
+      <div class="service-category border-t border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <div class="min-w-0 flex-1">
+
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Spadki i testamenty
+            </h3>
+
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Testamenty · Dziedziczenie · Poświadczenie dziedziczenia · Dział spadku
+            </p>
+
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('spadki')"
+              [attr.aria-expanded]="showSpadki"
+              aria-controls="services-spadki"
+            >
+              <span>
+                {{ showSpadki ? 'Ukryj czynności' : 'Pokaż czynności' }}
+              </span>
+
+              <span
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showSpadki"
+              >
+                +
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div
+          id="services-spadki"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showSpadki"
+          [class.max-h-[1000px]]="showSpadki"
+          [class.opacity-0]="!showSpadki"
+          [class.opacity-100]="showSpadki"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Sporządzanie testamentów
+            </li>
+
+            <li class="service-item">
+              Zmiana i odwołanie testamentu
+            </li>
+
+            <li class="service-item">
+              Wyszukiwanie testamentów
+            </li>
+
+            <li class="service-item">
+              Otwarcie i ogłoszenie testamentu
+            </li>
+
+            <li class="service-item">
+              Przyjęcie spadku
+            </li>
+
+            <li class="service-item">
+              Odrzucenie spadku
+            </li>
+
+            <li class="service-item">
+              Zrzeczenie się dziedziczenia
+            </li>
+
+            <li class="service-item">
+              Protokół dziedziczenia
+            </li>
+
+            <li class="service-item">
+              Akt poświadczenia dziedziczenia
+            </li>
+
+            <li class="service-item">
+              Europejskie poświadczenie spadkowe
+            </li>
+
+            <li class="service-item">
+              Dział spadku
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!-- ====================================================== -->
+      <!-- RODZINNE -->
+      <!-- ====================================================== -->
+
+      <div class="service-category border-t border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <div class="min-w-0 flex-1">
+
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Sprawy rodzinne i majątkowe
+            </h3>
+
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Intercyza · Rozdzielność majątkowa · Podział majątku
+            </p>
+
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('rodzinne')"
+              [attr.aria-expanded]="showRodzinne"
+              aria-controls="services-rodzinne"
+            >
+              <span>
+                {{ showRodzinne ? 'Ukryj czynności' : 'Pokaż czynności' }}
+              </span>
+
+              <span
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showRodzinne"
+              >
+                +
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div
+          id="services-rodzinne"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showRodzinne"
+          [class.max-h-[1000px]]="showRodzinne"
+          [class.opacity-0]="!showRodzinne"
+          [class.opacity-100]="showRodzinne"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Intercyza i umowy majątkowe małżeńskie
+            </li>
+
+            <li class="service-item">
+              Ustanowienie rozdzielności majątkowej
+            </li>
+
+            <li class="service-item">
+              Podział majątku wspólnego
+            </li>
+
+            <li class="service-item">
+              Ustalenie obowiązku alimentacyjnego
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!-- ====================================================== -->
+      <!-- SPÓŁKI -->
+      <!-- ====================================================== -->
+
+      <div class="service-category border-t border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <div class="min-w-0 flex-1">
+
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Spółki i przedsiębiorcy
+            </h3>
+
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Spółki · Protokoły · Rejestr akcjonariuszy · Fundacje
+            </p>
+
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('spolki')"
+              [attr.aria-expanded]="showSpolki"
+              aria-controls="services-spolki"
+            >
+              <span>
+                {{ showSpolki ? 'Ukryj czynności' : 'Pokaż czynności' }}
+              </span>
+
+              <span
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showSpolki"
+              >
+                +
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div
+          id="services-spolki"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showSpolki"
+          [class.max-h-[1000px]]="showSpolki"
+          [class.opacity-0]="!showSpolki"
+          [class.opacity-100]="showSpolki"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Zakładanie spółek
+            </li>
+
+            <li class="service-item">
+              Zmiany umów i statutów spółek
+            </li>
+
+            <li class="service-item">
+              Protokoły zgromadzeń wspólników
+            </li>
+
+            <li class="service-item">
+              Protokoły walnych zgromadzeń
+            </li>
+
+            <li class="service-item">
+              Rejestr akcjonariuszy
+            </li>
+
+            <li class="service-item">
+              Fundacje
+            </li>
+
+            <li class="service-item">
+              Fundacje rodzinne
+            </li>
+
+            <li class="service-item">
+              Zarząd sukcesyjny
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!-- ====================================================== -->
+      <!-- POŚWIADCZENIA -->
+      <!-- ====================================================== -->
+
+      <div class="service-category border-t border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <div class="min-w-0 flex-1">
+
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Poświadczenia i pełnomocnictwa
+            </h3>
+
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Podpisy · Dokumenty · Daty · Pełnomocnictwa
+            </p>
+
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('poswiadczenia')"
+              [attr.aria-expanded]="showPoswiadczenia"
+              aria-controls="services-poswiadczenia"
+            >
+              <span>
+                {{ showPoswiadczenia ? 'Ukryj czynności' : 'Pokaż czynności' }}
+              </span>
+
+              <span
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showPoswiadczenia"
+              >
+                +
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div
+          id="services-poswiadczenia"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showPoswiadczenia"
+          [class.max-h-[1000px]]="showPoswiadczenia"
+          [class.opacity-0]="!showPoswiadczenia"
+          [class.opacity-100]="showPoswiadczenia"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Poświadczenie własnoręczności podpisu
+            </li>
+
+            <li class="service-item">
+              Poświadczenie zgodności dokumentu z oryginałem
+            </li>
+
+            <li class="service-item">
+              Poświadczenie daty okazania dokumentu
+            </li>
+
+            <li class="service-item">
+              Poświadczenie pozostawania osoby przy życiu
+            </li>
+
+            <li class="service-item">
+              Poświadczenie pozostawania osoby w określonym miejscu
+            </li>
+
+            <li class="service-item">
+              Pełnomocnictwa
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <!-- ====================================================== -->
+      <!-- POZOSTAŁE -->
+      <!-- ====================================================== -->
+
+      <div class="service-category border-y border-stone-200">
+
+        <div class="flex items-start gap-4 py-5 md:py-6">
+
+          <span
+            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
+          ></span>
+
+          <div class="min-w-0 flex-1">
+
+            <h3
+              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
+            >
+              Pozostałe czynności
+            </h3>
+
+            <p
+              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
+            >
+              Depozyt · Najem · Protokoły · Wypisy i odpisy
+            </p>
+
+            <button
+              type="button"
+              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              (click)="toggleCategory('pozostale')"
+              [attr.aria-expanded]="showPozostale"
+              aria-controls="services-pozostale"
+            >
+              <span>
+                {{ showPozostale ? 'Ukryj czynności' : 'Pokaż czynności' }}
+              </span>
+
+              <span
+                class="text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-45]="showPozostale"
+              >
+                +
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div
+          id="services-pozostale"
+          class="overflow-hidden transition-all duration-500"
+          [class.max-h-0]="!showPozostale"
+          [class.max-h-[1000px]]="showPozostale"
+          [class.opacity-0]="!showPozostale"
+          [class.opacity-100]="showPozostale"
+        >
+          <ul
+            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
+          >
+            <li class="service-item">
+              Najem okazjonalny
+            </li>
+
+            <li class="service-item">
+              Najem instytucjonalny
+            </li>
+
+            <li class="service-item">
+              Protokoły z zebrań wspólnot mieszkaniowych
+            </li>
+
+            <li class="service-item">
+              Rodzinne ogrody działkowe
+            </li>
+
+            <li class="service-item">
+              Przewłaszczenie nieruchomości na zabezpieczenie
+            </li>
+
+            <li class="service-item">
+              Przeniesienie prawa w celu zwolnienia z długu
+            </li>
+
+            <li class="service-item">
+              Depozyt notarialny
+            </li>
+
+            <li class="service-item">
+              Wypisy aktów notarialnych
+            </li>
+
+            <li class="service-item">
+              Odpisy i wyciągi dokumentów
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </div>
