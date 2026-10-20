@@ -8,6 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Komputer i tablet */
 #home,
 #czynnosci-notarialne,
 #oplaty,
@@ -16,28 +17,14 @@ html {
   scroll-margin-top: 110px;
 }
 
-@media (max-width: 767px) {
-  #home,
-  #czynnosci-notarialne,
-  #oplaty,
-  #strefa-klienta,
-  #kontakt {
-    scroll-margin-top: 80px;
-  }
-}
-
 /* Telefon */
 @media (max-width: 767px) {
-  html {
-    scroll-padding-top: 90px;
-  }
-
   #home,
   #czynnosci-notarialne,
   #oplaty,
   #strefa-klienta,
   #kontakt {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 50px;
   }
 }
 
