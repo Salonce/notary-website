@@ -1,11 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-top-navbar',
-  styleUrl: './top-navbar.css',
+  standalone: true,
   templateUrl: './top-navbar.html',
+  styleUrl: './top-navbar.css',
 })
 export class TopNavbar {
+
+  scrollToSection(
+    event: MouseEvent,
+    id: string
+  ): void {
+
+    event.preventDefault();
+
+    const target = document.getElementById(id);
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+
+    history.replaceState(
+      null,
+      '',
+      `#${id}`
+    );
+  }
 }

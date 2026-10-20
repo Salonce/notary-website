@@ -1,20 +1,69 @@
 @import 'tailwindcss';
 
+/* =========================================
+   PRZEWIJANIE DO SEKCJI
+   ========================================= */
+
 html {
   scroll-behavior: smooth;
 }
 
-* {
-    box-sizing: border-box;
+#home,
+#czynnosci-notarialne,
+#oplaty,
+#strefa-klienta,
+#kontakt {
+  scroll-margin-top: 110px;
 }
+
+@media (max-width: 767px) {
+  #home,
+  #czynnosci-notarialne,
+  #oplaty,
+  #strefa-klienta,
+  #kontakt {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Telefon */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  #home,
+  #czynnosci-notarialne,
+  #oplaty,
+  #strefa-klienta,
+  #kontakt {
+    scroll-margin-top: 90px;
+  }
+}
+
+/* =========================================
+   USTAWIENIA GLOBALNE
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   NUMERY TELEFONÓW I DANE
+   ========================================= */
 
 .phone,
 .account-number,
 .identification-row strong {
-    font-family: "Inter", Arial, sans-serif;
-    font-variant-numeric: lining-nums tabular-nums;
-    font-feature-settings: "lnum", "tnum";
+  font-family: "Inter", Arial, sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum", "tnum";
 }
+
+/* =========================================
+   TYPOGRAFIA
+   ========================================= */
 
 .font-top-bar {
   font-family: "Merriweather", Georgia, serif;
@@ -44,7 +93,7 @@ html {
 }
 
 .font-motto {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: #8B1E2D;
@@ -62,4 +111,3 @@ html {
   letter-spacing: 0.01em;
   color: #292424;
 }
-

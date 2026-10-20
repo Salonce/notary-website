@@ -1,149 +1,63 @@
 <!-- NAVBAR -->
-
 <nav
-  class="relative
-         w-full
-         overflow-hidden
-         border-y border-[#bda968]/30
-         bg-[#eee8d9]
-         shadow-[0_6px_20px_rgba(80,65,35,0.10)]"
+  class="relative w-full overflow-hidden border-y border-[#bda968]/30 bg-[#eee8d9] shadow-[0_6px_20px_rgba(80,65,35,0.10)]"
+  aria-label="Nawigacja główna"
 >
-
-  <!-- =========================================
-       JEDNOLITE PREMIUM TŁO
-       ========================================= -->
-
-  <!-- SZEROKA, RÓWNOMIERNA ZŁOTA POŚWIATA -->
-
+  <!-- JEDNOLITE PREMIUM TŁO -->
   <div
-    class="pointer-events-none absolute inset-0
-           bg-[radial-gradient(ellipse_140%_180%_at_50%_50%,rgba(190,168,104,0.15)_0%,rgba(190,168,104,0.11)_35%,rgba(190,168,104,0.07)_60%,rgba(190,168,104,0.035)_80%,transparent_100%)]"
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_140%_180%_at_50%_50%,rgba(190,168,104,0.15)_0%,rgba(190,168,104,0.11)_35%,rgba(190,168,104,0.07)_60%,rgba(190,168,104,0.035)_80%,transparent_100%)]"
     aria-hidden="true"
   ></div>
 
-
-  <!-- DELIKATNE JASNE ROZŚWIETLENIE CAŁEGO PASKA -->
-
+  <!-- JASNE ROZŚWIETLENIE -->
   <div
-    class="pointer-events-none absolute inset-0
-           bg-[linear-gradient(90deg,rgba(255,252,242,0.08)_0%,rgba(255,252,242,0.18)_25%,rgba(255,252,242,0.22)_50%,rgba(255,252,242,0.18)_75%,rgba(255,252,242,0.08)_100%)]"
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,252,242,0.08)_0%,rgba(255,252,242,0.18)_25%,rgba(255,252,242,0.22)_50%,rgba(255,252,242,0.18)_75%,rgba(255,252,242,0.08)_100%)]"
     aria-hidden="true"
   ></div>
 
-
-  <!-- BARDZO DELIKATNA CENTRALNA POŚWIATA -->
-
+  <!-- CENTRALNA POŚWIATA -->
   <div
-    class="pointer-events-none absolute
-           left-1/2 top-1/2
-           h-[100px] w-[850px]
-           -translate-x-1/2
-           -translate-y-1/2
-           rounded-full
-           bg-[#fffaf0]/[0.18]
-           blur-3xl"
+    class="pointer-events-none absolute left-1/2 top-1/2 h-[100px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#fffaf0]/[0.18] blur-3xl"
     aria-hidden="true"
   ></div>
 
-
-  <!-- =========================================
-       SUBTELNE ZŁOTE ŁUKI
-       ========================================= -->
-
+  <!-- ZŁOTE ŁUKI -->
   <div
-    class="pointer-events-none absolute
-           -left-24 top-1/2
-           h-[150px] w-[380px]
-           -translate-y-1/2
-           rounded-full
-           border
-           border-[#bda968]/[0.07]"
+    class="pointer-events-none absolute -left-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[#bda968]/[0.07]"
     aria-hidden="true"
   ></div>
 
   <div
-    class="pointer-events-none absolute
-           -right-24 top-1/2
-           h-[150px] w-[380px]
-           -translate-y-1/2
-           rounded-full
-           border
-           border-[#bda968]/[0.07]"
+    class="pointer-events-none absolute -right-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[#bda968]/[0.07]"
     aria-hidden="true"
   ></div>
 
-
-  <!-- =========================================
-       DELIKATNA LINIA CENTRALNA
-       ========================================= -->
-
+  <!-- LINIA CENTRALNA -->
   <div
-    class="pointer-events-none absolute
-           inset-x-[5%] top-1/2
-           h-px
-           -translate-y-1/2
-           bg-[#bda968]/[0.055]"
+    class="pointer-events-none absolute inset-x-[5%] top-1/2 h-px -translate-y-1/2 bg-[#bda968]/[0.055]"
     aria-hidden="true"
   ></div>
 
-
-  <!-- =========================================
-       KRAWĘDZIE
-       ========================================= -->
-
+  <!-- KRAWĘDZIE -->
   <div
-    class="pointer-events-none absolute
-           inset-x-0 top-0
-           h-px
-           bg-[#bda968]/[0.24]"
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#bda968]/[0.24]"
     aria-hidden="true"
   ></div>
 
   <div
-    class="pointer-events-none absolute
-           inset-x-0 bottom-0
-           h-px
-           bg-[#bda968]/[0.28]"
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[#bda968]/[0.28]"
     aria-hidden="true"
   ></div>
 
-
-  <!-- =========================================
-       TREŚĆ
-       ========================================= -->
-
-  <div
-    class="relative z-10
-           mx-auto flex max-w-7xl"
-  >
+  <!-- TREŚĆ -->
+  <div class="relative z-10 mx-auto flex max-w-7xl">
 
     <!-- STRONA GŁÓWNA -->
-
     <a
       href="#home"
       aria-label="Strona główna"
-      class="group relative flex min-w-0 flex-1
-             items-center justify-center
-             px-2 py-3
-             font-top-navbar
-             text-[15px]
-             font-normal
-             tracking-wide
-             text-stone-600
-             transition-colors duration-300
-             hover:text-[#806c3e]
-             md:px-6 md:py-3.5
-             md:text-[16px]
-             after:absolute
-             after:bottom-0
-             after:left-1/2
-             after:h-px
-             after:w-0
-             after:-translate-x-1/2
-             after:bg-[#bda968]
-             after:transition-all
-             after:duration-300
-             hover:after:w-full"
+      (click)="scrollToSection($event, 'home')"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-2 py-3 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -170,34 +84,12 @@
       </span>
     </a>
 
-
     <!-- CZYNNOŚCI NOTARIALNE -->
-
     <a
       href="#czynnosci-notarialne"
       aria-label="Czynności notarialne"
-      class="group relative flex min-w-0 flex-1
-             items-center justify-center
-             px-2 py-3
-             font-top-navbar
-             text-[15px]
-             font-normal
-             tracking-wide
-             text-stone-600
-             transition-colors duration-300
-             hover:text-[#806c3e]
-             md:px-6 md:py-3.5
-             md:text-[16px]
-             after:absolute
-             after:bottom-0
-             after:left-1/2
-             after:h-px
-             after:w-0
-             after:-translate-x-1/2
-             after:bg-[#bda968]
-             after:transition-all
-             after:duration-300
-             hover:after:w-full"
+      (click)="scrollToSection($event, 'czynnosci-notarialne')"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-2 py-3 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -224,34 +116,12 @@
       </span>
     </a>
 
-
     <!-- KOSZTY -->
-
     <a
       href="#oplaty"
       aria-label="Koszty"
-      class="group relative flex min-w-0 flex-1
-             items-center justify-center
-             px-2 py-3
-             font-top-navbar
-             text-[15px]
-             font-normal
-             tracking-wide
-             text-stone-600
-             transition-colors duration-300
-             hover:text-[#806c3e]
-             md:px-6 md:py-3.5
-             md:text-[16px]
-             after:absolute
-             after:bottom-0
-             after:left-1/2
-             after:h-px
-             after:w-0
-             after:-translate-x-1/2
-             after:bg-[#bda968]
-             after:transition-all
-             after:duration-300
-             hover:after:w-full"
+      (click)="scrollToSection($event, 'oplaty')"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-2 py-3 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -264,7 +134,11 @@
           class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
-          <circle cx="12" cy="12" r="8.5" />
+          <circle
+            cx="12"
+            cy="12"
+            r="8.5"
+          />
 
           <path
             stroke-linecap="round"
@@ -284,34 +158,12 @@
       </span>
     </a>
 
-
     <!-- STREFA KLIENTA -->
-
     <a
       href="#strefa-klienta"
       aria-label="Strefa klienta"
-      class="group relative flex min-w-0 flex-1
-             items-center justify-center
-             px-2 py-3
-             font-top-navbar
-             text-[15px]
-             font-normal
-             tracking-wide
-             text-stone-600
-             transition-colors duration-300
-             hover:text-[#806c3e]
-             md:px-6 md:py-3.5
-             md:text-[16px]
-             after:absolute
-             after:bottom-0
-             after:left-1/2
-             after:h-px
-             after:w-0
-             after:-translate-x-1/2
-             after:bg-[#bda968]
-             after:transition-all
-             after:duration-300
-             hover:after:w-full"
+      (click)="scrollToSection($event, 'strefa-klienta')"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-2 py-3 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -324,7 +176,11 @@
           class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4"
           aria-hidden="true"
         >
-          <circle cx="12" cy="8" r="3.2" />
+          <circle
+            cx="12"
+            cy="8"
+            r="3.2"
+          />
 
           <path
             stroke-linecap="round"
@@ -340,34 +196,12 @@
       </span>
     </a>
 
-
     <!-- KONTAKT -->
-
     <a
       href="#kontakt"
       aria-label="Kontakt"
-      class="group relative flex min-w-0 flex-1
-             items-center justify-center
-             px-2 py-3
-             font-top-navbar
-             text-[15px]
-             font-normal
-             tracking-wide
-             text-stone-600
-             transition-colors duration-300
-             hover:text-[#806c3e]
-             md:px-6 md:py-3.5
-             md:text-[16px]
-             after:absolute
-             after:bottom-0
-             after:left-1/2
-             after:h-px
-             after:w-0
-             after:-translate-x-1/2
-             after:bg-[#bda968]
-             after:transition-all
-             after:duration-300
-             hover:after:w-full"
+      (click)="scrollToSection($event, 'kontakt')"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-2 py-3 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex items-center justify-center gap-2">
 
@@ -395,5 +229,4 @@
     </a>
 
   </div>
-
 </nav>
