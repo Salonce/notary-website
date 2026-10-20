@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SectionScrollService } from '../section-scroll-service/section-scroll-service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -7,29 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './top-navbar.css',
 })
 export class TopNavbar {
+  private readonly sectionScroll = inject(SectionScrollService);
 
-  scrollToSection(
-    event: MouseEvent,
-    id: string
-  ): void {
-
+  scrollToSection(event: MouseEvent, id: string): void {
     event.preventDefault();
 
-    const target = document.getElementById(id);
+    this.sectionScroll.scrollToSection(id);
 
-    if (!target) {
-      return;
-    }
-
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-
-    history.replaceState(
-      null,
-      '',
-      `#${id}`
-    );
+    history.replaceState(null, '', `#${id}`);
   }
 }
