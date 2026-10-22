@@ -5,11 +5,6 @@
          bg-[#faf9f6]
          text-stone-600"
 >
-
-  <!-- =========================================
-       SZEROKIE PREMIUM OŚWIETLENIE
-       ========================================= -->
-
   <!-- GŁÓWNE ZŁOTE ŚWIATŁO -->
   <div
     class="pointer-events-none absolute inset-0
@@ -68,11 +63,7 @@
     aria-hidden="true"
   ></div>
 
-  <!-- =========================================
-       MOTYW PIECZĘCI — ZŁOTO
-       ========================================= -->
-
-  <!-- PRAWY GÓRNY ORNAMENT -->
+  <!-- ORNAMENT PRAWY GÓRNY -->
   <div
     class="pointer-events-none absolute
            -right-24 -top-28
@@ -100,7 +91,7 @@
     aria-hidden="true"
   ></div>
 
-  <!-- LEWY DOLNY ORNAMENT -->
+  <!-- ORNAMENT LEWY DOLNY -->
   <div
     class="pointer-events-none absolute
            -bottom-28 -left-24
@@ -119,10 +110,7 @@
     aria-hidden="true"
   ></div>
 
-  <!-- =========================================
-       DELIKATNA SIATKA
-       ========================================= -->
-
+  <!-- DELIKATNA SIATKA -->
   <div
     class="pointer-events-none absolute inset-0 opacity-25"
     aria-hidden="true"
@@ -138,37 +126,27 @@
     ></div>
   </div>
 
-
   <!-- =========================================
-       MOBILE — KOMPAKTOWY PASEK INFORMACYJNY
+       MOBILE — BEZ ZMIAN
        ========================================= -->
 
   <div
     class="relative z-10
            flex h-[68px]
-           items-center
-           justify-center
+           items-center justify-center
            px-3
            md:hidden"
   >
-
     <div
       class="flex w-full
-             items-center
-             justify-center"
+             items-center justify-center"
     >
-
-      <!-- GODZINY -->
+      <!-- GODZINY OTWARCIA -->
       <div
-        class="flex
-               items-center
-               justify-center
-               gap-2"
+        class="flex items-center justify-center gap-2"
       >
-
         <div
-          class="flex h-8 w-8
-                 shrink-0
+          class="flex h-8 w-8 shrink-0
                  items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -181,12 +159,9 @@
         </div>
 
         <div class="flex flex-col">
-
           <span
-            class="font-main-body
-                   text-[8px]
-                   font-normal
-                   uppercase
+            class="font-main-body text-[8px]
+                   font-normal uppercase
                    tracking-[0.18em]
                    text-stone-400"
           >
@@ -194,51 +169,36 @@
           </span>
 
           <span
-            class="font-main-body
-                   text-[12px]
-                   font-normal
-                   leading-4
-                   tracking-wide
-                   text-stone-700"
+            class="font-main-body text-[12px]
+                   font-normal leading-4
+                   tracking-wide text-stone-700"
           >
             08:00 – 16:00
           </span>
 
           <span
-            class="font-main-body
-                   text-[8px]
-                   font-normal
-                   leading-3
-                   tracking-wide
-                   text-stone-400"
+            class="font-main-body text-[8px]
+                   font-normal leading-3
+                   tracking-wide text-stone-400"
           >
             Inne godziny — po uzgodnieniu
           </span>
-
         </div>
-
       </div>
-
 
       <!-- SEPARATOR -->
       <div
-        class="mx-4 h-9 w-px
+        class="mx-4 h-9 w-px shrink-0
                bg-[#b3a06a]/30"
         aria-hidden="true"
       ></div>
 
-
       <!-- DOSTĘPNOŚĆ -->
       <div
-        class="flex
-               items-center
-               justify-center
-               gap-2"
+        class="flex items-center justify-center gap-2"
       >
-
         <div
-          class="flex h-8 w-8
-                 shrink-0
+          class="flex h-8 w-8 shrink-0
                  items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -251,12 +211,9 @@
         </div>
 
         <div class="flex flex-col">
-
           <span
-            class="font-main-body
-                   text-[8px]
-                   font-normal
-                   uppercase
+            class="font-main-body text-[8px]
+                   font-normal uppercase
                    tracking-[0.16em]
                    text-stone-400"
           >
@@ -264,57 +221,43 @@
           </span>
 
           <span
-            class="font-main-body
-                   text-[11px]
-                   font-normal
-                   leading-4
+            class="font-main-body text-[11px]
+                   font-normal leading-4
                    text-stone-700"
           >
             Dostępna dla osób
-            <span class="block">z niepełnosprawnościami</span>
+            <span class="block">
+              z niepełnosprawnościami
+            </span>
           </span>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 
-
   <!-- =========================================
-       DESKTOP — PEŁNA ZAWARTOŚĆ
+       DESKTOP — SZERSZY, ALE NIŻSZY
        ========================================= -->
 
   <div
     class="relative z-10
            mx-auto max-w-6xl
-           px-6 py-3
-           lg:px-8
+           px-8 py-3
+           xl:px-12
            hidden md:block"
   >
-
     <div
-      class="grid grid-cols-3
-             gap-6
-             lg:gap-10"
+      class="grid grid-cols-2
+             gap-8 lg:gap-12"
     >
-
-      <!-- =====================================
-           LEWA — GODZINY OTWARCIA
-           ===================================== -->
-
+      <!-- LEWA — GODZINY OTWARCIA -->
       <div
-        class="flex
-               items-center
-               min-h-[76px]"
+        class="flex min-h-[76px]
+               items-center gap-4"
       >
-
-        <!-- IKONA ZEGARA -->
+        <!-- IKONA -->
         <div
-          class="flex h-9 w-9
-                 shrink-0
+          class="flex h-9 w-9 shrink-0
                  items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -326,138 +269,47 @@
           <i class="fa-regular fa-clock text-sm"></i>
         </div>
 
-        <div class="ml-3">
-
+        <!-- TREŚĆ -->
+        <div class="min-w-0 flex-1">
           <span
-            class="block
-                   font-main-body
-                   text-[10px]
-                   font-normal
-                   uppercase
-                   tracking-[0.25em]
+            class="block font-main-body
+                   text-[10px] font-normal
+                   uppercase tracking-[0.25em]
                    text-stone-400"
           >
             Godziny otwarcia
           </span>
 
           <p
-            class="font-main-body
-                   text-[13px]
-                   font-normal
-                   leading-5
-                   tracking-wide
-                   text-stone-600"
+            class="font-main-body text-[13px]
+                   font-normal leading-5
+                   tracking-wide text-stone-600"
           >
             Dni powszednie · 08:00 – 16:00
           </p>
 
           <p
-            class="mt-1
-                   max-w-sm
-                   font-main-body
-                   text-[11px]
-                   font-normal
-                   leading-4
+            class="mt-1 max-w-lg
+                   font-main-body text-[11px]
+                   font-normal leading-4
                    text-stone-400"
           >
             Inne godziny i terminy dokonania czynności
             notarialnych – po uzgodnieniu z Klientem.
           </p>
-
         </div>
-
       </div>
 
-
-      <!-- =====================================
-           ŚRODEK — DOSTĘPNOŚĆ
-           ===================================== -->
-
+      <!-- PRAWA — DOSTĘPNOŚĆ -->
       <div
-        class="flex
-               items-center
-               min-h-[76px]
-               border-l
-               border-stone-200/80
-               pl-6"
+        class="flex min-h-[76px]
+               items-center gap-4
+               border-l border-stone-200/80
+               pl-8 lg:pl-10"
       >
-
-        <!-- IKONA DOSTĘPNOŚCI -->
+        <!-- IKONA -->
         <div
-          class="flex h-9 w-9
-                 shrink-0
-                 items-center justify-center
-                 rounded-full
-                 border border-[#b3a06a]
-                 bg-[#fffaf0]/75
-                 text-[#766947]
-                 shadow-[0_0_20px_rgba(179,160,106,0.14)]"
-          aria-label="Kancelaria dostępna dla osób z niepełnosprawnościami"
-        >
-          <i
-            class="fa-solid fa-wheelchair text-base"
-            aria-hidden="true"
-          ></i>
-        </div>
-
-        <div class="ml-3">
-
-          <span
-            class="block
-                   font-main-body
-                   text-[10px]
-                   font-normal
-                   uppercase
-                   tracking-[0.2em]
-                   text-stone-400"
-          >
-            Dostępność
-          </span>
-
-          <p
-            class="font-main-body
-                   text-[14px]
-                   font-normal
-                   leading-5
-                   text-stone-800"
-          >
-            Kancelaria dostępna dla osób
-            z niepełnosprawnościami
-          </p>
-
-          <p
-            class="mt-1
-                   font-main-body
-                   text-[11px]
-                   font-normal
-                   leading-4
-                   text-stone-400"
-          >
-            Dbamy o wygodę naszych klientów
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- =====================================
-           PRAWA — KANCELARIA / COPYRIGHT
-           ===================================== -->
-
-      <div
-        class="flex
-               items-center
-               min-h-[76px]
-               border-l
-               border-stone-200/80
-               pl-6"
-      >
-
-        <!-- IKONA COPYRIGHT -->
-        <div
-          class="flex h-9 w-9
-                 shrink-0
+          class="flex h-9 w-9 shrink-0
                  items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -466,56 +318,38 @@
                  shadow-[0_0_20px_rgba(179,160,106,0.14)]"
           aria-hidden="true"
         >
-          <i class="fa-regular fa-copyright text-sm"></i>
+          <i class="fa-solid fa-wheelchair text-base"></i>
         </div>
 
-        <div class="ml-3">
-
-          <div class="flex items-center gap-2">
-
-            <span
-              class="font-main-body
-                     text-[10px]
-                     font-normal
-                     uppercase
-                     tracking-[0.25em]
-                     text-stone-400"
-            >
-              Copyright
-            </span>
-
-            <span
-              class="font-main-body
-                     text-[11px]
-                     font-normal
-                     tracking-wide
-                     text-stone-400"
-            >
-              © 2026
-            </span>
-
-          </div>
+        <!-- TREŚĆ -->
+        <div class="min-w-0 flex-1">
+          <span
+            class="block font-main-body
+                   text-[10px] font-normal
+                   uppercase tracking-[0.2em]
+                   text-stone-400"
+          >
+            Dostępność
+          </span>
 
           <p
-            class="mt-1
-                   font-main-body
-                   text-[14px]
-                   font-normal
-                   leading-5
-                   tracking-wide
+            class="font-main-body text-[14px]
+                   font-normal leading-5
                    text-stone-800"
           >
-            Kancelaria Notarialna<br>
-            Zbigniew Władysławski<br>
-            Notariusz
+            Kancelaria dostępna dla osób
+            z niepełnosprawnościami
           </p>
 
+          <p
+            class="mt-1 font-main-body
+                   text-[11px] font-normal
+                   leading-4 text-stone-400"
+          >
+            Dbamy o wygodę naszych klientów
+          </p>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </footer>
