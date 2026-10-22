@@ -98,3 +98,66 @@ html {
   letter-spacing: 0.01em;
   color: #292424;
 }
+
+:root {
+  /* Mobile */
+  --section-gap: 128px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-gap: 224px;
+  }
+}
+
+/* =========================================
+   SHARED CONTENT COLUMN LAYOUT
+   ========================================= */
+
+.content-columns {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.content-columns__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-columns__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 100px;
+  align-items: start;
+}
+
+.content-columns__item {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Stack columns on smaller screens */
+@media (max-width: 900px) {
+  .content-columns {
+    padding: 0 20px;
+  }
+
+  .content-columns__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--section-gap);
+  }
+}
+
+/* =========================================
+   INDIVIDUAL CONTENT COLUMN
+   ========================================= */
+
+.content-column {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+}

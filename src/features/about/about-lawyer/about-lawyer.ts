@@ -7,7 +7,7 @@ import {
   ViewChild
 } from '@angular/core';
 
-import { TitleDivider } from '../../shared/title-divider/title-divider';
+import { TitleDivider } from '../../../shared/title-divider/title-divider';
 
 @Component({
   imports: [TitleDivider],

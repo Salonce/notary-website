@@ -1,0 +1,63 @@
+
+<!-- O KANCELARII -->
+<section id="o-kancelarii" class="about-area scroll-mt-24">
+
+  <div class="about-area__container">
+
+    <div class="about-area__grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="about-area__left">
+        <app-about-lawyer></app-about-lawyer>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="about-area__right">
+        <app-office-location></app-office-location>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+  .about-area {
+    width: 100%;
+    padding: 0 24px;
+    color: #20201e;
+    box-sizing: border-box;
+  }
+
+  .about-area__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-area__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .about-area__left,
+  .about-area__right {
+    min-width: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .about-area {
+      padding: 0 20px;
+    }
+
+    .about-area__grid {
+      grid-template-columns: 1fr;
+      gap: var(--section-gap);
+    }
+  }
+</style>
