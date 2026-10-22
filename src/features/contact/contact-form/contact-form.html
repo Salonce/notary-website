@@ -3,11 +3,8 @@
   class="contact-form"
   [class.is-visible]="isContactFormVisible"
 >
-
   <!-- HEADER -->
-
   <div class="text-center">
-
     <h2
       class="contact-form-title
              mt-2
@@ -24,12 +21,9 @@
     <div class="contact-form-divider">
       <app-title-divider />
     </div>
-
   </div>
 
-
   <!-- FORM -->
-
   <form
     [formGroup]="contactForm"
     (ngSubmit)="onSubmit()"
@@ -41,11 +35,8 @@
            md:mt-12
            md:space-y-6"
   >
-
     <!-- IMIĘ I NAZWISKO -->
-
     <div>
-
       <label
         for="name"
         class="mb-2 block
@@ -83,14 +74,10 @@
                focus:ring-[#d8ccb0]
                md:text-[18px]"
       />
-
     </div>
 
-
     <!-- ADRES E-MAIL -->
-
     <div>
-
       <label
         for="email"
         class="mb-2 block
@@ -128,14 +115,10 @@
                focus:ring-[#d8ccb0]
                md:text-[18px]"
       />
-
     </div>
 
-
     <!-- TREŚĆ ZAPYTANIA -->
-
     <div>
-
       <label
         for="message"
         class="mb-2 block
@@ -174,20 +157,14 @@
                md:text-[18px]
                md:leading-[1.9]"
       ></textarea>
-
     </div>
 
-
     <!-- ZGODA -->
-
     <div class="pt-1">
-
       <label
-        class="flex cursor-pointer
-               items-start
-               gap-3"
+        for="consent"
+        class="flex cursor-pointer items-start gap-3"
       >
-
         <input
           id="consent"
           formControlName="consent"
@@ -197,6 +174,18 @@
                  shrink-0
                  cursor-pointer
                  accent-[#806c3e]"
+          [attr.aria-invalid]="
+            contactForm.controls.consent.touched &&
+            contactForm.controls.consent.invalid
+              ? 'true'
+              : null
+          "
+          [attr.aria-describedby]="
+            contactForm.controls.consent.touched &&
+            contactForm.controls.consent.invalid
+              ? 'consent-error'
+              : null
+          "
         />
 
         <span
@@ -211,16 +200,77 @@
           w celu przetworzenia zapytania. Administratorem danych
           osobowych jest Kancelaria Notarialna Zbigniewa Władysławskiego.
         </span>
-
       </label>
 
+      <!-- CONSENT VALIDATION MESSAGE -->
+      @if (
+        contactForm.controls.consent.touched &&
+        contactForm.controls.consent.invalid
+      ) {
+        <div
+          id="consent-error"
+          class="mt-3 flex items-start gap-3
+                 border-l-2 border-[#b59b5b]
+                 bg-[#f8f5ee]
+                 px-4 py-3"
+          role="alert"
+        >
+          <svg
+            class="mt-0.5 h-4 w-4 shrink-0 text-[#806c3e]"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle
+              cx="10"
+              cy="10"
+              r="7.5"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="M10 9v4"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="10"
+              cy="6.5"
+              r="0.8"
+              fill="currentColor"
+            />
+          </svg>
+
+          <div class="min-w-0">
+            <p
+              class="font-main-body
+                     text-[12px]
+                     font-medium
+                     uppercase
+                     tracking-[0.12em]
+                     text-[#806c3e]"
+            >
+              Wymagane potwierdzenie
+            </p>
+
+            <p
+              class="mt-1
+                     font-main-body
+                     text-[13px]
+                     font-normal
+                     leading-[1.7]
+                     text-stone-600"
+            >
+              Prosimy o zaznaczenie zgody, aby móc wysłać formularz kontaktowy.
+            </p>
+          </div>
+        </div>
+      }
     </div>
 
-
-    <!-- MESSAGES -->
-
+    <!-- SUCCESS MESSAGE -->
     @if (successMessage) {
-
       <div
         class="pt-1
                font-main-body
@@ -229,14 +279,14 @@
                leading-7
                text-stone-600
                md:text-[15px]"
+        role="status"
       >
         {{ successMessage }}
       </div>
-
     }
 
+    <!-- ERROR MESSAGE -->
     @if (errorMessage) {
-
       <div
         class="pt-1
                font-main-body
@@ -245,17 +295,14 @@
                leading-7
                text-red-700
                md:text-[15px]"
+        role="alert"
       >
         {{ errorMessage }}
       </div>
-
     }
 
-
     <!-- BUTTON -->
-
     <div class="pt-1">
-
       <button
         type="submit"
         [disabled]="isSending"
@@ -280,13 +327,11 @@
                disabled:opacity-50
                sm:w-auto"
       >
-
         <span>
           {{ isSending ? 'Wysyłanie...' : 'Wyślij zapytanie' }}
         </span>
 
         @if (!isSending) {
-
           <span
             class="text-[#b59b5b]
                    transition-transform duration-300
@@ -296,13 +341,8 @@
           >
             →
           </span>
-
         }
-
       </button>
-
     </div>
-
   </form>
-
 </section>
