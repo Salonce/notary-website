@@ -6,14 +6,15 @@
   <!-- HEADER -->
   <div class="text-center">
     <h2
+      id="contact-form-title"
       class="contact-form-title
              mt-2
              font-main-heading
              text-[34px]
-             md:text-[40px]
              font-normal
              tracking-wide
-             text-stone-800"
+             text-stone-800
+             md:text-[40px]"
     >
       Formularz kontaktowy
     </h2>
@@ -27,6 +28,8 @@
   <form
     [formGroup]="contactForm"
     (ngSubmit)="onSubmit()"
+    aria-labelledby="contact-form-title"
+    novalidate
     class="contact-form-body
            mx-auto mt-10
            w-full max-w-xl
@@ -35,6 +38,140 @@
            md:mt-12
            md:space-y-6"
   >
+    <!-- ERROR SUMMARY -->
+    @if (submitted && contactForm.invalid) {
+      <div
+        id="form-error-summary"
+        tabindex="-1"
+        class="border-l-2 border-red-700
+               bg-red-50/70
+               px-5 py-4
+               focus-visible:outline-2
+               focus-visible:outline-offset-2
+               focus-visible:outline-red-700"
+        role="alert"
+        aria-labelledby="form-error-title"
+      >
+        <h3
+          id="form-error-title"
+          class="font-main-body
+                 text-[12px]
+                 font-medium
+                 uppercase
+                 tracking-[0.12em]
+                 text-red-800"
+        >
+          Prosimy o poprawienie formularza
+        </h3>
+
+        <p
+          class="mt-2
+                 font-main-body
+                 text-[13px]
+                 leading-6
+                 text-red-800"
+        >
+          Sprawdź poniższe pola i uzupełnij wymagane informacje.
+        </p>
+
+        <ul
+          class="mt-2
+                 list-inside
+                 list-disc
+                 space-y-1
+                 font-main-body
+                 text-[13px]
+                 leading-6
+                 text-red-800"
+        >
+          @if (shouldShowError('name')) {
+            <li>
+              <a
+                href="#name"
+                class="underline underline-offset-2
+                       hover:no-underline
+                       focus-visible:outline-2
+                       focus-visible:outline-offset-2"
+              >
+                Imię i nazwisko:
+                @if (
+                  contactForm.controls.name.hasError('required') ||
+                  contactForm.controls.name.hasError('whitespace')
+                ) {
+                  podaj imię i nazwisko.
+                } @else if (
+                  contactForm.controls.name.hasError('minlength')
+                ) {
+                  wpisz co najmniej 2 znaki.
+                } @else if (
+                  contactForm.controls.name.hasError('maxlength')
+                ) {
+                  wpisz maksymalnie 100 znaków.
+                }
+              </a>
+            </li>
+          }
+
+          @if (shouldShowError('email')) {
+            <li>
+              <a
+                href="#email"
+                class="underline underline-offset-2
+                       hover:no-underline
+                       focus-visible:outline-2
+                       focus-visible:outline-offset-2"
+              >
+                Adres e-mail:
+                @if (contactForm.controls.email.hasError('required')) {
+                  podaj adres e-mail.
+                } @else {
+                  podaj prawidłowy adres e-mail.
+                }
+              </a>
+            </li>
+          }
+
+          @if (shouldShowError('message')) {
+            <li>
+              <a
+                href="#message"
+                class="underline underline-offset-2
+                       hover:no-underline
+                       focus-visible:outline-2
+                       focus-visible:outline-offset-2"
+              >
+                Treść zapytania:
+                @if (
+                  contactForm.controls.message.hasError('required') ||
+                  contactForm.controls.message.hasError('whitespace')
+                ) {
+                  wpisz treść zapytania.
+                } @else if (
+                  contactForm.controls.message.hasError('minlength')
+                ) {
+                  wpisz co najmniej 10 znaków.
+                }
+              </a>
+            </li>
+          }
+
+          @if (shouldShowError('consent')) {
+            <li>
+              <a
+                href="#consent"
+                class="underline underline-offset-2
+                       hover:no-underline
+                       focus-visible:outline-2
+                       focus-visible:outline-offset-2"
+              >
+                Zgoda: zaznacz wymagane pole.
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+
     <!-- IMIĘ I NAZWISKO -->
     <div>
       <label
@@ -48,6 +185,7 @@
                text-[#806c3e]"
       >
         Imię i nazwisko
+        <span aria-hidden="true" class="text-red-700">*</span>
       </label>
 
       <input
@@ -56,6 +194,17 @@
         type="text"
         autocomplete="name"
         placeholder="Jan Kowalski"
+        minlength="2"
+        maxlength="100"
+        required
+        [attr.aria-invalid]="
+          shouldShowError('name') ? 'true' : null
+        "
+        [attr.aria-describedby]="
+          shouldShowError('name') ? 'name-error' : null
+        "
+        [class.!border-red-700]="shouldShowError('name')"
+        [class.!focus:border-red-700]="shouldShowError('name')"
         class="w-full
                border border-[#d8ccb0]
                bg-[#f3f0e7]/40
@@ -66,7 +215,7 @@
                leading-[1.7]
                text-stone-800
                outline-none
-               transition-all duration-300
+               transition-colors duration-200
                placeholder:text-stone-400
                hover:border-[#b59b5b]
                focus:border-[#806c3e]
@@ -74,6 +223,33 @@
                focus:ring-[#d8ccb0]
                md:text-[18px]"
       />
+
+      @if (shouldShowError('name')) {
+        <p
+          id="name-error"
+          class="mt-2
+                 font-main-body
+                 text-[13px]
+                 leading-5
+                 text-red-700"
+        >
+          @if (contactForm.controls.name.hasError('required')) {
+            Prosimy o podanie imienia i nazwiska.
+          } @else if (
+            contactForm.controls.name.hasError('whitespace')
+          ) {
+            Pole nie może zawierać wyłącznie spacji.
+          } @else if (
+            contactForm.controls.name.hasError('minlength')
+          ) {
+            Prosimy o wpisanie co najmniej 2 znaków.
+          } @else if (
+            contactForm.controls.name.hasError('maxlength')
+          ) {
+            Imię i nazwisko może mieć maksymalnie 100 znaków.
+          }
+        </p>
+      }
     </div>
 
     <!-- ADRES E-MAIL -->
@@ -89,6 +265,7 @@
                text-[#806c3e]"
       >
         Adres e-mail
+        <span aria-hidden="true" class="text-red-700">*</span>
       </label>
 
       <input
@@ -96,7 +273,17 @@
         formControlName="email"
         type="email"
         autocomplete="email"
+        inputmode="email"
         placeholder="jan.kowalski@email.pl"
+        required
+        [attr.aria-invalid]="
+          shouldShowError('email') ? 'true' : null
+        "
+        [attr.aria-describedby]="
+          shouldShowError('email') ? 'email-error' : null
+        "
+        [class.!border-red-700]="shouldShowError('email')"
+        [class.!focus:border-red-700]="shouldShowError('email')"
         class="w-full
                border border-[#d8ccb0]
                bg-[#f3f0e7]/40
@@ -107,7 +294,7 @@
                leading-[1.7]
                text-stone-800
                outline-none
-               transition-all duration-300
+               transition-colors duration-200
                placeholder:text-stone-400
                hover:border-[#b59b5b]
                focus:border-[#806c3e]
@@ -115,6 +302,23 @@
                focus:ring-[#d8ccb0]
                md:text-[18px]"
       />
+
+      @if (shouldShowError('email')) {
+        <p
+          id="email-error"
+          class="mt-2
+                 font-main-body
+                 text-[13px]
+                 leading-5
+                 text-red-700"
+        >
+          @if (contactForm.controls.email.hasError('required')) {
+            Prosimy o podanie adresu e-mail.
+          } @else if (contactForm.controls.email.hasError('email')) {
+            Prosimy o podanie prawidłowego adresu e-mail.
+          }
+        </p>
+      }
     </div>
 
     <!-- TREŚĆ ZAPYTANIA -->
@@ -130,6 +334,7 @@
                text-[#806c3e]"
       >
         Treść zapytania
+        <span aria-hidden="true" class="text-red-700">*</span>
       </label>
 
       <textarea
@@ -137,8 +342,17 @@
         formControlName="message"
         rows="5"
         placeholder="W czym możemy Państwu pomóc?"
+        required
+        [attr.aria-invalid]="
+          shouldShowError('message') ? 'true' : null
+        "
+        [attr.aria-describedby]="
+          shouldShowError('message') ? 'message-error' : null
+        "
+        [class.!border-red-700]="shouldShowError('message')"
+        [class.!focus:border-red-700]="shouldShowError('message')"
         class="w-full
-               resize-none
+               resize-y
                border border-[#d8ccb0]
                bg-[#f3f0e7]/40
                px-4 py-3
@@ -148,7 +362,7 @@
                leading-[1.85]
                text-stone-800
                outline-none
-               transition-all duration-300
+               transition-colors duration-200
                placeholder:text-stone-400
                hover:border-[#b59b5b]
                focus:border-[#806c3e]
@@ -157,6 +371,28 @@
                md:text-[18px]
                md:leading-[1.9]"
       ></textarea>
+
+      @if (shouldShowError('message')) {
+        <p
+          id="message-error"
+          class="mt-2
+                 font-main-body
+                 text-[13px]
+                 leading-5
+                 text-red-700"
+        >
+          @if (
+            contactForm.controls.message.hasError('required') ||
+            contactForm.controls.message.hasError('whitespace')
+          ) {
+            Prosimy o wpisanie treści zapytania.
+          } @else if (
+            contactForm.controls.message.hasError('minlength')
+          ) {
+            Treść zapytania musi zawierać co najmniej 10 znaków.
+          }
+        </p>
+      }
     </div>
 
     <!-- ZGODA -->
@@ -169,23 +405,22 @@
           id="consent"
           formControlName="consent"
           type="checkbox"
+          required
+          [attr.aria-invalid]="
+            shouldShowError('consent') ? 'true' : null
+          "
+          [attr.aria-describedby]="
+            shouldShowError('consent') ? 'consent-error' : null
+          "
+          [class.!outline-red-700]="shouldShowError('consent')"
           class="mt-1
                  h-4 w-4
                  shrink-0
                  cursor-pointer
-                 accent-[#806c3e]"
-          [attr.aria-invalid]="
-            contactForm.controls.consent.touched &&
-            contactForm.controls.consent.invalid
-              ? 'true'
-              : null
-          "
-          [attr.aria-describedby]="
-            contactForm.controls.consent.touched &&
-            contactForm.controls.consent.invalid
-              ? 'consent-error'
-              : null
-          "
+                 accent-[#806c3e]
+                 focus-visible:outline-2
+                 focus-visible:outline-offset-2
+                 focus-visible:outline-[#806c3e]"
         />
 
         <span
@@ -193,107 +428,61 @@
                  text-[13px]
                  font-normal
                  leading-6
-                 text-stone-500
+                 text-stone-600
                  md:text-[14px]"
         >
           Wyrażam zgodę na przetwarzanie moich danych osobowych
           w celu przetworzenia zapytania. Administratorem danych
           osobowych jest Kancelaria Notarialna Zbigniewa Władysławskiego.
+          <span aria-hidden="true" class="text-red-700">*</span>
         </span>
       </label>
 
-      <!-- CONSENT VALIDATION MESSAGE -->
-      @if (
-        contactForm.controls.consent.touched &&
-        contactForm.controls.consent.invalid
-      ) {
-        <div
-          id="consent-error"
-          class="mt-3 flex items-start gap-3
-                 border-l-2 border-[#b59b5b]
-                 bg-[#f8f5ee]
-                 px-4 py-3"
-          role="alert"
-        >
-          <svg
-            class="mt-0.5 h-4 w-4 shrink-0 text-[#806c3e]"
-            viewBox="0 0 20 20"
-            fill="none"
-            aria-hidden="true"
-          >
-            <circle
-              cx="10"
-              cy="10"
-              r="7.5"
-              stroke="currentColor"
-              stroke-width="1.4"
-            />
-            <path
-              d="M10 9v4"
-              stroke="currentColor"
-              stroke-width="1.4"
-              stroke-linecap="round"
-            />
-            <circle
-              cx="10"
-              cy="6.5"
-              r="0.8"
-              fill="currentColor"
-            />
-          </svg>
-
-          <div class="min-w-0">
-            <p
-              class="font-main-body
-                     text-[12px]
-                     font-medium
-                     uppercase
-                     tracking-[0.12em]
-                     text-[#806c3e]"
-            >
-              Wymagane potwierdzenie
-            </p>
-
-            <p
-              class="mt-1
-                     font-main-body
-                     text-[13px]
-                     font-normal
-                     leading-[1.7]
-                     text-stone-600"
-            >
-              Prosimy o zaznaczenie zgody, aby móc wysłać formularz kontaktowy.
-            </p>
-          </div>
-        </div>
-      }
+      <!-- Bez dodatkowego komunikatu pod checkboxem -->
     </div>
+
+    <!-- PRIVACY INFORMATION -->
+    <p
+      class="font-main-body
+             text-[12px]
+             leading-5
+             text-stone-500"
+    >
+      Pola oznaczone symbolem
+      <span aria-hidden="true" class="text-red-700">*</span>
+      są wymagane.
+    </p>
 
     <!-- SUCCESS MESSAGE -->
     @if (successMessage) {
       <div
-        class="pt-1
+        class="border-l-2 border-[#806c3e]
+               bg-[#f3f0e7]/60
+               px-4 py-3
                font-main-body
                text-[14px]
                font-normal
                leading-7
-               text-stone-600
+               text-stone-700
                md:text-[15px]"
         role="status"
+        aria-live="polite"
       >
         {{ successMessage }}
       </div>
     }
 
-    <!-- ERROR MESSAGE -->
+    <!-- SERVER / SUBMISSION ERROR -->
     @if (errorMessage) {
       <div
-        class="pt-1
+        class="border-l-2 border-red-700
+               bg-red-50/70
+               px-4 py-3
                font-main-body
                text-[14px]
                font-normal
                leading-7
-               text-red-700
+               text-red-800
                md:text-[15px]"
         role="alert"
       >
@@ -301,11 +490,12 @@
       </div>
     }
 
-    <!-- BUTTON -->
+    <!-- SUBMIT BUTTON -->
     <div class="pt-1">
       <button
         type="submit"
         [disabled]="isSending"
+        [attr.aria-busy]="isSending ? 'true' : null"
         class="group inline-flex
                w-full
                items-center
@@ -319,10 +509,13 @@
                font-normal
                tracking-wide
                text-[#806c3e]
-               transition-all duration-300
+               transition-colors duration-300
                hover:border-[#806c3e]
                hover:bg-[#806c3e]
                hover:text-white
+               focus-visible:outline-2
+               focus-visible:outline-offset-4
+               focus-visible:outline-[#806c3e]
                disabled:cursor-not-allowed
                disabled:opacity-50
                sm:w-auto"

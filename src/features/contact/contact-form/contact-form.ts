@@ -9,13 +9,74 @@ import {
 } from '@angular/core';
 
 import {
+  AbstractControl,
   FormBuilder,
   ReactiveFormsModule,
+  ValidationErrors,
+  ValidatorFn,
   Validators
 } from '@angular/forms';
 
 import { MailService } from '../mail-service/mail-service';
 import { TitleDivider } from '../../../shared/title-divider/title-divider';
+
+/**
+ * Rejects empty values and strings containing only whitespace.
+ */
+const nonWhitespaceValidator: ValidatorFn = (
+  control: AbstractControl
+): ValidationErrors | null => {
+  const value: unknown = control.value;
+
+  if (typeof value !== 'string') {
+    return { whitespace: true };
+  }
+
+  return value.trim().length > 0
+    ? null
+    : { whitespace: true };
+};
+
+/**
+ * Validates the trimmed length of a string.
+ *
+ * Leading and trailing spaces do not count towards
+ * the minimum or maximum length.
+ */
+const trimmedLengthValidator = (
+  min: number,
+  max: number
+): ValidatorFn => {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value: unknown = control.value;
+
+    if (typeof value !== 'string') {
+      return null;
+    }
+
+    const length = value.trim().length;
+
+    if (length < min) {
+      return {
+        minlength: {
+          requiredLength: min,
+          actualLength: length
+        }
+      };
+    }
+
+    if (length > max) {
+      return {
+        maxlength: {
+          requiredLength: max,
+          actualLength: length
+        }
+      };
+    }
+
+    return null;
+  };
+};
 
 @Component({
   selector: 'app-contact-form',
@@ -36,31 +97,85 @@ export class ContactForm implements AfterViewInit, OnDestroy {
   private readonly mailService = inject(MailService);
   private readonly cdr = inject(ChangeDetectorRef);
 
+  /**
+   * Tracks whether the user has attempted to submit the form.
+   */
+  submitted = false;
+
+  /**
+   * Reactive form with validation.
+   */
   contactForm = this.fb.nonNullable.group({
-    name: ['', [
-      Validators.required,
-      Validators.minLength(2)
-    ]],
 
-    email: ['', [
-      Validators.required,
-      Validators.email
-    ]],
+    name: [
+      '',
+      [
+        Validators.required,
+        nonWhitespaceValidator,
+        trimmedLengthValidator(2, 100)
+      ]
+    ],
 
-    message: ['', [
-      Validators.required,
-      Validators.minLength(10)
-    ]],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.email
+      ]
+    ],
 
-    consent: [false, [
-      Validators.requiredTrue
-    ]]
+    message: [
+      '',
+      [
+        Validators.required,
+        nonWhitespaceValidator,
+        Validators.minLength(10)
+      ]
+    ],
+
+    consent: [
+      false,
+      [
+        Validators.requiredTrue
+      ]
+    ]
+
   });
 
   isSending = false;
+
   successMessage = '';
   errorMessage = '';
 
+  /**
+   * Determines whether a validation error should be displayed.
+   */
+  shouldShowError(
+    controlName: 'name' | 'email' | 'message' | 'consent'
+  ): boolean {
+    const control = this.contactForm.controls[controlName];
+
+    return control.invalid &&
+      (control.touched || this.submitted);
+  }
+
+  /**
+   * Moves keyboard focus to the error summary after
+   * an invalid submission.
+   */
+  private focusErrorSummary(): void {
+    requestAnimationFrame(() => {
+      const errorSummary = document.getElementById(
+        'form-error-summary'
+      );
+
+      errorSummary?.focus();
+    });
+  }
+
+  /**
+   * Reveals the contact form when it enters the viewport.
+   */
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,46 +183,61 @@ export class ContactForm implements AfterViewInit, OnDestroy {
           return;
         }
 
+        this.isContactFormVisible = true;
         this.cdr.detectChanges();
 
-        requestAnimationFrame(() => {
-          this.isContactFormVisible = true;
-          this.cdr.detectChanges();
-
-          this.observer?.disconnect();
-        });
+        this.observer?.disconnect();
       },
       {
         threshold: 0.15
       }
     );
 
-    this.observer.observe(this.contactFormSection.nativeElement);
+    this.observer.observe(
+      this.contactFormSection.nativeElement
+    );
   }
 
+  /**
+   * Disconnects the observer when the component is destroyed.
+   */
   ngOnDestroy(): void {
     this.observer?.disconnect();
   }
 
+  /**
+   * Validates and submits the contact form.
+   */
   async onSubmit(): Promise<void> {
 
+    // Clear messages from the previous attempt.
     this.successMessage = '';
     this.errorMessage = '';
 
+    // Record this submission attempt.
+    this.submitted = true;
+
+    // Stop if any field is invalid.
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
+      this.focusErrorSummary();
+      return;
+    }
+
+    // Prevent duplicate submissions.
+    if (this.isSending) {
       return;
     }
 
     this.isSending = true;
 
     const formValue = this.contactForm.getRawValue();
-
     const formData = new FormData();
 
-    formData.append('name', formValue.name);
-    formData.append('email', formValue.email);
-    formData.append('message', formValue.message);
+    // Remove surrounding whitespace from text fields.
+    formData.append('name', formValue.name.trim());
+    formData.append('email', formValue.email.trim());
+    formData.append('message', formValue.message.trim());
 
     try {
       const result = await this.mailService.sendEmail(formData);
@@ -123,6 +253,8 @@ export class ContactForm implements AfterViewInit, OnDestroy {
           consent: false
         });
 
+        this.submitted = false;
+
       } else {
         this.errorMessage =
           result.message || 'Nie udało się wysłać wiadomości.';
@@ -133,6 +265,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
 
       this.errorMessage =
         'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
+
     } finally {
       this.isSending = false;
     }
