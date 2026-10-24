@@ -1,3 +1,4 @@
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -82,7 +83,7 @@ const trimmedLengthValidator = (
   selector: 'app-contact-form',
   imports: [ReactiveFormsModule, TitleDivider],
   styleUrl: './contact-form.css',
-  templateUrl: './contact-form.html',
+  templateUrl: './contact-form.html'
 })
 export class ContactForm implements AfterViewInit, OnDestroy {
 
@@ -142,6 +143,9 @@ export class ContactForm implements AfterViewInit, OnDestroy {
 
   });
 
+  /**
+   * Indicates whether the email is currently being sent.
+   */
   isSending = false;
 
   successMessage = '';
@@ -210,6 +214,11 @@ export class ContactForm implements AfterViewInit, OnDestroy {
    */
   async onSubmit(): Promise<void> {
 
+    // Prevent duplicate submissions immediately.
+    if (this.isSending) {
+      return;
+    }
+
     // Clear messages from the previous attempt.
     this.successMessage = '';
     this.errorMessage = '';
@@ -224,22 +233,18 @@ export class ContactForm implements AfterViewInit, OnDestroy {
       return;
     }
 
-    // Prevent duplicate submissions.
-    if (this.isSending) {
-      return;
-    }
-
+    // Lock submission before starting the request.
     this.isSending = true;
 
-    const formValue = this.contactForm.getRawValue();
-    const formData = new FormData();
-
-    // Remove surrounding whitespace from text fields.
-    formData.append('name', formValue.name.trim());
-    formData.append('email', formValue.email.trim());
-    formData.append('message', formValue.message.trim());
-
     try {
+      const formValue = this.contactForm.getRawValue();
+      const formData = new FormData();
+
+      // Remove surrounding whitespace from text fields.
+      formData.append('name', formValue.name.trim());
+      formData.append('email', formValue.email.trim());
+      formData.append('message', formValue.message.trim());
+
       const result = await this.mailService.sendEmail(formData);
 
       if (result.success) {
@@ -267,6 +272,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
         'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
 
     } finally {
+      // Always unlock submission, even if an error occurs.
       this.isSending = false;
     }
   }

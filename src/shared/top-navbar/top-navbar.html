@@ -57,7 +57,7 @@
       href="#home"
       aria-label="Strona główna"
       (click)="scrollToSection($event, 'home')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
         <svg
@@ -76,11 +76,13 @@
           />
         </svg>
 
-        <span class="text-[10px] leading-tight md:hidden">
+        <!-- PONIŻEJ 1024 PX -->
+        <span class="lg:hidden">
           Start
         </span>
 
-        <span class="hidden md:inline">
+        <!-- OD 1024 PX -->
+        <span class="hidden lg:inline">
           Strona główna
         </span>
       </span>
@@ -91,7 +93,7 @@
       href="#czynnosci-notarialne"
       aria-label="Czynności notarialne"
       (click)="scrollToSection($event, 'czynnosci-notarialne')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
         <svg
@@ -110,11 +112,18 @@
           />
         </svg>
 
-        <span class="text-[10px] leading-tight md:hidden">
+        <!-- PONIŻEJ 768 PX -->
+        <span class="md:hidden">
           Czynności
         </span>
 
-        <span class="hidden md:inline">
+        <!-- OD 768 PX DO 1279 PX -->
+        <span class="hidden md:inline xl:hidden">
+          Czynności
+        </span>
+
+        <!-- OD 1280 PX -->
+        <span class="hidden xl:inline">
           Czynności notarialne
         </span>
       </span>
@@ -125,7 +134,7 @@
       href="#oplaty"
       aria-label="Koszty"
       (click)="scrollToSection($event, 'oplaty')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
         <svg
@@ -138,19 +147,17 @@
           aria-hidden="true"
         >
           <circle cx="12" cy="12" r="8.5" />
-
           <path
             stroke-linecap="round"
             d="M14.5 9.5c-.5-.7-1.4-1.1-2.5-1.1-1.4 0-2.4.7-2.4 1.7 0 2.6 4.8 1.1 4.8 3.8 0 1.1-1 1.8-2.5 1.8-1.1 0-2.1-.4-2.7-1.2"
           />
-
           <path
             stroke-linecap="round"
             d="M12 7v10"
           />
         </svg>
 
-        <span class="text-[10px] leading-tight md:hidden">
+        <span class="md:hidden">
           Koszty
         </span>
 
@@ -165,7 +172,7 @@
       href="#strefa-klienta"
       aria-label="Strefa klienta"
       (click)="scrollToSection($event, 'strefa-klienta')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
         <svg
@@ -178,7 +185,6 @@
           aria-hidden="true"
         >
           <circle cx="12" cy="8" r="3.2" />
-
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -186,11 +192,13 @@
           />
         </svg>
 
-        <span class="text-[10px] leading-tight md:hidden">
+        <!-- PONIŻEJ 1024 PX -->
+        <span class="lg:hidden">
           Klient
         </span>
 
-        <span class="hidden md:inline">
+        <!-- OD 1024 PX -->
+        <span class="hidden lg:inline">
           Strefa klienta
         </span>
       </span>
@@ -201,7 +209,7 @@
       href="#kontakt"
       aria-label="Kontakt"
       (click)="scrollToSection($event, 'kontakt')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
         <svg
@@ -220,7 +228,7 @@
           />
         </svg>
 
-        <span class="text-[10px] leading-tight md:hidden">
+        <span class="md:hidden">
           Kontakt
         </span>
 

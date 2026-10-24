@@ -1,3 +1,4 @@
+
 <section
   #contactFormSection
   class="contact-form"
@@ -437,11 +438,9 @@
           <span aria-hidden="true" class="text-red-700">*</span>
         </span>
       </label>
-
-      <!-- Bez dodatkowego komunikatu pod checkboxem -->
     </div>
 
-    <!-- PRIVACY INFORMATION -->
+    <!-- INFORMACJA O POLACH WYMAGANYCH -->
     <p
       class="font-main-body
              text-[12px]
@@ -453,10 +452,13 @@
       są wymagane.
     </p>
 
-    <!-- SUCCESS MESSAGE -->
+    <!-- KOMUNIKAT O SUKCESIE PO WYSŁANIU -->
     @if (successMessage) {
       <div
-        class="border-l-2 border-[#806c3e]
+        role="status"
+        aria-live="polite"
+        class="flex items-start gap-3
+               border-l-2 border-[#806c3e]
                bg-[#f3f0e7]/60
                px-4 py-3
                font-main-body
@@ -465,16 +467,42 @@
                leading-7
                text-stone-700
                md:text-[15px]"
-        role="status"
-        aria-live="polite"
       >
-        {{ successMessage }}
+        <!-- Elegancki, złoto-oliwkowy ptaszek -->
+        <span
+          aria-hidden="true"
+          class="mt-1
+                 flex h-6 w-6 shrink-0
+                 items-center justify-center
+                 rounded-full
+                 border border-[#b59b5b]
+                 text-[#806c3e]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+          >
+            <path d="m5 12 4 4L19 6" />
+          </svg>
+        </span>
+
+        <p class="min-w-0">
+          {{ successMessage }}
+        </p>
       </div>
     }
 
-    <!-- SERVER / SUBMISSION ERROR -->
+    <!-- KOMUNIKAT O BŁĘDZIE -->
     @if (errorMessage) {
       <div
+        role="alert"
+        aria-live="assertive"
         class="border-l-2 border-red-700
                bg-red-50/70
                px-4 py-3
@@ -484,13 +512,12 @@
                leading-7
                text-red-800
                md:text-[15px]"
-        role="alert"
       >
         {{ errorMessage }}
       </div>
     }
 
-    <!-- SUBMIT BUTTON -->
+    <!-- PRZYCISK WYSYŁANIA -->
     <div class="pt-1">
       <button
         type="submit"
