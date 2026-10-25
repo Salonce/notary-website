@@ -46,7 +46,8 @@
 
   <!-- MENU MOBILNE: PONIŻEJ 390 PX -->
   <div class="relative z-10 xxs:hidden">
-    <!-- PASEK MENU: WYSOKOŚĆ 40 PX -->
+
+    <!-- PASEK MENU -->
     <button
       type="button"
       class="group flex h-[40px] min-h-[40px] w-full items-center justify-end gap-2.5 px-3.5 text-right transition-colors duration-300 hover:bg-[#fffaf0]/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] active:bg-[#bda968]/10 min-[375px]:px-4 min-[375px]:gap-3"
@@ -61,6 +62,7 @@
         MENU
       </span>
 
+      <!-- IKONA HAMBURGERA -->
       <span
         class="flex h-9 w-9 shrink-0 items-center justify-center text-[#8b7542] transition-colors duration-300 group-hover:text-[#806c3e]"
         aria-hidden="true"
@@ -70,14 +72,13 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1.5"
+          stroke-width="1.6"
+          stroke-linecap="round"
           class="h-[23px] w-[23px]"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 3v17M8 20h8M6 7h12M5 7l-2 5h4L5 7Zm14 0-2 5h4l-2-5Z"
-          />
+          <path d="M4 6.5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 17.5h16" />
         </svg>
       </span>
     </button>
@@ -216,6 +217,7 @@
 
   <!-- NAVBAR DESKTOP: OD 390 PX -->
   <div class="relative z-10 mx-auto hidden max-w-7xl xxs:flex">
+
     <!-- STRONA GŁÓWNA -->
     <a
       href="#home"
