@@ -6,13 +6,12 @@
 
       <!-- LEFT COLUMN -->
       <div class="space-y-20">
-        <app-contact-info />
+        <app-contact-info></app-contact-info>
       </div>
-
 
       <!-- RIGHT COLUMN -->
       <div>
-        <app-contact-form />
+        <app-contact-form></app-contact-form>
       </div>
 
     </div>
@@ -20,3 +19,11 @@
   </div>
 
 </section>
+
+<style>
+  @media (max-width: 900px) {
+    #kontakt .grid {
+      gap: var(--section-gap);
+    }
+  }
+</style>
