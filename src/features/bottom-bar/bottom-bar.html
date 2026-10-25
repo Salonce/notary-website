@@ -127,15 +127,17 @@
   </div>
 
   <!-- =========================================
-       MOBILE — WIĘKSZE ELEMENTY NA NAJMNIEJSZYCH EKRANACH
-       BREAKPOINT: xxs
+       MOBILE — DOPASOWANIE DO MAŁYCH EKRANÓW
+       WIĘKSZA WERSJA OD xxxs
        ========================================= -->
 
   <div
     class="relative z-10
-           flex h-[52px] xxs:h-[64px]
+           flex h-[50px] xxxs:h-[52px]
+           xxxs:xxs:h-[64px]
            items-center justify-center
-           px-1.5 xxs:px-3
+           px-1 xxxs:px-1.5
+           xxxs:xxs:px-3
            md:hidden"
   >
     <div
@@ -146,12 +148,14 @@
       <div
         class="flex min-w-0 flex-1
                items-center justify-center
-               gap-1 xxs:gap-2"
+               gap-0.5 xxxs:gap-1
+               xxxs:xxs:gap-2"
       >
         <!-- IKONA ZEGARA -->
         <div
-          class="flex h-[27px] w-[27px]
-                 xxs:h-8 xxs:w-8
+          class="flex h-[25px] w-[25px]
+                 xxxs:h-[27px] xxxs:w-[27px]
+                 xxxs:xxs:h-8 xxxs:xxs:w-8
                  shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -160,25 +164,37 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-regular fa-clock text-[11px] xxs:text-xs"></i>
+          <i
+            class="fa-regular fa-clock
+                   text-[10px]
+                   xxxs:text-[11px]
+                   xxxs:xxs:text-xs"
+          ></i>
         </div>
 
         <!-- GODZINY I DODATKOWA INFORMACJA -->
         <div class="flex min-w-0 flex-col justify-center">
           <span
             class="font-main-body
-                   text-[10.5px] xxs:text-[11px]
-                   font-normal leading-[14px] xxs:leading-[15px]
+                   text-[10px] xxxs:text-[10.5px]
+                   xxxs:xxs:text-[11px]
+                   font-normal
+                   leading-[13px] xxxs:leading-[14px]
+                   xxxs:xxs:leading-[15px]
                    tracking-normal
-                   text-stone-700 whitespace-nowrap"
+                   text-stone-700
+                   whitespace-nowrap"
           >
             PN - PT · 08:00 - 16:00
           </span>
 
           <span
             class="font-main-body
-                   text-[8.5px] xxs:text-[9px]
-                   font-normal leading-[11px] xxs:leading-3
+                   text-[8px] xxxs:text-[8.5px]
+                   xxxs:xxs:text-[9px]
+                   font-normal
+                   leading-[10px] xxxs:leading-[11px]
+                   xxxs:xxs:leading-3
                    tracking-normal
                    text-stone-400"
           >
@@ -189,8 +205,11 @@
 
       <!-- SEPARATOR -->
       <div
-        class="mx-1.5 xxs:mx-3
-               h-7 xxs:h-9 w-px shrink-0
+        class="mx-1 xxxs:mx-1.5
+               xxxs:xxs:mx-3
+               h-6 xxxs:h-7
+               xxxs:xxs:h-9
+               w-px shrink-0
                bg-[#b3a06a]/30"
         aria-hidden="true"
       ></div>
@@ -199,12 +218,14 @@
       <div
         class="flex min-w-0 flex-1
                items-center justify-center
-               gap-1 xxs:gap-2"
+               gap-0.5 xxxs:gap-1
+               xxxs:xxs:gap-2"
       >
         <!-- IKONA DOSTĘPNOŚCI -->
         <div
-          class="flex h-[27px] w-[27px]
-                 xxs:h-8 xxs:w-8
+          class="flex h-[25px] w-[25px]
+                 xxxs:h-[27px] xxxs:w-[27px]
+                 xxxs:xxs:h-8 xxxs:xxs:w-8
                  shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -213,20 +234,28 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-solid fa-wheelchair text-[11px] xxs:text-xs"></i>
+          <i
+            class="fa-solid fa-wheelchair
+                   text-[10px]
+                   xxxs:text-[11px]
+                   xxxs:xxs:text-xs"
+          ></i>
         </div>
 
         <!-- INFORMACJA O DOSTĘPNOŚCI -->
         <div class="flex min-w-0 flex-col justify-center">
           <span
             class="font-main-body
-                   text-[10.5px] xxs:text-[11px]
-                   font-normal leading-[14px] xxs:leading-[15px]
+                   text-[10px] xxxs:text-[10.5px]
+                   xxxs:xxs:text-[11px]
+                   font-normal
+                   leading-[13px] xxxs:leading-[14px]
+                   xxxs:xxs:leading-[15px]
                    text-stone-700"
           >
             Kancelaria przyjazna dla
             <span class="block">
-            osób niepełnosprawnych
+              osób niepełnosprawnych
             </span>
           </span>
         </div>
@@ -293,7 +322,7 @@
                    font-normal leading-4
                    text-stone-400"
           >
-            Inne godziny i terminy dokonania czynności
+            Inne godziny i terminy dokonania czynności <br> 
             notarialnych – po uzgodnieniu z Klientem.
           </p>
         </div>
