@@ -127,14 +127,15 @@
   </div>
 
   <!-- =========================================
-       MOBILE — MNIEJSZE LITERY W XXS
+       MOBILE — WIĘKSZE ELEMENTY NA NAJMNIEJSZYCH EKRANACH
+       BREAKPOINT: xxas
        ========================================= -->
 
   <div
     class="relative z-10
-           flex h-[52px] xxs:h-[68px]
+           flex h-[52px] xxas:h-[64px]
            items-center justify-center
-           px-1.5 xxs:px-3
+           px-1.5 xxas:px-3
            md:hidden"
   >
     <div
@@ -145,10 +146,12 @@
       <div
         class="flex min-w-0 flex-1
                items-center justify-center
-               gap-1 xxs:gap-2"
+               gap-1 xxas:gap-2"
       >
+        <!-- IKONA ZEGARA -->
         <div
-          class="flex h-6 w-6 xxs:h-8 xxs:w-8
+          class="flex h-[27px] w-[27px]
+                 xxas:h-8 xxas:w-8
                  shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -157,46 +160,37 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-regular fa-clock text-[10px] xxs:text-xs"></i>
+          <i class="fa-regular fa-clock text-[11px] xxas:text-xs"></i>
         </div>
 
-        <div class="flex min-w-0 flex-col">
+        <!-- GODZINY I DODATKOWA INFORMACJA -->
+        <div class="flex min-w-0 flex-col justify-center">
           <span
             class="font-main-body
-                   text-[7px] xxs:text-[7px]
-                   font-normal uppercase
-                   tracking-[0.12em] xxs:tracking-[0.16em]
-                   text-stone-400"
-          >
-            Godziny
-          </span>
-
-          <span
-            class="font-main-body
-                   text-[10px] xxs:text-[11px]
-                   font-normal leading-3 xxs:leading-4
-                   tracking-normal xxs:tracking-wide
+                   text-[10.5px] xxas:text-[11px]
+                   font-normal leading-[14px] xxas:leading-[15px]
+                   tracking-normal
                    text-stone-700 whitespace-nowrap"
           >
-            08:00 – 16:00
+            PN - PT · 08:00 - 16:00
           </span>
 
           <span
             class="font-main-body
-                   text-[7px] xxs:text-[7px]
-                   font-normal leading-[9px] xxs:leading-3
-                   tracking-normal xxs:tracking-wide
+                   text-[8.5px] xxas:text-[9px]
+                   font-normal leading-[11px] xxas:leading-3
+                   tracking-normal
                    text-stone-400"
           >
-            Inne godziny — po uzgodnieniu
+            Inne godziny - po uzgodnieniu
           </span>
         </div>
       </div>
 
       <!-- SEPARATOR -->
       <div
-        class="mx-1.5 xxs:mx-4
-               h-6 xxs:h-9 w-px shrink-0
+        class="mx-1.5 xxas:mx-3
+               h-7 xxas:h-9 w-px shrink-0
                bg-[#b3a06a]/30"
         aria-hidden="true"
       ></div>
@@ -205,10 +199,12 @@
       <div
         class="flex min-w-0 flex-1
                items-center justify-center
-               gap-1 xxs:gap-2"
+               gap-1 xxas:gap-2"
       >
+        <!-- IKONA DOSTĘPNOŚCI -->
         <div
-          class="flex h-6 w-6 xxs:h-8 xxs:w-8
+          class="flex h-[27px] w-[27px]
+                 xxas:h-8 xxas:w-8
                  shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
@@ -217,29 +213,20 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-solid fa-wheelchair text-[10px] xxs:text-xs"></i>
+          <i class="fa-solid fa-wheelchair text-[11px] xxas:text-xs"></i>
         </div>
 
-        <div class="flex min-w-0 flex-col">
+        <!-- INFORMACJA O DOSTĘPNOŚCI -->
+        <div class="flex min-w-0 flex-col justify-center">
           <span
             class="font-main-body
-                   text-[7px] xxs:text-[7px]
-                   font-normal uppercase
-                   tracking-[0.10em] xxs:tracking-[0.14em]
-                   text-stone-400"
-          >
-            Dostępność
-          </span>
-
-          <span
-            class="font-main-body
-                   text-[9px] xxs:text-[10px]
-                   font-normal leading-[11px] xxs:leading-[14px]
+                   text-[10.5px] xxas:text-[11px]
+                   font-normal leading-[14px] xxas:leading-[15px]
                    text-stone-700"
           >
-            Dostępna dla osób
+            Kancelaria przyjazna dla
             <span class="block">
-              z niepełnosprawnościami
+            osób niepełnosprawnych
             </span>
           </span>
         </div>
@@ -349,7 +336,7 @@
                    font-normal leading-5
                    text-stone-800"
           >
-            Kancelaria dostępna dla osób
+            Kancelaria przyjazna dla osób
             z niepełnosprawnościami
           </p>
 
