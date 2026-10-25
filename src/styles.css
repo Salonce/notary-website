@@ -1,4 +1,11 @@
+
 @import 'tailwindcss';
+
+@theme {
+  --breakpoint-xxxs: 360px;
+  --breakpoint-xxs: 390px;
+  --breakpoint-xs: 480px;
+}
 
 /* =========================================
    PRZEWIJANIE DO SEKCJI
@@ -99,8 +106,11 @@ html {
   color: #292424;
 }
 
+/* =========================================
+   ODSTĘPY MIĘDZY SEKCJAMI
+   ========================================= */
+
 :root {
-  /* Mobile */
   --section-gap: 128px;
 }
 
@@ -111,7 +121,7 @@ html {
 }
 
 /* =========================================
-   SHARED CONTENT COLUMN LAYOUT
+   UKŁAD KOLUMN TREŚCI
    ========================================= */
 
 .content-columns {
@@ -139,7 +149,7 @@ html {
   min-width: 0;
 }
 
-/* Stack columns on smaller screens */
+/* Jedna kolumna na mniejszych ekranach */
 @media (max-width: 900px) {
   .content-columns {
     padding: 0 20px;
@@ -152,7 +162,7 @@ html {
 }
 
 /* =========================================
-   INDIVIDUAL CONTENT COLUMN
+   POJEDYNCZA KOLUMNA TREŚCI
    ========================================= */
 
 .content-column {
@@ -160,4 +170,28 @@ html {
   width: 100%;
   min-width: 0;
   padding: 0;
+}
+
+/* =========================================
+   LEKKO MNIEJSZE TYTUŁY
+   NA WĄSKICH TELEFONACH
+   ========================================= */
+
+@media (max-width: 389px) {
+  .font-main-heading {
+    font-size: 1.85rem;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================
+   JESZCZE MNIEJSZE TYTUŁY
+   PONIŻEJ 360 PX
+   ========================================= */
+
+@media (max-width: 359px) {
+  .font-main-heading {
+    font-size: 1.65rem;
+    line-height: 1.3;
+  }
 }

@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { SectionScrollService } from '../section-scroll-service/section-scroll-service';
 
@@ -9,6 +10,8 @@ import { SectionScrollService } from '../section-scroll-service/section-scroll-s
 })
 export class TopNavbar {
   private readonly sectionScroll = inject(SectionScrollService);
+
+  isMobileMenuOpen = false;
 
   scrollToSection(event: MouseEvent, id: string): void {
     event.preventDefault();

@@ -1,10 +1,11 @@
+
 <div
   #servicesSection
   id="czynnosci-notarialne"
-  class="w-full px-6 md:px-8"
+  class="w-full px-2 xs:px-6 md:px-8"
   [class.is-visible]="isServicesVisible"
 >
-  <div class="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-12">
+  <div class="mx-auto max-w-[1400px] px-2 xs:px-6 md:px-10 lg:px-12">
 
     <!-- Nagłówek -->
     <div class="text-center">
@@ -21,25 +22,17 @@
       </div>
     </div>
 
-
     <!-- Kategorie -->
     <div class="mx-auto mt-8 w-full max-w-5xl md:mt-10">
 
-
-      <!-- ====================================================== -->
       <!-- NIERUCHOMOŚCI I PRAWA DO LOKALI -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-t border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -70,10 +63,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-nieruchomosci"
@@ -83,64 +74,30 @@
           [class.opacity-0]="!showNieruchomosci"
           [class.opacity-100]="showNieruchomosci"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
-            <li class="service-item">
-              Sprzedaż
-            </li>
-
-            <li class="service-item">
-              Darowizna
-            </li>
-
-            <li class="service-item">
-              Dożywocie
-            </li>
-
-            <li class="service-item">
-              Zamiana
-            </li>
-
-            <li class="service-item">
-              Zniesienie współwłasności
-            </li>
-
-            <li class="service-item">
-              Umowy deweloperskie
-            </li>
-
-            <li class="service-item">
-              Ustanowienie odrębnej własności lokalu
-            </li>
-
-            <li class="service-item">
-              Ustanowienie hipoteki
-            </li>
-
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
+            <li class="service-item">Sprzedaż</li>
+            <li class="service-item">Darowizna</li>
+            <li class="service-item">Dożywocie</li>
+            <li class="service-item">Zamiana</li>
+            <li class="service-item">Zniesienie współwłasności</li>
+            <li class="service-item">Umowy deweloperskie</li>
+            <li class="service-item">Ustanowienie odrębnej własności lokalu</li>
+            <li class="service-item">Ustanowienie hipoteki</li>
             <li class="service-item">
               Ustanowienie służebności (gruntowej, przesyłu, osobistej)
             </li>
           </ul>
         </div>
-
       </div>
 
-
-      <!-- ====================================================== -->
       <!-- SPRAWY RODZINNE I MAJĄTKOWE -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-t border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -171,10 +128,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-rodzinne"
@@ -184,40 +139,22 @@
           [class.opacity-0]="!showRodzinne"
           [class.opacity-100]="showRodzinne"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
-            <li class="service-item">
-              Umowa majątkowa małżeńska
-            </li>
-
-            <li class="service-item">
-              Podział majątku wspólnego
-            </li>
-
-            <li class="service-item">
-              Ustalenie obowiązku alimentacyjnego
-            </li>
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
+            <li class="service-item">Umowa majątkowa małżeńska</li>
+            <li class="service-item">Podział majątku wspólnego</li>
+            <li class="service-item">Ustalenie obowiązku alimentacyjnego</li>
           </ul>
         </div>
-
       </div>
 
-
-      <!-- ====================================================== -->
       <!-- SPÓŁKI, DZIAŁALNOŚĆ GOSPODARCZA I FUNDACJE -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-t border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -248,10 +185,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-spolki"
@@ -261,52 +196,27 @@
           [class.opacity-0]="!showSpolki"
           [class.opacity-100]="showSpolki"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
-            <li class="service-item">
-              Zakładanie spółek i zmiany umów spółek
-            </li>
-
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
+            <li class="service-item">Zakładanie spółek i zmiany umów spółek</li>
             <li class="service-item">
               Protokoły zgromadzeń wspólników i walnych zgromadzeń
             </li>
-
-            <li class="service-item">
-              Rejestr akcjonariuszy
-            </li>
-
-            <li class="service-item">
-              Fundacje
-            </li>
-
-            <li class="service-item">
-              Fundacje rodzinne
-            </li>
-
-            <li class="service-item">
-              Zarząd sukcesyjny
-            </li>
+            <li class="service-item">Rejestr akcjonariuszy</li>
+            <li class="service-item">Fundacje</li>
+            <li class="service-item">Fundacje rodzinne</li>
+            <li class="service-item">Zarząd sukcesyjny</li>
           </ul>
         </div>
-
       </div>
 
-
-      <!-- ====================================================== -->
       <!-- SPADKI I TESTAMENTY -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-t border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -337,10 +247,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-spadki"
@@ -350,68 +258,29 @@
           [class.opacity-0]="!showSpadki"
           [class.opacity-100]="showSpadki"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
-            <li class="service-item">
-              Sporządzanie testamentów
-            </li>
-
-            <li class="service-item">
-              Wyszukiwanie testamentów
-            </li>
-
-            <li class="service-item">
-              Otwarcie i ogłoszenie testamentu
-            </li>
-
-            <li class="service-item">
-              Przyjęcie spadku
-            </li>
-
-            <li class="service-item">
-              Odrzucenie spadku
-            </li>
-
-            <li class="service-item">
-              Protokół dziedziczenia
-            </li>
-
-            <li class="service-item">
-              Akt poświadczenia dziedziczenia
-            </li>
-
-            <li class="service-item">
-              Europejskie poświadczenie spadkowe
-            </li>
-
-            <li class="service-item">
-              Dział spadku
-            </li>
-
-            <li class="service-item">
-              Zrzeczenie się dziedziczenia
-            </li>
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
+            <li class="service-item">Sporządzanie testamentów</li>
+            <li class="service-item">Wyszukiwanie testamentów</li>
+            <li class="service-item">Otwarcie i ogłoszenie testamentu</li>
+            <li class="service-item">Przyjęcie spadku</li>
+            <li class="service-item">Odrzucenie spadku</li>
+            <li class="service-item">Protokół dziedziczenia</li>
+            <li class="service-item">Akt poświadczenia dziedziczenia</li>
+            <li class="service-item">Europejskie poświadczenie spadkowe</li>
+            <li class="service-item">Dział spadku</li>
+            <li class="service-item">Zrzeczenie się dziedziczenia</li>
           </ul>
         </div>
-
       </div>
 
-
-      <!-- ====================================================== -->
       <!-- POŚWIADCZENIA -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-t border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -442,10 +311,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-poswiadczenia"
@@ -455,44 +322,31 @@
           [class.opacity-0]="!showPoswiadczenia"
           [class.opacity-100]="showPoswiadczenia"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
             <li class="service-item">
               Poświadczenie zgodności dokumentu z oryginałem
             </li>
-
             <li class="service-item">
               Poświadczenie własnoręczności podpisu
             </li>
-
             <li class="service-item">
               Poświadczenie daty okazania dokumentu
             </li>
-
             <li class="service-item">
               Poświadczenie pozostawania osoby przy życiu lub w określonym miejscu
             </li>
           </ul>
         </div>
-
       </div>
 
-
-      <!-- ====================================================== -->
       <!-- POZOSTAŁE CZYNNOŚCI -->
-      <!-- ====================================================== -->
-
       <div class="service-category border-y border-stone-200">
-
         <div class="flex items-start gap-4 py-5 md:py-6">
-
           <span
             class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
           ></span>
 
           <div class="min-w-0 flex-1">
-
             <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
@@ -523,10 +377,8 @@
                 +
               </span>
             </button>
-
           </div>
         </div>
-
 
         <div
           id="services-pozostale"
@@ -536,55 +388,26 @@
           [class.opacity-0]="!showPozostale"
           [class.opacity-100]="showPozostale"
         >
-          <ul
-            class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7"
-          >
-            <li class="service-item">
-              Najem okazjonalny
-            </li>
-
-            <li class="service-item">
-              Najem instytucjonalny
-            </li>
-
+          <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
+            <li class="service-item">Najem okazjonalny</li>
+            <li class="service-item">Najem instytucjonalny</li>
             <li class="service-item">
               Protokoły z zebrań Wspólnot Mieszkaniowych
             </li>
-
-            <li class="service-item">
-              Rodzinne ogrody działkowe
-            </li>
-
+            <li class="service-item">Rodzinne ogrody działkowe</li>
             <li class="service-item">
               Przewłaszczenie nieruchomości na zabezpieczenie
             </li>
-
             <li class="service-item">
               Przeniesienie prawa w celu zwolnienia się z długu
             </li>
-
-            <li class="service-item">
-              Depozyt notarialny
-            </li>
-
-            <li class="service-item">
-              Pełnomocnictwa
-            </li>
-
-            <li class="service-item">
-              Umowy przedwstępne
-            </li>
-
-            <li class="service-item">
-              Wypisy aktów notarialnych
-            </li>
-
-            <li class="service-item">
-              Odpisy i wyciągi dokumentów
-            </li>
+            <li class="service-item">Depozyt notarialny</li>
+            <li class="service-item">Pełnomocnictwa</li>
+            <li class="service-item">Umowy przedwstępne</li>
+            <li class="service-item">Wypisy aktów notarialnych</li>
+            <li class="service-item">Odpisy i wyciągi dokumentów</li>
           </ul>
         </div>
-
       </div>
 
     </div>
