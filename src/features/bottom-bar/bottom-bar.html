@@ -127,14 +127,15 @@
   </div>
 
   <!-- =========================================
-       MOBILE — BEZ ZMIAN
+       MOBILE — NIŻSZY PONIŻEJ XXS
+       OD XXS BEZ ZMIAN
        ========================================= -->
 
   <div
     class="relative z-10
-           flex h-[68px]
+           flex h-[52px] xxs:h-[68px]
            items-center justify-center
-           px-3
+           px-1.5 xxs:px-3
            md:hidden"
   >
     <div
@@ -143,11 +144,13 @@
     >
       <!-- GODZINY OTWARCIA -->
       <div
-        class="flex items-center justify-center gap-2"
+        class="flex min-w-0 flex-1
+               items-center justify-center
+               gap-1 xxs:gap-2"
       >
         <div
-          class="flex h-8 w-8 shrink-0
-                 items-center justify-center
+          class="flex h-6 w-6 xxs:h-8 xxs:w-8
+                 shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
                  bg-[#fffaf0]/75
@@ -155,31 +158,36 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-regular fa-clock text-xs"></i>
+          <i class="fa-regular fa-clock text-[10px] xxs:text-xs"></i>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex min-w-0 flex-col">
           <span
-            class="font-main-body text-[8px]
+            class="font-main-body
+                   text-[7px] xxs:text-[8px]
                    font-normal uppercase
-                   tracking-[0.18em]
+                   tracking-[0.12em] xxs:tracking-[0.18em]
                    text-stone-400"
           >
             Godziny
           </span>
 
           <span
-            class="font-main-body text-[12px]
-                   font-normal leading-4
-                   tracking-wide text-stone-700"
+            class="font-main-body
+                   text-[10px] xxs:text-[12px]
+                   font-normal leading-3 xxs:leading-4
+                   tracking-normal xxs:tracking-wide
+                   text-stone-700 whitespace-nowrap"
           >
             08:00 – 16:00
           </span>
 
           <span
-            class="font-main-body text-[8px]
-                   font-normal leading-3
-                   tracking-wide text-stone-400"
+            class="font-main-body
+                   text-[7px] xxs:text-[8px]
+                   font-normal leading-[9px] xxs:leading-3
+                   tracking-normal xxs:tracking-wide
+                   text-stone-400"
           >
             Inne godziny — po uzgodnieniu
           </span>
@@ -188,18 +196,21 @@
 
       <!-- SEPARATOR -->
       <div
-        class="mx-4 h-9 w-px shrink-0
+        class="mx-1.5 xxs:mx-4
+               h-6 xxs:h-9 w-px shrink-0
                bg-[#b3a06a]/30"
         aria-hidden="true"
       ></div>
 
       <!-- DOSTĘPNOŚĆ -->
       <div
-        class="flex items-center justify-center gap-2"
+        class="flex min-w-0 flex-1
+               items-center justify-center
+               gap-1 xxs:gap-2"
       >
         <div
-          class="flex h-8 w-8 shrink-0
-                 items-center justify-center
+          class="flex h-6 w-6 xxs:h-8 xxs:w-8
+                 shrink-0 items-center justify-center
                  rounded-full
                  border border-[#b3a06a]
                  bg-[#fffaf0]/75
@@ -207,22 +218,24 @@
                  shadow-[0_0_16px_rgba(179,160,106,0.12)]"
           aria-hidden="true"
         >
-          <i class="fa-solid fa-wheelchair text-xs"></i>
+          <i class="fa-solid fa-wheelchair text-[10px] xxs:text-xs"></i>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex min-w-0 flex-col">
           <span
-            class="font-main-body text-[8px]
+            class="font-main-body
+                   text-[7px] xxs:text-[8px]
                    font-normal uppercase
-                   tracking-[0.16em]
+                   tracking-[0.10em] xxs:tracking-[0.16em]
                    text-stone-400"
           >
             Dostępność
           </span>
 
           <span
-            class="font-main-body text-[11px]
-                   font-normal leading-4
+            class="font-main-body
+                   text-[9px] xxs:text-[11px]
+                   font-normal leading-[11px] xxs:leading-4
                    text-stone-700"
           >
             Dostępna dla osób
@@ -236,7 +249,7 @@
   </div>
 
   <!-- =========================================
-       DESKTOP — NIŻSZA WERSJA
+       DESKTOP — BEZ ZMIAN
        ========================================= -->
 
   <div
