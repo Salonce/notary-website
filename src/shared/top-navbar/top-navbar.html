@@ -1,4 +1,3 @@
-
 <!-- NAVBAR -->
 <nav
   class="relative w-full overflow-hidden border-y border-[#bda968]/30 bg-[#eee8d9] shadow-[0_6px_20px_rgba(80,65,35,0.10)]"
@@ -45,27 +44,25 @@
     aria-hidden="true"
   ></div>
 
-  <!-- MENU MOBILNE: PONIŻEJ 480 PX -->
+  <!-- MENU MOBILNE: PONIŻEJ 390 PX -->
   <div class="relative z-10 xxs:hidden">
-    <!-- PASEK MENU -->
+    <!-- PASEK MENU: WYSOKOŚĆ 46 PX -->
     <button
       type="button"
-      class="group flex min-h-[54px] w-full items-center justify-end gap-2.5 px-3.5 text-right transition-colors duration-300 hover:bg-[#fffaf0]/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] active:bg-[#bda968]/10 min-[375px]:px-4 min-[375px]:gap-3"
+      class="group flex h-[46px] min-h-[46px] w-full items-center justify-end gap-2.5 px-3.5 text-right transition-colors duration-300 hover:bg-[#fffaf0]/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] active:bg-[#bda968]/10 min-[375px]:px-4 min-[375px]:gap-3"
       [attr.aria-expanded]="isMobileMenuOpen"
       aria-controls="mobile-navigation-menu"
       [attr.aria-label]="isMobileMenuOpen ? 'Zamknij menu nawigacyjne' : 'Otwórz menu nawigacyjne'"
       (click)="isMobileMenuOpen = !isMobileMenuOpen"
     >
-      <!-- NAPIS MENU: PO PRAWEJ, TUŻ PRZED WAGĄ -->
       <span
         class="shrink-0 font-top-navbar text-[14px] font-medium tracking-[0.07em] text-[#6f5c35] min-[375px]:text-[15px] min-[375px]:tracking-[0.08em]"
       >
         MENU
       </span>
 
-      <!-- IKONA WAGI: PO PRAWEJ STRONIE NAPISU -->
       <span
-        class="flex h-9 w-9 shrink-0 items-center justify-center text-[#8b7542] transition-colors duration-300 group-hover:text-[#806c3e] min-[375px]:h-10 min-[375px]:w-10"
+        class="flex h-9 w-9 shrink-0 items-center justify-center text-[#8b7542] transition-colors duration-300 group-hover:text-[#806c3e]"
         aria-hidden="true"
       >
         <svg
@@ -74,7 +71,7 @@
           fill="none"
           stroke="currentColor"
           stroke-width="1.5"
-          class="h-[23px] w-[23px] min-[375px]:h-[25px] min-[375px]:w-[25px]"
+          class="h-[23px] w-[23px]"
         >
           <path
             stroke-linecap="round"
@@ -110,7 +107,7 @@
         <!-- STRONA GŁÓWNA -->
         <a
           href="#home"
-          (click)="scrollToSection($event, 'home'); isMobileMenuOpen = false"
+          (click)="scrollToSection($event, 'home', true)"
           class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#bda968]/15 px-2.5 py-3 text-stone-600 transition-colors duration-200 hover:bg-[#fffaf0]/80 hover:text-[#806c3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
           <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#9b844d] transition-colors group-hover:text-[#806c3e]">
@@ -129,7 +126,7 @@
         <!-- CZYNNOŚCI NOTARIALNE -->
         <a
           href="#czynnosci-notarialne"
-          (click)="scrollToSection($event, 'czynnosci-notarialne'); isMobileMenuOpen = false"
+          (click)="scrollToSection($event, 'czynnosci-notarialne', true)"
           class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#bda968]/15 px-2.5 py-3 text-stone-600 transition-colors duration-200 hover:bg-[#fffaf0]/80 hover:text-[#806c3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
           <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#9b844d] transition-colors group-hover:text-[#806c3e]">
@@ -148,7 +145,7 @@
         <!-- KOSZTY -->
         <a
           href="#oplaty"
-          (click)="scrollToSection($event, 'oplaty'); isMobileMenuOpen = false"
+          (click)="scrollToSection($event, 'oplaty', true)"
           class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#bda968]/15 px-2.5 py-3 text-stone-600 transition-colors duration-200 hover:bg-[#fffaf0]/80 hover:text-[#806c3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
           <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#9b844d] transition-colors group-hover:text-[#806c3e]">
@@ -169,7 +166,7 @@
         <!-- STREFA KLIENTA -->
         <a
           href="#strefa-klienta"
-          (click)="scrollToSection($event, 'strefa-klienta'); isMobileMenuOpen = false"
+          (click)="scrollToSection($event, 'strefa-klienta', true)"
           class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#bda968]/15 px-2.5 py-3 text-stone-600 transition-colors duration-200 hover:bg-[#fffaf0]/80 hover:text-[#806c3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
           <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#9b844d] transition-colors group-hover:text-[#806c3e]">
@@ -189,7 +186,7 @@
         <!-- KONTAKT -->
         <a
           href="#kontakt"
-          (click)="scrollToSection($event, 'kontakt'); isMobileMenuOpen = false"
+          (click)="scrollToSection($event, 'kontakt', true)"
           class="group flex min-h-[48px] items-center gap-3 rounded-md px-2.5 py-3 text-stone-600 transition-colors duration-200 hover:bg-[#fffaf0]/80 hover:text-[#806c3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a58b4d] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
           <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#9b844d] transition-colors group-hover:text-[#806c3e]">
@@ -224,10 +221,10 @@
       href="#home"
       aria-label="Strona główna"
       (click)="scrollToSection($event, 'home')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[46px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 md:h-[46px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
-      <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4" aria-hidden="true">
+      <span class="inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5M5.5 9v11h13V9M9.5 20v-6h5v6" />
         </svg>
         <span class="lg:hidden">Start</span>
@@ -240,10 +237,10 @@
       href="#czynnosci-notarialne"
       aria-label="Czynności notarialne"
       (click)="scrollToSection($event, 'czynnosci-notarialne')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[46px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 md:h-[46px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
-      <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4" aria-hidden="true">
+      <span class="inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17M8 20h8M6 7h12M5 7l-2 5h4L5 7Zm14 0-2 5h4l-2-5Z" />
         </svg>
         <span class="md:hidden">Czynności</span>
@@ -257,10 +254,10 @@
       href="#oplaty"
       aria-label="Koszty"
       (click)="scrollToSection($event, 'oplaty')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[46px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 md:h-[46px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
-      <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4" aria-hidden="true">
+      <span class="inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <circle cx="12" cy="12" r="8.5" />
           <path stroke-linecap="round" d="M14.5 9.5c-.5-.7-1.4-1.1-2.5-1.1-1.4 0-2.4.7-2.4 1.7 0 2.6 4.8 1.1 4.8 3.8 0 1.1-1 1.8-2.5 1.8-1.1 0-2.1-.4-2.7-1.2" />
           <path stroke-linecap="round" d="M12 7v10" />
@@ -274,10 +271,10 @@
       href="#strefa-klienta"
       aria-label="Strefa klienta"
       (click)="scrollToSection($event, 'strefa-klienta')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[46px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 md:h-[46px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
-      <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4" aria-hidden="true">
+      <span class="inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <circle cx="12" cy="8" r="3.2" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 20c.8-3.8 3.2-6 7-6s6.2 2.2 7 6" />
         </svg>
@@ -291,10 +288,10 @@
       href="#kontakt"
       aria-label="Kontakt"
       (click)="scrollToSection($event, 'kontakt')"
-      class="group relative flex min-w-0 flex-1 items-center justify-center px-1 py-2.5 font-top-navbar text-[15px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 sm:py-3 md:px-3 lg:px-6 md:py-3.5 md:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[46px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-stone-600 transition-colors duration-300 hover:text-[#806c3e] sm:px-2 md:h-[46px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#bda968] after:transition-all after:duration-300 hover:after:w-full"
     >
-      <span class="inline-flex flex-col items-center justify-center gap-1 md:flex-row md:gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[18px] w-[18px] shrink-0 md:h-4 md:w-4" aria-hidden="true">
+      <span class="inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 3.5h3l1.2 4-2 1.5a15.5 15.5 0 0 0 6.3 6.3l1.5 1.2v3c0 1.1-.9 2-2 2C11.6 19.5 4.5 12.4 4.5 3.5c0-1.1.9-2 2-2Z" />
         </svg>
         <span>Kontakt</span>

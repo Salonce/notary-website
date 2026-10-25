@@ -1,3 +1,4 @@
+
 <header
   class="relative
          w-full
@@ -175,26 +176,32 @@
            mx-auto flex max-w-7xl
            items-center justify-between
            px-3 py-2.5
+           max-[359px]:px-2
            sm:px-6"
   >
     <!-- MOBILE: ADRES PO LEWEJ, TELEFON PO PRAWEJ -->
     <div
       class="flex w-full
+             h-5
              items-center
              justify-between
              gap-3
+             max-[359px]:gap-1.5
              md:hidden"
     >
       <!-- ADRES -->
       <div
         class="flex min-w-0 flex-1
-               items-center gap-2"
+               h-5
+               items-center gap-2
+               max-[359px]:gap-1"
       >
         <i
           class="fa-solid fa-house
                  hidden sm:inline-block
                  shrink-0
                  text-[13px]
+                 max-[359px]:text-[12px]
                  text-[#bda968]"
           aria-hidden="true"
         ></i>
@@ -205,9 +212,12 @@
                  text-left
                  font-top-bar
                  text-[12px]
+                 max-[359px]:text-[11px]
                  font-normal
                  leading-5
+                 max-[359px]:leading-4
                  tracking-wide
+                 max-[359px]:tracking-normal
                  text-stone-500
                  max-[479px]:inline
                  min-[480px]:hidden"
@@ -221,9 +231,12 @@
                  text-left
                  font-top-bar
                  text-[12px]
+                 max-[359px]:text-[11px]
                  font-normal
                  leading-5
+                 max-[359px]:leading-4
                  tracking-wide
+                 max-[359px]:tracking-normal
                  text-stone-500
                  hidden min-[480px]:inline"
         >
@@ -235,12 +248,16 @@
       <a
         href="tel:+48895273839"
         class="flex shrink-0
+               h-5
                items-center gap-2
+               max-[359px]:gap-1
                whitespace-nowrap
                font-top-bar
                text-[12px]
+               max-[359px]:text-[11px]
                font-normal
                tracking-wide
+               max-[359px]:tracking-normal
                text-stone-600
                transition-colors
                hover:text-[#806c3e]"
@@ -248,6 +265,7 @@
         <i
           class="fa-solid fa-phone
                  text-[13px]
+                 max-[359px]:text-[12px]
                  text-[#bda968]"
           aria-hidden="true"
         ></i>
