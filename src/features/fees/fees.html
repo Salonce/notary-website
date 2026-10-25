@@ -1,16 +1,13 @@
 <section
   #feesSection
   id="oplaty"
-  class="w-full scroll-mt-20 px-6
-         md:px-8"
+  class="w-full scroll-mt-28 px-6 md:px-8"
   [class.is-visible]="isFeesVisible"
 >
   <div class="mx-auto max-w-5xl">
 
-    <!-- Nagłówek -->
-
+    <!-- NAGŁÓWEK -->
     <div class="text-center">
-
       <h2
         class="fees-title mt-2
                font-main-heading
@@ -26,18 +23,13 @@
       <div class="fees-divider mt-4">
         <app-title-divider />
       </div>
-
     </div>
 
-
-    <!-- Informacje o kosztach -->
-
+    <!-- INFORMACJE O KOSZTACH -->
     <div class="fees-costs mt-12 md:mt-14">
 
       <!-- I — WYNAGRODZENIE NOTARIUSZA -->
-
       <div class="fees-item py-9 md:py-10">
-
         <div class="mx-auto max-w-3xl text-center">
 
           <div
@@ -67,11 +59,7 @@
             Wynagrodzenie notariusza
           </h3>
 
-          <div
-            class="mx-auto mt-3
-                   h-[2px] w-12
-                   bg-[#b59b5b]"
-          ></div>
+          <div class="mx-auto mt-3 h-[2px] w-12 bg-[#b59b5b]"></div>
 
           <p
             class="mt-5
@@ -91,14 +79,10 @@
           </p>
 
         </div>
-
       </div>
 
-
       <!-- II — PODATKI -->
-
       <div class="fees-item py-9 md:py-10">
-
         <div class="mx-auto max-w-3xl text-center">
 
           <div
@@ -128,11 +112,7 @@
             Podatki
           </h3>
 
-          <div
-            class="mx-auto mt-3
-                   h-[2px] w-12
-                   bg-[#b59b5b]"
-          ></div>
+          <div class="mx-auto mt-3 h-[2px] w-12 bg-[#b59b5b]"></div>
 
           <p
             class="mt-5
@@ -153,14 +133,10 @@
           </p>
 
         </div>
-
       </div>
 
-
       <!-- III — OPŁATY SĄDOWE -->
-
       <div class="fees-item py-9 md:py-10">
-
         <div class="mx-auto max-w-3xl text-center">
 
           <div
@@ -190,11 +166,7 @@
             Opłaty sądowe
           </h3>
 
-          <div
-            class="mx-auto mt-3
-                   h-[2px] w-12
-                   bg-[#b59b5b]"
-          ></div>
+          <div class="mx-auto mt-3 h-[2px] w-12 bg-[#b59b5b]"></div>
 
           <p
             class="mt-5
@@ -212,14 +184,44 @@
           </p>
 
         </div>
-
       </div>
 
     </div>
 
+    <!-- LINK DO SPOSOBÓW PŁATNOŚCI -->
+    <div class="mt-5 text-center">
+      <a
+        href="#platnosc"
+        (click)="scrollToPayment($event)"
+        class="inline-flex items-center justify-center gap-2
+              font-main-body
+              text-[13px]
+              font-medium
+              tracking-[0.04em]
+              text-[#806c3e]
+              transition-colors duration-300
+              hover:text-[#5f4e2b]
+              md:text-[14px]"
+      >
+        <span>Przejdź do sposobów płatności</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </div>
 
     <!-- PODSTAWY PRAWNE -->
-
     <div
       class="mx-auto mt-8
              max-w-3xl
@@ -228,9 +230,7 @@
              pt-5
              pb-1"
     >
-
       <div class="flex items-center justify-end gap-3">
-
         <span
           class="font-main-body
                  text-[10px]
@@ -242,14 +242,8 @@
           Podstawy prawne
         </span>
 
-        <div
-          class="h-px w-8
-                 shrink-0
-                 bg-[#c5ad73]"
-        ></div>
-
+        <div class="h-px w-8 shrink-0 bg-[#c5ad73]"></div>
       </div>
-
 
       <div
         class="mt-3
@@ -261,7 +255,6 @@
                leading-[1.7]
                text-stone-400"
       >
-
         <p>
           Rozporządzenie Ministra Sprawiedliwości z dnia 28 czerwca 2004 r.
           w sprawie maksymalnych stawek taksy notarialnej.
@@ -283,20 +276,18 @@
         <p>
           Art. 7 § 2 ustawy – Prawo o notariacie.
         </p>
-
       </div>
-
     </div>
 
-
-    <!-- PŁATNOŚĆ — JEDNA CHMURKA -->
-
+    <!-- PŁATNOŚĆ -->
     <div
+      id="platnosc"
       class="fees-payment
              mx-auto
              mt-12
              mb-10
              max-w-4xl
+             scroll-mt-28
              overflow-hidden
              rounded-xl
              border
@@ -314,7 +305,6 @@
     >
 
       <!-- TYTUŁ -->
-
       <div
         class="font-main-body
                text-[15px]
@@ -329,9 +319,7 @@
         Sposoby płatności
       </div>
 
-
       <!-- GŁÓWNA INFORMACJA -->
-
       <p
         class="mx-auto mt-5
                max-w-3xl
@@ -352,9 +340,7 @@
         lub na rachunek bankowy kancelarii o numerze:
       </p>
 
-
       <!-- NUMER RACHUNKU -->
-
       <div
         class="mx-auto mt-5
                max-w-2xl
@@ -366,7 +352,6 @@
                md:mt-7
                md:pt-7"
       >
-
         <span
           class="block
                  break-words
@@ -385,7 +370,6 @@
         >
           07 1020 3541 0000 5302 0286 9071
         </span>
-
       </div>
 
     </div>

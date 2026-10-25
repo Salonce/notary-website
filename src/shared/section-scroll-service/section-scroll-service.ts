@@ -1,6 +1,9 @@
-import { Service } from '@angular/core';
 
-@Service()
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class SectionScrollService {
   scrollToSection(id: string): void {
     const target = document.getElementById(id);
@@ -9,15 +12,24 @@ export class SectionScrollService {
       return;
     }
 
-    target.scrollIntoView({
+    const scrollMarginTop = parseFloat(
+      getComputedStyle(target).scrollMarginTop
+    ) || 0;
+
+    const top =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      scrollMarginTop;
+
+    window.scrollTo({
+      top,
       behavior: 'smooth',
-      block: 'start',
     });
   }
 
   scrollToCurrentHash(): void {
     const id = decodeURIComponent(
-      window.location.hash.slice(1),
+      window.location.hash.slice(1)
     );
 
     if (id) {
