@@ -24,9 +24,9 @@
   background-color: var(--button-surface);
   color: var(--brand-gold-dark);
   transition:
-    background-color 250ms ease,
-    border-color 250ms ease,
-    color 250ms ease;
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
 }
 
 .font-main-body.button-accent:hover {

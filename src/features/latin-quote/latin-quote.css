@@ -4,38 +4,6 @@
   color: var(--brand-gold-motto);
 }
 
-.motto-ornament-line {
-  box-shadow:
-    0 -1px 0 rgba(255, 252, 239, 0.32),
-    0 1px 1px rgba(78, 56, 17, 0.2);
-}
-
-.motto-ornament-line-left {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(var(--brand-gold-rgb), 0.42) 38%,
-    #a9822f 100%
-  );
-}
-
-.motto-ornament-line-right {
-  background: linear-gradient(
-    270deg,
-    transparent 0%,
-    rgba(var(--brand-gold-rgb), 0.42) 38%,
-    #a9822f 100%
-  );
-}
-
-.motto-ornament-symbol {
-  color: #8f702f;
-  text-shadow:
-    0 -1px 0 rgba(255, 252, 239, 0.42),
-    0 1px 1px rgba(78, 56, 17, 0.3),
-    0 2px 3px rgba(78, 56, 17, 0.14);
-}
-
 .latin-quote::before {
   position: absolute;
   z-index: -1;

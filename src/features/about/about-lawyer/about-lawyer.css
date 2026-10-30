@@ -33,11 +33,11 @@
 
 .notariusz-paragraph {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 
   transition:
-    opacity 800ms ease-out,
-    transform 950ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 600ms ease-out,
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -46,11 +46,11 @@
    ========================================= */
 
 .notariusz-paragraph:nth-child(1) {
-  transition-delay: 380ms;
+  transition-delay: 120ms;
 }
 
 .notariusz-paragraph:nth-child(2) {
-  transition-delay: 540ms;
+  transition-delay: 230ms;
 }
 
 
