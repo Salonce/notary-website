@@ -1,4 +1,4 @@
-
+﻿
 /* =========================================
    NAVBAR KANCELARII NOTARIALNEJ
    ELEGANCKI KARMAZYN + ZŁOTO
@@ -133,6 +133,15 @@ nav.navbar > div.relative.z-10 button {
     transform 250ms ease !important;
 }
 
+/* Kolor etykiety menu w stanie zamkniętym i otwartym */
+nav.navbar .menu-toggle > span:first-child {
+  color: #F7F3EB !important;
+}
+
+nav.navbar .menu-toggle[aria-expanded="true"] > span:first-child,
+nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+  color: var(--brand-gold) !important;
+}
 /* Ikona hamburgera */
 nav.navbar > div.relative.z-10 button svg {
   transform: translateY(0) scale(1);
@@ -297,6 +306,10 @@ nav.navbar #mobile-navigation-menu a {
   transition: color 120ms ease !important;
 }
 
+/* Etykiety linków mobilnych zachowują jasny kolor nawigacji */
+nav.navbar #mobile-navigation-menu a > span.flex-1 {
+  color: #F7F3EB !important;
+}
 /* Ikony mobilne */
 nav.navbar #mobile-navigation-menu a svg {
   transition:
