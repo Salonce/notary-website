@@ -220,52 +220,63 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
    ========================================= */
 
 @media (hover: none), (pointer: coarse) {
+  nav.navbar > div.relative.z-10.mx-auto > a {
+    animation: none !important;
+    transition: color 120ms ease !important;
+  }
 
   /* Usunięcie przyklejonego stanu hover */
   nav.navbar > div.relative.z-10 button:hover {
     color: #F7F3EB !important;
-
     background-color: transparent !important;
-
     box-shadow: none !important;
-
-    transform: translateY(0) scale(1);
+    transform: none !important;
   }
 
   nav.navbar > div.relative.z-10 button:hover svg {
-    color: #D5B77F !important;
-    transform: translateY(0) scale(1);
+    color: #F7F3EB !important;
+    transform: none !important;
   }
 
-  /* Animacja podczas dotknięcia */
+  nav.navbar > div.relative.z-10 button,
+  nav.navbar > div.relative.z-10 button svg,
+  nav.navbar .menu-toggle-icon,
+  nav.navbar .menu-toggle-icon path {
+    transition: color 120ms ease !important;
+  }
+
+  nav.navbar .menu-toggle-icon path {
+    transform: none !important;
+  }
+
+  nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
   nav.navbar > div.relative.z-10 button:active {
     color: #D5B77F !important;
-
-    background-color: rgba(213, 183, 127, 0.09) !important;
-
-    box-shadow:
-      inset 0 -1px 0 rgba(213, 183, 127, 0.4),
-      0 4px 12px rgba(30, 8, 15, 0.12) !important;
-
-    transform: scale(0.98);
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
   }
 
-  /* Powiększenie i uniesienie ikony podczas dotknięcia */
   nav.navbar > div.relative.z-10 button:active svg {
-    color: #E5C994 !important;
-    transform: scale(0.96);
+    color: #D5B77F !important;
+    transform: none !important;
   }
 
   nav.navbar > div.relative.z-10.mx-auto > a:hover {
     color: #F7F3EB !important;
     background-color: transparent !important;
-    box-shadow: none;
-    transform: none;
+    box-shadow: none !important;
+    transform: none !important;
   }
 
+  nav.navbar > div.relative.z-10.mx-auto > a:hover span,
   nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
-    color: #D5B77F !important;
-    transform: none;
+    color: #F7F3EB !important;
+    transform: none !important;
   }
 
   nav.navbar > div.relative.z-10.mx-auto > a:hover::after {
@@ -276,10 +287,17 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
     color: #D5B77F !important;
     background-color: transparent !important;
     box-shadow: none !important;
+    transform: none !important;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:active span,
+  nav.navbar > div.relative.z-10.mx-auto > a:active svg {
+    color: #D5B77F !important;
+    transform: none !important;
   }
 
   nav.navbar > div.relative.z-10.mx-auto > a:active::after {
-    transform: scaleX(1) !important;
+    transform: scaleX(0) !important;
   }
 }
 
@@ -434,16 +452,37 @@ nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
 }
 
 @media (hover: none), (pointer: coarse) {
+  nav.navbar #mobile-navigation-menu.menu-panel,
+  nav.navbar #mobile-navigation-menu.menu-panel.is-open {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a {
+    animation: none !important;
+  }
+
+  nav.navbar #mobile-navigation-menu a,
+  nav.navbar #mobile-navigation-menu a svg {
+    transition: color 120ms ease !important;
+  }
+
   nav.navbar #mobile-navigation-menu a:hover {
     color: #F7F3EB !important;
     background-color: transparent !important;
-    box-shadow: none;
-    transform: none;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  nav.navbar #mobile-navigation-menu a:hover span,
+  nav.navbar #mobile-navigation-menu a:hover svg {
+    color: #F7F3EB !important;
+    transform: none !important;
   }
 
   nav.navbar #mobile-navigation-menu a:hover svg,
   nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
-    color: #D5B77F !important;
+    color: #F7F3EB !important;
     transform: none;
   }
 
@@ -455,11 +494,17 @@ nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
     color: #D5B77F !important;
     background-color: transparent !important;
     box-shadow: none !important;
-    transform: none;
+    transform: none !important;
+  }
+
+  nav.navbar #mobile-navigation-menu a:active span,
+  nav.navbar #mobile-navigation-menu a:active svg {
+    color: #D5B77F !important;
+    transform: none !important;
   }
 
   nav.navbar #mobile-navigation-menu a:active::after {
-    transform: scaleX(1) !important;
+    transform: scaleX(0) !important;
   }
 }
 
