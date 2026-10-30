@@ -10,15 +10,7 @@ footer.footer-kancelaria {
   z-index: 50;
   overflow: hidden;
 
-  /* GŁÓWNY KOLOR TŁA */
-  background:
-    radial-gradient(
-      ellipse 85% 120% at 50% 0%,
-      rgba(213, 183, 127, 0.09) 0%,
-      rgba(197, 164, 109, 0.04) 42%,
-      transparent 78%
-    ),
-    #7F2336 !important;
+  background-color: #7F2336 !important;
 
   border-top: 1px solid rgba(197, 164, 109, 0.65) !important;
   color: #f7f3eb !important;
@@ -62,17 +54,6 @@ footer.footer-kancelaria .footer-primary {
 /* Informacje dodatkowe */
 footer.footer-kancelaria .footer-secondary {
   color: rgba(247, 243, 235, 0.72) !important;
-}
-
-/* Delikatne złote światło */
-footer.footer-kancelaria .footer-glow {
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(213, 183, 127, 0.10) 0%,
-    rgba(197, 164, 109, 0.04) 42%,
-    transparent 75%
-  );
 }
 
 /* Ornamenty */
