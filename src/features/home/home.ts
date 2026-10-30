@@ -9,7 +9,7 @@ import { SectionDivider } from '../../shared/section-divider/section-divider';
 import { About } from '../about/about';
 
 @Component({
-  imports: [Contact, NotarialServices, Fees, CustomerArea, LatinQuote, LatinQuote, About, GoogleReviews, SectionDivider],
+  imports: [Contact, NotarialServices, Fees, CustomerArea, LatinQuote, LatinQuote, About, SectionDivider],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
