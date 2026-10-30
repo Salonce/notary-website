@@ -8,15 +8,7 @@ header.header-kancelaria {
   isolation: isolate;
   overflow: hidden;
 
-  background:
-    radial-gradient(
-      ellipse 90% 150% at 50% 45%,
-      rgba(213, 183, 127, 0.09) 0%,
-      rgba(197, 164, 109, 0.04) 35%,
-      rgba(197, 164, 109, 0.015) 65%,
-      transparent 100%
-    ),
-    #872A3D !important;
+  background-color: #872A3D !important;
 
   border-bottom: 1px solid rgba(197, 164, 109, 0.5) !important;
 }
