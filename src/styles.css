@@ -1,4 +1,4 @@
-
+﻿
 @import 'tailwindcss';
 
 @theme {
@@ -15,7 +15,7 @@
   --brand-gold: #d5b77f;
   --brand-gold-rgb: 213, 183, 127;
   --brand-gold-dark: #6f5b2f;
-  --brand-gold-motto: #c9a64a;
+  --brand-gold-motto: #a9822f;
   --button-surface: #f7f3eb;
 }
 
@@ -111,7 +111,7 @@ html {
   font-family: "Merriweather", Georgia, serif;
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--brand-burgundy);
+  color: #000000;
 }
 
 .font-main-body {
