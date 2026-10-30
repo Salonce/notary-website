@@ -42,6 +42,8 @@
   transition-delay: 900ms;
 }
 
+
+
 .is-visible .documents-title {
   opacity: 1;
   transform: translateY(0);

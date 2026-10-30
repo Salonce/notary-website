@@ -36,7 +36,7 @@
              text-[17px]
              font-normal
              tracking-wide
-             text-[#b59b5b]"
+             text-[var(--brand-gold)]"
       aria-label="Ocena 5 gwiazdek"
     >
       <span>★</span>
@@ -146,10 +146,10 @@
                  rounded-full
                  border border-[#d8ccb0]
                  bg-[#f3f0e7]
-                 text-[#806c3e]
+                 text-[var(--brand-gold-dark)]
                  shadow-[0_4px_15px_rgba(80,70,50,0.08)]
                  transition-all duration-300
-                 hover:border-[#b59b5b]
+                 hover:border-[var(--brand-gold)]
                  hover:bg-[#ebe5d5]
                  disabled:pointer-events-none
                  disabled:opacity-35"
@@ -203,12 +203,12 @@
                        group-hover:scale-125"
                 [style.background-color]="
                   index === currentIndex() - 1
-                    ? '#806c3e'
+                    ? 'var(--brand-gold-dark)'
                     : '#d8ccb0'
                 "
                 [style.box-shadow]="
                   index === currentIndex() - 1
-                    ? '0 0 0 3px rgba(181,155,91,0.18)'
+                    ? '0 0 0 3px rgba(var(--brand-gold-rgb),0.18)'
                     : 'none'
                 "
               ></span>
@@ -233,10 +233,10 @@
                  rounded-full
                  border border-[#d8ccb0]
                  bg-[#f3f0e7]
-                 text-[#806c3e]
+                 text-[var(--brand-gold-dark)]
                  shadow-[0_4px_15px_rgba(80,70,50,0.08)]
                  transition-all duration-300
-                 hover:border-[#b59b5b]
+                 hover:border-[var(--brand-gold)]
                  hover:bg-[#ebe5d5]
                  disabled:pointer-events-none
                  disabled:opacity-35"
@@ -286,12 +286,12 @@
                    rounded-full
                    border border-[#d8ccb0]
                    bg-[#f3f0e7]
-                   text-[#806c3e]
+                   text-[var(--brand-gold-dark)]
                    shadow-[0_5px_20px_rgba(80,70,50,0.08)]
                    transition-all duration-300
-                   hover:border-[#b59b5b]
+                   hover:border-[var(--brand-gold)]
                    hover:bg-[#ebe5d5]
-                   hover:text-[#806c3e]
+                   hover:text-[var(--brand-gold-dark)]
                    hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
                    disabled:pointer-events-none
                    disabled:opacity-35
@@ -364,7 +364,7 @@
                          px-6 py-7
                          shadow-[0_8px_30px_rgba(80,70,50,0.07)]
                          transition-all duration-500
-                         hover:border-[#b59b5b]/70
+                         hover:border-[var(--brand-gold)]/70
                          hover:shadow-[0_12px_35px_rgba(80,70,50,0.10)]
                          sm:px-9 sm:py-8
                          md:min-h-[270px]
@@ -376,7 +376,7 @@
                   <div
                     class="absolute left-0 top-0
                            h-full w-1
-                           bg-[#b59b5b]"
+                           bg-[var(--brand-gold)]"
                     aria-hidden="true"
                   ></div>
 
@@ -431,7 +431,7 @@
                              text-[14px]
                              font-normal
                              tracking-[0.12em]
-                             text-[#b59b5b]"
+                             text-[var(--brand-gold)]"
                       aria-label="Ocena opinii"
                     >
 
@@ -455,10 +455,10 @@
 
                   <div
                     class="mt-5 h-px w-10
-                           bg-[#b59b5b]/60
+                           bg-[var(--brand-gold)]/60
                            transition-all duration-500
                            group-hover:w-16
-                           group-hover:bg-[#b59b5b]"
+                           group-hover:bg-[var(--brand-gold)]"
                   ></div>
 
 
@@ -476,7 +476,7 @@
                              text-4xl
                              font-normal
                              leading-none
-                             text-[#b59b5b]/40"
+                             text-[var(--brand-gold)]/40"
                       aria-hidden="true"
                     >
                       “
@@ -552,12 +552,12 @@
                    rounded-full
                    border border-[#d8ccb0]
                    bg-[#f3f0e7]
-                   text-[#806c3e]
+                   text-[var(--brand-gold-dark)]
                    shadow-[0_5px_20px_rgba(80,70,50,0.08)]
                    transition-all duration-300
-                   hover:border-[#b59b5b]
+                   hover:border-[var(--brand-gold)]
                    hover:bg-[#ebe5d5]
-                   hover:text-[#806c3e]
+                   hover:text-[var(--brand-gold-dark)]
                    hover:shadow-[0_8px_25px_rgba(80,70,50,0.12)]
                    disabled:pointer-events-none
                    disabled:opacity-35
@@ -626,12 +626,12 @@
                          group-hover:scale-125"
                   [style.background-color]="
                     index === currentIndex() - 1
-                      ? '#806c3e'
+                      ? 'var(--brand-gold-dark)'
                       : '#d8ccb0'
                   "
                   [style.box-shadow]="
                     index === currentIndex() - 1
-                      ? '0 0 0 3px rgba(181,155,91,0.18)'
+                      ? '0 0 0 3px rgba(var(--brand-gold-rgb),0.18)'
                       : 'none'
                   "
                 ></span>
@@ -718,9 +718,9 @@
              text-[13px]
              font-normal
              tracking-wide
-             text-[#806c3e]
+             text-[var(--brand-gold-dark)]
              transition-colors duration-300
-             hover:text-[#b59b5b]"
+             hover:text-[var(--brand-gold)]"
     >
 
       <span>
@@ -728,7 +728,7 @@
       </span>
 
       <span
-        class="text-[#b59b5b]
+        class="text-[var(--brand-gold)]
                transition-transform duration-300
                group-hover:translate-x-1"
         aria-hidden="true"

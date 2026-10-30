@@ -2,70 +2,19 @@
   class="footer-kancelaria fixed inset-x-0 bottom-0 z-50
          overflow-hidden
          border-t
-         bg-[#7f2336]
+         bg-[var(--brand-burgundy-soft)]
          text-[#f7f3eb]"
 >
-  <!-- ORNAMENT PRAWY GÓRNY -->
-  <div
-    class="footer-ornament pointer-events-none absolute
-           -right-24 -top-28
-           h-[300px] w-[300px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
+  <!-- SUBTELNE ORNAMENTY KONTUROWE -->
+  <div class="footer-ornament pointer-events-none absolute -right-20 -top-24 h-[220px] w-[220px] rounded-full border" aria-hidden="true"></div>
+  <div class="footer-ornament pointer-events-none absolute -right-8 -top-12 h-[150px] w-[150px] rounded-full border" aria-hidden="true"></div>
+  <div class="footer-ornament pointer-events-none absolute -bottom-24 -left-20 h-[220px] w-[220px] rounded-full border" aria-hidden="true"></div>
+  <div class="footer-ornament pointer-events-none absolute -bottom-12 -left-8 h-[150px] w-[150px] rounded-full border" aria-hidden="true"></div>
 
-  <div
-    class="footer-ornament pointer-events-none absolute
-           -right-8 -top-12
-           h-[220px] w-[220px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="footer-ornament pointer-events-none absolute
-           right-6 top-6
-           h-[150px] w-[150px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <!-- ORNAMENT LEWY DOLNY -->
-  <div
-    class="footer-ornament pointer-events-none absolute
-           -bottom-28 -left-24
-           h-[300px] w-[300px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="footer-ornament pointer-events-none absolute
-           -bottom-12 -left-8
-           h-[210px] w-[210px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <!-- DELIKATNA SIATKA -->
-  <div
-    class="pointer-events-none absolute inset-0 opacity-25"
-    aria-hidden="true"
-  >
-    <div
-      class="absolute inset-0
-             bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(197,164,109,0.10)_49%,transparent_50%,transparent_100%)]"
-    ></div>
-
-    <div
-      class="absolute inset-0
-             bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(197,164,109,0.07)_49%,transparent_50%,transparent_100%)]"
-    ></div>
+  <!-- LEKKI WZÓR GEOMETRYCZNY -->
+  <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.07)_49%,transparent_50%,transparent_100%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.045)_49%,transparent_50%,transparent_100%)]"></div>
   </div>
 
   <!-- =========================================
@@ -254,7 +203,7 @@
       <div
         class="flex min-h-[64px]
                items-center gap-4
-               border-l border-[#c5a46d]/40
+               border-l border-[var(--brand-gold)]/40
                pl-8 lg:pl-10"
       >
         <!-- IKONA -->

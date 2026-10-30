@@ -10,9 +10,9 @@ footer.footer-kancelaria {
   z-index: 50;
   overflow: hidden;
 
-  background-color: #7F2336 !important;
+  background-color: var(--brand-burgundy-soft) !important;
 
-  border-top: 1px solid rgba(197, 164, 109, 0.65) !important;
+  border-top: 1px solid rgba(var(--brand-gold-rgb), 0.65) !important;
   color: #f7f3eb !important;
   isolation: isolate;
 }
@@ -25,25 +25,29 @@ footer.footer-kancelaria span {
 
 /* Ikony */
 footer.footer-kancelaria i {
-  color: #d5b77f !important;
+  color: var(--brand-gold) !important;
 }
 
 /* Okrągłe tła ikon */
 footer.footer-kancelaria .footer-icon {
   background: rgba(247, 243, 235, 0.09) !important;
-  border: 1px solid #c5a46d !important;
-  color: #d5b77f !important;
-  box-shadow: 0 0 18px rgba(197, 164, 109, 0.12);
+  border: 1px solid var(--brand-gold) !important;
+  color: var(--brand-gold) !important;
+  box-shadow: none !important;
 }
 
 /* Separatory */
 footer.footer-kancelaria .footer-separator {
-  background: rgba(197, 164, 109, 0.45) !important;
+  background: rgba(var(--brand-gold-rgb), 0.45) !important;
 }
 
 /* Obramowania */
 footer.footer-kancelaria .footer-border {
-  border-color: rgba(197, 164, 109, 0.4) !important;
+  border-color: rgba(var(--brand-gold-rgb), 0.4) !important;
+}
+
+footer.footer-kancelaria .footer-ornament {
+  border-color: rgba(var(--brand-gold-rgb), 0.16) !important;
 }
 
 /* Główne informacje */
@@ -54,11 +58,6 @@ footer.footer-kancelaria .footer-primary {
 /* Informacje dodatkowe */
 footer.footer-kancelaria .footer-secondary {
   color: rgba(247, 243, 235, 0.72) !important;
-}
-
-/* Ornamenty */
-footer.footer-kancelaria .footer-ornament {
-  border-color: rgba(197, 164, 109, 0.2) !important;
 }
 
 /* Tekst pozostaje ostry */

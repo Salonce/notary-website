@@ -8,9 +8,9 @@ header.header-kancelaria {
   isolation: isolate;
   overflow: hidden;
 
-  background-color: #8E2C40 !important;
+  background-color: var(--brand-burgundy-soft) !important;
 
-  border-bottom: 1px solid rgba(197, 164, 109, 0.5) !important;
+  border-bottom: 1px solid rgba(var(--brand-gold-rgb), 0.5) !important;
 }
 
 /* WSZYSTKIE TEKSTY */
@@ -21,7 +21,7 @@ header.header-kancelaria a {
 
 /* IKONY */
 header.header-kancelaria i {
-  color: #d5b77f !important;
+  color: var(--brand-gold) !important;
 }
 
 /* TELEFON I E-MAIL */
@@ -35,19 +35,8 @@ header.header-kancelaria a:hover span {
   color: #ffffff !important;
 }
 
-/* DELIKATNE ZŁOTE LINIE */
-header.header-kancelaria .header-line {
-  background: rgba(197, 164, 109, 0.35);
-}
-
-/* ORNAMENTY */
 header.header-kancelaria .header-ornament {
-  border-color: rgba(197, 164, 109, 0.18);
-}
-
-/* DEKORACYJNA POŚWIATA */
-header.header-kancelaria .header-glow {
-  pointer-events: none;
+  border-color: rgba(var(--brand-gold-rgb), 0.16);
 }
 
 /* OSTROŚĆ TEKSTU */
@@ -59,7 +48,7 @@ header.header-kancelaria i {
 
 /* TELEFON I E-MAIL — INTERAKCJA */
 header.header-kancelaria a:focus-visible {
-  outline: 2px solid #d5b77f;
+  outline: 2px solid var(--brand-gold);
   outline-offset: 4px;
   border-radius: 2px;
 }

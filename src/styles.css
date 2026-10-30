@@ -9,6 +9,32 @@
   --breakpoint-xs: 480px;
 }
 
+:root {
+  --brand-burgundy: #7f2336;
+  --brand-burgundy-soft: #862638;
+  --brand-gold: #d5b77f;
+  --brand-gold-rgb: 213, 183, 127;
+  --brand-gold-dark: #6f5b2f;
+  --brand-gold-motto: #c9a64a;
+  --button-surface: #f7f3eb;
+}
+
+.font-main-body.button-accent {
+  border-color: rgba(var(--brand-gold-rgb), 0.55);
+  background-color: var(--button-surface);
+  color: var(--brand-gold-dark);
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
+}
+
+.font-main-body.button-accent:hover {
+  border-color: var(--brand-gold);
+  background-color: #e9ddbf;
+  color: var(--brand-gold-dark);
+}
+
 /* =========================================
    PRZEWIJANIE DO SEKCJI
    ========================================= */
@@ -45,6 +71,12 @@ html {
   box-sizing: border-box;
 }
 
+.main-background {
+  background-image: linear-gradient(180deg, #f6f1e9 0%, #f2ece1 100%);
+}
+
+
+
 /* =========================================
    NUMERY TELEFONÓW I DANE
    ========================================= */
@@ -79,7 +111,7 @@ html {
   font-family: "Merriweather", Georgia, serif;
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: #8B1E2D;
+  color: var(--brand-burgundy);
 }
 
 .font-main-body {
@@ -92,7 +124,7 @@ html {
   font-family: "Merriweather", serif;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: #8B1E2D;
+  color: var(--brand-burgundy);
 }
 
 .font-notarial-services-list-main-element {

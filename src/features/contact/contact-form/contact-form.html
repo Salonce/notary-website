@@ -182,7 +182,7 @@
                font-normal
                uppercase
                tracking-[0.2em]
-               text-[#765D35]"
+               text-[var(--brand-gold-dark)]"
       >
         Imię i nazwisko
         <span aria-hidden="true" class="text-red-700">*</span>
@@ -207,7 +207,7 @@
         [class.!focus:border-red-700]="shouldShowError('name')"
         class="w-full
                border border-[#D2C3A8]
-               bg-[#F7F3EB]/70
+               bg-[#F7F3EB]/90
                px-4 py-3
                font-main-body
                text-[17px]
@@ -217,10 +217,10 @@
                outline-none
                transition-colors duration-200
                placeholder:text-stone-400
-               hover:border-[#A88A50]
-               focus:border-[#765D35]
+               hover:border-[var(--brand-gold-dark)]
+               focus:border-[var(--brand-gold-dark)]
                focus:ring-1
-               focus:ring-[#D2C3A8]
+               focus:ring-[var(--brand-gold)]/40
                md:text-[18px]"
       />
 
@@ -262,7 +262,7 @@
                font-normal
                uppercase
                tracking-[0.2em]
-               text-[#765D35]"
+               text-[var(--brand-gold-dark)]"
       >
         Adres e-mail
         <span aria-hidden="true" class="text-red-700">*</span>
@@ -286,7 +286,7 @@
         [class.!focus:border-red-700]="shouldShowError('email')"
         class="w-full
                border border-[#D2C3A8]
-               bg-[#F7F3EB]/70
+               bg-[#F7F3EB]/90
                px-4 py-3
                font-main-body
                text-[17px]
@@ -296,10 +296,10 @@
                outline-none
                transition-colors duration-200
                placeholder:text-stone-400
-               hover:border-[#A88A50]
-               focus:border-[#765D35]
+               hover:border-[var(--brand-gold-dark)]
+               focus:border-[var(--brand-gold-dark)]
                focus:ring-1
-               focus:ring-[#D2C3A8]
+               focus:ring-[var(--brand-gold)]/40
                md:text-[18px]"
       />
 
@@ -331,7 +331,7 @@
                font-normal
                uppercase
                tracking-[0.2em]
-               text-[#765D35]"
+               text-[var(--brand-gold-dark)]"
       >
         Treść zapytania
         <span aria-hidden="true" class="text-red-700">*</span>
@@ -354,7 +354,7 @@
         class="w-full
                resize-y
                border border-[#D2C3A8]
-               bg-[#F7F3EB]/70
+               bg-[#F7F3EB]/90
                px-4 py-3
                font-main-body
                text-[17px]
@@ -364,10 +364,10 @@
                outline-none
                transition-colors duration-200
                placeholder:text-stone-400
-               hover:border-[#A88A50]
-               focus:border-[#765D35]
+               hover:border-[var(--brand-gold-dark)]
+               focus:border-[var(--brand-gold-dark)]
                focus:ring-1
-               focus:ring-[#D2C3A8]
+               focus:ring-[var(--brand-gold)]/40
                md:text-[18px]
                md:leading-[1.9]"
       ></textarea>
@@ -417,10 +417,10 @@
                  h-4 w-4
                  shrink-0
                  cursor-pointer
-                 accent-[#765D35]
+                 accent-[var(--brand-gold-dark)]
                  focus-visible:outline-2
                  focus-visible:outline-offset-2
-                 focus-visible:outline-[#765D35]"
+                 focus-visible:outline-[var(--brand-gold-dark)]"
         />
 
         <span
@@ -529,20 +529,20 @@
                justify-center
                gap-4
                border border-[#D2C3A8]
-               bg-transparent
+               bg-[#F7F3EB]/90
                px-6 py-3
                font-main-body
                text-[14px]
                font-normal
                tracking-wide
-               text-[#765D35]
+               text-[var(--brand-gold-dark)]
                transition-colors duration-300
-               hover:border-[#765D35]
-               hover:bg-[#765D35]
-               hover:text-white
+               hover:border-[var(--brand-gold-dark)]
+               hover:bg-[#EFE6D6]
+               hover:text-[var(--brand-gold-dark)]
                focus-visible:outline-2
                focus-visible:outline-offset-4
-               focus-visible:outline-[#765D35]
+               focus-visible:outline-[var(--brand-gold-dark)]
                disabled:cursor-not-allowed
                disabled:opacity-50
                sm:w-auto"
@@ -553,10 +553,10 @@
 
         @if (!isSending) {
           <span
-            class="text-[#A88A50]
+            class="text-[var(--brand-gold-dark)]
                    transition-transform duration-300
                    group-hover:translate-x-1
-                   group-hover:text-white"
+                   group-hover:text-[var(--brand-gold-dark)]"
             aria-hidden="true"
           >
             →

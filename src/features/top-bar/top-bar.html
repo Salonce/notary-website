@@ -2,144 +2,20 @@
   class="header-kancelaria relative
          w-full
          overflow-hidden
-         border-b border-[#c5a46d]/40
-         bg-[#8e2c40]"
+         border-b border-[var(--brand-gold)]/40
+         bg-[var(--brand-burgundy-soft)]"
 >
-  <!-- TŁO — SUBTELNE ZŁOTE OŚWIETLENIE -->
-  <div
-    class="header-glow pointer-events-none absolute inset-0
-           bg-[radial-gradient(ellipse_125%_180%_at_50%_45%,rgba(197,164,109,0.13)_0%,rgba(197,164,109,0.075)_28%,rgba(197,164,109,0.045)_52%,rgba(197,164,109,0.018)_74%,transparent_100%)]"
-    aria-hidden="true"
-  ></div>
+  <!-- SUBTELNE ORNAMENTY KONTUROWE -->
+  <div class="header-ornament pointer-events-none absolute -left-24 -top-28 h-[240px] w-[240px] rounded-full border" aria-hidden="true"></div>
+  <div class="header-ornament pointer-events-none absolute -left-12 -top-16 h-[170px] w-[170px] rounded-full border" aria-hidden="true"></div>
+  <div class="header-ornament pointer-events-none absolute -right-24 -bottom-28 h-[240px] w-[240px] rounded-full border" aria-hidden="true"></div>
+  <div class="header-ornament pointer-events-none absolute -right-12 -bottom-16 h-[170px] w-[170px] rounded-full border" aria-hidden="true"></div>
 
-  <!-- DELIKATNE POŚWIATY PO BOKACH -->
-  <div
-    class="header-glow pointer-events-none absolute
-           left-[-10%] -top-[85%]
-           h-[280px] w-[50%]
-           rounded-full
-           bg-[#c5a46d]/[0.045]
-           blur-3xl"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-glow pointer-events-none absolute
-           right-[-10%] -top-[85%]
-           h-[280px] w-[50%]
-           rounded-full
-           bg-[#c5a46d]/[0.045]
-           blur-3xl"
-    aria-hidden="true"
-  ></div>
-
-  <!-- SZEROKIE ORNAMENTY — LEWY -->
-  <div
-    class="header-ornament pointer-events-none absolute
-           -left-32 -top-32
-           h-[300px] w-[300px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-ornament pointer-events-none absolute
-           -left-20 -top-20
-           h-[240px] w-[240px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-ornament pointer-events-none absolute
-           -left-8 -top-8
-           h-[165px] w-[165px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <!-- SZEROKIE ORNAMENTY — PRAWY -->
-  <div
-    class="header-ornament pointer-events-none absolute
-           -right-32 -bottom-32
-           h-[300px] w-[300px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-ornament pointer-events-none absolute
-           -right-20 -bottom-20
-           h-[240px] w-[240px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-ornament pointer-events-none absolute
-           -right-8 -bottom-8
-           h-[165px] w-[165px]
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <!-- DŁUGIE ŁUKI -->
-  <div
-    class="header-ornament pointer-events-none absolute
-           left-[5%] top-1/2
-           h-[180px] w-[650px]
-           -translate-y-1/2
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-ornament pointer-events-none absolute
-           right-[5%] top-1/2
-           h-[180px] w-[650px]
-           -translate-y-1/2
-           rounded-full
-           border"
-    aria-hidden="true"
-  ></div>
-
-  <!-- DELIKATNA SIATKA -->
-  <div
-    class="pointer-events-none absolute inset-0 opacity-20"
-    aria-hidden="true"
-  >
-    <div
-      class="absolute inset-0
-             bg-[linear-gradient(135deg,transparent_0%,transparent_46%,rgba(197,164,109,0.07)_48%,transparent_50%,transparent_100%)]"
-    ></div>
-
-    <div
-      class="absolute inset-0
-             bg-[linear-gradient(45deg,transparent_0%,transparent_46%,rgba(197,164,109,0.045)_48%,transparent_50%,transparent_100%)]"
-    ></div>
+  <!-- LEKKI WZÓR GEOMETRYCZNY -->
+  <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.07)_49%,transparent_50%,transparent_100%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.045)_49%,transparent_50%,transparent_100%)]"></div>
   </div>
-
-  <!-- DELIKATNE LINIE KRAWĘDZIOWE -->
-  <div
-    class="header-line pointer-events-none absolute
-           inset-x-0 top-0
-           h-px"
-    aria-hidden="true"
-  ></div>
-
-  <div
-    class="header-line pointer-events-none absolute
-           inset-x-0 bottom-0
-           h-px"
-    aria-hidden="true"
-  ></div>
 
   <!-- TREŚĆ -->
   <div
@@ -173,7 +49,7 @@
                  shrink-0
                  text-[13px]
                  max-[359px]:text-[12px]
-                 text-[#d5b77f]"
+                 text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
 
@@ -216,8 +92,7 @@
       </div>
 
       <!-- TELEFON PO PRAWEJ -->
-      <a
-        href="tel:+48895273839"
+      <div
         class="flex shrink-0
                h-5
                items-center gap-2
@@ -229,20 +104,18 @@
                font-normal
                tracking-wide
                max-[359px]:tracking-normal
-               text-[#f7f3eb]
-               transition-colors
-               hover:text-white"
+               text-[#f7f3eb]"
       >
         <i
           class="fa-solid fa-phone
                  text-[13px]
                  max-[359px]:text-[12px]
-                 text-[#d5b77f]"
+                 text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
 
         <span>89 527 38 39</span>
-      </a>
+      </div>
     </div>
 
     <!-- DESKTOP -->
@@ -260,7 +133,7 @@
         <i
           class="fa-solid fa-house
                  text-[16px]
-                 text-[#d5b77f]"
+                 text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
 
@@ -285,7 +158,7 @@
         <i
           class="fa-solid fa-house
                  text-[16px]
-                 text-[#d5b77f]"
+                 text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
 
@@ -304,49 +177,43 @@
 
       <!-- TELEFON I E-MAIL -->
       <div class="flex items-center gap-6">
-        <a
-          href="tel:+48895273839"
+        <div
           class="flex items-center gap-3
                  whitespace-nowrap
                  font-top-bar
                  text-[15px]
                  font-normal
                  tracking-wide
-                 text-[#f7f3eb]
-                 transition-colors
-                 hover:text-white"
+                 text-[#f7f3eb]"
         >
           <i
             class="fa-solid fa-phone
                    text-[14px]
-                   text-[#d5b77f]"
+                   text-[var(--brand-gold)]"
             aria-hidden="true"
           ></i>
 
           <span>89 527 38 39</span>
-        </a>
+        </div>
 
-        <a
-          href="mailto:notariusz@wladyslawski.pl"
+        <div
           class="flex items-center gap-3
                  whitespace-nowrap
                  font-top-bar
                  text-[15px]
                  font-normal
                  tracking-wide
-                 text-[#f7f3eb]
-                 transition-colors
-                 hover:text-white"
+                 text-[#f7f3eb]"
         >
           <i
             class="fa-solid fa-envelope
                    text-[14px]
-                   text-[#d5b77f]"
+                   text-[var(--brand-gold)]"
             aria-hidden="true"
           ></i>
 
           <span>notariusz@wladyslawski.pl</span>
-        </a>
+        </div>
       </div>
     </div>
   </div>

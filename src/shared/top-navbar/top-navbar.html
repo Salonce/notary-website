@@ -1,7 +1,7 @@
 
 <!-- NAVBAR -->
 <nav
-  class="navbar relative w-full overflow-hidden border-y border-[#c5a46d]/40 bg-[#8e2c40] shadow-[0_6px_20px_rgba(50,15,25,0.18)]"
+  class="navbar relative w-full overflow-hidden border-y border-[var(--brand-gold)]/40 bg-[var(--brand-burgundy)]"
   aria-label="Nawigacja główna"
 >
 
@@ -9,31 +9,31 @@
 
   <!-- Delikatny obrys po lewej stronie -->
   <div
-    class="pointer-events-none absolute -left-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[#c5a46d]/[0.10]"
+    class="pointer-events-none absolute -left-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[var(--brand-gold)]/[0.10]"
     aria-hidden="true"
   ></div>
 
   <!-- Delikatny obrys po prawej stronie -->
   <div
-    class="pointer-events-none absolute -right-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[#c5a46d]/[0.10]"
+    class="pointer-events-none absolute -right-24 top-1/2 h-[150px] w-[380px] -translate-y-1/2 rounded-full border border-[var(--brand-gold)]/[0.10]"
     aria-hidden="true"
   ></div>
 
   <!-- Subtelna linia przez środek -->
   <div
-    class="pointer-events-none absolute inset-x-[5%] top-1/2 h-px -translate-y-1/2 bg-[#c5a46d]/[0.07]"
+    class="pointer-events-none absolute inset-x-[5%] top-1/2 h-px -translate-y-1/2 bg-[var(--brand-gold)]/[0.07]"
     aria-hidden="true"
   ></div>
 
   <!-- Górna złota linia -->
   <div
-    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#c5a46d]/40"
+    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-[var(--brand-gold)]/40"
     aria-hidden="true"
   ></div>
 
   <!-- Dolna złota linia -->
   <div
-    class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[#c5a46d]/45"
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[var(--brand-gold)]/45"
     aria-hidden="true"
   ></div>
 
@@ -44,7 +44,7 @@
     <!-- PASEK MENU -->
     <button
       type="button"
-      class="menu-toggle group flex h-[40px] min-h-[40px] w-full items-center justify-end gap-2.5 px-3.5 text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:px-4 min-[375px]:gap-3"
+      class="menu-toggle group flex h-[40px] min-h-[40px] w-full items-center justify-end gap-2.5 px-3.5 text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:px-4 min-[375px]:gap-3"
       [attr.aria-expanded]="isMobileMenuOpen"
       aria-controls="mobile-navigation-menu"
       [attr.aria-label]="isMobileMenuOpen ? 'Zamknij menu nawigacyjne' : 'Otwórz menu nawigacyjne'"
@@ -80,14 +80,14 @@
 
     <!-- DYSKRETNA LINIA -->
     <div
-      class="h-px bg-gradient-to-r from-transparent via-[#c5a46d]/60 to-transparent"
+      class="h-px bg-gradient-to-r from-transparent via-[var(--brand-gold)]/60 to-transparent"
       aria-hidden="true"
     ></div>
 
     <!-- ROZWIJANE MENU -->
     <div
       id="mobile-navigation-menu"
-      class="menu-panel border-t border-[#c5a46d]/30 bg-[#8e2c40] px-3 min-[375px]:px-4"
+      class="menu-panel border-t border-[var(--brand-gold)]/30 bg-[var(--brand-burgundy)] px-3 min-[375px]:px-4"
       [class.is-open]="isMobileMenuOpen"
       [attr.aria-hidden]="!isMobileMenuOpen"
       [attr.inert]="!isMobileMenuOpen ? '' : null"
@@ -95,13 +95,13 @@
 
       <!-- NAGŁÓWEK LISTY -->
       <div class="mb-2 flex items-center gap-3 px-3 py-2">
-        <span class="h-px w-5 bg-[#c5a46d]" aria-hidden="true"></span>
+        <span class="h-px w-5 bg-[var(--brand-gold)]" aria-hidden="true"></span>
 
         <span class="text-[10px] font-medium uppercase tracking-[0.2em] text-[#f7f3eb]">
           Zapraszamy
         </span>
 
-        <span class="h-px flex-1 bg-[#c5a46d]/40" aria-hidden="true"></span>
+        <span class="h-px flex-1 bg-[var(--brand-gold)]/40" aria-hidden="true"></span>
       </div>
 
       <div class="flex flex-col">
@@ -110,9 +110,9 @@
         <a
           href="#home"
           (click)="scrollToSection($event, 'home', true)"
-          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#c5a46d]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
+          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[var(--brand-gold)]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#d5b77f] transition-colors group-hover:text-[#f7f3eb]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[var(--brand-gold)] transition-colors group-hover:text-[#f7f3eb]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" class="h-5 w-5 min-[375px]:h-[21px] min-[375px]:w-[21px]" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5M5.5 9v11h13V9M9.5 20v-6h5v6" />
             </svg>
@@ -122,7 +122,7 @@
             Strona główna
           </span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[#d5b77f] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
           </svg>
         </a>
@@ -131,9 +131,9 @@
         <a
           href="#czynnosci-notarialne"
           (click)="scrollToSection($event, 'czynnosci-notarialne', true)"
-          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#c5a46d]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
+          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[var(--brand-gold)]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#d5b77f] transition-colors group-hover:text-[#f7f3eb]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[var(--brand-gold)] transition-colors group-hover:text-[#f7f3eb]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" class="h-5 w-5 min-[375px]:h-[21px] min-[375px]:w-[21px]" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17M8 20h8M6 7h12M5 7l-2 5h4L5 7Zm14 0-2 5h4l-2-5Z" />
             </svg>
@@ -143,7 +143,7 @@
             Czynności notarialne
           </span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[#d5b77f] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
           </svg>
         </a>
@@ -152,9 +152,9 @@
         <a
           href="#oplaty"
           (click)="scrollToSection($event, 'oplaty', true)"
-          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#c5a46d]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
+          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[var(--brand-gold)]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#d5b77f] transition-colors group-hover:text-[#f7f3eb]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[var(--brand-gold)] transition-colors group-hover:text-[#f7f3eb]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" class="h-5 w-5 min-[375px]:h-[21px] min-[375px]:w-[21px]" aria-hidden="true">
               <circle cx="12" cy="12" r="8.5" />
               <path stroke-linecap="round" d="M14.5 9.5c-.5-.7-1.4-1.1-2.5-1.1-1.4 0-2.4.7-2.4 1.7 0 2.6 4.8 1.1 4.8 3.8 0 1.1-1 1.8-2.5 1.8-1.1 0-2.1-.4-2.7-1.2" />
@@ -166,7 +166,7 @@
             Koszty
           </span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[#d5b77f] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
           </svg>
         </a>
@@ -175,9 +175,9 @@
         <a
           href="#strefa-klienta"
           (click)="scrollToSection($event, 'strefa-klienta', true)"
-          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[#c5a46d]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
+          class="group flex min-h-[48px] items-center gap-3 rounded-md border-b border-[var(--brand-gold)]/25 px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#d5b77f] transition-colors group-hover:text-[#f7f3eb]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[var(--brand-gold)] transition-colors group-hover:text-[#f7f3eb]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" class="h-5 w-5 min-[375px]:h-[21px] min-[375px]:w-[21px]" aria-hidden="true">
               <circle cx="12" cy="8" r="3.2" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 20c.8-3.8 3.2-6 7-6s6.2 2.2 7 6" />
@@ -188,7 +188,7 @@
             Strefa klienta
           </span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[#d5b77f] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
           </svg>
         </a>
@@ -197,9 +197,9 @@
         <a
           href="#kontakt"
           (click)="scrollToSection($event, 'kontakt', true)"
-          class="group flex min-h-[48px] items-center gap-3 rounded-md px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#d5b77f] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
+          class="group flex min-h-[48px] items-center gap-3 rounded-md px-2.5 py-3 text-[#f7f3eb] transition-colors duration-200 hover:bg-white/[0.07] hover:text-[#f7f3eb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--brand-gold)] min-[375px]:min-h-[52px] min-[375px]:gap-3.5 min-[375px]:px-3"
         >
-          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[#d5b77f] transition-colors group-hover:text-[#f7f3eb]">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center text-[var(--brand-gold)] transition-colors group-hover:text-[#f7f3eb]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" class="h-5 w-5 min-[375px]:h-[21px] min-[375px]:w-[21px]" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 3.5h3l1.2 4-2 1.5a15.5 15.5 0 0 0 6.3 6.3l1.5 1.2v3c0 1.1-.9 2-2 2C11.6 19.5 4.5 12.4 4.5 3.5c0-1.1.9-2 2-2Z" />
             </svg>
@@ -209,7 +209,7 @@
             Kontakt
           </span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[#d5b77f] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] transition-transform group-hover:translate-x-0.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
           </svg>
         </a>
@@ -218,13 +218,13 @@
 
       <!-- DOLNY AKCENT -->
       <div class="mt-3 flex items-center justify-center gap-2 pb-1 min-[375px]:mt-4">
-        <span class="h-px w-8 bg-[#c5a46d]/70" aria-hidden="true"></span>
+        <span class="h-px w-8 bg-[var(--brand-gold)]/70" aria-hidden="true"></span>
 
         <span class="text-[10px] font-medium tracking-[0.12em] text-[#f7f3eb]">
           Kancelaria notarialna
         </span>
 
-        <span class="h-px w-8 bg-[#c5a46d]/70" aria-hidden="true"></span>
+        <span class="h-px w-8 bg-[var(--brand-gold)]/70" aria-hidden="true"></span>
       </div>
 
     </div>
@@ -239,11 +239,11 @@
       href="#home"
       aria-label="Strona główna"
       (click)="scrollToSection($event, 'home')"
-      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#c5a46d] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--brand-gold)] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="nav-item-content inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[#d5b77f] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5M5.5 9v11h13V9M9.5 20v-6h5v6" />
         </svg>
 
@@ -258,11 +258,11 @@
       href="#czynnosci-notarialne"
       aria-label="Czynności notarialne"
       (click)="scrollToSection($event, 'czynnosci-notarialne')"
-      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#c5a46d] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--brand-gold)] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="nav-item-content inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[#d5b77f] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17M8 20h8M6 7h12M5 7l-2 5h4L5 7Zm14 0-2 5h4l-2-5Z" />
         </svg>
 
@@ -278,11 +278,11 @@
       href="#oplaty"
       aria-label="Koszty"
       (click)="scrollToSection($event, 'oplaty')"
-      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#c5a46d] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--brand-gold)] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="nav-item-content inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[#d5b77f] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <circle cx="12" cy="12" r="8.5" />
           <path stroke-linecap="round" d="M14.5 9.5c-.5-.7-1.4-1.1-2.5-1.1-1.4 0-2.4.7-2.4 1.7 0 2.6 4.8 1.1 4.8 3.8 0 1.1-1 1.8-2.5 1.8-1.1 0-2.1-.4-2.7-1.2" />
           <path stroke-linecap="round" d="M12 7v10" />
@@ -298,11 +298,11 @@
       href="#strefa-klienta"
       aria-label="Strefa klienta"
       (click)="scrollToSection($event, 'strefa-klienta')"
-      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#c5a46d] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--brand-gold)] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="nav-item-content inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[#d5b77f] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <circle cx="12" cy="8" r="3.2" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 20c.8-3.8 3.2-6 7-6s6.2 2.2 7 6" />
         </svg>
@@ -318,11 +318,11 @@
       href="#kontakt"
       aria-label="Kontakt"
       (click)="scrollToSection($event, 'kontakt')"
-      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[#c5a46d] after:transition-all after:duration-300 hover:after:w-full"
+      class="group relative flex h-[50px] min-w-0 flex-1 items-center justify-center px-1 font-top-navbar text-[14px] font-normal tracking-wide text-[#f7f3eb] transition-colors duration-300 hover:text-[#f7f3eb] sm:px-2 md:h-[50px] md:px-3 md:text-[15px] lg:px-6 lg:text-[16px] after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--brand-gold)] after:transition-all after:duration-300 hover:after:w-full"
     >
       <span class="nav-item-content inline-flex flex-col items-center justify-center gap-0 md:flex-row md:gap-1.5 lg:gap-2">
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[#d5b77f] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-4 w-4 shrink-0 text-[var(--brand-gold)] md:h-[15px] md:w-[15px] lg:h-4 lg:w-4" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 3.5h3l1.2 4-2 1.5a15.5 15.5 0 0 0 6.3 6.3l1.5 1.2v3c0 1.1-.9 2-2 2C11.6 19.5 4.5 12.4 4.5 3.5c0-1.1.9-2 2-2Z" />
         </svg>
 

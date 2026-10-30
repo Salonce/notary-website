@@ -28,12 +28,22 @@
       <!-- NIERUCHOMOŚCI I PRAWA DO LOKALI -->
       <div class="service-category border-t border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m3 10 9-7 9 7M5.5 9v12h13V9M9 21v-7h6v7" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Nieruchomości i prawa do lokali
@@ -44,10 +54,11 @@
             >
               Sprzedaż · Darowizna · Dożywocie · Zamiana · Hipoteki · Służebności
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('nieruchomosci')"
               [attr.aria-expanded]="showNieruchomosci"
               aria-controls="services-nieruchomosci"
@@ -57,10 +68,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showNieruchomosci"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showNieruchomosci"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>
@@ -93,12 +106,22 @@
       <!-- SPRAWY RODZINNE I MAJĄTKOWE -->
       <div class="service-category border-t border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="9" cy="8" r="3" /><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5.2a3 3 0 0 1 0 5.6M18 15a5 5 0 0 1 3 4.6V21" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Sprawy rodzinne i majątkowe
@@ -109,10 +132,11 @@
             >
               Rozdzielność majątkowa · Podział majątku · Obowiązek alimentacyjny
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('rodzinne')"
               [attr.aria-expanded]="showRodzinne"
               aria-controls="services-rodzinne"
@@ -122,10 +146,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showRodzinne"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showRodzinne"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>
@@ -150,12 +176,22 @@
       <!-- SPÓŁKI, DZIAŁALNOŚĆ GOSPODARCZA I FUNDACJE -->
       <div class="service-category border-t border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 21h18M5 21V8l7-5 7 5v13M9 10h.01M15 10h.01M9 14h.01M15 14h.01M9 21v-3h6v3" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Spółki, działalność gospodarcza i fundacje
@@ -166,10 +202,11 @@
             >
               Spółki · Protokoły zgromadzeń · Rejestr akcjonariuszy · Fundacje
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('spolki')"
               [attr.aria-expanded]="showSpolki"
               aria-controls="services-spolki"
@@ -179,10 +216,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showSpolki"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showSpolki"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>
@@ -212,12 +251,22 @@
       <!-- SPADKI I TESTAMENTY -->
       <div class="service-category border-t border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M7 3h10v18H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3ZM4 18a3 3 0 0 1 3-3h10M9 8h6m-6 3h6" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Spadki i testamenty
@@ -228,10 +277,11 @@
             >
               Testamenty · Dziedziczenie · Poświadczenie dziedziczenia · Dział spadku
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('spadki')"
               [attr.aria-expanded]="showSpadki"
               aria-controls="services-spadki"
@@ -241,10 +291,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showSpadki"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showSpadki"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>
@@ -276,12 +328,22 @@
       <!-- POŚWIADCZENIA -->
       <div class="service-category border-t border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="10" r="6" /><path d="m9 15-1 6 4-2 4 2-1-6M10 10l1.3 1.3L14 8.5" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Poświadczenia
@@ -292,10 +354,11 @@
             >
               Dokumenty · Podpisy · Daty · Potwierdzenie stanu faktycznego
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('poswiadczenia')"
               [attr.aria-expanded]="showPoswiadczenia"
               aria-controls="services-poswiadczenia"
@@ -305,10 +368,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showPoswiadczenia"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showPoswiadczenia"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>
@@ -342,12 +407,22 @@
       <!-- POZOSTAŁE CZYNNOŚCI -->
       <div class="service-category border-y border-stone-200">
         <div class="flex items-start gap-4 py-5 md:py-6">
-          <span
-            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#b59b5b]"
-          ></span>
+          <svg
+            class="mt-1 h-[18px] w-[18px] shrink-0 text-[var(--brand-gold-dark)]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m4 20 4.5-1 11-11a2.1 2.1 0 0 0-3-3l-11 11L4 20ZM14.5 6.5l3 3M4 21h16" />
+          </svg>
 
-          <div class="min-w-0 flex-1">
-            <h3
+          <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
+            <div class="min-w-0">
+              <h3
               class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
             >
               Pozostałe czynności
@@ -358,10 +433,11 @@
             >
               Najem · Protokoły · Depozyt · Pełnomocnictwa · Dokumenty
             </p>
+            </div>
 
             <button
               type="button"
-              class="mt-4 inline-flex items-center gap-2 border border-stone-300 px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] text-stone-600 transition-all duration-300 hover:border-[#b59b5b] hover:text-[#806c3e]"
+              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
               (click)="toggleCategory('pozostale')"
               [attr.aria-expanded]="showPozostale"
               aria-controls="services-pozostale"
@@ -371,10 +447,12 @@
               </span>
 
               <span
-                class="text-[15px] leading-none transition-transform duration-300"
-                [class.rotate-45]="showPozostale"
+                class="relative -top-px text-[15px] leading-none transition-transform duration-300"
+                [class.rotate-180]="showPozostale"
               >
-                +
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
               </span>
             </button>
           </div>

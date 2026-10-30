@@ -9,15 +9,13 @@ nav.navbar {
   isolation: isolate;
   overflow: hidden;
 
-  background-color: #8E2C40 !important;
-  background-image:
-    radial-gradient(ellipse 34% 150% at 0% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%),
-    radial-gradient(ellipse 34% 150% at 100% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%) !important;
+  background-color: var(--brand-burgundy) !important;
+  background-image: none !important;
 
-  border-top: 1px solid rgba(197, 164, 109, 0.4) !important;
-  border-bottom: 1px solid rgba(197, 164, 109, 0.4) !important;
+  border-top: 1px solid rgba(var(--brand-gold-rgb), 0.4) !important;
+  border-bottom: 1px solid rgba(var(--brand-gold-rgb), 0.4) !important;
 
-  box-shadow: 0 6px 20px rgba(50, 15, 25, 0.18);
+  box-shadow: none !important;
 }
 
 nav.navbar a,
@@ -73,12 +71,12 @@ nav.navbar > div.relative.z-10.mx-auto > a::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(213, 183, 127, 0.9) 22%,
-    #D5B77F 50%,
-    rgba(213, 183, 127, 0.9) 78%,
+    rgba(var(--brand-gold-rgb), 0.9) 22%,
+    var(--brand-gold) 50%,
+    rgba(var(--brand-gold-rgb), 0.9) 78%,
     transparent
   ) !important;
-  box-shadow: 0 0 3px rgba(213, 183, 127, 0.16);
+  box-shadow: 0 0 3px rgba(var(--brand-gold-rgb), 0.16);
   translate: 0 0 !important;
   transform: scaleX(0) !important;
   transform-origin: center;
@@ -87,7 +85,7 @@ nav.navbar > div.relative.z-10.mx-auto > a::after {
 
 /* Najechanie na pozycję */
 nav.navbar > div.relative.z-10.mx-auto > a:hover {
-  color: #D5B77F !important;
+  color: var(--brand-gold) !important;
   background-color: transparent !important;
   box-shadow: none !important;
   transform: none;
@@ -99,7 +97,7 @@ nav.navbar > div.relative.z-10.mx-auto > a:focus-visible::after {
 }
 
 nav.navbar > div.relative.z-10.mx-auto > a:focus-visible {
-  color: #D5B77F !important;
+  color: var(--brand-gold) !important;
 }
 
 /* Delikatne rozjaśnienie ikon */
@@ -110,7 +108,7 @@ nav.navbar > div.relative.z-10.mx-auto > a svg {
 }
 
 nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
-  color: #D5B77F !important;
+  color: var(--brand-gold) !important;
   transform: none;
 }
 
@@ -176,19 +174,19 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
 @media (hover: hover) and (pointer: fine) {
 
   nav.navbar > div.relative.z-10 button:hover {
-    color: #D5B77F !important;
+    color: var(--brand-gold) !important;
 
-    background-color: rgba(213, 183, 127, 0.09) !important;
+    background-color: rgba(var(--brand-gold-rgb), 0.09) !important;
 
     box-shadow:
-      inset 0 -1px 0 rgba(213, 183, 127, 0.4),
+      inset 0 -1px 0 rgba(var(--brand-gold-rgb), 0.4),
       0 4px 12px rgba(30, 8, 15, 0.12);
 
     transform: translateY(-2px);
   }
 
   nav.navbar > div.relative.z-10 button:hover svg {
-    color: #E5C994 !important;
+    color: var(--brand-gold) !important;
     transform: translateY(-1px) scale(1.06);
   }
 }
@@ -229,7 +227,7 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
   nav.navbar > div.relative.z-10 button:active,
   nav.navbar > div.relative.z-10.mx-auto > a:active,
   nav.navbar #mobile-navigation-menu a:active {
-    color: #D5B77F !important;
+    color: var(--brand-gold) !important;
     background-color: transparent !important;
     box-shadow: none !important;
     transform: none !important;
@@ -240,7 +238,7 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
   nav.navbar > div.relative.z-10.mx-auto > a:active svg,
   nav.navbar #mobile-navigation-menu a:active span,
   nav.navbar #mobile-navigation-menu a:active svg {
-    color: #D5B77F !important;
+    color: var(--brand-gold) !important;
     transform: none !important;
   }
 
@@ -256,10 +254,10 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
    ========================================= */
 
 nav.navbar #mobile-navigation-menu {
-  background-color: #8E2C40 !important;
+  background-color: var(--brand-burgundy) !important;
   background-image: none !important;
 
-  border-top: 1px solid rgba(197, 164, 109, 0.3);
+  border-top: 1px solid rgba(var(--brand-gold-rgb), 0.3);
 }
 
 nav.navbar #mobile-navigation-menu.menu-panel {
@@ -276,7 +274,7 @@ nav.navbar #mobile-navigation-menu.menu-panel.is-open {
   max-height: 520px;
   padding-top: 0.625rem !important;
   padding-bottom: 0.75rem !important;
-  border-top-color: rgba(197, 164, 109, 0.3);
+  border-top-color: rgba(var(--brand-gold-rgb), 0.3);
   opacity: 1;
   visibility: visible;
 }
@@ -318,7 +316,7 @@ nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
   nav.navbar #mobile-navigation-menu a:hover svg { color: #F7F3EB !important; }
   nav.navbar #mobile-navigation-menu a:active,
   nav.navbar #mobile-navigation-menu a:active span,
-  nav.navbar #mobile-navigation-menu a:active svg { color: #D5B77F !important; }
+  nav.navbar #mobile-navigation-menu a:active svg { color: var(--brand-gold) !important; }
 }
 
 /* =========================================
@@ -327,7 +325,7 @@ nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
 
 nav.navbar a:focus-visible,
 nav.navbar button:focus-visible {
-  outline: 2px solid #D5B77F !important;
+  outline: 2px solid var(--brand-gold) !important;
   outline-offset: 3px;
 }
 
@@ -335,8 +333,8 @@ nav.navbar button:focus-visible {
    ZŁOTE LINIE I OBRAMOWANIA
    ========================================= */
 
-nav.navbar .border-\[\#c5a46d\]\/40 {
-  border-color: rgba(197, 164, 109, 0.4);
+nav.navbar .border-\[\var(--brand-gold)\]\/40 {
+  border-color: rgba(var(--brand-gold-rgb), 0.4);
 }
 
 @keyframes navbar-item-in {
