@@ -1,0 +1,87 @@
+/* =========================================
+   GÓRNY PASEK KANCELARII NOTARIALNEJ
+   KARMAZYN + KOŚĆ SŁONIOWA + ZŁOTO
+   ========================================= */
+
+header.header-kancelaria {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse 90% 150% at 50% 45%,
+      rgba(213, 183, 127, 0.09) 0%,
+      rgba(197, 164, 109, 0.04) 35%,
+      rgba(197, 164, 109, 0.015) 65%,
+      transparent 100%
+    ),
+    #8C2332 !important;
+
+  border-bottom: 1px solid rgba(197, 164, 109, 0.5) !important;
+}
+
+/* WSZYSTKIE TEKSTY */
+header.header-kancelaria span,
+header.header-kancelaria a {
+  color: #f7f3eb !important;
+}
+
+/* IKONY */
+header.header-kancelaria i {
+  color: #d5b77f !important;
+}
+
+/* TELEFON I E-MAIL */
+header.header-kancelaria a {
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+header.header-kancelaria a:hover,
+header.header-kancelaria a:hover span {
+  color: #ffffff !important;
+}
+
+/* DELIKATNE ZŁOTE LINIE */
+header.header-kancelaria .header-line {
+  background: rgba(197, 164, 109, 0.35);
+}
+
+/* ORNAMENTY */
+header.header-kancelaria .header-ornament {
+  border-color: rgba(197, 164, 109, 0.18);
+}
+
+/* DEKORACYJNA POŚWIATA */
+header.header-kancelaria .header-glow {
+  pointer-events: none;
+}
+
+/* OSTROŚĆ TEKSTU */
+header.header-kancelaria span,
+header.header-kancelaria a,
+header.header-kancelaria i {
+  text-shadow: none !important;
+}
+
+/* TELEFON I E-MAIL — INTERAKCJA */
+header.header-kancelaria a:focus-visible {
+  outline: 2px solid #d5b77f;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  header.header-kancelaria {
+    border-bottom-width: 1px;
+  }
+}
+
+/* OGRANICZENIE ANIMACJI */
+@media (prefers-reduced-motion: reduce) {
+  header.header-kancelaria a {
+    transition: none;
+  }
+}

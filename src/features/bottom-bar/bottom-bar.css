@@ -1,0 +1,104 @@
+/* =========================================
+   STOPKA KANCELARII NOTARIALNEJ
+   Kolory: burgund, kość słoniowa, złoto
+   ========================================= */
+
+footer.footer-kancelaria {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 50;
+  overflow: hidden;
+
+  /* GŁÓWNY KOLOR TŁA */
+  background:
+    radial-gradient(
+      ellipse 85% 120% at 50% 0%,
+      rgba(213, 183, 127, 0.09) 0%,
+      rgba(197, 164, 109, 0.04) 42%,
+      transparent 78%
+    ),
+    #6B1321 !important;
+
+  border-top: 1px solid rgba(197, 164, 109, 0.65) !important;
+  color: #f7f3eb !important;
+  isolation: isolate;
+}
+
+/* Teksty stopki */
+footer.footer-kancelaria p,
+footer.footer-kancelaria span {
+  color: #f7f3eb !important;
+}
+
+/* Ikony */
+footer.footer-kancelaria i {
+  color: #d5b77f !important;
+}
+
+/* Okrągłe tła ikon */
+footer.footer-kancelaria .footer-icon {
+  background: rgba(247, 243, 235, 0.09) !important;
+  border: 1px solid #c5a46d !important;
+  color: #d5b77f !important;
+  box-shadow: 0 0 18px rgba(197, 164, 109, 0.12);
+}
+
+/* Separatory */
+footer.footer-kancelaria .footer-separator {
+  background: rgba(197, 164, 109, 0.45) !important;
+}
+
+/* Obramowania */
+footer.footer-kancelaria .footer-border {
+  border-color: rgba(197, 164, 109, 0.4) !important;
+}
+
+/* Główne informacje */
+footer.footer-kancelaria .footer-primary {
+  color: #f7f3eb !important;
+}
+
+/* Informacje dodatkowe */
+footer.footer-kancelaria .footer-secondary {
+  color: rgba(247, 243, 235, 0.72) !important;
+}
+
+/* Delikatne złote światło */
+footer.footer-kancelaria .footer-glow {
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(213, 183, 127, 0.10) 0%,
+    rgba(197, 164, 109, 0.04) 42%,
+    transparent 75%
+  );
+}
+
+/* Ornamenty */
+footer.footer-kancelaria .footer-ornament {
+  border-color: rgba(197, 164, 109, 0.2) !important;
+}
+
+/* Tekst pozostaje ostry */
+footer.footer-kancelaria,
+footer.footer-kancelaria * {
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Responsywność */
+@media (max-width: 767px) {
+  footer.footer-kancelaria {
+    border-top-width: 1px;
+  }
+}
+
+/* Ograniczenie animacji */
+@media (prefers-reduced-motion: reduce) {
+  footer.footer-kancelaria,
+  footer.footer-kancelaria * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,20 +1,96 @@
-.navbar {
-  opacity: 0;
-  transform: translateY(-6px);
-  filter: blur(1.5px);
-  animation: navbarReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) 500ms forwards;
+/* =========================================
+   NAVBAR KANCELARII NOTARIALNEJ
+   KARMAZYN + KOŚĆ SŁONIOWA + ZŁOTO
+   ========================================= */
+
+nav.navbar {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* GŁÓWNY KOLOR TŁA */
+  background-color: #7A1C28 !important;
+  background-image: none !important;
+
+  border-top: 1px solid rgba(197, 164, 109, 0.4) !important;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.4) !important;
+
+  box-shadow: 0 6px 20px rgba(50, 15, 25, 0.18);
 }
 
-@keyframes navbarReveal {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-    filter: blur(1.5px);
-  }
+/* =========================================
+   KOLORY TEKSTÓW
+   ========================================= */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+nav.navbar a,
+nav.navbar button,
+nav.navbar span {
+  text-shadow: none !important;
+}
+
+/* Teksty menu */
+nav.navbar a,
+nav.navbar button {
+  color: #F7F3EB;
+}
+
+/* =========================================
+   IKONY
+   ========================================= */
+
+nav.navbar svg {
+  filter: none !important;
+}
+
+/* =========================================
+   MENU MOBILNE
+   ========================================= */
+
+nav.navbar #mobile-navigation-menu {
+  background-color: #7A1C28 !important;
+  background-image: none !important;
+
+  border-top: 1px solid rgba(197, 164, 109, 0.3);
+}
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+nav.navbar a:hover,
+nav.navbar button:hover {
+  color: #F7F3EB;
+}
+
+/* =========================================
+   FOCUS — DOSTĘPNOŚĆ
+   ========================================= */
+
+nav.navbar a:focus-visible,
+nav.navbar button:focus-visible {
+  outline: 2px solid #D5B77F;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   ZŁOTE LINIE I OBRAMOWANIA
+   ========================================= */
+
+nav.navbar .border-\[\#c5a46d\]\/40 {
+  border-color: rgba(197, 164, 109, 0.4);
+}
+
+/* =========================================
+   BRAK NIEPOTRZEBNYCH ANIMACJI
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  nav.navbar *,
+  nav.navbar *::before,
+  nav.navbar *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
