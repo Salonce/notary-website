@@ -9,7 +9,7 @@ nav.navbar {
   isolation: isolate;
   overflow: hidden;
 
-  background-color: #7A1C28 !important;
+  background-color: #902337 !important;
   background-image:
     radial-gradient(ellipse 34% 150% at 0% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%),
     radial-gradient(ellipse 34% 150% at 100% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%) !important;
@@ -288,7 +288,7 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
    ========================================= */
 
 nav.navbar #mobile-navigation-menu {
-  background-color: #7A1C28 !important;
+  background-color: #902337 !important;
   background-image: none !important;
 
   border-top: 1px solid rgba(197, 164, 109, 0.3);
