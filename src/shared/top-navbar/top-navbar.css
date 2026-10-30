@@ -10,7 +10,9 @@ nav.navbar {
   overflow: hidden;
 
   background-color: #7A1C28 !important;
-  background-image: none !important;
+  background-image:
+    radial-gradient(ellipse 34% 150% at 0% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%),
+    radial-gradient(ellipse 34% 150% at 100% 50%, rgba(213, 183, 127, 0.11) 0%, transparent 100%) !important;
 
   border-top: 1px solid rgba(197, 164, 109, 0.4) !important;
   border-bottom: 1px solid rgba(197, 164, 109, 0.4) !important;
@@ -54,36 +56,72 @@ nav.navbar button {
    DESKTOP — EFEKT HOVER
    ========================================= */
 
-/* Pozycje menu desktopowego */
 nav.navbar > div.relative.z-10.mx-auto > a {
   position: relative;
   isolation: isolate;
   color: #F7F3EB !important;
+  animation: navbar-item-in 620ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+
   transition:
     color 250ms ease,
     transform 250ms ease !important;
 }
 
-/* Złota linia pod pozycją */
+nav.navbar > div.relative.z-10.mx-auto > a:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+nav.navbar > div.relative.z-10.mx-auto > a:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+nav.navbar > div.relative.z-10.mx-auto > a:nth-child(4) {
+  animation-delay: 210ms;
+}
+
+nav.navbar > div.relative.z-10.mx-auto > a:nth-child(5) {
+  animation-delay: 280ms;
+}
+
 nav.navbar > div.relative.z-10.mx-auto > a::after {
-  height: 2px !important;
+  content: "" !important;
+  position: absolute;
+  left: 15% !important;
+  right: 15% !important;
+  bottom: 5px !important;
+  width: auto !important;
+  height: 1px;
+  border-radius: 999px;
   background: linear-gradient(
     90deg,
-    rgba(197, 164, 109, 0.25),
-    #D5B77F,
-    rgba(197, 164, 109, 0.25)
+    transparent,
+    rgba(213, 183, 127, 0.9) 22%,
+    #D5B77F 50%,
+    rgba(213, 183, 127, 0.9) 78%,
+    transparent
   ) !important;
-
-  box-shadow: 0 0 7px rgba(213, 183, 127, 0.28);
-  transition:
-    width 300ms ease,
-    opacity 300ms ease !important;
+  box-shadow: 0 0 3px rgba(213, 183, 127, 0.16);
+  translate: 0 0 !important;
+  transform: scaleX(0) !important;
+  transform-origin: center;
+  transition: transform 280ms cubic-bezier(0.2, 0.75, 0.25, 1) !important;
 }
 
 /* Najechanie na pozycję */
 nav.navbar > div.relative.z-10.mx-auto > a:hover {
   color: #D5B77F !important;
-  transform: translateY(-2px);
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+
+nav.navbar > div.relative.z-10.mx-auto > a:hover::after,
+nav.navbar > div.relative.z-10.mx-auto > a:focus-visible::after {
+  transform: scaleX(1) !important;
+}
+
+nav.navbar > div.relative.z-10.mx-auto > a:focus-visible {
+  color: #D5B77F !important;
 }
 
 /* Delikatne rozjaśnienie ikon */
@@ -94,8 +132,8 @@ nav.navbar > div.relative.z-10.mx-auto > a svg {
 }
 
 nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
-  color: #E5C994 !important;
-  transform: translateY(-1px);
+  color: #D5B77F !important;
+  transform: none;
 }
 
 /* =========================================
@@ -103,25 +141,146 @@ nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
    ========================================= */
 
 nav.navbar > div.relative.z-10 button {
+  position: relative;
+
   color: #F7F3EB !important;
   border-radius: 3px;
-}
 
-nav.navbar > div.relative.z-10 button:hover {
-  background-color: rgba(213, 183, 127, 0.09) !important;
-  box-shadow: inset 0 -1px 0 rgba(213, 183, 127, 0.4);
+  -webkit-tap-highlight-color: transparent;
+
+  transform: translateY(0) scale(1);
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    box-shadow 250ms ease,
+    transform 250ms ease !important;
 }
 
 /* Ikona hamburgera */
 nav.navbar > div.relative.z-10 button svg {
+  transform: translateY(0) scale(1);
+
   transition:
     color 250ms ease,
     transform 250ms ease !important;
 }
 
-nav.navbar > div.relative.z-10 button:hover svg {
-  color: #E5C994 !important;
-  transform: scale(1.06);
+nav.navbar .menu-toggle-icon {
+  transition: transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+nav.navbar .menu-toggle-icon path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 220ms ease,
+    transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:first-child {
+  transform: translateY(5.5px) rotate(45deg);
+}
+
+nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.25);
+}
+
+nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* =========================================
+   URZĄDZENIA Z MYSZKĄ — HOVER
+   ========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  nav.navbar > div.relative.z-10 button:hover {
+    color: #D5B77F !important;
+
+    background-color: rgba(213, 183, 127, 0.09) !important;
+
+    box-shadow:
+      inset 0 -1px 0 rgba(213, 183, 127, 0.4),
+      0 4px 12px rgba(30, 8, 15, 0.12);
+
+    transform: translateY(-2px);
+  }
+
+  nav.navbar > div.relative.z-10 button:hover svg {
+    color: #E5C994 !important;
+    transform: translateY(-1px) scale(1.06);
+  }
+}
+
+/* =========================================
+   TABLETY I TELEFONY — ANIMACJA DOTYKOWA
+   ========================================= */
+
+@media (hover: none), (pointer: coarse) {
+
+  /* Usunięcie przyklejonego stanu hover */
+  nav.navbar > div.relative.z-10 button:hover {
+    color: #F7F3EB !important;
+
+    background-color: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: translateY(0) scale(1);
+  }
+
+  nav.navbar > div.relative.z-10 button:hover svg {
+    color: #D5B77F !important;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Animacja podczas dotknięcia */
+  nav.navbar > div.relative.z-10 button:active {
+    color: #D5B77F !important;
+
+    background-color: rgba(213, 183, 127, 0.09) !important;
+
+    box-shadow:
+      inset 0 -1px 0 rgba(213, 183, 127, 0.4),
+      0 4px 12px rgba(30, 8, 15, 0.12) !important;
+
+    transform: scale(0.98);
+  }
+
+  /* Powiększenie i uniesienie ikony podczas dotknięcia */
+  nav.navbar > div.relative.z-10 button:active svg {
+    color: #E5C994 !important;
+    transform: scale(0.96);
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:hover {
+    color: #F7F3EB !important;
+    background-color: transparent !important;
+    box-shadow: none;
+    transform: none;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
+    color: #D5B77F !important;
+    transform: none;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:hover::after {
+    transform: scaleX(0) !important;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:active {
+    color: #D5B77F !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:active::after {
+    transform: scaleX(1) !important;
+  }
 }
 
 /* =========================================
@@ -131,7 +290,70 @@ nav.navbar > div.relative.z-10 button:hover svg {
 nav.navbar #mobile-navigation-menu {
   background-color: #7A1C28 !important;
   background-image: none !important;
+
   border-top: 1px solid rgba(197, 164, 109, 0.3);
+}
+
+nav.navbar #mobile-navigation-menu.menu-panel {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top-color: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    max-height 460ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    padding 360ms ease,
+    border-color 300ms ease,
+    opacity 260ms ease,
+    transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    visibility 0s linear 460ms !important;
+}
+
+nav.navbar #mobile-navigation-menu.menu-panel.is-open {
+  max-height: 520px;
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.75rem !important;
+  border-top-color: rgba(197, 164, 109, 0.3);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    max-height 520ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    padding 360ms ease,
+    border-color 300ms ease,
+    opacity 300ms ease 40ms,
+    transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    visibility 0s !important;
+}
+
+@media (min-width: 375px) {
+  nav.navbar #mobile-navigation-menu.menu-panel.is-open {
+    padding-top: 0.75rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a {
+  animation: mobile-link-in 420ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a:nth-child(2) {
+  animation-delay: 55ms;
+}
+
+nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a:nth-child(3) {
+  animation-delay: 110ms;
+}
+
+nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a:nth-child(4) {
+  animation-delay: 165ms;
+}
+
+nav.navbar #mobile-navigation-menu.is-open > div.flex.flex-col > a:nth-child(5) {
+  animation-delay: 220ms;
 }
 
 /* Linki mobilne */
@@ -145,38 +367,54 @@ nav.navbar #mobile-navigation-menu a {
   transition:
     background-color 250ms ease,
     color 250ms ease,
-    padding-left 250ms ease,
-    border-color 250ms ease !important;
+    border-color 250ms ease,
+    transform 250ms ease !important;
 }
 
-/* Złoty akcent po lewej stronie */
 nav.navbar #mobile-navigation-menu a::before {
-  content: "";
+  content: none;
+}
+
+nav.navbar #mobile-navigation-menu a::after {
+  content: "" !important;
   position: absolute;
-  left: 0;
-  top: 20%;
-  bottom: 20%;
-  width: 2px;
-
-  background: #D5B77F;
-  opacity: 0;
-  transform: scaleY(0.5);
-
-  transition:
-    opacity 250ms ease,
-    transform 250ms ease;
+  left: 8% !important;
+  right: 8% !important;
+  bottom: 5px !important;
+  width: auto !important;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(213, 183, 127, 0.9) 22%,
+    #D5B77F 50%,
+    rgba(213, 183, 127, 0.9) 78%,
+    transparent
+  );
+  box-shadow: 0 0 3px rgba(213, 183, 127, 0.16);
+  translate: 0 0 !important;
+  transform: scaleX(0) !important;
+  transform-origin: center;
+  transition: transform 250ms cubic-bezier(0.2, 0.75, 0.25, 1) !important;
 }
 
 /* Hover linków mobilnych */
 nav.navbar #mobile-navigation-menu a:hover {
-  color: #E5C994 !important;
-  background-color: rgba(213, 183, 127, 0.09) !important;
-  padding-left: 18px !important;
+  color: #D5B77F !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: none;
 }
 
-nav.navbar #mobile-navigation-menu a:hover::before {
-  opacity: 1;
-  transform: scaleY(1);
+nav.navbar #mobile-navigation-menu a:active {
+  color: #D5B77F !important;
+  background-color: transparent !important;
+}
+
+nav.navbar #mobile-navigation-menu a:hover::after,
+nav.navbar #mobile-navigation-menu a:focus-visible::after {
+  transform: scaleX(1) !important;
 }
 
 /* Ikony mobilne */
@@ -187,12 +425,42 @@ nav.navbar #mobile-navigation-menu a svg {
 }
 
 nav.navbar #mobile-navigation-menu a:hover svg {
-  color: #E5C994 !important;
+  color: #D5B77F !important;
 }
 
 /* Strzałki delikatnie przesuwają się w prawo */
 nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
-  transform: translateX(3px);
+  transform: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  nav.navbar #mobile-navigation-menu a:hover {
+    color: #F7F3EB !important;
+    background-color: transparent !important;
+    box-shadow: none;
+    transform: none;
+  }
+
+  nav.navbar #mobile-navigation-menu a:hover svg,
+  nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
+    color: #D5B77F !important;
+    transform: none;
+  }
+
+  nav.navbar #mobile-navigation-menu a:hover::after {
+    transform: scaleX(0) !important;
+  }
+
+  nav.navbar #mobile-navigation-menu a:active {
+    color: #D5B77F !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: none;
+  }
+
+  nav.navbar #mobile-navigation-menu a:active::after {
+    transform: scaleX(1) !important;
+  }
 }
 
 /* =========================================
@@ -211,6 +479,30 @@ nav.navbar button:focus-visible {
 
 nav.navbar .border-\[\#c5a46d\]\/40 {
   border-color: rgba(197, 164, 109, 0.4);
+}
+
+@keyframes navbar-item-in {
+  from {
+    opacity: 0;
+    translate: 0 9px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes mobile-link-in {
+  from {
+    opacity: 0;
+    translate: -9px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 /* =========================================
