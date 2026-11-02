@@ -6,26 +6,49 @@
 
 .motto-ornament-line {
   box-shadow:
-    0 -1px 0 rgba(255, 252, 239, 0.32),
-    0 1px 1px rgba(78, 56, 17, 0.2);
+    0 -1px 0 rgba(255, 252, 239, 0.48),
+    0 1px 1px rgba(78, 56, 17, 0.28);
+}
+
+.motto-flourish {
+  display: block;
+  height: 24px;
+  overflow: visible;
+}
+
+.motto-flourish > path {
+  fill: none;
+  stroke: #98742e;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.15;
+  opacity: 0.82;
+}
+
+.motto-flourish > .motto-flourish-leaf {
+  fill: rgba(var(--brand-gold-rgb), 0.2);
+  stroke: #98742e;
+  stroke-width: 0.85;
+}
+
+.motto-flourish-right {
+  transform: scaleX(-1);
+}
+
+.motto-ornament-bottom .motto-flourish {
+  transform: scaleY(-1);
+}
+
+.motto-ornament-bottom .motto-flourish-right {
+  transform: scale(-1, -1);
 }
 
 .motto-ornament-line-left {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(var(--brand-gold-rgb), 0.42) 38%,
-    #a9822f 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, rgba(var(--brand-gold-rgb), 0.58) 38%, #98742e 100%);
 }
 
 .motto-ornament-line-right {
-  background: linear-gradient(
-    270deg,
-    transparent 0%,
-    rgba(var(--brand-gold-rgb), 0.42) 38%,
-    #a9822f 100%
-  );
+  background: linear-gradient(270deg, transparent 0%, rgba(var(--brand-gold-rgb), 0.58) 38%, #98742e 100%);
 }
 
 .motto-ornament-symbol {
@@ -36,22 +59,53 @@
     0 2px 3px rgba(78, 56, 17, 0.14);
 }
 
+.motto-ornament > .motto-ornament-symbol {
+  position: relative;
+  color: #76591f;
+  font-size: 15px;
+  text-shadow:
+    0 -1px 0 rgba(255, 252, 239, 0.72),
+    0 1px 1px rgba(78, 56, 17, 0.42),
+    0 0 6px rgba(var(--brand-gold-rgb), 0.32);
+  filter: drop-shadow(0 1px 2px rgba(78, 56, 17, 0.2));
+}
+
+.motto-ornament > .motto-ornament-symbol::before,
+.motto-ornament > .motto-ornament-symbol::after {
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--brand-gold-rgb), 0.72), transparent);
+  content: "";
+}
+
+.motto-ornament > .motto-ornament-symbol::before {
+  right: calc(100% + 3px);
+}
+
+.motto-ornament > .motto-ornament-symbol::after {
+  left: calc(100% + 3px);
+}
+
 .latin-quote::before {
   position: absolute;
   z-index: -1;
-  top: 50%;
+  top: 54%;
   left: 50%;
-  width: min(140%, 1600px);
-  height: 7.5em;
+  width: min(155%, 1750px);
+  height: 9em;
   border-radius: 50%;
-  background: radial-gradient(
-    ellipse,
-    rgba(var(--brand-gold-rgb), 0.32) 0%,
-    rgba(var(--brand-gold-rgb), 0.2) 38%,
-    rgba(var(--brand-gold-rgb), 0.1) 62%,
-    rgba(var(--brand-gold-rgb), 0.035) 80%,
-    rgba(var(--brand-gold-rgb), 0) 100%
-  );
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(255, 244, 210, 0.16) 0%, rgba(225, 190, 120, 0.08) 30%, transparent 58%),
+    radial-gradient(
+      ellipse,
+      rgba(var(--brand-gold-rgb), 0.48) 0%,
+      rgba(var(--brand-gold-rgb), 0.3) 38%,
+      rgba(var(--brand-gold-rgb), 0.15) 62%,
+      rgba(var(--brand-gold-rgb), 0.055) 80%,
+      rgba(var(--brand-gold-rgb), 0) 100%
+    );
   content: "";
   filter: blur(38px);
   opacity: 0;
@@ -62,22 +116,26 @@
 
 .latin-quote span {
   display: inline-block;
+  font-style: italic;
   color: #8f702f;
   background-image: linear-gradient(
-    90deg,
-    #806126 0%,
-    #a9873e 32%,
-    #b99d5b 52%,
-    #8f6e2b 72%,
-    #b3944e 100%
+    180deg,
+    #a9873e 0%,
+    #85662c 24%,
+    #9b7d42 48%,
+    #745823 72%,
+    #927239 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.35px rgba(75, 52, 15, 0.72);
   text-shadow:
-    0 -1px 0 rgba(255, 248, 225, 0.32),
-    0 1px 1px rgba(78, 56, 17, 0.3),
-    0 2px 3px rgba(78, 56, 17, 0.14);
+    -1px -1px 0 rgba(255, 248, 225, 0.58),
+    1px 1px 0 rgba(67, 48, 18, 0.54),
+    0 2px 2px rgba(78, 56, 17, 0.54),
+    0 4px 7px rgba(78, 56, 17, 0.34),
+    0 7px 10px rgba(78, 56, 17, 0.12);
   opacity: 0;
   transform: translateY(4px);
   animation: latinLetterReveal 900ms ease-out forwards;
