@@ -18,25 +18,29 @@
   </div>
 
   <!-- =========================================
-       MOBILE / KOMPAKTOWA — DO 1535 PX
+       WERSJA KOMPAKTOWA
+       TELEFONY, TABLETY I NISKIE EKRANY LAPTOPÓW
        ========================================= -->
 
   <div
     class="relative z-10
-           flex h-[44px] xxxs:h-[46px]
+           flex h-[50px] xxxs:h-[52px]
            xxxs:xxs:h-[56px]
            items-center justify-center
            px-1 xxxs:px-1.5
            xxxs:xxs:px-3
-           2xl:hidden"
+           [@media(min-width:768px)_and_(min-height:900px)]:hidden"
   >
     <div
-      class="flex w-full
-             items-center justify-center"
+      class="grid w-full max-w-[680px]
+             grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)]
+             items-center
+             gap-4 xxxs:gap-5
+             xxxs:xxs:gap-6"
     >
-      <!-- GODZINY OTWARCIA -->
+      <!-- LEWA KOLUMNA — GODZINY OTWARCIA -->
       <div
-        class="flex min-w-0 flex-1
+        class="flex min-w-0
                items-center justify-center
                gap-0.5 xxxs:gap-1
                xxxs:xxs:gap-2"
@@ -86,19 +90,18 @@
         </div>
       </div>
 
-      <!-- SEPARATOR -->
+      <!-- CENTRALNY SEPARATOR -->
       <div
-        class="footer-separator mx-1 xxxs:mx-1.5
-               xxxs:xxs:mx-3
+        class="footer-separator
                h-6 xxxs:h-7
                xxxs:xxs:h-9
-               w-px shrink-0"
+               w-px justify-self-center"
         aria-hidden="true"
       ></div>
 
-      <!-- DOSTĘPNOŚĆ -->
+      <!-- PRAWA KOLUMNA — DOSTĘPNOŚĆ -->
       <div
-        class="flex min-w-0 flex-1
+        class="flex min-w-0
                items-center justify-center
                gap-0.5 xxxs:gap-1
                xxxs:xxs:gap-2"
@@ -141,7 +144,9 @@
   </div>
 
   <!-- =========================================
-       DESKTOP — OD 1536 PX
+       WERSJA PEŁNA
+       SZEROKIE I WYSOKIE EKRANY
+       OD 768 PX SZEROKOŚCI I 900 PX WYSOKOŚCI
        ========================================= -->
 
   <div
@@ -149,16 +154,19 @@
            mx-auto max-w-7xl
            px-8 py-2
            xl:px-12
-           hidden 2xl:block"
+           hidden
+           [@media(min-width:768px)_and_(min-height:900px)]:block"
   >
     <div
-      class="grid grid-cols-2
-             gap-12 lg:gap-20 xl:gap-28"
+      class="grid grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)]
+             items-center
+             gap-4"
     >
-      <!-- LEWA — GODZINY OTWARCIA -->
+      <!-- LEWA KOLUMNA — GODZINY OTWARCIA -->
       <div
         class="flex min-h-[64px]
-               items-center gap-4"
+               items-center justify-center
+               gap-4"
       >
         <!-- IKONA -->
         <div
@@ -171,7 +179,7 @@
         </div>
 
         <!-- TREŚĆ -->
-        <div class="min-w-0 flex-1">
+        <div class="min-w-0">
           <span
             class="footer-secondary block font-main-body
                    text-[10px] font-normal
@@ -199,12 +207,19 @@
         </div>
       </div>
 
-      <!-- PRAWA — DOSTĘPNOŚĆ -->
+      <!-- CENTRALNY SEPARATOR — DESKTOP -->
+      <div
+        class="footer-separator
+               h-[64px] w-px
+               justify-self-center"
+        aria-hidden="true"
+      ></div>
+
+      <!-- PRAWA KOLUMNA — DOSTĘPNOŚĆ -->
       <div
         class="flex min-h-[64px]
-               items-center gap-4
-               border-l border-[var(--brand-gold)]/40
-               pl-8 lg:pl-10"
+               items-center justify-center
+               gap-4"
       >
         <!-- IKONA -->
         <div
@@ -217,7 +232,7 @@
         </div>
 
         <!-- TREŚĆ -->
-        <div class="min-w-0 flex-1">
+        <div class="min-w-0">
           <span
             class="footer-secondary block font-main-body
                    text-[10px] font-normal
