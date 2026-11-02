@@ -26,6 +26,10 @@
     0 2px 3px rgba(78, 56, 17, 0.14);
 }
 
+.motto-ornament-symbol-right {
+  transform: scaleX(-1);
+}
+
 .latin-quote span {
   display: inline-block;
   color: #8f702f;
