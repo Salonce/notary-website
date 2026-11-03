@@ -24,8 +24,8 @@
 
   <div
     class="relative z-10
-           flex h-[50px] xxxs:h-[52px]
-           xxxs:xxs:h-[56px]
+           flex h-[44px] xxxs:h-[46px]
+           xxxs:xxs:h-[50px]
            items-center justify-center
            px-1 xxxs:px-1.5
            xxxs:xxs:px-3
@@ -45,7 +45,6 @@
                gap-0.5 xxxs:gap-1
                xxxs:xxs:gap-2"
       >
-        <!-- IKONA ZEGARA -->
         <div
           class="footer-icon flex h-[25px] w-[25px]
                  xxxs:h-[27px] xxxs:w-[27px]
@@ -62,7 +61,6 @@
           ></i>
         </div>
 
-        <!-- GODZINY I DODATKOWA INFORMACJA -->
         <div class="flex min-w-0 flex-col justify-center">
           <span
             class="footer-primary font-main-body
@@ -85,7 +83,7 @@
                    leading-[10px] xxxs:leading-[11px]
                    xxxs:xxs:leading-3"
           >
-            Inne godziny - po uzgodnieniu
+            Inne dni i godziny - po uzgodnieniu
           </span>
         </div>
       </div>
@@ -93,8 +91,8 @@
       <!-- CENTRALNY SEPARATOR -->
       <div
         class="footer-separator
-               h-6 xxxs:h-7
-               xxxs:xxs:h-9
+               h-5 xxxs:h-6
+               xxxs:xxs:h-8
                w-px justify-self-center"
         aria-hidden="true"
       ></div>
@@ -106,7 +104,6 @@
                gap-0.5 xxxs:gap-1
                xxxs:xxs:gap-2"
       >
-        <!-- IKONA DOSTĘPNOŚCI -->
         <div
           class="footer-icon flex h-[25px] w-[25px]
                  xxxs:h-[27px] xxxs:w-[27px]
@@ -123,19 +120,34 @@
           ></i>
         </div>
 
-        <!-- INFORMACJA O DOSTĘPNOŚCI -->
         <div class="flex min-w-0 flex-col justify-center">
+          <!-- WIDOCZNE PONIŻEJ 480 PX -->
+          <span
+            class="footer-primary font-main-body
+                   text-[10px] xxxs:text-[10.5px]
+                   font-normal
+                   leading-[13px] xxxs:leading-[14px]
+                   min-[480px]:hidden"
+          >
+            Kancelaria przyjazna
+            <span class="block">
+              os. niepełnosprawnym
+            </span>
+          </span>
+
+          <!-- WIDOCZNE OD 480 PX -->
           <span
             class="footer-primary font-main-body
                    text-[10px] xxxs:text-[10.5px]
                    xxxs:xxs:text-[11px]
                    font-normal
                    leading-[13px] xxxs:leading-[14px]
-                   xxxs:xxs:leading-[15px]"
+                   xxxs:xxs:leading-[15px]
+                   hidden min-[480px]:block"
           >
-            Kancelaria przyjazna dla
+            Kancelaria przyjazna dla osób
             <span class="block">
-              osób niepełnosprawnych
+              z niepełnosprawnościami
             </span>
           </span>
         </div>
@@ -152,7 +164,7 @@
   <div
     class="relative z-10
            mx-auto max-w-7xl
-           px-8 py-2
+           px-8 py-1
            xl:px-12
            hidden
            [@media(min-width:768px)_and_(min-height:900px)]:block"
@@ -164,11 +176,10 @@
     >
       <!-- LEWA KOLUMNA — GODZINY OTWARCIA -->
       <div
-        class="flex min-h-[64px]
+        class="flex min-h-[50px]
                items-center justify-center
                gap-4"
       >
-        <!-- IKONA -->
         <div
           class="footer-icon flex h-9 w-9 shrink-0
                  items-center justify-center
@@ -178,16 +189,7 @@
           <i class="fa-regular fa-clock text-sm"></i>
         </div>
 
-        <!-- TREŚĆ -->
         <div class="min-w-0">
-          <span
-            class="footer-secondary block font-main-body
-                   text-[10px] font-normal
-                   uppercase tracking-[0.25em]"
-          >
-            Godziny otwarcia
-          </span>
-
           <p
             class="footer-primary font-main-body text-[13px]
                    font-normal leading-5
@@ -210,18 +212,17 @@
       <!-- CENTRALNY SEPARATOR — DESKTOP -->
       <div
         class="footer-separator
-               h-[64px] w-px
+               h-[50px] w-px
                justify-self-center"
         aria-hidden="true"
       ></div>
 
       <!-- PRAWA KOLUMNA — DOSTĘPNOŚĆ -->
       <div
-        class="flex min-h-[64px]
+        class="flex min-h-[50px]
                items-center justify-center
                gap-4"
       >
-        <!-- IKONA -->
         <div
           class="footer-icon flex h-9 w-9 shrink-0
                  items-center justify-center
@@ -231,16 +232,7 @@
           <i class="fa-solid fa-wheelchair text-base"></i>
         </div>
 
-        <!-- TREŚĆ -->
         <div class="min-w-0">
-          <span
-            class="footer-secondary block font-main-body
-                   text-[10px] font-normal
-                   uppercase tracking-[0.2em]"
-          >
-            Dostępność
-          </span>
-
           <p
             class="footer-primary font-main-body text-[14px]
                    font-normal leading-5"

@@ -1,5 +1,7 @@
+
 <header
   class="header-kancelaria relative
+         h-[31px] max-h-[31px]
          w-full
          overflow-hidden
          border-b border-[var(--brand-gold)]/40
@@ -20,16 +22,18 @@
   <!-- TREŚĆ -->
   <div
     class="relative z-10
-           mx-auto flex max-w-7xl
+           mx-auto flex h-[30px] max-h-[30px]
+           max-w-7xl
            items-center justify-between
-           px-3 py-2.5
+           overflow-hidden
+           px-3
            max-[359px]:px-2
            sm:px-6"
   >
-    <!-- MOBILE: ADRES PO LEWEJ, TELEFON PO PRAWEJ -->
+
+    <!-- MOBILE -->
     <div
-      class="flex w-full
-             h-5
+      class="flex h-full w-full
              items-center
              justify-between
              gap-3
@@ -39,7 +43,6 @@
       <!-- ADRES -->
       <div
         class="flex min-w-0 flex-1
-               h-5
                items-center gap-2
                max-[359px]:gap-1"
       >
@@ -47,8 +50,7 @@
           class="fa-solid fa-house
                  hidden sm:inline-block
                  shrink-0
-                 text-[13px]
-                 max-[359px]:text-[12px]
+                 text-[11px]
                  text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
@@ -58,13 +60,10 @@
           class="min-w-0 truncate
                  text-left
                  font-top-bar
-                 text-[12px]
-                 max-[359px]:text-[11px]
+                 text-[11px]
                  font-normal
-                 leading-5
-                 max-[359px]:leading-4
-                 tracking-wide
-                 max-[359px]:tracking-normal
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]
                  max-[479px]:inline
                  min-[480px]:hidden"
@@ -72,18 +71,15 @@
           Olsztyn, Dąbrowszczaków 21/3
         </span>
 
-        <!-- ADRES OD 480 PX WŁĄCZNIE -->
+        <!-- ADRES OD 480 PX -->
         <span
           class="min-w-0 truncate
                  text-left
                  font-top-bar
-                 text-[12px]
-                 max-[359px]:text-[11px]
+                 text-[11px]
                  font-normal
-                 leading-5
-                 max-[359px]:leading-4
-                 tracking-wide
-                 max-[359px]:tracking-normal
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]
                  hidden min-[480px]:inline"
         >
@@ -91,25 +87,22 @@
         </span>
       </div>
 
-      <!-- TELEFON PO PRAWEJ -->
+      <!-- TELEFON -->
       <div
         class="flex shrink-0
-               h-5
-               items-center gap-2
+               items-center gap-1.5
                max-[359px]:gap-1
                whitespace-nowrap
                font-top-bar
-               text-[12px]
-               max-[359px]:text-[11px]
+               text-[11px]
                font-normal
-               tracking-wide
-               max-[359px]:tracking-normal
+               leading-none
+               tracking-normal
                text-[#f7f3eb]"
       >
         <i
           class="fa-solid fa-phone
-                 text-[13px]
-                 max-[359px]:text-[12px]
+                 text-[11px]
                  text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
@@ -120,7 +113,7 @@
 
     <!-- DESKTOP -->
     <div
-      class="hidden w-full
+      class="hidden h-full w-full
              items-center
              justify-between
              md:flex"
@@ -128,11 +121,11 @@
       <!-- ADRES: MD 768–1023 PX -->
       <div
         class="hidden md:flex lg:hidden
-               items-center gap-3"
+               items-center gap-2"
       >
         <i
           class="fa-solid fa-house
-                 text-[16px]
+                 text-[11px]
                  text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
@@ -140,10 +133,10 @@
         <span
           class="whitespace-nowrap
                  font-top-bar
-                 text-[15px]
+                 text-[12px]
                  font-normal
-                 tracking-wide
-                 leading-6
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]"
         >
           Olsztyn, ul. Dąbrowszczaków 21/3
@@ -153,11 +146,11 @@
       <!-- ADRES: LG OD 1024 PX -->
       <div
         class="hidden lg:flex
-               items-center gap-3"
+               items-center gap-2"
       >
         <i
           class="fa-solid fa-house
-                 text-[16px]
+                 text-[11px]
                  text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
@@ -165,10 +158,10 @@
         <span
           class="whitespace-nowrap
                  font-top-bar
-                 text-[15px]
+                 text-[12px]
                  font-normal
-                 tracking-wide
-                 leading-6
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]"
         >
           10-540 Olsztyn, ul. Dąbrowszczaków 21 lok. 3
@@ -176,19 +169,20 @@
       </div>
 
       <!-- TELEFON I E-MAIL -->
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-5">
         <div
-          class="flex items-center gap-3
+          class="flex items-center gap-2
                  whitespace-nowrap
                  font-top-bar
-                 text-[15px]
+                 text-[12px]
                  font-normal
-                 tracking-wide
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]"
         >
           <i
             class="fa-solid fa-phone
-                   text-[14px]
+                   text-[11px]
                    text-[var(--brand-gold)]"
             aria-hidden="true"
           ></i>
@@ -197,17 +191,18 @@
         </div>
 
         <div
-          class="flex items-center gap-3
+          class="flex items-center gap-2
                  whitespace-nowrap
                  font-top-bar
-                 text-[15px]
+                 text-[12px]
                  font-normal
-                 tracking-wide
+                 leading-none
+                 tracking-normal
                  text-[#f7f3eb]"
         >
           <i
             class="fa-solid fa-envelope
-                   text-[14px]
+                   text-[11px]
                    text-[var(--brand-gold)]"
             aria-hidden="true"
           ></i>
