@@ -9,22 +9,23 @@ import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import { Header } from '../../features/header/header';
 import { TopBar } from '../../features/top-bar/top-bar';
 import { BottomBar } from '../../features/bottom-bar/bottom-bar';
 import { TopNavbar } from '../top-navbar/top-navbar';
 import { CopyrightMobile } from '../../features/copyright-mobile/copyright-mobile';
 import { SectionScrollService } from '../section-scroll-service/section-scroll-service';
+import { HeroBanner } from '../../app/hero-section/hero-banner/hero-banner';
+import { HeroSection } from '../../app/hero-section/hero-section';
 
 @Component({
   imports: [
-    Header,
     TopBar,
     RouterOutlet,
     BottomBar,
     TopNavbar,
     CopyrightMobile,
-  ],
+    HeroSection
+],
   selector: 'app-main-layout',
   styleUrl: './main-layout.css',
   templateUrl: './main-layout.html',
