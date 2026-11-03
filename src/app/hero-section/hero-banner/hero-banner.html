@@ -1,14 +1,9 @@
 <!-- =========================================
      HEADER BANNER – KANCELARIA NOTARIALNA
-     SAMODZIELNY KOMPONENT ANGULAR
-     SZEROKOŚĆ: ZAWSZE 100%
      ========================================= -->
 
-<header
-  id="home"
-  class="w-full h-full bg-[#faf9f6]"
->
-  <div class="w-full h-full">
+<header id="home" class="w-full h-full min-w-0">
+  <div class="w-full h-full min-w-0">
 
     <div
       class="header-banner
@@ -16,64 +11,42 @@
              flex
              min-h-[190px]
              w-full
+             min-w-0
              h-full
              items-center
              justify-center
              overflow-hidden
-             bg-[#f8f6f0]
-             px-5
+             px-2
              py-8
              text-center
              sm:min-h-[210px]
-             sm:px-7
+             sm:px-4
              sm:py-9
              md:min-h-[220px]
-             md:px-8
+             md:px-5
              md:py-10"
     >
-
-      <!-- =========================================
-           TŁO – MOTYW PIECZĘCI
-           ========================================= -->
 
       <!-- PRAWY GÓRNY ORNAMENT -->
 
       <div
-        class="pointer-events-none
-               absolute
-               -right-24
-               -top-24
-               h-[320px]
-               w-[320px]
-               rounded-full
-               border
-               border-[var(--brand-burgundy)]/[0.10]"
+        class="pointer-events-none absolute -right-24 -top-24
+               h-[320px] w-[320px] rounded-full
+               border border-[var(--brand-burgundy)]/[0.10]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none
-               absolute
-               -right-10
-               -top-10
-               h-[250px]
-               w-[250px]
-               rounded-full
-               border
-               border-[var(--brand-gold)]/[0.18]"
+        class="pointer-events-none absolute -right-10 -top-10
+               h-[250px] w-[250px] rounded-full
+               border border-[var(--brand-gold)]/[0.18]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none
-               absolute
-               -right-1
-               top-1
-               h-[190px]
-               w-[190px]
-               rounded-full
-               border
-               border-[var(--brand-gold)]/[0.12]"
+        class="pointer-events-none absolute -right-1 top-1
+               h-[190px] w-[190px] rounded-full
+               border border-[var(--brand-gold)]/[0.12]"
         aria-hidden="true"
       ></div>
 
@@ -81,102 +54,46 @@
       <!-- LEWY DOLNY ORNAMENT -->
 
       <div
-        class="pointer-events-none
-               absolute
-               -bottom-28
-               -left-28
-               h-[300px]
-               w-[300px]
-               rounded-full
-               border
-               border-[var(--brand-gold)]/[0.12]"
+        class="pointer-events-none absolute -bottom-28 -left-28
+               h-[300px] w-[300px] rounded-full
+               border border-[var(--brand-gold)]/[0.12]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none
-               absolute
-               -bottom-16
-               -left-16
-               h-[220px]
-               w-[220px]
-               rounded-full
-               border
-               border-[var(--brand-burgundy)]/[0.07]"
+        class="pointer-events-none absolute -bottom-16 -left-16
+               h-[220px] w-[220px] rounded-full
+               border border-[var(--brand-burgundy)]/[0.07]"
         aria-hidden="true"
       ></div>
 
 
-      <!-- =========================================
-           DELIKATNA SIATKA
-           ========================================= -->
+      <!-- DELIKATNA SIATKA -->
 
       <div
-        class="pointer-events-none
-               absolute
-               inset-0
-               opacity-30"
+        class="pointer-events-none absolute inset-0 opacity-30"
         aria-hidden="true"
       >
-
         <div
-          class="absolute
-                 inset-0
+          class="absolute inset-0
                  bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.10)_49%,transparent_50%,transparent_100%)]"
         ></div>
 
         <div
-          class="absolute
-                 inset-0
+          class="absolute inset-0
                  bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.07)_49%,transparent_50%,transparent_100%)]"
         ></div>
-
       </div>
 
 
-      <!-- =========================================
-           CENTRALNE ROZŚWIETLENIE
-           ========================================= -->
+      <!-- TREŚĆ -->
 
       <div
-        class="pointer-events-none
-               absolute
-               left-1/2
-               top-1/2
-               h-[320px]
-               w-[320px]
-               -translate-x-1/2
-               -translate-y-1/2
-               rounded-full
-               bg-[var(--brand-gold)]/[0.16]
-               blur-3xl"
-        aria-hidden="true"
-      ></div>
-
-      <div
-        class="pointer-events-none
-               absolute
-               left-1/2
-               top-1/2
-               h-[170px]
-               w-[170px]
-               -translate-x-1/2
-               -translate-y-1/2
-               rounded-full
-               bg-[#fffaf0]/[0.75]
-               blur-2xl"
-        aria-hidden="true"
-      ></div>
-
-
-      <!-- =========================================
-           GŁÓWNA NAZWA KANCELARII
-           ========================================= -->
-
-      <div
-        class="relative
-               z-10
+        class="relative z-10
                flex
+               w-full
+               min-w-0
+               max-w-full
                flex-col
                items-center
                font-['Libre_Baskerville']"
@@ -184,110 +101,74 @@
 
         <!-- KANCELARIA NOTARIALNA -->
 
-        <div class="header-small-title">
-
-          <span
-            class="text-[10px]
-                   font-normal
-                   uppercase
-                   tracking-[0.15em]
-                   text-stone-500
-                   sm:text-xs
-                   md:text-sm"
-            aria-label="Kancelaria Notarialna"
-          >
-
-            @for (
-              letter of splitText(bannerParts[0]);
-              track $index
-            ) {
-
-              <span
-                class="header-letter"
-                [style.animation-delay.ms]="250 + ($index * 35)"
-              >
-                {{ letter === ' ' ? '\u00A0' : letter }}
-              </span>
-
-            }
-
-          </span>
-
-        </div>
+        <p
+          class="m-0
+                 block
+                 w-full
+                 max-w-full
+                 whitespace-nowrap
+                 text-center
+                 text-[clamp(8px,1.8vw,13px)]
+                 font-normal
+                 uppercase
+                 tracking-[0.06em]
+                 sm:text-[clamp(9px,1.7vw,14px)]
+                 sm:tracking-[0.10em]
+                 text-stone-500"
+        >
+          {{ bannerParts[0] }}
+        </p>
 
 
-        <!-- =========================================
-             IMIĘ I NAZWISKO
-             ========================================= -->
+        <!-- IMIĘ I NAZWISKO -->
 
         <h1
           class="header-name
+                 m-0
                  mt-3
-                 text-2xl
+                 block
+                 w-full
+                 min-w-0
+                 max-w-full
+                 whitespace-nowrap
+                 text-center
+                 text-[clamp(11px,3.1vw,23px)]
                  font-normal
-                 tracking-[-0.085em]
+                 leading-tight
+                 tracking-[-0.055em]
                  text-[var(--brand-burgundy)]
                  sm:mt-4
-                 sm:text-3xl
-                 md:text-3xl
+                 sm:text-[clamp(15px,3.2vw,27px)]
+                 md:text-[clamp(19px,3.1vw,31px)]
                  lg:text-4xl"
           aria-label="Zbigniew Władysławski"
         >
-
-          @for (
-            letter of splitText(bannerParts[1]);
-            track $index
-          ) {
-
-            <span
-              class="header-letter"
-              [style.animation-delay.ms]="950 + ($index * 45)"
-            >
-              {{ letter === ' ' ? '\u00A0' : letter }}
-            </span>
-
-          }
-
+          {{ bannerParts[1] }}
         </h1>
 
 
-        <!-- =========================================
-             NOTARIUSZ
-             ========================================= -->
+        <!-- NOTARIUSZ -->
 
-        <div
-          class="header-role
+        <p
+          class="m-0
                  mt-3
-                 sm:mt-4"
+                 block
+                 w-full
+                 max-w-full
+                 whitespace-nowrap
+                 text-center
+                 text-[9px]
+                 font-normal
+                 uppercase
+                 tracking-[0.12em]
+                 text-stone-500
+                 sm:mt-4
+                 sm:text-[10px]
+                 sm:tracking-[0.18em]
+                 md:text-xs"
         >
-
-          <span
-            class="text-[10px]
-                   font-normal
-                   uppercase
-                   tracking-[0.25em]
-                   text-stone-500
-                   sm:text-xs"
-            aria-label="Notariusz"
-          >
-
-            @for (
-              letter of splitText(bannerParts[2]);
-              track $index
-            ) {
-
-              <span
-                class="header-letter"
-                [style.animation-delay.ms]="1900 + ($index * 55)"
-              >
-                {{ letter }}
-              </span>
-
-            }
-
-          </span>
-
-        </div>
+          {{ bannerParts[2] }}
+        </p>
 
       </div>
 

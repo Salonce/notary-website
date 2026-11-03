@@ -2,29 +2,25 @@
      HERO SECTION – UKŁAD DWUKOLUMNOWY
      ========================================= -->
 
-<section
-  id="hero"
-  class="w-full bg-[#faf9f6]"
->
+<section id="hero" class="hero-section w-full">
   <div
-    class="mx-auto
-           grid
-           w-full
-           max-w-5xl
+    class="mx-auto grid w-full max-w-7xl
            grid-cols-1
+           gap-4
+           px-4
+           sm:gap-6
            md:grid-cols-2
-           md:gap-10"
+           md:gap-8
+           lg:gap-10"
   >
 
     <!-- LEWA STRONA – BANER KANCELARII -->
-
     <div class="w-full min-w-0">
       <app-hero-banner></app-hero-banner>
     </div>
 
     <!-- PRAWA STRONA – OBRAZ HERO -->
-
-    <div class="w-full min-w-0">
+    <div class="hero-image-wrapper w-full min-w-0">
       <app-hero-image></app-hero-image>
     </div>
 

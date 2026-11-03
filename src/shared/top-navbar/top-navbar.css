@@ -346,10 +346,6 @@ nav.navbar button:focus-visible {
    ZŁOTE LINIE I OBRAMOWANIA
    ========================================= */
 
-nav.navbar .border-\[\var(--brand-gold)\]\/40 {
-  border-color: rgba(var(--brand-gold-rgb), 0.4);
-}
-
 @keyframes navbar-item-in {
   from {
     opacity: 0;
