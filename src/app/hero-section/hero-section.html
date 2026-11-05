@@ -1,10 +1,12 @@
+
 <!-- =========================================
      HERO SECTION – UKŁAD DWUKOLUMNOWY
      ========================================= -->
 
 <section id="hero" class="hero-section w-full">
   <div
-    class="mx-auto grid w-full max-w-7xl
+    class="grid
+           w-full
            grid-cols-1
            gap-4
            px-4
@@ -20,7 +22,15 @@
     </div>
 
     <!-- PRAWA STRONA – OBRAZ HERO -->
-    <div class="hero-image-wrapper w-full min-w-0">
+    <div
+      class="hero-image-wrapper
+             flex
+             w-full
+             min-w-0
+             items-center
+             justify-end
+             md:pr-[1cm]"
+    >
       <app-hero-image></app-hero-image>
     </div>
 

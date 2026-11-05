@@ -1,3 +1,4 @@
+
 /* =========================================
    HERO IMAGE – KOMPONENT
    ========================================= */
@@ -8,82 +9,116 @@
   width: 100%;
   height: 100%;
   min-width: 0;
-  background-color: #f6f1e9;
+  box-sizing: border-box;
 }
 
 /* =========================================
-   TŁO – BIAŁE W CENTRUM,
-   PŁYNNE PRZEJŚCIE W KOLOR ZŁOTAWY
+   KONTENER ZDJĘCIA
    ========================================= */
 
 :host .hero-image {
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
   width: 100%;
   height: 100%;
   min-width: 0;
-  overflow: hidden;
 
-  background:
-    radial-gradient(
-      ellipse at center,
-      #ffffff 0%,
-      #fffefa 30%,
-      #faf9f6 52%,
-      #f6f1e9 78%,
-      #f2ece1 100%
-    );
+  box-sizing: border-box;
+
+  /* ODSTĘP KONTROLOWANY PRZEZ RODZICA */
+  padding-right: 0;
+
+  overflow: visible;
+  background: transparent;
 }
 
 /* =========================================
-   ZDJĘCIE – ORYGINALNE KOLORY
-   BEZ MASKI I FILTRÓW
+   ZDJĘCIE – BEZ ZŁOTEJ NAKŁADKI
    ========================================= */
 
-:host img {
+:host .hero-image img {
   display: block;
-  position: relative;
-  z-index: 1;
 
-  width: 100%;
+  /* NATURALNE PROPORCJE OBRAZU */
+  width: auto;
   height: 100%;
 
+  max-width: 100%;
+  min-width: 0;
+
   object-fit: contain;
-  object-position: center;
+  object-position: right center;
+
+  margin: 0;
 
   opacity: 1;
   filter: none;
-  -webkit-mask-image: none;
-  mask-image: none;
 }
 
 /* =========================================
-   RESPONSYWNOŚĆ – TELEFONY
+   TELEFONY
    ========================================= */
 
 @media (max-width: 767px) {
+
   :host {
     height: auto;
   }
 
   :host .hero-image {
+    display: flex;
+
     width: 100%;
-    height: 100%;
+    height: auto;
     min-height: 280px;
+
+    padding-right: 0;
+
+    justify-content: center;
+    align-items: center;
   }
 
-  :host img {
+  :host .hero-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
+
+    max-width: 100%;
+
     object-fit: contain;
+    object-position: center;
   }
 }
 
 /* =========================================
-   RESPONSYWNOŚĆ – TABLETY I DESKTOP
+   TABLETY I DESKTOP
    ========================================= */
 
 @media (min-width: 768px) {
+
+  :host {
+    height: 100%;
+  }
+
   :host .hero-image {
+    width: 100%;
+    height: 100%;
     min-height: 100%;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 0;
+  }
+
+  :host .hero-image img {
+    width: auto;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: right center;
   }
 }
