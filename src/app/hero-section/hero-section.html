@@ -1,3 +1,7 @@
+<!-- =========================================
+     HERO SECTION – ELASTYCZNY UKŁAD
+     ========================================= -->
+
 <section id="hero" class="hero-section w-full">
   <div
     class="grid
@@ -6,9 +10,10 @@
            gap-4
            px-4
            sm:gap-6
-           md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
-           md:gap-8"
+           min-[1101px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+           min-[1101px]:gap-8"
   >
+
     <!-- LEWA STRONA – BANER KANCELARII -->
     <div class="w-full min-w-0">
       <app-hero-banner></app-hero-banner>
@@ -22,10 +27,11 @@
              min-w-0
              items-center
              justify-center
-             md:justify-end
-             md:pr-[0.5cm]"
+             min-[1101px]:justify-end
+             min-[1101px]:pr-[0.5cm]"
     >
-      <app-hero-image></app-hero-image>
+      <app-hero-image class="block w-full min-w-0"></app-hero-image>
     </div>
+
   </div>
 </section>
