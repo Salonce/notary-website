@@ -1,0 +1,16 @@
+/* KANCELARIA NOTARIALNA */
+.header-subtitle {
+  font-size: clamp(8px, 1.2vw, 15px);
+  letter-spacing: clamp(0.06em, 0.1vw, 0.10em);
+}
+
+/* IMIĘ I NAZWISKO */
+.header-name {
+  font-size: clamp(11px, 3.3vw, 50px);
+}
+
+/* NOTARIUSZ */
+.header-role {
+  font-size: clamp(9px, 1.1vw, 14px);
+  letter-spacing: clamp(0.12em, 0.18vw, 0.18em);
+}
