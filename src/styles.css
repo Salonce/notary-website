@@ -7,6 +7,7 @@
   --breakpoint-xxxs: 380px;
   --breakpoint-xxs: 420px;
   --breakpoint-xs: 480px;
+  --breakpoint-columns: 1100px;
 }
 
 :root {
@@ -192,17 +193,6 @@ html {
   min-width: 0;
 }
 
-/* Jedna kolumna na mniejszych ekranach */
-@media (max-width: 900px) {
-  .content-columns {
-    padding: 0 20px;
-  }
-
-  .content-columns__grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--section-gap);
-  }
-}
 
 /* =========================================
    POJEDYNCZA KOLUMNA TREŚCI
@@ -240,3 +230,8 @@ html {
 }
 
 
+:root {
+  /* Tytuły w sekcjach kolumnowych */
+  --heading-size-columns: 40px
+  --heading-size-no-columns: 34px;
+}

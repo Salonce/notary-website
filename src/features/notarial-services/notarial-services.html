@@ -2,15 +2,15 @@
 <div
   #servicesSection
   id="czynnosci-notarialne"
-  class="w-full px-2 xxs:px-6 md:px-8"
+  class="services-area w-full"
   [class.is-visible]="isServicesVisible"
 >
-  <div class="mx-auto max-w-[1400px] px-2 xxs:px-6 md:px-10 lg:px-12">
+  <div class="services-container">
 
     <!-- Nagłówek -->
     <div class="text-center">
       <h2
-        class="services-title mt-2 font-main-heading text-[34px] font-normal tracking-wide text-black md:text-[40px]"
+        class="services-title mt-2 font-main-heading font-normal tracking-wide text-black"
       >
         Zakres
         <br class="sm:hidden" />
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Kategorie -->
-    <div class="mx-auto mt-8 w-full max-w-5xl md:mt-10">
+    <div class="services-list mx-auto mt-8 w-full md:mt-10">
 
       <!-- NIERUCHOMOŚCI I PRAWA DO LOKALI -->
       <div class="service-category border-t border-stone-200">
@@ -43,30 +43,22 @@
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Nieruchomości i prawa do lokali
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Sprzedaż · Darowizna · Dożywocie · Zamiana · Hipoteki · Służebności
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Nieruchomości i prawa do lokali
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Sprzedaż · Darowizna · Dożywocie · Zamiana · Hipoteki · Służebności
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('nieruchomosci')"
               [attr.aria-expanded]="showNieruchomosci"
               aria-controls="services-nieruchomosci"
             >
-              <span>
-                {{ showNieruchomosci ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showNieruchomosci ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showNieruchomosci"
@@ -96,9 +88,7 @@
             <li class="service-item">Umowy deweloperskie</li>
             <li class="service-item">Ustanowienie odrębnej własności lokalu</li>
             <li class="service-item">Ustanowienie hipoteki</li>
-            <li class="service-item">
-              Ustanowienie służebności (gruntowej, przesyłu, osobistej)
-            </li>
+            <li class="service-item">Ustanowienie służebności (gruntowej, przesyłu, osobistej)</li>
           </ul>
         </div>
       </div>
@@ -116,35 +106,28 @@
             stroke-linejoin="round"
             aria-hidden="true"
           >
-            <circle cx="9" cy="8" r="3" /><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5.2a3 3 0 0 1 0 5.6M18 15a5 5 0 0 1 3 4.6V21" />
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5.2a3 3 0 0 1 0 5.6M18 15a5 5 0 0 1 3 4.6V21" />
           </svg>
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Sprawy rodzinne i majątkowe
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Rozdzielność majątkowa · Podział majątku · Obowiązek alimentacyjny
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Sprawy rodzinne i majątkowe
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Rozdzielność majątkowa · Podział majątku · Obowiązek alimentacyjny
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('rodzinne')"
               [attr.aria-expanded]="showRodzinne"
               aria-controls="services-rodzinne"
             >
-              <span>
-                {{ showRodzinne ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showRodzinne ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showRodzinne"
@@ -191,30 +174,22 @@
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Spółki, działalność gospodarcza i fundacje
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Spółki · Protokoły zgromadzeń · Rejestr akcjonariuszy · Fundacje
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Spółki, działalność gospodarcza i fundacje
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Spółki · Protokoły zgromadzeń · Rejestr akcjonariuszy · Fundacje
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('spolki')"
               [attr.aria-expanded]="showSpolki"
               aria-controls="services-spolki"
             >
-              <span>
-                {{ showSpolki ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showSpolki ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showSpolki"
@@ -237,9 +212,7 @@
         >
           <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
             <li class="service-item">Zakładanie spółek i zmiany umów spółek</li>
-            <li class="service-item">
-              Protokoły zgromadzeń wspólników i walnych zgromadzeń
-            </li>
+            <li class="service-item">Protokoły zgromadzeń wspólników i walnych zgromadzeń</li>
             <li class="service-item">Rejestr akcjonariuszy</li>
             <li class="service-item">Fundacje</li>
             <li class="service-item">Fundacje rodzinne</li>
@@ -266,30 +239,22 @@
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Spadki i testamenty
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Testamenty · Dziedziczenie · Poświadczenie dziedziczenia · Dział spadku
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Spadki i testamenty
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Testamenty · Dziedziczenie · Poświadczenie dziedziczenia · Dział spadku
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('spadki')"
               [attr.aria-expanded]="showSpadki"
               aria-controls="services-spadki"
             >
-              <span>
-                {{ showSpadki ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showSpadki ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showSpadki"
@@ -338,35 +303,28 @@
             stroke-linejoin="round"
             aria-hidden="true"
           >
-            <circle cx="12" cy="10" r="6" /><path d="m9 15-1 6 4-2 4 2-1-6M10 10l1.3 1.3L14 8.5" />
+            <circle cx="12" cy="10" r="6" />
+            <path d="m9 15-1 6 4-2 4 2-1-6M10 10l1.3 1.3L14 8.5" />
           </svg>
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Poświadczenia
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Dokumenty · Podpisy · Daty · Potwierdzenie stanu faktycznego
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Poświadczenia
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Dokumenty · Podpisy · Daty · Potwierdzenie stanu faktycznego
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('poswiadczenia')"
               [attr.aria-expanded]="showPoswiadczenia"
               aria-controls="services-poswiadczenia"
             >
-              <span>
-                {{ showPoswiadczenia ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showPoswiadczenia ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showPoswiadczenia"
@@ -388,18 +346,10 @@
           [class.opacity-100]="showPoswiadczenia"
         >
           <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
-            <li class="service-item">
-              Poświadczenie zgodności dokumentu z oryginałem
-            </li>
-            <li class="service-item">
-              Poświadczenie własnoręczności podpisu
-            </li>
-            <li class="service-item">
-              Poświadczenie daty okazania dokumentu
-            </li>
-            <li class="service-item">
-              Poświadczenie pozostawania osoby przy życiu lub w określonym miejscu
-            </li>
+            <li class="service-item">Poświadczenie zgodności dokumentu z oryginałem</li>
+            <li class="service-item">Poświadczenie własnoręczności podpisu</li>
+            <li class="service-item">Poświadczenie daty okazania dokumentu</li>
+            <li class="service-item">Poświadczenie pozostawania osoby przy życiu lub w określonym miejscu</li>
           </ul>
         </div>
       </div>
@@ -422,30 +372,22 @@
 
           <div class="min-w-0 flex-1 md:flex md:items-center md:justify-between md:gap-4">
             <div class="min-w-0">
-              <h3
-              class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]"
-            >
-              Pozostałe czynności
-            </h3>
-
-            <p
-              class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]"
-            >
-              Najem · Protokoły · Depozyt · Pełnomocnictwa · Dokumenty
-            </p>
+              <h3 class="font-notarial-services-list-main-element text-[18px] font-normal tracking-wide text-stone-800 md:text-[20px]">
+                Pozostałe czynności
+              </h3>
+              <p class="mt-1 font-main-body text-[12px] leading-[1.5] text-stone-500 md:text-[13px]">
+                Najem · Protokoły · Depozyt · Pełnomocnictwa · Dokumenty
+              </p>
             </div>
 
             <button
               type="button"
-              class="button-accent mt-4 inline-flex shrink-0 md:mt-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em]"
+              class="button-accent mt-4 inline-flex shrink-0 items-center gap-2 border px-4 py-2 font-main-body text-[11px] uppercase tracking-[0.12em] md:mt-0"
               (click)="toggleCategory('pozostale')"
               [attr.aria-expanded]="showPozostale"
               aria-controls="services-pozostale"
             >
-              <span>
-                {{ showPozostale ? 'Ukryj czynności' : 'Pokaż czynności' }}
-              </span>
-
+              <span>{{ showPozostale ? 'Ukryj czynności' : 'Pokaż czynności' }}</span>
               <span
                 class="relative -top-px text-[15px] leading-none transition-transform duration-[250ms]"
                 [class.rotate-180]="showPozostale"
@@ -469,16 +411,10 @@
           <ul class="grid gap-x-10 pb-6 pl-5 md:grid-cols-2 md:pb-7">
             <li class="service-item">Najem okazjonalny</li>
             <li class="service-item">Najem instytucjonalny</li>
-            <li class="service-item">
-              Protokoły z zebrań Wspólnot Mieszkaniowych
-            </li>
+            <li class="service-item">Protokoły z zebrań Wspólnot Mieszkaniowych</li>
             <li class="service-item">Rodzinne ogrody działkowe</li>
-            <li class="service-item">
-              Przewłaszczenie nieruchomości na zabezpieczenie
-            </li>
-            <li class="service-item">
-              Przeniesienie prawa w celu zwolnienia się z długu
-            </li>
+            <li class="service-item">Przewłaszczenie nieruchomości na zabezpieczenie</li>
+            <li class="service-item">Przeniesienie prawa w celu zwolnienia się z długu</li>
             <li class="service-item">Depozyt notarialny</li>
             <li class="service-item">Pełnomocnictwa</li>
             <li class="service-item">Umowy przedwstępne</li>
@@ -491,3 +427,33 @@
     </div>
   </div>
 </div>
+
+<style>
+  .services-area {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 24px;
+  }
+
+  .services-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-list {
+    max-width: 1024px;
+  }
+
+  @media (max-width: 1100px) {
+    .services-area {
+      padding: 0 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-area {
+      padding: 0 10px;
+    }
+  }
+</style>
