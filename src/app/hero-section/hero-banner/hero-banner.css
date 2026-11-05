@@ -3,7 +3,7 @@
    ========================================= */
 
 .header-subtitle {
-  font-size: clamp(8px, 1.2vw, 15px);
+  font-size: clamp(10px, calc(1.2vw + 2px), 17px);
   letter-spacing: clamp(0.06em, 0.1vw, 0.10em);
 }
 
@@ -12,7 +12,7 @@
    ========================================= */
 
 .header-name {
-  font-size: clamp(11px, 3.3vw, 50px);
+  font-size: clamp(7px, calc(3.3vw - 4px), 46px);
 }
 
 /* =========================================
@@ -20,48 +20,58 @@
    ========================================= */
 
 .header-role {
-  font-size: clamp(9px, 1.1vw, 14px);
+  font-size: clamp(11px, calc(1.1vw + 2px), 16px);
   letter-spacing: clamp(0.12em, 0.18vw, 0.18em);
 }
 
 /* =========================================
+   DUŻY DESKTOP
+   PRZYWRÓCENIE PIERWOTNEGO ROZMIARU NAZWISKA
+   ========================================= */
+
+@media (min-width: 1101px) and (min-height: 751px) {
+  .header-name {
+    font-size: clamp(11px, 3.3vw, 50px);
+  }
+}
+
+/* =========================================
    UKŁAD JEDNOKOLUMNOWY – 700–1100 PX
-   STAŁY, MNIEJSZY ROZMIAR
    ========================================= */
 
 @media (min-width: 700px) and (max-width: 1100px) {
   .header-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: 44px;
+    font-size: 40px;
   }
 
   .header-role {
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.18em;
   }
 }
 
 /* =========================================
    PONIŻEJ 700 PX
-   PŁYNNE ZMNIEJSZANIE BEZ SKOKU
+   PŁYNNE SKALOWANIE
    ========================================= */
 
 @media (max-width: 699px) {
   .header-subtitle {
-    font-size: clamp(9px, 2vw, 14px);
+    font-size: clamp(11px, calc(2vw + 2px), 16px);
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: clamp(20px, 6.28vw, 44px);
+    font-size: clamp(16px, calc(6.28vw - 4px), 40px);
   }
 
   .header-role {
-    font-size: clamp(9px, 1.86vw, 13px);
+    font-size: clamp(11px, calc(1.86vw + 2px), 15px);
     letter-spacing: 0.18em;
   }
 }

@@ -10,27 +10,33 @@
            gap-4
            px-4
            sm:gap-6
-           min-[1101px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+           min-[1101px]:grid-cols-[minmax(0,1fr)_auto]
+           min-[1101px]:items-center
            min-[1101px]:gap-8"
   >
-
-    <!-- LEWA STRONA – BANER KANCELARII -->
-    <div class="w-full min-w-0">
-      <app-hero-banner></app-hero-banner>
-    </div>
 
     <!-- PRAWA STRONA – OBRAZ HERO -->
     <div
       class="hero-image-wrapper
+             order-1
              flex
              w-full
              min-w-0
              items-center
              justify-center
+             min-[1101px]:order-2
+             min-[1101px]:w-auto
              min-[1101px]:justify-end
              min-[1101px]:pr-[0.5cm]"
     >
-      <app-hero-image class="block w-full min-w-0"></app-hero-image>
+      <app-hero-image
+        class="block w-full min-w-0 min-[1101px]:w-auto"
+      ></app-hero-image>
+    </div>
+
+    <!-- LEWA STRONA – BANER KANCELARII -->
+    <div class="order-2 w-full min-w-0 min-[1101px]:order-1">
+      <app-hero-banner></app-hero-banner>
     </div>
 
   </div>
