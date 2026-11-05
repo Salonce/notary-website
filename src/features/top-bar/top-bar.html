@@ -1,11 +1,12 @@
-
 <header
   class="header-kancelaria relative
          h-[31px] max-h-[31px]
          w-full
          overflow-hidden
          border-b border-[var(--brand-gold)]/40
-         bg-[var(--brand-burgundy-soft)]"
+         bg-[var(--brand-burgundy-soft)]
+         [@media(min-width:1024px)_and_(min-height:900px)]:h-[38px]
+         [@media(min-width:1024px)_and_(min-height:900px)]:max-h-[38px]"
 >
   <!-- SUBTELNE ORNAMENTY KONTUROWE -->
   <div class="header-ornament pointer-events-none absolute -left-24 -top-28 h-[240px] w-[240px] rounded-full border" aria-hidden="true"></div>
@@ -28,7 +29,9 @@
            overflow-hidden
            px-3
            max-[359px]:px-2
-           sm:px-6"
+           sm:px-6
+           [@media(min-width:1024px)_and_(min-height:900px)]:h-[37px]
+           [@media(min-width:1024px)_and_(min-height:900px)]:max-h-[37px]"
   >
 
     <!-- MOBILE -->
@@ -146,12 +149,14 @@
       <!-- ADRES: LG OD 1024 PX -->
       <div
         class="hidden lg:flex
-               items-center gap-2"
+               items-center gap-2
+               [@media(min-width:1024px)_and_(min-height:900px)]:gap-3"
       >
         <i
           class="fa-solid fa-house
                  text-[11px]
-                 text-[var(--brand-gold)]"
+                 text-[var(--brand-gold)]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]"
           aria-hidden="true"
         ></i>
 
@@ -162,14 +167,19 @@
                  font-normal
                  leading-none
                  tracking-normal
-                 text-[#f7f3eb]"
+                 text-[#f7f3eb]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]"
         >
           10-540 Olsztyn, ul. Dąbrowszczaków 21 lok. 3
         </span>
       </div>
 
       <!-- TELEFON I E-MAIL -->
-      <div class="flex items-center gap-5">
+      <div
+        class="flex items-center gap-5
+               [@media(min-width:1024px)_and_(min-height:900px)]:gap-8"
+      >
+        <!-- TELEFON -->
         <div
           class="flex items-center gap-2
                  whitespace-nowrap
@@ -178,18 +188,22 @@
                  font-normal
                  leading-none
                  tracking-normal
-                 text-[#f7f3eb]"
+                 text-[#f7f3eb]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:gap-3"
         >
           <i
             class="fa-solid fa-phone
                    text-[11px]
-                   text-[var(--brand-gold)]"
+                   text-[var(--brand-gold)]
+                   [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]"
             aria-hidden="true"
           ></i>
 
           <span>89 527 38 39</span>
         </div>
 
+        <!-- E-MAIL -->
         <div
           class="flex items-center gap-2
                  whitespace-nowrap
@@ -198,12 +212,15 @@
                  font-normal
                  leading-none
                  tracking-normal
-                 text-[#f7f3eb]"
+                 text-[#f7f3eb]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]
+                 [@media(min-width:1024px)_and_(min-height:900px)]:gap-3"
         >
           <i
             class="fa-solid fa-envelope
                    text-[11px]
-                   text-[var(--brand-gold)]"
+                   text-[var(--brand-gold)]
+                   [@media(min-width:1024px)_and_(min-height:900px)]:text-[14px]"
             aria-hidden="true"
           ></i>
 

@@ -1,3 +1,4 @@
+
 <div class="main-background relative min-h-screen bg-[#F2ECE1]">
 
   <!-- TOP BAR -->
@@ -21,9 +22,10 @@
            z-40
            pt-[42px]
            layout-header
-           lg:pt-[43px]"
+           lg:pt-[43px]
+           [@media(min-width:1024px)_and_(min-height:900px)]:pt-[44px]"
   >
-    <app-hero-section/>
+    <app-hero-section></app-hero-section>
   </div>
 
 
@@ -35,7 +37,8 @@
            z-50
            w-full
            layout-navbar
-           lg:top-[30px]"
+           lg:top-[30px]
+           [@media(min-width:1024px)_and_(min-height:900px)]:top-[37px]"
   >
     <app-top-navbar></app-top-navbar>
   </div>
