@@ -7,6 +7,7 @@
   letter-spacing: clamp(0.06em, 0.1vw, 0.10em);
 }
 
+
 /* =========================================
    IMIĘ I NAZWISKO
    ========================================= */
@@ -14,6 +15,7 @@
 .header-name {
   font-size: clamp(7px, calc(3.3vw - 4px), 46px);
 }
+
 
 /* =========================================
    NOTARIUSZ
@@ -24,9 +26,9 @@
   letter-spacing: clamp(0.12em, 0.18vw, 0.18em);
 }
 
+
 /* =========================================
-   DUŻY DESKTOP
-   PRZYWRÓCENIE PIERWOTNEGO ROZMIARU NAZWISKA
+   DUŻY DESKTOP – POWYŻEJ 1100 PX
    ========================================= */
 
 @media (min-width: 1101px) and (min-height: 751px) {
@@ -35,43 +37,70 @@
   }
 }
 
+
 /* =========================================
-   UKŁAD JEDNOKOLUMNOWY – 700–1100 PX
+   TABLET – 700–1100 PX
+   WIĘKSZE NAPISY I PRZESUNIĘCIE W GÓRĘ
    ========================================= */
 
 @media (min-width: 700px) and (max-width: 1100px) {
   .header-subtitle {
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: 40px;
+    font-size: 46px;
   }
 
   .header-role {
-    font-size: 15px;
+    font-size: 17px;
     letter-spacing: 0.18em;
+  }
+
+  .header-banner {
+    padding-top: 68px;
+    padding-bottom: 92px;
   }
 }
 
+
 /* =========================================
-   PONIŻEJ 700 PX
-   PŁYNNE SKALOWANIE
+   TELEFONY – PONIŻEJ 700 PX
+   PŁYNNE SKALOWANIE I PRZESUNIĘCIE W GÓRĘ
    ========================================= */
 
 @media (max-width: 699px) {
   .header-subtitle {
-    font-size: clamp(11px, calc(2vw + 2px), 16px);
+    font-size: clamp(12px, calc(2.3vw + 3px), 17px);
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: clamp(16px, calc(6.28vw - 4px), 40px);
+    font-size: clamp(18px, calc(6.8vw - 3px), 43px);
   }
 
   .header-role {
-    font-size: clamp(11px, calc(1.86vw + 2px), 15px);
+    font-size: clamp(12px, calc(2vw + 2px), 16px);
     letter-spacing: 0.18em;
+  }
+
+  .header-banner {
+    padding-top: 58px;
+    padding-bottom: 78px;
+  }
+}
+
+
+/* =========================================
+   OCHRONA PRZED PRZESADNYMI ANIMACJAMI
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .header-banner,
+  .header-subtitle,
+  .header-name,
+  .header-role {
+    scroll-behavior: auto;
   }
 }
