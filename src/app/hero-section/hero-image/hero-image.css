@@ -30,7 +30,7 @@
 }
 
 /* =========================================
-   ZDJĘCIE
+   ZDJĘCIE – ROZMIAR DOMYŚLNY
    ========================================= */
 
 :host .hero-image img {
@@ -46,26 +46,58 @@
   object-position: center;
 
   margin: 0;
+
+  opacity: 1;
+  filter: none;
 }
 
 /* =========================================
-   NIŻSZE EKRANY
+   DESKTOP – STANDARDOWA WYSOKOŚĆ
+   Powyżej 950 px
    ========================================= */
 
-@media (min-width: 768px) and (max-height: 800px) {
+@media (min-width: 1101px) and (min-height: 951px) {
   :host .hero-image img {
-    max-height: 480px;
+    max-height: 600px;
   }
 }
 
-@media (min-width: 768px) and (max-height: 650px) {
+/* =========================================
+   DESKTOP – NIŻSZE MONITORY
+   751–950 px
+   ========================================= */
+
+@media (min-width: 1101px) and (max-height: 950px) {
   :host .hero-image img {
-    max-height: 350px;
+    max-height: 430px;
+  }
+}
+
+/* =========================================
+   DESKTOP – BARDZO NISKIE MONITORY
+   601–750 px
+   ========================================= */
+
+@media (min-width: 1101px) and (max-height: 750px) {
+  :host .hero-image img {
+    max-height: 320px;
+  }
+}
+
+/* =========================================
+   DESKTOP – EKSTREMALNIE NISKIE MONITORY
+   Do 600 px
+   ========================================= */
+
+@media (min-width: 1101px) and (max-height: 600px) {
+  :host .hero-image img {
+    max-height: 260px;
   }
 }
 
 /* =========================================
    DESKTOP – WYRÓWNANIE DO PRAWEJ
+   Od 1101 px
    ========================================= */
 
 @media (min-width: 1101px) {
@@ -79,10 +111,10 @@
 }
 
 /* =========================================
-   TELEFONY
+   TABLETY – 768–1100 PX
    ========================================= */
 
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   :host {
     height: auto;
   }
@@ -94,10 +126,40 @@
   }
 
   :host .hero-image img {
-    width: 100%;
+    width: auto;
     height: auto;
     max-width: 100%;
     max-height: 55vh;
+    object-position: center;
+  }
+}
+
+/* =========================================
+   TELEFONY – DO 767 PX
+   ========================================= */
+
+@media (max-width: 767px) {
+  :host {
+    height: auto;
+  }
+
+  :host .hero-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  :host .hero-image img {
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 55vh;
+
+    object-fit: contain;
     object-position: center;
   }
 }
