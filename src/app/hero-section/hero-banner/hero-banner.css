@@ -33,7 +33,7 @@
 
 @media (min-width: 1101px) and (min-height: 751px) {
   .header-name {
-    font-size: clamp(11px, 3.3vw, 50px);
+    font-size: clamp(11px, 3.0vw, 50px);
   }
 }
 
