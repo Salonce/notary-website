@@ -53,8 +53,7 @@
 }
 
 /* =========================================
-   DESKTOP – PŁYNNE SKALOWANIE
-   Od 1101 px – WSZYSTKIE WYSOKOŚCI
+   DESKTOP – OD 1101 PX
    ========================================= */
 
 @media (min-width: 1101px) {
@@ -69,10 +68,10 @@
 }
 
 /* =========================================
-   TABLETY – 768–1100 PX
+   TABLETS – FIXED SIZE 650–1100 PX
    ========================================= */
 
-@media (min-width: 768px) and (max-width: 1100px) {
+@media (min-width: 650px) and (max-width: 1100px) {
   :host {
     height: auto;
   }
@@ -86,17 +85,20 @@
   :host .hero-image img {
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 55vh;
+
+    max-width: 400px;
+    max-height: 400px;
+
+    object-fit: contain;
     object-position: center;
   }
 }
 
 /* =========================================
-   TELEFONY – DO 767 PX
+   MOBILE – SMOOTHLY DECREASING
    ========================================= */
 
-@media (max-width: 767px) {
+@media (max-width: 649px) {
   :host {
     height: auto;
   }
@@ -111,10 +113,10 @@
   }
 
   :host .hero-image img {
-    width: 100%;
+    width: auto;
     height: auto;
 
-    max-width: 100%;
+    max-width: min(100%, 400px);
     max-height: 55vh;
 
     object-fit: contain;
