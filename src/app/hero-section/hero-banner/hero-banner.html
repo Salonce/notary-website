@@ -1,3 +1,8 @@
+
+<!-- =========================================
+     HERO SECTION – RESPONSIVE HEADER
+     ========================================= -->
+
 <header id="home" class="w-full h-full min-w-0">
   <div class="w-full h-full min-w-0">
 
@@ -46,7 +51,6 @@
         aria-hidden="true"
       ></div>
 
-
       <!-- LEWY DOLNY ORNAMENT -->
 
       <div
@@ -62,7 +66,6 @@
                border border-[var(--brand-burgundy)]/[0.07]"
         aria-hidden="true"
       ></div>
-
 
       <!-- DELIKATNA SIATKA -->
 
@@ -81,7 +84,6 @@
         ></div>
       </div>
 
-
       <!-- TREŚĆ -->
 
       <div
@@ -97,22 +99,22 @@
 
         <!-- KANCELARIA NOTARIALNA -->
 
-      <p
-        class="header-subtitle
-              m-0
-              block
-              w-full
-              max-w-full
-              whitespace-nowrap
-              text-center
-              font-normal
-              uppercase
-              tracking-[0.06em]
-              text-stone-500"
-      >
-        {{ bannerParts[0] }}
-      </p>
-
+        <p
+          class="header-subtitle
+                 m-0
+                 block
+                 w-full
+                 max-w-full
+                 whitespace-nowrap
+                 text-center
+                 font-normal
+                 uppercase
+                 tracking-[0.06em]
+                 text-stone-500"
+          style="font-size: clamp(10px, calc(10px + (100vw - 900px) * 0.006), 11.2px);"
+        >
+          {{ bannerParts[0] }}
+        </p>
 
         <!-- IMIĘ I NAZWISKO -->
 
@@ -131,28 +133,29 @@
                  tracking-[-0.055em]
                  text-[var(--brand-burgundy)]
                  sm:mt-4"
+          style="font-size: clamp(30px, calc(30px + (100vw - 900px) * 0.035), 37px);"
           aria-label="Zbigniew Władysławski"
         >
           {{ bannerParts[1] }}
         </h1>
 
-
         <!-- NOTARIUSZ -->
 
         <p
           class="header-role
-                m-0
-                mt-3
-                block
-                w-full
-                max-w-full
-                whitespace-nowrap
-                text-center
-                font-normal
-                uppercase
-                tracking-[0.12em]
-                text-stone-500
-                sm:mt-4"
+                 m-0
+                 mt-3
+                 block
+                 w-full
+                 max-w-full
+                 whitespace-nowrap
+                 text-center
+                 font-normal
+                 uppercase
+                 tracking-[0.12em]
+                 text-stone-500
+                 sm:mt-4"
+          style="font-size: clamp(10px, calc(10px + (100vw - 900px) * 0.006), 11.2px);"
         >
           {{ bannerParts[2] }}
         </p>

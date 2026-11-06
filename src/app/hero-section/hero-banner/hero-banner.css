@@ -1,3 +1,4 @@
+
 /* =========================================
    KANCELARIA NOTARIALNA
    ========================================= */
@@ -7,7 +8,6 @@
   letter-spacing: clamp(0.06em, 0.1vw, 0.10em);
 }
 
-
 /* =========================================
    IMIĘ I NAZWISKO
    ========================================= */
@@ -15,7 +15,6 @@
 .header-name {
   font-size: clamp(7px, calc(3.3vw - 4px), 46px);
 }
-
 
 /* =========================================
    NOTARIUSZ
@@ -26,9 +25,8 @@
   letter-spacing: clamp(0.12em, 0.18vw, 0.18em);
 }
 
-
 /* =========================================
-   DUŻY DESKTOP – POWYŻEJ 1100 PX
+   LARGE DESKTOP – ABOVE 1100 PX
    ========================================= */
 
 @media (min-width: 1101px) and (min-height: 751px) {
@@ -37,13 +35,11 @@
   }
 }
 
-
 /* =========================================
-   TABLET – 721–1100 PX
-   WIĘKSZE NAPISY I PRZESUNIĘCIE W GÓRĘ
+   TABLET – 721–900 PX
    ========================================= */
 
-@media (min-width: 721px) and (max-width: 1100px) {
+@media (min-width: 721px) and (max-width: 900px) {
   .header-subtitle {
     font-size: 18px;
     letter-spacing: 0.10em;
@@ -64,10 +60,8 @@
   }
 }
 
-
 /* =========================================
-   TELEFONY – 320–720 PX
-   PŁYNNE ZWIĘKSZANIE PADDINGU
+   PHONES – 320–720 PX
    ========================================= */
 
 @media (min-width: 320px) and (max-width: 720px) {
@@ -91,9 +85,8 @@
   }
 }
 
-
 /* =========================================
-   OCHRONA PRZED PRZESADNYMI ANIMACJAMI
+   REDUCED MOTION
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
