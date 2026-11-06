@@ -29,19 +29,18 @@
            overflow-hidden
            px-3
            max-[359px]:px-2
-           sm:px-6
            [@media(min-width:1024px)_and_(min-height:900px)]:h-[37px]
            [@media(min-width:1024px)_and_(min-height:900px)]:max-h-[37px]"
   >
 
-    <!-- MOBILE -->
+    <!-- WERSJA MOBILNA: DO 660 PX -->
     <div
       class="flex h-full w-full
              items-center
              justify-between
              gap-3
              max-[359px]:gap-1.5
-             md:hidden"
+             min-[661px]:hidden"
     >
       <!-- ADRES -->
       <div
@@ -51,14 +50,14 @@
       >
         <i
           class="fa-solid fa-house
-                 hidden sm:inline-block
+                 hidden
                  shrink-0
                  text-[11px]
                  text-[var(--brand-gold)]"
           aria-hidden="true"
         ></i>
 
-        <!-- ADRES PONIŻEJ 480 PX -->
+        <!-- ADRES PONIŻEJ 360 PX -->
         <span
           class="min-w-0 truncate
                  text-left
@@ -68,15 +67,14 @@
                  leading-none
                  tracking-normal
                  text-[#f7f3eb]
-                 max-[479px]:inline
-                 min-[480px]:hidden"
+                 min-[360px]:hidden"
         >
           Olsztyn, Dąbrowszczaków 21 lok.3
         </span>
 
-        <!-- ADRES OD 480 PX -->
+        <!-- ADRES OD 360 PX -->
         <span
-          class="min-w-0 truncate
+          class="hidden min-w-0 truncate
                  text-left
                  font-top-bar
                  text-[11px]
@@ -84,7 +82,7 @@
                  leading-none
                  tracking-normal
                  text-[#f7f3eb]
-                 hidden min-[480px]:inline"
+                 min-[360px]:inline"
         >
           Olsztyn, ul. Dąbrowszczaków 21 lok. 3
         </span>
@@ -114,16 +112,16 @@
       </div>
     </div>
 
-    <!-- DESKTOP -->
+    <!-- WERSJA DESKTOPOWA: OD 661 PX -->
     <div
       class="hidden h-full w-full
              items-center
              justify-between
-             md:flex"
+             min-[661px]:flex"
     >
-      <!-- ADRES: MD 768–1023 PX -->
+      <!-- ADRES: 661–1023 PX -->
       <div
-        class="hidden md:flex lg:hidden
+        class="hidden min-[661px]:flex lg:hidden
                items-center gap-2"
       >
         <i
@@ -146,7 +144,7 @@
         </span>
       </div>
 
-      <!-- ADRES: LG OD 1024 PX -->
+      <!-- ADRES: OD 1024 PX -->
       <div
         class="hidden lg:flex
                items-center gap-2
