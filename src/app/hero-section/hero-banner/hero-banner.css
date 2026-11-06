@@ -39,11 +39,11 @@
 
 
 /* =========================================
-   TABLET – 700–1100 PX
+   TABLET – 721–1100 PX
    WIĘKSZE NAPISY I PRZESUNIĘCIE W GÓRĘ
    ========================================= */
 
-@media (min-width: 700px) and (max-width: 1100px) {
+@media (min-width: 721px) and (max-width: 1100px) {
   .header-subtitle {
     font-size: 18px;
     letter-spacing: 0.10em;
@@ -66,11 +66,11 @@
 
 
 /* =========================================
-   TELEFONY – PONIŻEJ 700 PX
-   PŁYNNE SKALOWANIE I PRZESUNIĘCIE W GÓRĘ
+   TELEFONY – 320–720 PX
+   PŁYNNE ZWIĘKSZANIE PADDINGU
    ========================================= */
 
-@media (max-width: 699px) {
+@media (min-width: 320px) and (max-width: 720px) {
   .header-subtitle {
     font-size: clamp(12px, calc(2.3vw + 3px), 17px);
     letter-spacing: 0.10em;
@@ -86,8 +86,8 @@
   }
 
   .header-banner {
-    padding-top: 58px;
-    padding-bottom: 78px;
+    padding-top: clamp(30px, calc(5.5vw + 12.4px), 52px);
+    padding-bottom: clamp(42px, calc(6.5vw + 21.2px), 68px);
   }
 }
 

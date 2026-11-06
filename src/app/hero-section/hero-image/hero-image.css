@@ -1,3 +1,4 @@
+
 /* =========================================
    HERO IMAGE – KOMPONENT
    ========================================= */
@@ -52,52 +53,8 @@
 }
 
 /* =========================================
-   DESKTOP – STANDARDOWA WYSOKOŚĆ
-   Powyżej 950 px
-   ========================================= */
-
-@media (min-width: 1101px) and (min-height: 951px) {
-  :host .hero-image img {
-    max-height: 600px;
-  }
-}
-
-/* =========================================
-   DESKTOP – NIŻSZE MONITORY
-   751–950 px
-   ========================================= */
-
-@media (min-width: 1101px) and (max-height: 950px) {
-  :host .hero-image img {
-    max-height: 430px;
-  }
-}
-
-/* =========================================
-   DESKTOP – BARDZO NISKIE MONITORY
-   601–750 px
-   ========================================= */
-
-@media (min-width: 1101px) and (max-height: 750px) {
-  :host .hero-image img {
-    max-height: 320px;
-  }
-}
-
-/* =========================================
-   DESKTOP – EKSTREMALNIE NISKIE MONITORY
-   Do 600 px
-   ========================================= */
-
-@media (min-width: 1101px) and (max-height: 600px) {
-  :host .hero-image img {
-    max-height: 260px;
-  }
-}
-
-/* =========================================
-   DESKTOP – WYRÓWNANIE DO PRAWEJ
-   Od 1101 px
+   DESKTOP – PŁYNNE SKALOWANIE
+   Od 1101 px – WSZYSTKIE WYSOKOŚCI
    ========================================= */
 
 @media (min-width: 1101px) {
@@ -106,6 +63,7 @@
   }
 
   :host .hero-image img {
+    max-height: clamp(260px, calc(63vh - 117px), 600px);
     object-position: right center;
   }
 }
