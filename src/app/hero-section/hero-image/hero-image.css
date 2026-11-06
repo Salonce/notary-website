@@ -53,10 +53,10 @@
 }
 
 /* =========================================
-   DESKTOP – OD 1101 PX
+   DESKTOP – ABOVE 1300 PX
    ========================================= */
 
-@media (min-width: 1101px) {
+@media (min-width: 1301px) {
   :host .hero-image {
     justify-content: flex-end;
   }
@@ -68,10 +68,10 @@
 }
 
 /* =========================================
-   TABLETS – FIXED SIZE 650–1100 PX
+   TABLETS / SMALL DESKTOP – 650–1300 PX
    ========================================= */
 
-@media (min-width: 650px) and (max-width: 1100px) {
+@media (min-width: 650px) and (max-width: 1300px) {
   :host {
     height: auto;
   }
@@ -86,8 +86,7 @@
     width: auto;
     height: auto;
 
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 520px;
 
     object-fit: contain;
     object-position: center;
