@@ -112,6 +112,20 @@
 }
 
 /* =========================================
+   IMAGE SIZE – 900–1150 PX
+   ========================================= */
+
+@media (min-width: 900px) and (max-width: 1150px) {
+  :host .hero-image img {
+    max-width: clamp(
+      380px,
+      calc(440px + (100vw - 1050px) * 0.3467),
+      440px
+    );
+  }
+}
+
+/* =========================================
    STABILITY – 901–1100 PX
    ========================================= */
 
@@ -135,12 +149,17 @@
 }
 
 /* =========================================
-   MOBILE – SMOOTHLY DECREASING
+   MOBILE – EQUAL TOP AND BOTTOM PADDING
    ========================================= */
 
 @media (max-width: 649px) {
   :host {
     height: auto;
+
+    padding-top: clamp(2px, calc(1.82vw - 3.82px), 8px);
+    padding-bottom: clamp(2px, calc(1.82vw - 3.82px), 8px);
+
+    box-sizing: border-box;
   }
 
   :host .hero-image {

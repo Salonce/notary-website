@@ -1,3 +1,20 @@
+/* =========================================
+   CUSTOM ELEMENT HOSTS
+   ========================================= */
+
+app-hero-banner,
+app-hero-image {
+  display: block;
+}
+
+/* =========================================
+   BANNER CONTAINER
+   ========================================= */
+
+.header-banner {
+  padding-top: clamp(24px, calc(2vw + 16px), 40px);
+  padding-bottom: clamp(24px, calc(2vw + 16px), 40px);
+}
 
 /* =========================================
    KANCELARIA NOTARIALNA
@@ -31,7 +48,17 @@
 
 @media (min-width: 1101px) and (min-height: 751px) {
   .header-name {
-    font-size: clamp(11px, 3.0vw, 50px);
+    font-size: clamp(15px, calc(3.0vw + 4px), 54px);
+  }
+}
+
+/* =========================================
+   LARGE SCREENS – 901–1100 PX
+   ========================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .header-name {
+    font-size: calc(3.3vw);
   }
 }
 
@@ -46,17 +73,12 @@
   }
 
   .header-name {
-    font-size: 46px;
+    font-size: 43px;
   }
 
   .header-role {
     font-size: 17px;
     letter-spacing: 0.18em;
-  }
-
-  .header-banner {
-    padding-top: 68px;
-    padding-bottom: 92px;
   }
 }
 
@@ -78,10 +100,48 @@
     font-size: clamp(12px, calc(2vw + 2px), 16px);
     letter-spacing: 0.18em;
   }
+}
 
+/* =========================================
+   SMALL PHONES – BELOW 320 PX
+   GRADUALLY DECREASE HEADING SIZE
+   ========================================= */
+
+@media (max-width: 319px) {
+  .header-name {
+    font-size: clamp(16px, calc(3.45vw + 7.72px), 18.76px);
+  }
+}
+
+/* =========================================
+   RESPONSIVE TOP AND BOTTOM PADDING
+   TOP:    EXTRA 0PX AT 320PX → 45PX AT 650PX
+   BOTTOM: EXTRA 5PX AT 320PX → 50PX AT 650PX
+   ========================================= */
+
+@media (min-width: 320px) and (max-width: 649px) {
   .header-banner {
-    padding-top: clamp(30px, calc(5.5vw + 12.4px), 52px);
-    padding-bottom: clamp(42px, calc(6.5vw + 21.2px), 68px);
+    padding-top: calc(
+      clamp(24px, calc(2vw + 16px), 40px)
+      + clamp(0px, calc(13.63636vw - 43.63636px), 45px)
+    );
+
+    padding-bottom: calc(
+      clamp(24px, calc(2vw + 16px), 40px)
+      + clamp(5px, calc(13.63636vw - 38.63636px), 50px)
+    );
+  }
+}
+
+/* =========================================
+   TABLET PADDING – 650–900 PX
+   SAME MAXIMUM PADDING AS AT 650 PX
+   ========================================= */
+
+@media (min-width: 650px) and (max-width: 900px) {
+  .header-banner {
+    padding-top: 74px;
+    padding-bottom: 79px;
   }
 }
 

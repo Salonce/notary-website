@@ -3,32 +3,25 @@
      HERO SECTION – RESPONSIVE HEADER
      ========================================= -->
 
-<header id="home" class="w-full h-full min-w-0">
-  <div class="w-full h-full min-w-0">
+<header id="home" class="w-full min-w-0">
+  <div class="w-full min-w-0">
 
-    <div
-      class="header-banner
-             relative
-             flex
-             min-h-[190px]
-             w-full
-             min-w-0
-             h-full
-             items-center
-             justify-center
-             overflow-hidden
-             px-2
-             py-8
-             text-center
-             sm:min-h-[210px]
-             sm:px-4
-             sm:py-9
-             md:min-h-[220px]
-             md:px-5
-             md:py-10"
-    >
+<div
+  class="header-banner
+         relative
+         flex
+         w-full
+         min-w-0
+         items-center
+         justify-center
+         overflow-hidden
+         px-2
+         text-center
+         sm:px-4
+         md:px-5"
+>
 
-      <!-- PRAWY GÓRNY ORNAMENT -->
+      <!-- PRAWA GÓRNA ORNAMENTY -->
 
       <div
         class="pointer-events-none absolute -right-24 -top-24
@@ -51,7 +44,7 @@
         aria-hidden="true"
       ></div>
 
-      <!-- LEWY DOLNY ORNAMENT -->
+      <!-- LEWA DOLNA ORNAMENTY -->
 
       <div
         class="pointer-events-none absolute -bottom-28 -left-28
@@ -111,7 +104,6 @@
                  uppercase
                  tracking-[0.06em]
                  text-stone-500"
-          style="font-size: clamp(10px, calc(10px + (100vw - 900px) * 0.006), 11.2px);"
         >
           {{ bannerParts[0] }}
         </p>
@@ -133,7 +125,6 @@
                  tracking-[-0.055em]
                  text-[var(--brand-burgundy)]
                  sm:mt-4"
-          style="font-size: clamp(30px, calc(30px + (100vw - 900px) * 0.035), 37px);"
           aria-label="Zbigniew Władysławski"
         >
           {{ bannerParts[1] }}
@@ -155,7 +146,6 @@
                  tracking-[0.12em]
                  text-stone-500
                  sm:mt-4"
-          style="font-size: clamp(10px, calc(10px + (100vw - 900px) * 0.006), 11.2px);"
         >
           {{ bannerParts[2] }}
         </p>
