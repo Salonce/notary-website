@@ -20,6 +20,10 @@
   --button-surface: #f7f3eb;
 }
 
+/* =========================================
+   PRZYCISKI
+   ========================================= */
+
 .font-main-body.button-accent {
   border-color: rgba(var(--brand-gold-rgb), 0.55);
   background-color: var(--button-surface);
@@ -49,7 +53,8 @@ html {
 #czynnosci-notarialne,
 #oplaty,
 #strefa-klienta,
-#kontakt {
+#kontakt,
+#hero {
   scroll-margin-top: 110px;
 }
 
@@ -59,7 +64,8 @@ html {
   #czynnosci-notarialne,
   #oplaty,
   #strefa-klienta,
-  #kontakt {
+  #kontakt,
+  #hero {
     scroll-margin-top: 100px;
   }
 }
@@ -75,8 +81,6 @@ html {
 .main-background {
   background-image: linear-gradient(180deg, #f6f1e9 0%, #f2ece1 100%);
 }
-
-
 
 /* =========================================
    NUMERY TELEFONÓW I DANE
@@ -150,21 +154,14 @@ html {
   --section-gap: 128px;
 }
 
-/* Tablety i mniejsze ekrany */
-@media (min-width: 768px) {
+/* Tablety i laptopy */
+@media (min-width: 768px) and (max-width: 1919px) {
   :root {
-    --section-gap: 176px;
+    --section-gap: 165px;
   }
 }
 
-/* Standardowy desktop */
-@media (min-width: 1200px) and (min-height: 700px) {
-  :root {
-    --section-gap: 200px;
-  }
-}
-
-/* Duże ekrany desktopowe */
+/* Duże ekrany desktopowe — bez zmian */
 @media (min-width: 1200px) and (min-height: 900px) {
   :root {
     --section-gap: 224px;
@@ -199,7 +196,6 @@ html {
   width: 100%;
   min-width: 0;
 }
-
 
 /* =========================================
    POJEDYNCZA KOLUMNA TREŚCI
@@ -236,9 +232,11 @@ html {
   }
 }
 
+/* =========================================
+   ROZMIARY TYTUŁÓW
+   ========================================= */
 
 :root {
-  /* Tytuły w sekcjach kolumnowych */
-  --heading-size-columns: 40px
+  --heading-size-columns: 40px;
   --heading-size-no-columns: 34px;
 }
