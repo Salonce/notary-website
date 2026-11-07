@@ -467,7 +467,6 @@
                text-[#405e46]
                md:text-[15px]"
       >
-        <!-- ZIELONY ZNAK POTWIERDZENIA -->
         <span
           aria-hidden="true"
           class="mt-1
@@ -524,7 +523,8 @@
         [disabled]="isSending"
         [attr.aria-busy]="isSending ? 'true' : null"
         class="group inline-flex
-               w-full
+               w-fit max-w-full
+               self-start
                items-center
                justify-center
                gap-4
@@ -544,8 +544,7 @@
                focus-visible:outline-offset-4
                focus-visible:outline-[var(--brand-gold-dark)]
                disabled:cursor-not-allowed
-               disabled:opacity-50
-               sm:w-auto"
+               disabled:opacity-50"
       >
         <span>
           {{ isSending ? 'Wysyłanie...' : 'Wyślij zapytanie' }}
