@@ -150,15 +150,22 @@ html {
   --section-gap: 128px;
 }
 
-/* Tablety i mniejsze laptopy */
+/* Tablety i mniejsze ekrany */
 @media (min-width: 768px) {
   :root {
     --section-gap: 176px;
   }
 }
 
-/* Duże ekrany */
-@media (min-width: 1200px) {
+/* Standardowy desktop */
+@media (min-width: 1200px) and (min-height: 700px) {
+  :root {
+    --section-gap: 200px;
+  }
+}
+
+/* Duże ekrany desktopowe */
+@media (min-width: 1200px) and (min-height: 900px) {
   :root {
     --section-gap: 224px;
   }

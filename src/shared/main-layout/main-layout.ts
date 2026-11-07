@@ -14,8 +14,7 @@ import { BottomBar } from '../../features/bottom-bar/bottom-bar';
 import { TopNavbar } from '../top-navbar/top-navbar';
 import { CopyrightMobile } from '../../features/copyright-mobile/copyright-mobile';
 import { SectionScrollService } from '../section-scroll-service/section-scroll-service';
-import { HeroBanner } from '../../app/hero-section/hero-banner/hero-banner';
-import { HeroSection } from '../../app/hero-section/hero-section';
+import { HeroSection } from '../../features/hero-section/hero-section';
 
 @Component({
   imports: [
