@@ -27,10 +27,11 @@ app-hero-image {
 
 /* =========================================
    IMIĘ I NAZWISKO
+   (max lowered by 5px: 46px -> 41px)
    ========================================= */
 
 .header-name {
-  font-size: clamp(7px, calc(3.3vw - 4px), 46px);
+  font-size: clamp(7px, calc(3.3vw - 4px), 41px);
 }
 
 /* =========================================
@@ -44,11 +45,12 @@ app-hero-image {
 
 /* =========================================
    LARGE DESKTOP – ABOVE 1100 PX
+   (max lowered by 5px: 54px -> 49px)
    ========================================= */
 
 @media (min-width: 1101px) and (min-height: 751px) {
   .header-name {
-    font-size: clamp(15px, calc(3.0vw + 4px), 54px);
+    font-size: clamp(15px, calc(3.0vw + 4px), 49px);
   }
 }
 

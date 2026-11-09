@@ -13,23 +13,6 @@ export class TopNavbar {
 
   isMobileMenuOpen = false;
 
-  /**
-   * Otwiera lub zamyka menu mobilne.
-   */
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  /**
-   * Zamyka menu mobilne.
-   */
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
-  }
-
-  /**
-   * Obsługuje nawigację do wskazanej sekcji strony.
-   */
   scrollToSection(
     event: MouseEvent,
     id: string,
@@ -38,9 +21,10 @@ export class TopNavbar {
     event.preventDefault();
 
     if (closeMobileMenu) {
-      this.closeMobileMenu();
+      // Close the menu before calculating the target's scroll position.
+      this.isMobileMenuOpen = false;
 
-      // Poczekaj na aktualizację widoku i zamknięcie menu.
+      // Wait for the layout to update before scrolling.
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           this.navigateToSection(id);
@@ -50,16 +34,14 @@ export class TopNavbar {
       return;
     }
 
+    // Desktop navigation uses the same scrolling service.
     this.navigateToSection(id);
   }
 
-  /**
-   * Wykonuje przewijanie i aktualizuje adres URL.
-   */
   private navigateToSection(id: string): void {
     this.sectionScroll.scrollToSection(id);
 
+    // Update the URL without triggering native anchor navigation.
     history.replaceState(null, '', `#${id}`);
   }
 }
-
