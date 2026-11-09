@@ -48,7 +48,7 @@ app-hero-image {
 
 @media (min-width: 1101px) and (min-height: 751px) {
   .header-name {
-    font-size: clamp(15px, calc(3.0vw + 4px), 49px);
+    font-size: clamp(15px, calc(3.0vw + 4px), 44px);
   }
 }
 
@@ -69,12 +69,12 @@ app-hero-image {
 
 @media (min-width: 650px) and (max-width: 900px) {
   .header-subtitle {
-    font-size: 18px;
+    font-size: 17px;
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: 39px;
+    font-size: 37px;
   }
 
   .header-role {
