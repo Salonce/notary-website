@@ -1,0 +1,38 @@
+/* =========================================
+   HERO SECTION – HOST
+   ========================================= */
+
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   ODSTĘP ZDJĘCIA OD PRAWEJ KRAWĘDZI
+   ≤ 1100 PX:   0.5 cm (mobile, tablet, laptopy)
+   1100–1700 PX: płynnie 0.5 cm → 4 cm
+   ≥ 1700 PX:   4 cm
+   (nachylenie: 3.5cm / 600px ≈ 0.2205 px na px)
+   ========================================= */
+
+@media (min-width: 901px) {
+  .hero-image-wrapper {
+    padding-right: clamp(
+      0.5cm,
+      calc(0.5cm + (100vw - 1100px) * 0.2205),
+      4cm
+    );
+  }
+}
+
+/* =========================================
+   PONIŻEJ 901 PX
+   ZDJĘCIE WYŚRODKOWANE, BEZ PRAWEGO ODSTĘPU
+   ========================================= */
+
+@media (max-width: 900.98px) {
+  .hero-image-wrapper {
+    padding-right: 0;
+  }
+}
