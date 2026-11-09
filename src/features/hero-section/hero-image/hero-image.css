@@ -115,7 +115,7 @@
    IMAGE SIZE – 900–1150 PX
    ========================================= */
 
-@media (min-width: 900px) and (max-width: 1150px) {
+@media (min-width: 901px) and (max-width: 1150px) {
   :host .hero-image img {
     max-width: clamp(
       380px,

@@ -27,7 +27,6 @@ app-hero-image {
 
 /* =========================================
    IMIĘ I NAZWISKO
-   (max lowered by 5px: 46px -> 41px)
    ========================================= */
 
 .header-name {
@@ -45,7 +44,6 @@ app-hero-image {
 
 /* =========================================
    LARGE DESKTOP – ABOVE 1100 PX
-   (max lowered by 5px: 54px -> 49px)
    ========================================= */
 
 @media (min-width: 1101px) and (min-height: 751px) {
@@ -65,17 +63,18 @@ app-hero-image {
 }
 
 /* =========================================
-   TABLET – 721–900 PX
+   TABLET – 650–900 PX
+   CONSTANT SIZES (SAME AS AT 900 PX)
    ========================================= */
 
-@media (min-width: 721px) and (max-width: 900px) {
+@media (min-width: 650px) and (max-width: 900px) {
   .header-subtitle {
     font-size: 18px;
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: 43px;
+    font-size: 39px;
   }
 
   .header-role {
@@ -85,21 +84,46 @@ app-hero-image {
 }
 
 /* =========================================
-   PHONES – 320–720 PX
+   LARGE PHONES – 430–649 PX
+   JUMP DOWN AT 650 PX, THEN CONSTANT
+   (values = former sizes at 520 PX)
    ========================================= */
 
-@media (min-width: 320px) and (max-width: 720px) {
+@media (min-width: 430px) and (max-width: 649.98px) {
   .header-subtitle {
-    font-size: clamp(12px, calc(2.3vw + 3px), 17px);
+    font-size: 15.01px;
     letter-spacing: 0.10em;
   }
 
   .header-name {
-    font-size: clamp(18px, calc(6.8vw - 3px), 43px);
+    font-size: 31.03px;
   }
 
   .header-role {
-    font-size: clamp(12px, calc(2vw + 2px), 16px);
+    font-size: 14.4px;
+    letter-spacing: 0.18em;
+  }
+}
+
+/* =========================================
+   PHONES – 320–429 PX
+   SMOOTHLY SCALES DOWN FROM THE 430 PX SIZES
+   430 PX: subtitle 15.01 / name 31.03 / role 14.4
+   320 PX: subtitle 12    / name 18.76 / role 12
+   ========================================= */
+
+@media (min-width: 320px) and (max-width: 429.98px) {
+  .header-subtitle {
+    font-size: clamp(12px, calc(2.7364vw + 3.2436px), 15.01px);
+    letter-spacing: 0.10em;
+  }
+
+  .header-name {
+    font-size: clamp(18.76px, calc(11.1514vw - 16.925px), 31.03px);
+  }
+
+  .header-role {
+    font-size: clamp(12px, calc(2.1818vw + 5.018px), 14.4px);
     letter-spacing: 0.18em;
   }
 }
@@ -116,22 +140,28 @@ app-hero-image {
 }
 
 /* =========================================
-   RESPONSIVE TOP AND BOTTOM PADDING
-   TOP:    EXTRA 0PX AT 320PX → 45PX AT 650PX
-   BOTTOM: EXTRA 5PX AT 320PX → 50PX AT 650PX
+   PADDING – LARGE PHONES 430–649 PX
+   CONSTANT (former padding at 520 PX)
    ========================================= */
 
-@media (min-width: 320px) and (max-width: 649px) {
+@media (min-width: 430px) and (max-width: 649.98px) {
   .header-banner {
-    padding-top: calc(
-      clamp(24px, calc(2vw + 16px), 40px)
-      + clamp(0px, calc(13.63636vw - 43.63636px), 45px)
-    );
+    padding-top: 53.67px;
+    padding-bottom: 58.67px;
+  }
+}
 
-    padding-bottom: calc(
-      clamp(24px, calc(2vw + 16px), 40px)
-      + clamp(5px, calc(13.63636vw - 38.63636px), 50px)
-    );
+/* =========================================
+   PADDING – PHONES 320–429 PX
+   SMOOTHLY SCALES DOWN FROM THE 430 PX PADDING
+   430 PX: 53.67 / 58.67
+   320 PX: 24    / 29
+   ========================================= */
+
+@media (min-width: 320px) and (max-width: 429.98px) {
+  .header-banner {
+    padding-top: clamp(24px, calc(26.9752vw - 62.3206px), 53.67px);
+    padding-bottom: clamp(29px, calc(26.9752vw - 57.3206px), 58.67px);
   }
 }
 
