@@ -1,10 +1,12 @@
-﻿
-/* =========================================
+﻿/* =========================================
    NAVBAR KANCELARII NOTARIALNEJ
    ELEGANCKI KARMAZYN + ZŁOTO
    ========================================= */
 
 nav.navbar {
+  /* Wspólny czas i krzywa animacji koloru: napis MENU + ikona hamburgera */
+  --menu-toggle-color-transition: 250ms ease;
+
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -142,6 +144,7 @@ nav.navbar .menu-toggle[aria-expanded="true"] > span:first-child,
 nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon {
   color: var(--brand-gold) !important;
 }
+
 /* Ikona hamburgera */
 nav.navbar > div.relative.z-10 button svg {
   transform: translateY(0) scale(1);
@@ -259,6 +262,40 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
 }
 
 /* =========================================
+   MOBILE — NAPIS MENU + IKONA HAMBURGERA
+   TA SAMA ANIMACJA KOLORU (ten sam czas i krzywa)
+   Blok musi zostać po regułach hover / touch,
+   bo ma wyższą specyficzność niż one.
+   ========================================= */
+
+/* Napis MENU i kontener ikony: identyczna animacja koloru */
+nav.navbar div.relative.z-10 button.menu-toggle > span:first-child,
+nav.navbar div.relative.z-10 button.menu-toggle .menu-toggle-icon {
+  transition:
+    color var(--menu-toggle-color-transition),
+    transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1) !important;
+}
+
+/* SVG tylko dziedziczy kolor po kontenerze i nie ma własnej animacji koloru.
+   Dzięki temu nie ma opóźnienia względem napisu. */
+nav.navbar div.relative.z-10 button.menu-toggle .menu-toggle-icon svg {
+  color: inherit !important;
+  transition: transform 250ms ease !important;
+}
+
+/* Menu otwarte: ikona podświetlona na stałe (jak napis MENU) */
+nav.navbar div.relative.z-10 button.menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+  color: var(--brand-gold) !important;
+}
+
+/* Mysz: ikona złota po najechaniu (jak dotychczas) */
+@media (hover: hover) and (pointer: fine) {
+  nav.navbar div.relative.z-10 button.menu-toggle:hover .menu-toggle-icon {
+    color: var(--brand-gold) !important;
+  }
+}
+
+/* =========================================
    MOBILE — ROZWIJANE MENU
    ========================================= */
 
@@ -310,6 +347,7 @@ nav.navbar #mobile-navigation-menu a {
 nav.navbar #mobile-navigation-menu a > span.flex-1 {
   color: #F7F3EB !important;
 }
+
 /* Ikony mobilne */
 nav.navbar #mobile-navigation-menu a svg {
   transition:
@@ -372,4 +410,3 @@ nav.navbar button:focus-visible {
     transform: none !important;
   }
 }
-
