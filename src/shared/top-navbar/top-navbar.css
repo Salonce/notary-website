@@ -205,6 +205,11 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
 
 /* =========================================
    TABLETY I TELEFONY — ANIMACJA DOTYKOWA
+   Zasada: hover (lepki po tapnięciu) NIE zmienia kolorów.
+   Złoty kolor pojawia się tylko na czas :active (trzymanie palca),
+   po puszczeniu wszystko wraca do pierwotnych kolorów:
+   - etykiety: kremowe (#F7F3EB)
+   - ikony i strzałki: złote
    ========================================= */
 
 @media (hover: none), (pointer: coarse) {
@@ -218,6 +223,8 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
     transition: color 120ms ease !important;
   }
 
+  /* --- HOVER (lepki): pierwotne kolory, bez zmian --- */
+
   nav.navbar > div.relative.z-10 button:hover,
   nav.navbar > div.relative.z-10.mx-auto > a:hover,
   nav.navbar #mobile-navigation-menu a:hover {
@@ -227,14 +234,35 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
     transform: none !important;
   }
 
-  nav.navbar > div.relative.z-10.mx-auto > a:hover span,
-  nav.navbar > div.relative.z-10.mx-auto > a:hover svg,
-  nav.navbar #mobile-navigation-menu a:hover span,
-  nav.navbar #mobile-navigation-menu a:hover svg,
+  /* Desktopowy navbar na tablecie: napis kremowy, ikona złota */
+  nav.navbar > div.relative.z-10.mx-auto > a:hover span {
+    color: #F7F3EB !important;
+    transform: none !important;
+  }
+
+  nav.navbar > div.relative.z-10.mx-auto > a:hover svg {
+    color: var(--brand-gold) !important;
+    transform: none !important;
+  }
+
+  /* Rozwijane menu mobilne: etykieta kremowa, ikony i strzałka złote */
+  nav.navbar #mobile-navigation-menu a:hover span.flex-1 {
+    color: #F7F3EB !important;
+  }
+
+  nav.navbar #mobile-navigation-menu a:hover > span:first-child,
+  nav.navbar #mobile-navigation-menu a:hover svg {
+    color: var(--brand-gold) !important;
+    transform: none !important;
+  }
+
+  /* Przycisk hamburgera */
   nav.navbar > div.relative.z-10 button:hover svg {
     color: #F7F3EB !important;
     transform: none !important;
   }
+
+  /* --- ACTIVE (chwilowe podświetlenie na czas dotyku) --- */
 
   nav.navbar > div.relative.z-10 button:active,
   nav.navbar > div.relative.z-10.mx-auto > a:active,
@@ -248,7 +276,7 @@ nav.navbar .menu-toggle[aria-expanded="true"] .menu-toggle-icon path:last-child 
   nav.navbar > div.relative.z-10 button:active svg,
   nav.navbar > div.relative.z-10.mx-auto > a:active span,
   nav.navbar > div.relative.z-10.mx-auto > a:active svg,
-  nav.navbar #mobile-navigation-menu a:active span,
+  nav.navbar #mobile-navigation-menu a:active span.flex-1,
   nav.navbar #mobile-navigation-menu a:active svg {
     color: var(--brand-gold) !important;
     transform: none !important;
@@ -362,11 +390,19 @@ nav.navbar #mobile-navigation-menu a:hover > svg:last-child {
 
 @media (hover: none), (pointer: coarse) {
   nav.navbar #mobile-navigation-menu a svg { transition: color 120ms ease !important; }
-  nav.navbar #mobile-navigation-menu a:hover,
-  nav.navbar #mobile-navigation-menu a:hover span,
-  nav.navbar #mobile-navigation-menu a:hover svg { color: #F7F3EB !important; }
-  nav.navbar #mobile-navigation-menu a:active,
-  nav.navbar #mobile-navigation-menu a:active span,
+
+  nav.navbar #mobile-navigation-menu a > span:first-child {
+    transition: color 120ms ease !important;
+  }
+
+  /* Hover (lepki): etykieta kremowa, ikona i strzałka złote */
+  nav.navbar #mobile-navigation-menu a:hover > span.flex-1 { color: #F7F3EB !important; }
+  nav.navbar #mobile-navigation-menu a:hover > span:first-child,
+  nav.navbar #mobile-navigation-menu a:hover svg { color: var(--brand-gold) !important; }
+
+  /* Active: chwilowe złote podświetlenie etykiety */
+  nav.navbar #mobile-navigation-menu a:active > span.flex-1 { color: var(--brand-gold) !important; }
+  nav.navbar #mobile-navigation-menu a:active > span:first-child,
   nav.navbar #mobile-navigation-menu a:active svg { color: var(--brand-gold) !important; }
 }
 
