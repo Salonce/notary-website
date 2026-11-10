@@ -1,3 +1,4 @@
+
 /* =========================================
    CUSTOM ELEMENT HOSTS
    ========================================= */
@@ -27,9 +28,13 @@ app-hero-image {
 
 /* =========================================
    IMIĘ I NAZWISKO
+   CORMORANT GARAMOND – SEMIBOLD
    ========================================= */
 
 .header-name {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.015em;
   font-size: clamp(7px, calc(3.3vw - 4px), 41px);
 }
 
@@ -108,8 +113,6 @@ app-hero-image {
 /* =========================================
    PHONES – 320–429 PX
    SMOOTHLY SCALES DOWN FROM THE 430 PX SIZES
-   430 PX: subtitle 15.01 / name 31.03 / role 14.4
-   320 PX: subtitle 12    / name 18.76 / role 12
    ========================================= */
 
 @media (min-width: 320px) and (max-width: 429.98px) {
@@ -154,8 +157,6 @@ app-hero-image {
 /* =========================================
    PADDING – PHONES 320–429 PX
    SMOOTHLY SCALES DOWN FROM THE 430 PX PADDING
-   430 PX: 53.67 / 58.67
-   320 PX: 24    / 29
    ========================================= */
 
 @media (min-width: 320px) and (max-width: 429.98px) {
@@ -178,15 +179,7 @@ app-hero-image {
 }
 
 /* =========================================
-   ANIMACJA: ODSŁANIANIE OD ŚRODKA (SPOKOJNA)
-   1. ornamenty w tle bardzo powoli się rozjaśniają,
-   2. złota linia na dole banera rysuje się od środka,
-   3. tekst odsłania się od środka na boki
-      (imię i nazwisko → podtytuł → rola).
-   Animowane są tylko opacity / clip-path / transform,
-   więc układ strony się nie przesuwa.
-   Ujemne wartości w clip-path zapobiegają ucięciu
-   liter (ogonki, ciasny tracking) w stanie końcowym.
+   ANIMACJA: POWOLNE ODSŁANIANIE OD ŚRODKA
    ========================================= */
 
 @keyframes header-fade-in {
@@ -223,16 +216,19 @@ app-hero-image {
   }
 }
 
-/* Ornamenty: bardzo powolne rozjaśnienie */
+/* Ornamenty – powolne pojawianie się */
+
 .header-ornament {
-  animation: header-fade-in 3200ms ease-out both;
+  animation: header-fade-in 4000ms ease-out both;
 }
 
-/* Złota linia przy dolnej krawędzi banera */
+/* Złota linia – rozwijanie od środka */
+
 .header-line {
   left: 8%;
   right: 8%;
   height: 1px;
+
   background: linear-gradient(
     90deg,
     transparent,
@@ -241,22 +237,45 @@ app-hero-image {
     rgba(var(--brand-gold-rgb), 0.85) 80%,
     transparent
   );
+
   transform-origin: center;
-  animation: header-line-draw 3400ms cubic-bezier(0.25, 0.6, 0.25, 1) 700ms both;
+
+  animation: header-line-draw
+    5000ms
+    cubic-bezier(0.25, 0.6, 0.25, 1)
+    700ms
+    both;
 }
 
-/* Tekst: odsłanianie od środka */
+/* Tekst – odsłanianie od środka na boki */
+
 .header-reveal {
-  animation: header-reveal 2800ms cubic-bezier(0.25, 0.6, 0.25, 1) both;
+  animation: header-reveal
+    4000ms
+    cubic-bezier(0.25, 0.6, 0.25, 1)
+    both;
 }
 
-.header-reveal-1 { animation-delay: 500ms; }
-.header-reveal-2 { animation-delay: 1600ms; }
-.header-reveal-3 { animation-delay: 2200ms; }
+/* Imię i nazwisko */
+
+.header-reveal-1 {
+  animation-delay: 700ms;
+}
+
+/* Kancelaria Notarialna */
+
+.header-reveal-2 {
+  animation-delay: 2200ms;
+}
+
+/* Notariusz */
+
+.header-reveal-3 {
+  animation-delay: 3200ms;
+}
 
 /* =========================================
    REDUCED MOTION
-   Bez animacji: wszystko widoczne od razu
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
