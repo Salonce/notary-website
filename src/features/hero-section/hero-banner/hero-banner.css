@@ -178,7 +178,85 @@ app-hero-image {
 }
 
 /* =========================================
+   ANIMACJA: ODSŁANIANIE OD ŚRODKA (SPOKOJNA)
+   1. ornamenty w tle bardzo powoli się rozjaśniają,
+   2. złota linia na dole banera rysuje się od środka,
+   3. tekst odsłania się od środka na boki
+      (imię i nazwisko → podtytuł → rola).
+   Animowane są tylko opacity / clip-path / transform,
+   więc układ strony się nie przesuwa.
+   Ujemne wartości w clip-path zapobiegają ucięciu
+   liter (ogonki, ciasny tracking) w stanie końcowym.
+   ========================================= */
+
+@keyframes header-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes header-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(-20% 50% -20% 50%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(-20% -5% -20% -5%);
+  }
+}
+
+@keyframes header-line-draw {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Ornamenty: bardzo powolne rozjaśnienie */
+.header-ornament {
+  animation: header-fade-in 3200ms ease-out both;
+}
+
+/* Złota linia przy dolnej krawędzi banera */
+.header-line {
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--brand-gold-rgb), 0.85) 20%,
+    var(--brand-gold) 50%,
+    rgba(var(--brand-gold-rgb), 0.85) 80%,
+    transparent
+  );
+  transform-origin: center;
+  animation: header-line-draw 3400ms cubic-bezier(0.25, 0.6, 0.25, 1) 700ms both;
+}
+
+/* Tekst: odsłanianie od środka */
+.header-reveal {
+  animation: header-reveal 2800ms cubic-bezier(0.25, 0.6, 0.25, 1) both;
+}
+
+.header-reveal-1 { animation-delay: 500ms; }
+.header-reveal-2 { animation-delay: 1600ms; }
+.header-reveal-3 { animation-delay: 2200ms; }
+
+/* =========================================
    REDUCED MOTION
+   Bez animacji: wszystko widoczne od razu
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -187,5 +265,14 @@ app-hero-image {
   .header-name,
   .header-role {
     scroll-behavior: auto;
+  }
+
+  .header-ornament,
+  .header-line,
+  .header-reveal {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
   }
 }

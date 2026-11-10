@@ -1,4 +1,3 @@
-
 <!-- =========================================
      HERO SECTION – RESPONSIVE HEADER
      ========================================= -->
@@ -24,21 +23,24 @@
       <!-- PRAWA GÓRNA ORNAMENTY -->
 
       <div
-        class="pointer-events-none absolute -right-24 -top-24
+        class="header-ornament
+               pointer-events-none absolute -right-24 -top-24
                h-[320px] w-[320px] rounded-full
                border border-[var(--brand-burgundy)]/[0.10]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none absolute -right-10 -top-10
+        class="header-ornament
+               pointer-events-none absolute -right-10 -top-10
                h-[250px] w-[250px] rounded-full
                border border-[var(--brand-gold)]/[0.18]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none absolute -right-1 top-1
+        class="header-ornament
+               pointer-events-none absolute -right-1 top-1
                h-[190px] w-[190px] rounded-full
                border border-[var(--brand-gold)]/[0.12]"
         aria-hidden="true"
@@ -47,35 +49,27 @@
       <!-- LEWA DOLNA ORNAMENTY -->
 
       <div
-        class="pointer-events-none absolute -bottom-28 -left-28
+        class="header-ornament
+               pointer-events-none absolute -bottom-28 -left-28
                h-[300px] w-[300px] rounded-full
                border border-[var(--brand-gold)]/[0.12]"
         aria-hidden="true"
       ></div>
 
       <div
-        class="pointer-events-none absolute -bottom-16 -left-16
+        class="header-ornament
+               pointer-events-none absolute -bottom-16 -left-16
                h-[220px] w-[220px] rounded-full
                border border-[var(--brand-burgundy)]/[0.07]"
         aria-hidden="true"
       ></div>
 
-      <!-- DELIKATNA SIATKA -->
+      <!-- ZŁOTA LINIA NA DOLE BANERA (rysuje się od środka) -->
 
       <div
-        class="pointer-events-none absolute inset-0 opacity-30"
+        class="header-line pointer-events-none absolute bottom-0"
         aria-hidden="true"
-      >
-        <div
-          class="absolute inset-0
-                 bg-[linear-gradient(135deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.10)_49%,transparent_50%,transparent_100%)]"
-        ></div>
-
-        <div
-          class="absolute inset-0
-                 bg-[linear-gradient(45deg,transparent_0%,transparent_48%,rgba(var(--brand-gold-rgb),0.07)_49%,transparent_50%,transparent_100%)]"
-        ></div>
-      </div>
+      ></div>
 
       <!-- TREŚĆ -->
 
@@ -93,7 +87,7 @@
         <!-- KANCELARIA NOTARIALNA -->
 
         <p
-          class="header-subtitle
+          class="header-subtitle header-reveal header-reveal-2
                  m-0
                  block
                  w-full
@@ -111,7 +105,7 @@
         <!-- IMIĘ I NAZWISKO -->
 
         <h1
-          class="header-name
+          class="header-name header-reveal header-reveal-1
                  m-0
                  mt-3
                  block
@@ -133,7 +127,7 @@
         <!-- NOTARIUSZ -->
 
         <p
-          class="header-role
+          class="header-role header-reveal header-reveal-3
                  m-0
                  mt-3
                  block
