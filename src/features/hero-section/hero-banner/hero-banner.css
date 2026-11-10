@@ -22,28 +22,35 @@ app-hero-image {
    ========================================= */
 
 .header-subtitle {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
   font-size: clamp(10px, calc(1.2vw + 2px), 17px);
   letter-spacing: clamp(0.06em, 0.1vw, 0.10em);
 }
 
 /* =========================================
    IMIĘ I NAZWISKO
-   CORMORANT GARAMOND – SEMIBOLD
+   PARISIENNE
    ========================================= */
 
 .header-name {
-  font-family: "Parisienne", cursive;
+  font-family: "Parisienne";
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.015em;
-  font-size: clamp(7px, calc(3.3vw - 4px), 41px);
+  font-size: clamp(7px, calc(3.3vw - 4px), 41px)
 }
 
 /* =========================================
    NOTARIUSZ
+   CINZEL
    ========================================= */
 
 .header-role {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
   font-size: clamp(11px, calc(1.1vw + 2px), 16px);
   letter-spacing: clamp(0.12em, 0.18vw, 0.18em);
 }
