@@ -32,8 +32,9 @@ app-hero-image {
    ========================================= */
 
 .header-name {
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-weight: 700;
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: 0.015em;
   font-size: clamp(7px, calc(3.3vw - 4px), 41px);
 }

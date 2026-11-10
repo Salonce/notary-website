@@ -1,4 +1,3 @@
-
 .latin-quote {
   position: relative;
   isolation: isolate;
@@ -33,6 +32,8 @@
 
 .latin-quote span {
   display: inline-block;
+  font-family: "Cinzel Decorative", Georgia, serif;
+  font-weight: 400;
   color: #8f702f;
   background-image: linear-gradient(
     180deg,
