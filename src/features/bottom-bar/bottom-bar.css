@@ -60,6 +60,15 @@ footer.footer-kancelaria .footer-secondary {
   color: rgba(247, 243, 235, 0.72) !important;
 }
 
+/* Zagnieżdżone elementy w informacjach dodatkowych (np. niełamliwa
+   fraza "- po uzgodnieniu") dziedziczą kolor po .footer-secondary,
+   zamiast dostawać pełną biel z ogólnej reguły dla span.
+   Specyficzność wyższa niż "footer.footer-kancelaria span". */
+footer.footer-kancelaria .footer-secondary span,
+footer.footer-kancelaria .footer-secondary p {
+  color: inherit !important;
+}
+
 /* Tekst pozostaje ostry */
 footer.footer-kancelaria,
 footer.footer-kancelaria * {
