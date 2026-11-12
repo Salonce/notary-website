@@ -1,44 +1,96 @@
 <!-- =========================================
-     HERO SECTION – ELASTYCZNY UKŁAD
+     HERO SECTION – NAPIS + ZDJĘCIE
+     Mobile: napis nad zdjęciem
+     Desktop: napis po lewej na zdjęciu,
+              biały gradient od lewej strony zdjęcia
      ========================================= -->
 
-<section id="home" class="hero-section w-full">
-  <div
-    class="grid
-           w-full
-           grid-cols-1
-           px-4
-           min-[901px]:grid-cols-[minmax(0,1fr)_auto]
-           min-[901px]:items-center
-           min-[901px]:gap-8"
-  >
+<section class="hero">
 
-    <!-- PRAWA STRONA – OBRAZ HERO -->
-    <div
-      class="hero-image-wrapper
-             order-1
-             flex
-             w-full
-             min-w-0
-             items-center
-             justify-center
-             pt-6
-             min-[901px]:order-2
-             min-[901px]:w-auto
-             min-[901px]:justify-end
-             min-[901px]:pt-0"
-    >
-      <app-hero-image
-        class="block w-full min-w-0 max-w-[580px] min-[901px]:w-auto min-[901px]:max-w-none"
-      ></app-hero-image>
-    </div>
+  <!-- ===== NAPIS ===== -->
 
-    <!-- LEWA STRONA – BANER KANCELARII -->
+  <div class="hero-text">
+
+    <!-- PRAWA GÓRNA ORNAMENTY -->
+
     <div
-      class="order-2 w-full min-w-0 min-[901px]:order-1"
-    >
-      <app-hero-banner></app-hero-banner>
+      class="hero-ornament hero-ornament-right
+             pointer-events-none absolute -right-24 -top-24
+             h-[320px] w-[320px] rounded-full
+             border border-[var(--brand-burgundy)]/[0.10]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="hero-ornament hero-ornament-right
+             pointer-events-none absolute -right-10 -top-10
+             h-[250px] w-[250px] rounded-full
+             border border-[var(--brand-gold)]/[0.18]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="hero-ornament hero-ornament-right
+             pointer-events-none absolute -right-1 top-1
+             h-[190px] w-[190px] rounded-full
+             border border-[var(--brand-gold)]/[0.12]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- LEWA DOLNA ORNAMENTY -->
+
+    <div
+      class="hero-ornament
+             pointer-events-none absolute -bottom-28 -left-28
+             h-[300px] w-[300px] rounded-full
+             border border-[var(--brand-gold)]/[0.12]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="hero-ornament
+             pointer-events-none absolute -bottom-16 -left-16
+             h-[220px] w-[220px] rounded-full
+             border border-[var(--brand-burgundy)]/[0.07]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- ZŁOTA LINIA (rysuje się od środka) -->
+
+    <div class="hero-line pointer-events-none absolute bottom-0" aria-hidden="true"></div>
+
+    <!-- TEKST -->
+
+    <div class="hero-copy">
+
+      <p class="hero-subtitle hero-reveal hero-reveal-2">
+        {{ bannerParts[0] }}
+      </p>
+
+      <h1
+        class="hero-name hero-reveal hero-reveal-1"
+        aria-label="Zbigniew Władysławski"
+      >
+        {{ bannerParts[1] }}
+      </h1>
+
+      <p class="hero-role hero-reveal hero-reveal-3">
+        {{ bannerParts[2] }}
+      </p>
+
     </div>
 
   </div>
+
+  <!-- ===== ZDJĘCIE ===== -->
+
+  <div class="hero-media">
+    <img
+      class="hero-image"
+      src="assets/biurowiec1.jpg"
+      alt="Biurowiec, w którym mieści się kancelaria"
+      fetchpriority="high"
+    />
+  </div>
+
 </section>

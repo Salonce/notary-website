@@ -1,38 +1,289 @@
 /* =========================================
-   HERO SECTION – HOST
+   HOST + ZMIENNE
    ========================================= */
 
 :host {
   display: block;
-  width: 100%;
-  min-width: 0;
+
+  /* kolor tła pod gradientem – ustaw taki jak tło strony */
+  --hero-bg: #ffffff;
+
+  /* wysokość zdjęcia na desktopie */
+  --hero-desktop-height: clamp(380px, 34vw, 560px);
 }
 
 /* =========================================
-   ODSTĘP ZDJĘCIA OD PRAWEJ KRAWĘDZI
-   ≤ 1100 PX:   0.5 cm (mobile, tablet, laptopy)
-   1100–1700 PX: płynnie 0.5 cm → 4 cm
-   ≥ 1700 PX:   4 cm
-   (nachylenie: 3.5cm / 600px ≈ 0.2205 px na px)
+   KONTENER
    ========================================= */
 
-@media (min-width: 901px) {
-  .hero-image-wrapper {
-    padding-right: clamp(
-      0.5cm,
-      calc(0.5cm + (100vw - 1100px) * 0.2205),
-      4cm
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+/* =========================================
+   BLOK Z NAPISEM (MOBILE: NAD ZDJĘCIEM)
+   ========================================= */
+
+.hero-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  text-align: center;
+  padding:
+    clamp(28px, 8vw, 64px)
+    clamp(8px, 3vw, 24px)
+    clamp(34px, 9vw, 70px);
+}
+
+/* Rozmiary napisów skalują się względem szerokości
+   samego bloku z tekstem (container query units),
+   dzięki temu zawsze mieszczą się w jednej linii. */
+
+.hero-copy {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.hero-copy > * {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================================
+   KANCELARIA NOTARIALNA
+   ========================================= */
+
+.hero-subtitle {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #78716c; /* stone-500 */
+  font-size: clamp(10px, 3.9cqw, 19px);
+  letter-spacing: 0.10em;
+}
+
+/* =========================================
+   IMIĘ I NAZWISKO – PARISIENNE
+   ========================================= */
+
+.hero-name {
+  margin-top: 0.75rem !important;
+  font-family: "Parisienne";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: 0.015em;
+  color: var(--brand-burgundy);
+  font-size: clamp(18px, 9.5cqw, 64px);
+}
+
+/* =========================================
+   NOTARIUSZ – CINZEL
+   ========================================= */
+
+.hero-role {
+  margin-top: 0.75rem !important;
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #78716c; /* stone-500 */
+  font-size: clamp(10px, 3.9cqw, 19px);
+  letter-spacing: 0.18em;
+}
+
+/* =========================================
+   ZDJĘCIE (MOBILE: POD NAPISEM)
+   ========================================= */
+
+.hero-media {
+  position: relative;
+  min-width: 0;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+/* =========================================
+   DESKTOP – OD 900 PX
+   Napis po lewej, zdjęcie po prawej,
+   biały gradient od lewej strony zdjęcia
+   ========================================= */
+
+@media (min-width: 900px) {
+  .hero-text,
+  .hero-media {
+    grid-area: 1 / 1;
+  }
+
+  /* napis: lewa kolumna, nad zdjęciem */
+  .hero-text {
+    position: static; /* ornamenty i linia odnoszą się do .hero */
+    z-index: 2;
+    align-self: stretch;
+    justify-self: start;
+    width: 46%;
+    overflow: visible;
+    padding: 48px clamp(24px, 4vw, 72px);
+  }
+
+  /* zdjęcie: prawa strona, ok. 70% szerokości */
+  .hero-media {
+    z-index: 0;
+    justify-self: end;
+    width: 70%;
+  }
+
+  .hero-image {
+    height: var(--hero-desktop-height);
+    aspect-ratio: auto;
+  }
+
+  /* biały gradient: pełna biel po lewej -> przezroczystość */
+  .hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      var(--hero-bg) 0%,
+      var(--hero-bg) 8%,
+      transparent 62%
     );
+  }
+
+  /* prawe górne ornamenty zasłaniałyby zdjęcie */
+  .hero-ornament-right {
+    display: none;
   }
 }
 
 /* =========================================
-   PONIŻEJ 901 PX
-   ZDJĘCIE WYŚRODKOWANE, BEZ PRAWEGO ODSTĘPU
+   ANIMACJE: POWOLNE ODSŁANIANIE OD ŚRODKA
    ========================================= */
 
-@media (max-width: 900.98px) {
-  .hero-image-wrapper {
-    padding-right: 0;
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(-20% 50% -20% 50%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(-20% -5% -20% -5%);
+  }
+}
+
+@keyframes hero-line-draw {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Ornamenty – powolne pojawianie się */
+
+.hero-ornament {
+  z-index: 1;
+  animation: hero-fade-in 4000ms ease-out both;
+}
+
+/* Złota linia – rozwijanie od środka */
+
+.hero-line {
+  z-index: 3;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--brand-gold-rgb), 0.85) 20%,
+    var(--brand-gold) 50%,
+    rgba(var(--brand-gold-rgb), 0.85) 80%,
+    transparent
+  );
+
+  transform-origin: center;
+
+  animation: hero-line-draw
+    5000ms
+    cubic-bezier(0.25, 0.6, 0.25, 1)
+    700ms
+    both;
+}
+
+/* Tekst – odsłanianie od środka na boki */
+
+.hero-reveal {
+  animation: hero-reveal
+    4000ms
+    cubic-bezier(0.25, 0.6, 0.25, 1)
+    both;
+}
+
+.hero-reveal-1 { animation-delay: 700ms; }   /* imię i nazwisko */
+.hero-reveal-2 { animation-delay: 2200ms; }  /* kancelaria notarialna */
+.hero-reveal-3 { animation-delay: 3200ms; }  /* notariusz */
+
+/* Zdjęcie – łagodne pojawienie się */
+
+.hero-image {
+  animation: hero-fade-in 2500ms ease-out 300ms both;
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ornament,
+  .hero-line,
+  .hero-reveal,
+  .hero-image {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
   }
 }

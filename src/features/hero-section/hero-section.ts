@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { HeroBanner } from './hero-banner/hero-banner';
-import { HeroImage } from './hero-image/hero-image';
-
+ 
 @Component({
-  imports: [HeroBanner, HeroImage],
+  imports: [],
   selector: 'app-hero-section',
   styleUrl: './hero-section.css',
   templateUrl: './hero-section.html',
 })
 export class HeroSection {
-
-
+  readonly bannerParts = [
+    'Kancelaria Notarialna',
+    'Zbigniew Władysławski',
+    'Notariusz',
+  ];
+ 
+  readonly imageSrc = 'assets/biurowiec1.jpg';
 }
+ 
