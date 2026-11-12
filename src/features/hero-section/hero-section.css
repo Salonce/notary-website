@@ -1,3 +1,4 @@
+
 /* =========================================
    HOST + ZMIENNE
    ========================================= */
@@ -5,10 +6,10 @@
 :host {
   display: block;
 
-  /* kolor tła pod gradientem – ustaw taki jak tło strony */
-  --hero-bg: #ffffff;
+  /* Kolor zgodny z głównym tłem strony */
+  --hero-bg: #f6f1e9;
 
-  /* wysokość zdjęcia na desktopie */
+  /* Wysokość zdjęcia na desktopie */
   --hero-desktop-height: clamp(380px, 34vw, 560px);
 }
 
@@ -36,15 +37,14 @@
   min-width: 0;
   overflow: hidden;
   text-align: center;
+
   padding:
     clamp(28px, 8vw, 64px)
     clamp(8px, 3vw, 24px)
     clamp(34px, 9vw, 70px);
 }
 
-/* Rozmiary napisów skalują się względem szerokości
-   samego bloku z tekstem (container query units),
-   dzięki temu zawsze mieszczą się w jednej linii. */
+/* Skalowanie napisów względem szerokości bloku */
 
 .hero-copy {
   position: relative;
@@ -75,7 +75,7 @@
   font-weight: 500;
   font-style: italic;
   text-transform: uppercase;
-  color: #78716c; /* stone-500 */
+  color: #78716c;
   font-size: clamp(10px, 3.9cqw, 19px);
   letter-spacing: 0.10em;
 }
@@ -86,7 +86,7 @@
 
 .hero-name {
   margin-top: 0.75rem !important;
-  font-family: "Parisienne";
+  font-family: "Parisienne", cursive;
   font-weight: 400;
   font-style: normal;
   line-height: 1.25;
@@ -105,7 +105,7 @@
   font-weight: 500;
   font-style: italic;
   text-transform: uppercase;
-  color: #78716c; /* stone-500 */
+  color: #78716c;
   font-size: clamp(10px, 3.9cqw, 19px);
   letter-spacing: 0.18em;
 }
@@ -129,28 +129,31 @@
 
 /* =========================================
    DESKTOP – OD 900 PX
-   Napis po lewej, zdjęcie po prawej,
-   biały gradient od lewej strony zdjęcia
+   Napis po lewej, zdjęcie po prawej
    ========================================= */
 
 @media (min-width: 900px) {
+
   .hero-text,
   .hero-media {
     grid-area: 1 / 1;
   }
 
-  /* napis: lewa kolumna, nad zdjęciem */
+  /* Napis po lewej stronie */
+
   .hero-text {
-    position: static; /* ornamenty i linia odnoszą się do .hero */
+    position: static;
     z-index: 2;
     align-self: stretch;
     justify-self: start;
     width: 46%;
     overflow: visible;
+
     padding: 48px clamp(24px, 4vw, 72px);
   }
 
-  /* zdjęcie: prawa strona, ok. 70% szerokości */
+  /* Zdjęcie po prawej */
+
   .hero-media {
     z-index: 0;
     justify-self: end;
@@ -162,28 +165,62 @@
     aspect-ratio: auto;
   }
 
-  /* biały gradient: pełna biel po lewej -> przezroczystość */
+  /* =====================================
+     DELIKATNY GRADIENT
+     KOLOR TŁA STRONY -> ORYGINALNE ZDJĘCIE
+     ===================================== */
+
   .hero-media::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
+
     background: linear-gradient(
       90deg,
+
+      /* Pełne dopasowanie do tła strony */
       var(--hero-bg) 0%,
-      var(--hero-bg) 8%,
-      transparent 62%
+
+      /* Bardzo delikatne przejście */
+      color-mix(
+        in srgb,
+        var(--hero-bg) 96%,
+        transparent
+      ) 12%,
+
+      color-mix(
+        in srgb,
+        var(--hero-bg) 82%,
+        transparent
+      ) 28%,
+
+      color-mix(
+        in srgb,
+        var(--hero-bg) 55%,
+        transparent
+      ) 43%,
+
+      color-mix(
+        in srgb,
+        var(--hero-bg) 25%,
+        transparent
+      ) 60%,
+
+      /* Oryginalne zdjęcie */
+      transparent 80%
     );
   }
 
-  /* prawe górne ornamenty zasłaniałyby zdjęcie */
+  /* Ukrycie prawych ornamentów */
+
   .hero-ornament-right {
     display: none;
   }
 }
 
 /* =========================================
-   ANIMACJE: POWOLNE ODSŁANIANIE OD ŚRODKA
+   ANIMACJE
    ========================================= */
 
 @keyframes hero-fade-in {
@@ -220,14 +257,18 @@
   }
 }
 
-/* Ornamenty – powolne pojawianie się */
+/* =========================================
+   ORNAMENTY
+   ========================================= */
 
 .hero-ornament {
   z-index: 1;
   animation: hero-fade-in 4000ms ease-out both;
 }
 
-/* Złota linia – rozwijanie od środka */
+/* =========================================
+   ZŁOTA LINIA
+   ========================================= */
 
 .hero-line {
   z-index: 3;
@@ -246,27 +287,41 @@
 
   transform-origin: center;
 
-  animation: hero-line-draw
+  animation:
+    hero-line-draw
     5000ms
     cubic-bezier(0.25, 0.6, 0.25, 1)
     700ms
     both;
 }
 
-/* Tekst – odsłanianie od środka na boki */
+/* =========================================
+   TEKST – ODSŁANIANIE OD ŚRODKA
+   ========================================= */
 
 .hero-reveal {
-  animation: hero-reveal
+  animation:
+    hero-reveal
     4000ms
     cubic-bezier(0.25, 0.6, 0.25, 1)
     both;
 }
 
-.hero-reveal-1 { animation-delay: 700ms; }   /* imię i nazwisko */
-.hero-reveal-2 { animation-delay: 2200ms; }  /* kancelaria notarialna */
-.hero-reveal-3 { animation-delay: 3200ms; }  /* notariusz */
+.hero-reveal-1 {
+  animation-delay: 700ms;
+}
 
-/* Zdjęcie – łagodne pojawienie się */
+.hero-reveal-2 {
+  animation-delay: 2200ms;
+}
+
+.hero-reveal-3 {
+  animation-delay: 3200ms;
+}
+
+/* =========================================
+   ZDJĘCIE – ŁAGODNE POJAWIANIE SIĘ
+   ========================================= */
 
 .hero-image {
   animation: hero-fade-in 2500ms ease-out 300ms both;
@@ -277,6 +332,7 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .hero-ornament,
   .hero-line,
   .hero-reveal,
