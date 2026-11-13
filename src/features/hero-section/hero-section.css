@@ -222,6 +222,10 @@
     padding: 48px clamp(24px, 4vw, 72px);
   }
 
+  .hero-copy {
+    transform: translateX(50px);
+  }
+
   /* Zdjęcie po prawej */
 
   .hero-media {
