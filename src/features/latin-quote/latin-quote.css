@@ -1,3 +1,4 @@
+
 .latin-quote {
   position: relative;
   isolation: isolate;
@@ -11,11 +12,21 @@
 }
 
 .motto-ornament-line-left {
-  background: linear-gradient(90deg, transparent 0%, rgba(var(--brand-gold-rgb), 0.42) 38%, #a9822f 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--brand-gold-rgb), 0.42) 38%,
+    #a9822f 100%
+  );
 }
 
 .motto-ornament-line-right {
-  background: linear-gradient(270deg, transparent 0%, rgba(var(--brand-gold-rgb), 0.42) 38%, #a9822f 100%);
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    rgba(var(--brand-gold-rgb), 0.42) 38%,
+    #a9822f 100%
+  );
 }
 
 .motto-ornament-symbol {
@@ -24,6 +35,16 @@
     0 -1px 0 rgba(255, 252, 239, 0.42),
     0 1px 1px rgba(78, 56, 17, 0.3),
     0 2px 3px rgba(78, 56, 17, 0.14);
+}
+
+/* Odbicie pionowe wyłącznie górnych liści */
+.motto-leaf-top {
+  transform: scaleY(-1);
+}
+
+/* Zachowanie poziomego odbicia prawego liścia */
+.motto-leaf-top.motto-ornament-symbol-right {
+  transform: scale(-1, -1);
 }
 
 .motto-ornament-symbol-right {
@@ -35,6 +56,7 @@
   font-family: "Cinzel Decorative", Georgia, serif;
   font-weight: 400;
   color: #8f702f;
+
   background-image: linear-gradient(
     180deg,
     #e5c04b 0%,
@@ -43,10 +65,12 @@
     #b78308 72%,
     #e2b93a 100%
   );
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.4px rgba(91, 62, 10, 0.76);
+
   text-shadow:
     -1px -1px 0 rgba(255, 250, 228, 0.7),
     1px 1px 0 rgba(67, 48, 18, 0.6),
