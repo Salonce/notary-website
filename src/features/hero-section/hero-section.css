@@ -160,7 +160,7 @@
     object-fit: cover;
   }
 
-  /* Napis na zdjęciu */
+  /* Napis wyśrodkowany na zdjęciu */
 
   .hero-text {
     grid-area: 1 / 1;
@@ -198,7 +198,7 @@
 
 /* =========================================
    DESKTOP – OD 900 PX
-   NAPIS PO LEWEJ, ZDJĘCIE PO PRAWEJ
+   NAPIS CENTRALNIE, ZDJĘCIE W TLE
    ========================================= */
 
 @media (min-width: 900px) {
@@ -208,24 +208,35 @@
     grid-area: 1 / 1;
   }
 
-  /* Napis po lewej stronie (+30px w prawo) */
+  /* Napis centralnie w całym kontenerze */
 
   .hero-text {
-    position: static;
+    position: relative;
     z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     align-self: stretch;
-    justify-self: start;
-    width: 46%;
-    overflow: visible;
+    justify-self: stretch;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
 
     padding: 48px clamp(24px, 4vw, 72px);
 
-    transform: translateX(
-      clamp(200px, calc(200px + (100vw - 1600px) * 0.3125), 300px)
-    );
+    transform: none;
   }
 
-  /* Zdjęcie po prawej */
+  .hero-copy {
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Zdjęcie w tle */
 
   .hero-media {
     z-index: 0;
@@ -268,10 +279,6 @@
 
 /* =========================================
    OD 1921 PX – STAŁA, WYŚRODKOWANA KOMPOZYCJA
-   Napis + zdjęcie mają zawsze wymiary jak przy 1920 px.
-   Przy poszerzaniu ekranu nic się nie powiększa,
-   całość tylko przesuwa się do środka.
-   Prawa krawędź zdjęcia wygasa w kolor tła.
    ========================================= */
 
 @media (min-width: 1921px) {
@@ -281,13 +288,20 @@
     justify-content: center;
   }
 
-  /* Napis: stałe przesunięcie (jak przy 1920 px) */
+  /* Napis pozostaje centralnie */
 
   .hero-text {
-    transform: translateX(300px);
+    transform: none;
+    justify-self: stretch;
+    width: 100%;
   }
 
-  /* Zdjęcie: te same proporcje co przy 1920 px */
+  .hero-copy {
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Zdjęcie – stałe proporcje */
 
   .hero-media {
     width: 70%;
