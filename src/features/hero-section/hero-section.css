@@ -208,7 +208,7 @@
     grid-area: 1 / 1;
   }
 
-  /* Napis po lewej stronie (+30px w prawo) */
+  /* Napis po lewej stronie */
 
   .hero-text {
     position: static;
@@ -257,12 +257,6 @@
       rgba(0, 0, 0, 0.88) 60%,
       rgba(0, 0, 0, 1) 80%
     );
-  }
-
-  /* Ukrycie prawych ornamentów */
-
-  .hero-ornament-right {
-    display: none;
   }
 }
 
@@ -378,15 +372,6 @@
 }
 
 /* =========================================
-   ORNAMENTY
-   ========================================= */
-
-.hero-ornament {
-  z-index: 1;
-  animation: hero-fade-in 4000ms ease-out both;
-}
-
-/* =========================================
    ZŁOTA LINIA
    ========================================= */
 
@@ -453,7 +438,6 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .hero-ornament,
   .hero-line,
   .hero-reveal,
   .hero-image {
