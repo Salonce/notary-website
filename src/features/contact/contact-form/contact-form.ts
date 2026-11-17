@@ -1,13 +1,15 @@
-
 import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
+  PLATFORM_ID,
   ViewChild,
   inject
 } from '@angular/core';
+
+import { isPlatformBrowser } from '@angular/common';
 
 import {
   AbstractControl,
@@ -20,6 +22,12 @@ import {
 
 import { MailService } from '../mail-service/mail-service';
 import { TitleDivider } from '../../../shared/title-divider/title-divider';
+
+/**
+ * Maximum time (ms) to wait for the mail service before
+ * giving up, so the button can never stay stuck on "Wysyłanie...".
+ */
+const SEND_TIMEOUT_MS = 15000;
 
 /**
  * Rejects empty values and strings containing only whitespace.
@@ -97,6 +105,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
   private readonly fb = inject(FormBuilder);
   private readonly mailService = inject(MailService);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly platformId = inject(PLATFORM_ID);
 
   /**
    * Tracks whether the user has attempted to submit the form.
@@ -168,6 +177,10 @@ export class ContactForm implements AfterViewInit, OnDestroy {
    * an invalid submission.
    */
   private focusErrorSummary(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     requestAnimationFrame(() => {
       const errorSummary = document.getElementById(
         'form-error-summary'
@@ -178,9 +191,42 @@ export class ContactForm implements AfterViewInit, OnDestroy {
   }
 
   /**
+   * Focuses a form field from the error summary links.
+   *
+   * A plain href="#field" link can trigger a navigation to the
+   * app root when <base href="/"> is used, so the default action
+   * is cancelled and focus is moved manually.
+   */
+  focusField(event: Event, fieldId: string): void {
+    event.preventDefault();
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    const field = document.getElementById(fieldId);
+
+    field?.focus();
+    field?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+
+  /**
    * Reveals the contact form when it enters the viewport.
+   *
+   * Falls back to showing the form immediately when there is no
+   * browser (SSR) or IntersectionObserver is unavailable, because
+   * the form is invisible (opacity: 0) until revealed.
    */
   ngAfterViewInit(): void {
+    if (
+      !isPlatformBrowser(this.platformId) ||
+      typeof IntersectionObserver === 'undefined'
+    ) {
+      this.isContactFormVisible = true;
+      this.cdr.detectChanges();
+      return;
+    }
+
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
@@ -193,7 +239,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
         this.observer?.disconnect();
       },
       {
-        threshold: 0.15
+        threshold: 0.1
       }
     );
 
@@ -207,6 +253,29 @@ export class ContactForm implements AfterViewInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.observer?.disconnect();
+  }
+
+  /**
+   * Rejects if the given promise does not settle in time.
+   */
+  private withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      const timer = setTimeout(
+        () => reject(new Error('Request timed out')),
+        ms
+      );
+
+      promise.then(
+        (value) => {
+          clearTimeout(timer);
+          resolve(value);
+        },
+        (error) => {
+          clearTimeout(timer);
+          reject(error);
+        }
+      );
+    });
   }
 
   /**
@@ -245,7 +314,10 @@ export class ContactForm implements AfterViewInit, OnDestroy {
       formData.append('email', formValue.email.trim());
       formData.append('message', formValue.message.trim());
 
-      const result = await this.mailService.sendEmail(formData);
+      const result = await this.withTimeout(
+        this.mailService.sendEmail(formData),
+        SEND_TIMEOUT_MS
+      );
 
       if (result.success) {
         this.successMessage =
@@ -274,6 +346,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
     } finally {
       // Always unlock submission, even if an error occurs.
       this.isSending = false;
+      this.cdr.markForCheck();
     }
   }
 }

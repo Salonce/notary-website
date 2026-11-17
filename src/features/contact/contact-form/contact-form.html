@@ -88,6 +88,7 @@
             <li>
               <a
                 href="#name"
+                (click)="focusField($event, 'name')"
                 class="underline underline-offset-2
                        hover:no-underline
                        focus-visible:outline-2
@@ -116,6 +117,7 @@
             <li>
               <a
                 href="#email"
+                (click)="focusField($event, 'email')"
                 class="underline underline-offset-2
                        hover:no-underline
                        focus-visible:outline-2
@@ -135,6 +137,7 @@
             <li>
               <a
                 href="#message"
+                (click)="focusField($event, 'message')"
                 class="underline underline-offset-2
                        hover:no-underline
                        focus-visible:outline-2
@@ -159,6 +162,7 @@
             <li>
               <a
                 href="#consent"
+                (click)="focusField($event, 'consent')"
                 class="underline underline-offset-2
                        hover:no-underline
                        focus-visible:outline-2
@@ -194,7 +198,6 @@
         type="text"
         autocomplete="name"
         placeholder="Jan Kowalski"
-        minlength="2"
         maxlength="100"
         required
         [attr.aria-invalid]="
@@ -204,7 +207,6 @@
           shouldShowError('name') ? 'name-error' : null
         "
         [class.!border-red-700]="shouldShowError('name')"
-        [class.!focus:border-red-700]="shouldShowError('name')"
         class="w-full
                border border-[#D2C3A8]
                bg-[#F7F3EB]/90
@@ -283,7 +285,6 @@
           shouldShowError('email') ? 'email-error' : null
         "
         [class.!border-red-700]="shouldShowError('email')"
-        [class.!focus:border-red-700]="shouldShowError('email')"
         class="w-full
                border border-[#D2C3A8]
                bg-[#F7F3EB]/90
@@ -350,7 +351,6 @@
           shouldShowError('message') ? 'message-error' : null
         "
         [class.!border-red-700]="shouldShowError('message')"
-        [class.!focus:border-red-700]="shouldShowError('message')"
         class="w-full
                resize-y
                border border-[#D2C3A8]
@@ -437,6 +437,19 @@
           <span aria-hidden="true" class="text-red-700">*</span>
         </span>
       </label>
+
+      @if (shouldShowError('consent')) {
+        <p
+          id="consent-error"
+          class="mt-2
+                 font-main-body
+                 text-[13px]
+                 leading-5
+                 text-red-700"
+        >
+          Zaznaczenie zgody jest wymagane.
+        </p>
+      }
     </div>
 
     <!-- INFORMACJA O POLACH WYMAGANYCH -->
