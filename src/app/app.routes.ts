@@ -9,8 +9,7 @@ export const routes: Routes = [
         component: MainLayout,
         children: [
             { path: '', component: Home },
-            { path: 'home', component: Home },
-            { path: 'dodatkowe-czynnosci-notarialne', component: NotarialServices }
+            { path: 'home', redirectTo: '', pathMatch: 'full' }
         ]
     }
 ];
