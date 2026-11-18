@@ -1,11 +1,16 @@
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
-  ViewChild
+  ViewChild,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
+
+import { isPlatformBrowser } from '@angular/common';
 
 import { TitleDivider } from '../../../shared/title-divider/title-divider';
 
@@ -24,9 +29,18 @@ export class BeforeVisit implements AfterViewInit, OnDestroy {
 
   private observer?: IntersectionObserver;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngAfterViewInit(): void {
+
+    // IntersectionObserver działa wyłącznie w przeglądarce
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {

@@ -1,11 +1,16 @@
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
-  ViewChild
+  ViewChild,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
+
+import { isPlatformBrowser } from '@angular/common';
 
 import { TitleDivider } from '../../shared/title-divider/title-divider';
 import { SectionScrollService } from '../../shared/section-scroll-service/section-scroll-service';
@@ -27,10 +32,15 @@ export class Fees implements AfterViewInit, OnDestroy {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private sectionScrollService: SectionScrollService
+    private sectionScrollService: SectionScrollService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {

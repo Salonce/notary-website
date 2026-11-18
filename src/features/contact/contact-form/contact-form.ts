@@ -1,3 +1,4 @@
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -48,9 +49,6 @@ const nonWhitespaceValidator: ValidatorFn = (
 
 /**
  * Validates the trimmed length of a string.
- *
- * Leading and trailing spaces do not count towards
- * the minimum or maximum length.
  */
 const trimmedLengthValidator = (
   min: number,
@@ -192,10 +190,6 @@ export class ContactForm implements AfterViewInit, OnDestroy {
 
   /**
    * Focuses a form field from the error summary links.
-   *
-   * A plain href="#field" link can trigger a navigation to the
-   * app root when <base href="/"> is used, so the default action
-   * is cancelled and focus is moved manually.
    */
   focusField(event: Event, fieldId: string): void {
     event.preventDefault();
@@ -207,21 +201,32 @@ export class ContactForm implements AfterViewInit, OnDestroy {
     const field = document.getElementById(fieldId);
 
     field?.focus();
-    field?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    field?.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth'
+    });
   }
 
   /**
    * Reveals the contact form when it enters the viewport.
-   *
-   * Falls back to showing the form immediately when there is no
-   * browser (SSR) or IntersectionObserver is unavailable, because
-   * the form is invisible (opacity: 0) until revealed.
    */
   ngAfterViewInit(): void {
-    if (
-      !isPlatformBrowser(this.platformId) ||
-      typeof IntersectionObserver === 'undefined'
-    ) {
+
+    // During SSR/SSG, keep the form visible.
+    if (!isPlatformBrowser(this.platformId)) {
+      this.isContactFormVisible = true;
+      return;
+    }
+
+    // If IntersectionObserver is unavailable, show the form.
+    if (typeof IntersectionObserver === 'undefined') {
+      this.isContactFormVisible = true;
+      this.cdr.detectChanges();
+      return;
+    }
+
+    // If the section element is unavailable, show the form.
+    if (!this.contactFormSection?.nativeElement) {
       this.isContactFormVisible = true;
       this.cdr.detectChanges();
       return;
@@ -229,7 +234,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
 
     this.observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) {
+        if (!entry?.isIntersecting) {
           return;
         }
 
@@ -237,6 +242,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
         this.cdr.detectChanges();
 
         this.observer?.disconnect();
+        this.observer = undefined;
       },
       {
         threshold: 0.1
@@ -253,6 +259,7 @@ export class ContactForm implements AfterViewInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.observer?.disconnect();
+    this.observer = undefined;
   }
 
   /**
@@ -283,33 +290,27 @@ export class ContactForm implements AfterViewInit, OnDestroy {
    */
   async onSubmit(): Promise<void> {
 
-    // Prevent duplicate submissions immediately.
     if (this.isSending) {
       return;
     }
 
-    // Clear messages from the previous attempt.
     this.successMessage = '';
     this.errorMessage = '';
 
-    // Record this submission attempt.
     this.submitted = true;
 
-    // Stop if any field is invalid.
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       this.focusErrorSummary();
       return;
     }
 
-    // Lock submission before starting the request.
     this.isSending = true;
 
     try {
       const formValue = this.contactForm.getRawValue();
       const formData = new FormData();
 
-      // Remove surrounding whitespace from text fields.
       formData.append('name', formValue.name.trim());
       formData.append('email', formValue.email.trim());
       formData.append('message', formValue.message.trim());
@@ -344,7 +345,6 @@ export class ContactForm implements AfterViewInit, OnDestroy {
         'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.';
 
     } finally {
-      // Always unlock submission, even if an error occurs.
       this.isSending = false;
       this.cdr.markForCheck();
     }
