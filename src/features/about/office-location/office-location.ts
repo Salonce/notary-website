@@ -26,6 +26,11 @@ export class OfficeLocation implements AfterViewInit, OnDestroy {
   locationSection!: ElementRef<HTMLElement>;
 
   isLocationVisible = false;
+  
+isMapVisible = false;
+
+  readonly mapUrl =
+    'https://maps.google.com/maps?q=Kancelaria%20Notarialna%20Zbigniew%20W%C5%82adys%C5%82awski%2C%20D%C4%85browszczak%C3%B3w%2021%2C%20Olsztyn&t=m&z=13&output=embed';
 
   private observer?: IntersectionObserver;
 
@@ -53,6 +58,8 @@ export class OfficeLocation implements AfterViewInit, OnDestroy {
         // Dopiero w następnej klatce uruchamiamy animację
         requestAnimationFrame(() => {
           this.isLocationVisible = true;
+          this.isMapVisible = true;
+
           this.cdr.detectChanges();
 
           this.observer?.disconnect();

@@ -1,3 +1,4 @@
+
 <!-- =========================================
      HERO SECTION – NAPIS + ZDJĘCIE
      Mobile: napis na zdjęciu
@@ -40,12 +41,26 @@
   <!-- ===== ZDJĘCIE ===== -->
 
   <div class="hero-media">
-    <img
-      class="hero-image"
-      src="assets/biurowiec1.jpg"
-      alt="Biurowiec, w którym mieści się kancelaria"
-      fetchpriority="high"
-    />
+
+    <picture>
+      <!-- Mobile: do 900 px -->
+      <source
+        media="(max-width: 900px)"
+        srcset="assets/biurowiec1-mobile.webp"
+        type="image/webp"
+      />
+
+      <!-- Tablet i desktop: powyżej 900 px -->
+      <img
+        class="hero-image"
+        src="assets/biurowiec1.jpg"
+        alt="Biurowiec, w którym mieści się kancelaria"
+        width="1600"
+        height="900"
+        fetchpriority="high"
+      />
+    </picture>
+
   </div>
 
 </section>
