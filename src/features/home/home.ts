@@ -4,7 +4,6 @@ import { NotarialServices } from '../notarial-services/notarial-services';
 import { Fees } from '../fees/fees';
 import { CustomerArea } from '../customer-area/customer-area';
 import { LatinQuote } from '../latin-quote/latin-quote';
-import { GoogleReviews } from '../google-reviews/google-reviews';
 import { SectionDivider } from '../../shared/section-divider/section-divider';
 import { About } from '../about/about';
 
